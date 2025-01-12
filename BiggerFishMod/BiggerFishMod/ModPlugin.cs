@@ -10,10 +10,10 @@ namespace BiggerFishMod
     [BepInPlugin(MyGuid, PluginName, VersionString)]
     [BepInDependency("com.snmodding.nautilus")]
 
-    public class FirstModPlugin : BaseUnityPlugin
+    public class ModPlugin : BaseUnityPlugin
     {
-        private const string MyGuid = "com.lazybriefcase.firstmod";
-        private const string PluginName = "First Mod";
+        private const string MyGuid = "com.lazybriefcase.biggerfish";
+        private const string PluginName = "Bigger Fish";
         private const string VersionString = "1.0.0";
 
         private static readonly Harmony Harmony = new Harmony(MyGuid);
@@ -205,10 +205,10 @@ namespace BiggerFishMod
     [BepInPlugin(MyGuid, PluginName, VersionString)]
     [BepInDependency("com.snmodding.nautilus")]
 
-    public class FirstModPlugin : BaseUnityPlugin
+    public class ModPlugin : BaseUnityPlugin
     {
-        private const string MyGuid = "com.lazybriefcase.firstmod";
-        private const string PluginName = "First Mod";
+        private const string MyGuid = "com.lazybriefcase.biggerfish";
+        private const string PluginName = "BiggerFish";
         private const string VersionString = "1.0.0";
 
         private static readonly Harmony Harmony = new Harmony(MyGuid);
