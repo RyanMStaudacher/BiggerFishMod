@@ -171,12 +171,12 @@ namespace BiggerFishMod
 
             if (__instance is SeaEmperorBaby seaEmporerBaby)
             {
-                SpawnHandler.totalSeaEmporerBabies.Remove(seaEmporerBaby.gameObject);
+                SpawnHandler.totalSeaEmperorBabies.Remove(seaEmporerBaby.gameObject);
             }
 
             if (__instance is SeaEmperorJuvenile seaEmporerJuvenile)
             {
-                SpawnHandler.totalSeaEmporerJuveniles.Remove(seaEmporerJuvenile.gameObject);
+                SpawnHandler.totalSeaEmperorJuveniles.Remove(seaEmporerJuvenile.gameObject);
             }
 
             if (__instance is SeaTreader seaTreader)

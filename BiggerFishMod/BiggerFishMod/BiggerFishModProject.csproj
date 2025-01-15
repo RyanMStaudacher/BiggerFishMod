@@ -98,6 +98,7 @@
     <Compile Include="CreatureHealthPatch.cs" />
     <Compile Include="CreatureSizePatch.cs" />
     <Compile Include="CreatureSlownessPatch.cs" />
+    <Compile Include="CreatureValuesPatch.cs" />
     <Compile Include="ModPlugin.cs" />
     <Compile Include="MyModOptions.cs" />
     <Compile Include="OnDisableHandleSpawnPatch.cs" />

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using BepInEx.Configuration;
 
 namespace BiggerFishMod
 {
@@ -13,11 +14,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    biter.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    biter.liveMixin.health = MyModOptions.biterBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    biter.liveMixin.health *= MyModOptions.biterHealth.Value;
+                    biter.liveMixin.health = MyModOptions.biterBaseHealth.Value * MyModOptions.biterHealth.Value;
                 }
             }
 
@@ -25,11 +26,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    bladderFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    bladderFish.liveMixin.health = MyModOptions.bladderFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    bladderFish.liveMixin.health *= MyModOptions.bladderFishHealth.Value;
+                    bladderFish.liveMixin.health = MyModOptions.bladderFishBaseHealth.Value * MyModOptions.bladderFishHealth.Value;
                 }
             }
 
@@ -37,11 +38,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    bleeder.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    bleeder.liveMixin.health = MyModOptions.bleederBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    bleeder.liveMixin.health *= MyModOptions.bleederHealth.Value;
+                    bleeder.liveMixin.health = MyModOptions.bleederBaseHealth.Value * MyModOptions.bleederHealth.Value;
                 }
             }
 
@@ -49,11 +50,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    boneShark.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    boneShark.liveMixin.health = MyModOptions.boneSharkBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    boneShark.liveMixin.health *= MyModOptions.boneSharkHealth.Value;
+                    boneShark.liveMixin.health = MyModOptions.boneSharkBaseHealth.Value * MyModOptions.boneSharkHealth.Value;
                 }
             }
 
@@ -61,11 +62,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    boomerang.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    boomerang.liveMixin.health = MyModOptions.boomerangBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    boomerang.liveMixin.health *= MyModOptions.boomerangHealth.Value;
+                    boomerang.liveMixin.health = MyModOptions.boomerangBaseHealth.Value * MyModOptions.boomerangHealth.Value;
                 }
             }
 
@@ -73,11 +74,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    caveCrawler.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    caveCrawler.liveMixin.health = MyModOptions.caveCrawlerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    caveCrawler.liveMixin.health *= MyModOptions.caveCrawlerHealth.Value;
+                    caveCrawler.liveMixin.health = MyModOptions.caveCrawlerBaseHealth.Value * MyModOptions.caveCrawlerHealth.Value;
                 }
             }
 
@@ -85,11 +86,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crabSnake.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    crabSnake.liveMixin.health = MyModOptions.crabSnakeBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    crabSnake.liveMixin.health *= MyModOptions.crabSnakeHealth.Value;
+                    crabSnake.liveMixin.health = MyModOptions.crabSnakeBaseHealth.Value * MyModOptions.crabSnakeHealth.Value;
                 }
             }
 
@@ -97,11 +98,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crabSquid.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    crabSquid.liveMixin.health = MyModOptions.crabSquidBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    crabSquid.liveMixin.health *= MyModOptions.crabSquidHealth.Value;
+                    crabSquid.liveMixin.health = MyModOptions.crabSquidBaseHealth.Value * MyModOptions.crabSquidHealth.Value;
                 }
             }
 
@@ -109,11 +110,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crashFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    crashFish.liveMixin.health = MyModOptions.crashFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    crashFish.liveMixin.health *= MyModOptions.crashFishHealth.Value;
+                    crashFish.liveMixin.health = MyModOptions.crashFishBaseHealth.Value * MyModOptions.crashFishHealth.Value;
                 }
             }
 
@@ -121,11 +122,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    cuddleFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    cuddleFish.liveMixin.health = MyModOptions.cuddleFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    cuddleFish.liveMixin.health *= MyModOptions.cuddleFishHealth.Value;
+                    cuddleFish.liveMixin.health = MyModOptions.cuddleFishBaseHealth.Value * MyModOptions.cuddleFishHealth.Value;
                 }
             }
 
@@ -133,11 +134,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    eyeye.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    eyeye.liveMixin.health = MyModOptions.eyeyeBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    eyeye.liveMixin.health *= MyModOptions.eyeyeHealth.Value;
+                    eyeye.liveMixin.health = MyModOptions.eyeyeBaseHealth.Value * MyModOptions.eyeyeHealth.Value;
                 }
             }
 
@@ -145,11 +146,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    garryFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    garryFish.liveMixin.health = MyModOptions.garryFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    garryFish.liveMixin.health *= MyModOptions.garryFishHealth.Value;
+                    garryFish.liveMixin.health = MyModOptions.garryFishBaseHealth.Value * MyModOptions.garryFishHealth.Value;
                 }
             }
 
@@ -157,11 +158,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    gasopod.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    gasopod.liveMixin.health = MyModOptions.gasopodBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    gasopod.liveMixin.health *= MyModOptions.gasopodHealth.Value;
+                    gasopod.liveMixin.health = MyModOptions.gasopodBaseHealth.Value * MyModOptions.gasopodHealth.Value;
                 }
             }
 
@@ -169,11 +170,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    voidGhostLeviathan.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    voidGhostLeviathan.liveMixin.health = MyModOptions.voidGhostLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    voidGhostLeviathan.liveMixin.health *= MyModOptions.voidGhostLeviathanHealth.Value;
+                    voidGhostLeviathan.liveMixin.health = MyModOptions.voidGhostLeviathanBaseHealth.Value * MyModOptions.voidGhostLeviathanHealth.Value;
                 }
             }
 
@@ -181,11 +182,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    ghostLeviathan.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    ghostLeviathan.liveMixin.health = MyModOptions.ghostLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    ghostLeviathan.liveMixin.health *= MyModOptions.ghostLeviathanHealth.Value;
+                    ghostLeviathan.liveMixin.health = MyModOptions.ghostLeviathanBaseHealth.Value * MyModOptions.ghostLeviathanHealth.Value;
                 }
             }
 
@@ -193,11 +194,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    ghostRay.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    ghostRay.liveMixin.health = MyModOptions.ghostRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    ghostRay.liveMixin.health *= MyModOptions.ghostRayHealth.Value;
+                    ghostRay.liveMixin.health = MyModOptions.ghostRayBaseHealth.Value * MyModOptions.ghostRayHealth.Value;
                 }
             }
 
@@ -205,11 +206,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    holeFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    holeFish.liveMixin.health = MyModOptions.holeFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    holeFish.liveMixin.health *= MyModOptions.holeFishHealth.Value;
+                    holeFish.liveMixin.health = MyModOptions.holeFishBaseHealth.Value * MyModOptions.holeFishHealth.Value;
                 }
             }
 
@@ -217,11 +218,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    hoopFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    hoopFish.liveMixin.health = MyModOptions.hoopFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    hoopFish.liveMixin.health *= MyModOptions.hoopFishHealth.Value;
+                    hoopFish.liveMixin.health = MyModOptions.hoopFishBaseHealth.Value * MyModOptions.hoopFishHealth.Value;
                 }
             }
 
@@ -229,11 +230,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    hoverFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    hoverFish.liveMixin.health = MyModOptions.hoverFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    hoverFish.liveMixin.health *= MyModOptions.hoverFishHealth.Value;
+                    hoverFish.liveMixin.health = MyModOptions.hoverFishBaseHealth.Value * MyModOptions.hoverFishHealth.Value;
                 }
             }
 
@@ -241,11 +242,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    jellyRay.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    jellyRay.liveMixin.health = MyModOptions.jellyRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    jellyRay.liveMixin.health *= MyModOptions.jellyRayHealth.Value;
+                    jellyRay.liveMixin.health = MyModOptions.jellyRayBaseHealth.Value * MyModOptions.jellyRayHealth.Value;
                 }
             }
 
@@ -253,11 +254,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    jumper.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    jumper.liveMixin.health = MyModOptions.jumperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    jumper.liveMixin.health *= MyModOptions.jumperHealth.Value;
+                    jumper.liveMixin.health = MyModOptions.jumperBaseHealth.Value * MyModOptions.jumperHealth.Value;
                 }
             }
 
@@ -265,11 +266,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    lavaLarva.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    lavaLarva.liveMixin.health = MyModOptions.lavaLarvaBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    lavaLarva.liveMixin.health *= MyModOptions.lavaLarvaHealth.Value;
+                    lavaLarva.liveMixin.health = MyModOptions.lavaLarvaBaseHealth.Value * MyModOptions.lavaLarvaHealth.Value;
                 }
             }
 
@@ -277,11 +278,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    lavaLizard.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    lavaLizard.liveMixin.health = MyModOptions.lavaLizardBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    lavaLizard.liveMixin.health *= MyModOptions.lavaLizardHealth.Value;
+                    lavaLizard.liveMixin.health = MyModOptions.lavaLizardBaseHealth.Value * MyModOptions.lavaLizardHealth.Value;
                 }
             }
 
@@ -289,23 +290,23 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    mesmer.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    mesmer.liveMixin.health = MyModOptions.mesmerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    mesmer.liveMixin.health *= MyModOptions.mesmerHealth.Value;
+                    mesmer.liveMixin.health = MyModOptions.mesmerBaseHealth.Value * MyModOptions.mesmerHealth.Value;
                 }
             }
 
-            if (__instance is OculusFish oculus)
+            if (__instance is OculusFish oculusFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    oculus.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    oculusFish.liveMixin.health = MyModOptions.oculusFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    oculus.liveMixin.health *= MyModOptions.oculusFishHealth.Value;
+                    oculusFish.liveMixin.health = MyModOptions.oculusFishBaseHealth.Value * MyModOptions.oculusFishHealth.Value;
                 }
             }
 
@@ -313,11 +314,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    peeper.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    peeper.liveMixin.health = MyModOptions.peeperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    peeper.liveMixin.health *= MyModOptions.peeperHealth.Value;
+                    peeper.liveMixin.health = MyModOptions.peeperBaseHealth.Value * MyModOptions.peeperHealth.Value;
                 }
             }
 
@@ -325,11 +326,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    rabbitRay.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    rabbitRay.liveMixin.health = MyModOptions.rabbitRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    rabbitRay.liveMixin.health *= MyModOptions.rabbitRayHealth.Value;
+                    rabbitRay.liveMixin.health = MyModOptions.rabbitRayBaseHealth.Value * MyModOptions.rabbitRayHealth.Value;
                 }
             }
 
@@ -337,11 +338,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reaperLeviathan.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    reaperLeviathan.liveMixin.health = MyModOptions.reaperLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    reaperLeviathan.liveMixin.health *= MyModOptions.reaperLeviathanHealth.Value;
+                    reaperLeviathan.liveMixin.health = MyModOptions.reaperLeviathanBaseHealth.Value * MyModOptions.reaperLeviathanHealth.Value;
                 }
             }
 
@@ -349,11 +350,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reefback.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    reefback.liveMixin.health = MyModOptions.reefbackBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    reefback.liveMixin.health *= MyModOptions.reefbackHealth.Value;
+                    reefback.liveMixin.health = MyModOptions.reefbackBaseHealth.Value * MyModOptions.reefbackHealth.Value;
                 }
             }
 
@@ -361,11 +362,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reginald.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    reginald.liveMixin.health = MyModOptions.reginaldBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    reginald.liveMixin.health *= MyModOptions.reginaldHealth.Value;
+                    reginald.liveMixin.health = MyModOptions.reginaldBaseHealth.Value * MyModOptions.reginaldHealth.Value;
                 }
             }
 
@@ -373,11 +374,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    sandShark.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    sandShark.liveMixin.health = MyModOptions.sandSharkBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    sandShark.liveMixin.health *= MyModOptions.sandSharkHealth.Value;
+                    sandShark.liveMixin.health = MyModOptions.sandSharkBaseHealth.Value * MyModOptions.sandSharkHealth.Value;
                 }
             }
 
@@ -385,35 +386,35 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaDragon.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    seaDragon.liveMixin.health = MyModOptions.seaDragonBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    seaDragon.liveMixin.health *= MyModOptions.seaDragonHealth.Value;
+                    seaDragon.liveMixin.health = MyModOptions.seaDragonBaseHealth.Value * MyModOptions.seaDragonHealth.Value;
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmporerBaby)
+            if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaEmporerBaby.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    seaEmperorBaby.liveMixin.health = MyModOptions.seaEmperorBabyBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    seaEmporerBaby.liveMixin.health *= MyModOptions.seaEmporerBabyHealth.Value;
+                    seaEmperorBaby.liveMixin.health = MyModOptions.seaEmperorBabyBaseHealth.Value * MyModOptions.seaEmperorBabyHealth.Value;
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmporerJuvenile)
+            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaEmporerJuvenile.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    seaEmperorJuvenile.liveMixin.health = MyModOptions.seaEmperorJuvenileBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    seaEmporerJuvenile.liveMixin.health *= MyModOptions.seaEmporerJuvenileHealth.Value;
+                    seaEmperorJuvenile.liveMixin.health = MyModOptions.seaEmperorJuvenileBaseHealth.Value * MyModOptions.seaEmperorJuvenileHealth.Value;
                 }
             }
 
@@ -421,11 +422,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaTreader.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    seaTreader.liveMixin.health = MyModOptions.seaTreaderBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    seaTreader.liveMixin.health *= MyModOptions.seaTreaderHealth.Value;
+                    seaTreader.liveMixin.health = MyModOptions.seaTreaderBaseHealth.Value * MyModOptions.seaTreaderHealth.Value;
                 }
             }
 
@@ -433,11 +434,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    shocker.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    shocker.liveMixin.health = MyModOptions.shockerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    shocker.liveMixin.health *= MyModOptions.shockerHealth.Value;
+                    shocker.liveMixin.health = MyModOptions.shockerBaseHealth.Value * MyModOptions.shockerHealth.Value;
                 }
             }
 
@@ -445,11 +446,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    spadeFish.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    spadeFish.liveMixin.health = MyModOptions.spadeFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    spadeFish.liveMixin.health *= MyModOptions.spadeFishHealth.Value;
+                    spadeFish.liveMixin.health = MyModOptions.spadeFishBaseHealth.Value * MyModOptions.spadeFishHealth.Value;
                 }
             }
 
@@ -457,11 +458,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    spineEel.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    spineEel.liveMixin.health = MyModOptions.spineEelBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    spineEel.liveMixin.health *= MyModOptions.spineEelHealth.Value;
+                    spineEel.liveMixin.health = MyModOptions.spineEelBaseHealth.Value * MyModOptions.spineEelHealth.Value;
                 }
             }
 
@@ -469,11 +470,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    stalker.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    stalker.liveMixin.health = MyModOptions.stalkerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    stalker.liveMixin.health *= MyModOptions.stalkerHealth.Value;
+                    stalker.liveMixin.health = MyModOptions.stalkerBaseHealth.Value * MyModOptions.stalkerHealth.Value;
                 }
             }
 
@@ -481,11 +482,11 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    warper.liveMixin.health *= MyModOptions.proportionalHealth.Value;
+                    warper.liveMixin.health = MyModOptions.warperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
                 else
                 {
-                    warper.liveMixin.health *= MyModOptions.biterHealth.Value;
+                    warper.liveMixin.health = MyModOptions.warperBaseHealth.Value * MyModOptions.warperHealth.Value;
                 }
             }
         }

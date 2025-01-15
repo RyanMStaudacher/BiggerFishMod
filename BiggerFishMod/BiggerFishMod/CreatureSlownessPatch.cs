@@ -14,17 +14,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    biter.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    biter.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    biter.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    biter.GetComponent<Biter>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    biter.GetComponent<Locomotion>().maxAcceleration = MyModOptions.biterBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    biter.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.biterBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    biter.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.biterBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    biter.GetComponent<Biter>().traitsAnimator.speed = MyModOptions.biterBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    biter.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.biterSlowness.Value;
-                    biter.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.biterSlowness.Value;
-                    biter.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.biterSlowness.Value;
-                    biter.GetComponent<Biter>().traitsAnimator.speed /= MyModOptions.biterSlowness.Value;
+                    biter.GetComponent<Locomotion>().maxAcceleration = MyModOptions.biterBaseMaxAcceleration.Value / MyModOptions.biterSlowness.Value;
+                    biter.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.biterBaseForwardRotationSpeed.Value / MyModOptions.biterSlowness.Value;
+                    biter.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.biterBaseUpRotationSpeed.Value / MyModOptions.biterSlowness.Value;
+                    biter.GetComponent<Biter>().traitsAnimator.speed = MyModOptions.biterBaseTraitsAnimatorSpeed.Value / MyModOptions.biterSlowness.Value;
                 }
             }
 
@@ -32,17 +32,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    bladderFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    bladderFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    bladderFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    bladderFish.GetComponent<Bladderfish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bladderFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bladderFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bladderFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    bladderFish.GetComponent<Bladderfish>().traitsAnimator.speed = MyModOptions.bladderFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    bladderFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.bladderFishSlowness.Value;
-                    bladderFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.bladderFishSlowness.Value;
-                    bladderFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.bladderFishSlowness.Value;
-                    bladderFish.GetComponent<Bladderfish>().traitsAnimator.speed /= MyModOptions.bladderFishSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bladderFishBaseMaxAcceleration.Value / MyModOptions.bladderFishSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bladderFishBaseForwardRotationSpeed.Value / MyModOptions.bladderFishSlowness.Value;
+                    bladderFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bladderFishBaseUpRotationSpeed.Value / MyModOptions.bladderFishSlowness.Value;
+                    bladderFish.GetComponent<Bladderfish>().traitsAnimator.speed = MyModOptions.bladderFishBaseTraitsAnimatorSpeed.Value / MyModOptions.bladderFishSlowness.Value;
                 }
             }
 
@@ -50,17 +50,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    bleeder.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    bleeder.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    bleeder.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    bleeder.GetComponent<Bleeder>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bleederBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bleederBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bleederBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    bleeder.GetComponent<Bleeder>().traitsAnimator.speed = MyModOptions.bleederBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    bleeder.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.bleederSlowness.Value;
-                    bleeder.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.bleederSlowness.Value;
-                    bleeder.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.bleederSlowness.Value;
-                    bleeder.GetComponent<Bleeder>().traitsAnimator.speed /= MyModOptions.bleederSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bladderFishBaseMaxAcceleration.Value / MyModOptions.bleederSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bladderFishBaseForwardRotationSpeed.Value / MyModOptions.bleederSlowness.Value;
+                    bleeder.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bladderFishBaseUpRotationSpeed.Value / MyModOptions.bleederSlowness.Value;
+                    bleeder.GetComponent<Bleeder>().traitsAnimator.speed = MyModOptions.bladderFishBaseTraitsAnimatorSpeed.Value / MyModOptions.bleederSlowness.Value;
                 }
             }
 
@@ -68,17 +68,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    boneShark.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    boneShark.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    boneShark.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    boneShark.GetComponent<BoneShark>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boneSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boneSharkBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.boneSharkBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    boneShark.GetComponent<BoneShark>().traitsAnimator.speed = MyModOptions.boneSharkBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    boneShark.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.boneSharkSlowness.Value;
-                    boneShark.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.boneSharkSlowness.Value;
-                    boneShark.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.boneSharkSlowness.Value;
-                    boneShark.GetComponent<BoneShark>().traitsAnimator.speed /= MyModOptions.boneSharkSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boneSharkBaseMaxAcceleration.Value / MyModOptions.boneSharkSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boneSharkBaseForwardRotationSpeed.Value / MyModOptions.boneSharkSlowness.Value;
+                    boneShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.boneSharkBaseUpRotationSpeed.Value / MyModOptions.boneSharkSlowness.Value;
+                    boneShark.GetComponent<BoneShark>().traitsAnimator.speed = MyModOptions.boneSharkBaseTraitsAnimatorSpeed.Value / MyModOptions.boneSharkSlowness.Value;
                 }
             }
 
@@ -86,17 +86,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    boomerang.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    boomerang.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    boomerang.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    boomerang.GetComponent<Boomerang>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boomerangBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boomerangBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.boomerangBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    boomerang.GetComponent<Boomerang>().traitsAnimator.speed = MyModOptions.boomerangBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    boomerang.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.boomerangSlowness.Value;
-                    boomerang.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.boomerangSlowness.Value;
-                    boomerang.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.boomerangSlowness.Value;
-                    boomerang.GetComponent<Boomerang>().traitsAnimator.speed /= MyModOptions.boomerangSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boomerangBaseMaxAcceleration.Value / MyModOptions.boomerangSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boomerangBaseForwardRotationSpeed.Value / MyModOptions.boomerangSlowness.Value;
+                    boomerang.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.boomerangBaseUpRotationSpeed.Value / MyModOptions.boomerangSlowness.Value;
+                    boomerang.GetComponent<Boomerang>().traitsAnimator.speed = MyModOptions.boomerangBaseTraitsAnimatorSpeed.Value / MyModOptions.boomerangSlowness.Value;
                 }
             }
 
@@ -104,17 +104,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    caveCrawler.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    caveCrawler.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    caveCrawler.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    caveCrawler.GetComponent<CaveCrawler>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().maxAcceleration = MyModOptions.caveCrawlerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.caveCrawlerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.caveCrawlerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    caveCrawler.GetComponent<CaveCrawler>().traitsAnimator.speed = MyModOptions.caveCrawlerBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    caveCrawler.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.caveCrawlerSlowness.Value;
-                    caveCrawler.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.caveCrawlerSlowness.Value;
-                    caveCrawler.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.caveCrawlerSlowness.Value;
-                    caveCrawler.GetComponent<CaveCrawler>().traitsAnimator.speed /= MyModOptions.caveCrawlerSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().maxAcceleration = MyModOptions.caveCrawlerBaseMaxAcceleration.Value / MyModOptions.caveCrawlerSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.caveCrawlerBaseForwardRotationSpeed.Value / MyModOptions.caveCrawlerSlowness.Value;
+                    caveCrawler.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.caveCrawlerBaseUpRotationSpeed.Value / MyModOptions.caveCrawlerSlowness.Value;
+                    caveCrawler.GetComponent<CaveCrawler>().traitsAnimator.speed = MyModOptions.caveCrawlerBaseTraitsAnimatorSpeed.Value / MyModOptions.caveCrawlerSlowness.Value;
                 }
             }
 
@@ -122,17 +122,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crabSnake.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    crabSnake.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crabSnake.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crabSnake.GetComponent<CrabSnake>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSnakeBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSnakeBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crabSnakeBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSnake.GetComponent<CrabSnake>().traitsAnimator.speed = MyModOptions.crabSnakeBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    crabSnake.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.crabSnakeSlowness.Value;
-                    crabSnake.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.crabSnakeSlowness.Value;
-                    crabSnake.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.crabSnakeSlowness.Value;
-                    crabSnake.GetComponent<CrabSnake>().traitsAnimator.speed /= MyModOptions.crabSnakeSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSnakeBaseMaxAcceleration.Value / MyModOptions.crabSnakeSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSnakeBaseForwardRotationSpeed.Value / MyModOptions.crabSnakeSlowness.Value;
+                    crabSnake.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crabSnakeBaseUpRotationSpeed.Value / MyModOptions.crabSnakeSlowness.Value;
+                    crabSnake.GetComponent<CrabSnake>().traitsAnimator.speed = MyModOptions.crabSnakeBaseTraitsAnimatorSpeed.Value / MyModOptions.crabSnakeSlowness.Value;
                 }
             }
 
@@ -140,17 +140,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crabSquid.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    crabSquid.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crabSquid.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crabSquid.GetComponent<CrabSquid>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSquidBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSquidBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crabSquidBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crabSquid.GetComponent<CrabSquid>().traitsAnimator.speed = MyModOptions.crabSquidBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    crabSquid.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.crabSquidSlowness.Value;
-                    crabSquid.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.crabSquidSlowness.Value;
-                    crabSquid.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.crabSquidSlowness.Value;
-                    crabSquid.GetComponent<CrabSquid>().traitsAnimator.speed /= MyModOptions.crabSquidSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSquidBaseMaxAcceleration.Value / MyModOptions.crabSquidSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSquidBaseForwardRotationSpeed.Value / MyModOptions.crabSquidSlowness.Value;
+                    crabSquid.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crabSquidBaseUpRotationSpeed.Value / MyModOptions.crabSquidSlowness.Value;
+                    crabSquid.GetComponent<CrabSquid>().traitsAnimator.speed = MyModOptions.crabSquidBaseTraitsAnimatorSpeed.Value / MyModOptions.crabSquidSlowness.Value;
                 }
             }
 
@@ -158,17 +158,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    crashFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    crashFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crashFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    crashFish.GetComponent<Crash>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crashFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crashFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crashFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    crashFish.GetComponent<Crash>().traitsAnimator.speed = MyModOptions.crashFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    crashFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.crashFishSlowness.Value;
-                    crashFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.crashFishSlowness.Value;
-                    crashFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.crashFishSlowness.Value;
-                    crashFish.GetComponent<Crash>().traitsAnimator.speed /= MyModOptions.crashFishSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crashFishBaseMaxAcceleration.Value / MyModOptions.crashFishSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crashFishBaseForwardRotationSpeed.Value / MyModOptions.crashFishSlowness.Value;
+                    crashFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crashFishBaseUpRotationSpeed.Value / MyModOptions.crashFishSlowness.Value;
+                    crashFish.GetComponent<Crash>().traitsAnimator.speed = MyModOptions.crashFishBaseTraitsAnimatorSpeed.Value / MyModOptions.crashFishSlowness.Value;
                 }
             }
 
@@ -176,17 +176,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    cuddleFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    cuddleFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    cuddleFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    cuddleFish.GetComponent<CuteFish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.cuddleFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.cuddleFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.cuddleFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    cuddleFish.GetComponent<CuteFish>().traitsAnimator.speed = MyModOptions.cuddleFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    cuddleFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.cuddleFishSlowness.Value;
-                    cuddleFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.cuddleFishSlowness.Value;
-                    cuddleFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.cuddleFishSlowness.Value;
-                    cuddleFish.GetComponent<CuteFish>().traitsAnimator.speed /= MyModOptions.cuddleFishSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.cuddleFishBaseMaxAcceleration.Value / MyModOptions.cuddleFishSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.cuddleFishBaseForwardRotationSpeed.Value / MyModOptions.cuddleFishSlowness.Value;
+                    cuddleFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.cuddleFishBaseUpRotationSpeed.Value / MyModOptions.cuddleFishSlowness.Value;
+                    cuddleFish.GetComponent<CuteFish>().traitsAnimator.speed = MyModOptions.cuddleFishBaseTraitsAnimatorSpeed.Value / MyModOptions.cuddleFishSlowness.Value;
                 }
             }
 
@@ -194,17 +194,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    eyeye.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    eyeye.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    eyeye.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    eyeye.GetComponent<Eyeye>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().maxAcceleration = MyModOptions.eyeyeBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.eyeyeBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.eyeyeBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    eyeye.GetComponent<Eyeye>().traitsAnimator.speed = MyModOptions.eyeyeBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    eyeye.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.eyeyeSlowness.Value;
-                    eyeye.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.eyeyeSlowness.Value;
-                    eyeye.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.eyeyeSlowness.Value;
-                    eyeye.GetComponent<Eyeye>().traitsAnimator.speed /= MyModOptions.eyeyeSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().maxAcceleration = MyModOptions.eyeyeBaseMaxAcceleration.Value / MyModOptions.eyeyeSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.eyeyeBaseForwardRotationSpeed.Value / MyModOptions.eyeyeSlowness.Value;
+                    eyeye.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.eyeyeBaseUpRotationSpeed.Value / MyModOptions.eyeyeSlowness.Value;
+                    eyeye.GetComponent<Eyeye>().traitsAnimator.speed = MyModOptions.eyeyeBaseTraitsAnimatorSpeed.Value / MyModOptions.eyeyeSlowness.Value;
                 }
             }
 
@@ -212,17 +212,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    garryFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    garryFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    garryFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    garryFish.GetComponent<Garryfish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.garryFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.garryFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.garryFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    garryFish.GetComponent<Garryfish>().traitsAnimator.speed = MyModOptions.garryFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    garryFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.garryFishSlowness.Value;
-                    garryFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.garryFishSlowness.Value;
-                    garryFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.garryFishSlowness.Value;
-                    garryFish.GetComponent<Garryfish>().traitsAnimator.speed /= MyModOptions.garryFishSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.garryFishBaseMaxAcceleration.Value / MyModOptions.garryFishSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.garryFishBaseForwardRotationSpeed.Value / MyModOptions.garryFishSlowness.Value;
+                    garryFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.garryFishBaseUpRotationSpeed.Value / MyModOptions.garryFishSlowness.Value;
+                    garryFish.GetComponent<Garryfish>().traitsAnimator.speed = MyModOptions.garryFishBaseTraitsAnimatorSpeed.Value / MyModOptions.garryFishSlowness.Value;
                 }
             }
 
@@ -230,17 +230,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    gasopod.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    gasopod.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    gasopod.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    gasopod.GetComponent<GasoPod>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().maxAcceleration = MyModOptions.gasopodBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.gasopodBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.gasopodBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    gasopod.GetComponent<GasoPod>().traitsAnimator.speed = MyModOptions.gasopodBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    gasopod.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.gasopodSlowness.Value;
-                    gasopod.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.gasopodSlowness.Value;
-                    gasopod.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.gasopodSlowness.Value;
-                    gasopod.GetComponent<GasoPod>().traitsAnimator.speed /= MyModOptions.gasopodSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().maxAcceleration = MyModOptions.gasopodBaseMaxAcceleration.Value / MyModOptions.gasopodSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.gasopodBaseForwardRotationSpeed.Value / MyModOptions.gasopodSlowness.Value;
+                    gasopod.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.gasopodBaseUpRotationSpeed.Value / MyModOptions.gasopodSlowness.Value;
+                    gasopod.GetComponent<GasoPod>().traitsAnimator.speed = MyModOptions.gasopodBaseTraitsAnimatorSpeed.Value / MyModOptions.gasopodSlowness.Value;
                 }
             }
 
@@ -248,17 +248,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    voidGhostLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    voidGhostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    voidGhostLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    voidGhostLeviathan.GetComponent<GhostLeviatanVoid>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.voidGhostLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.voidGhostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.voidGhostLeviathanBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    voidGhostLeviathan.GetComponent<GhostLeviatanVoid>().traitsAnimator.speed = MyModOptions.voidGhostLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    voidGhostLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.voidGhostLeviathanSlowness.Value;
-                    voidGhostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.voidGhostLeviathanSlowness.Value;
-                    voidGhostLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.voidGhostLeviathanSlowness.Value;
-                    voidGhostLeviathan.GetComponent<GhostLeviatanVoid>().traitsAnimator.speed /= MyModOptions.voidGhostLeviathanSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.voidGhostLeviathanBaseMaxAcceleration.Value / MyModOptions.voidGhostLeviathanSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.voidGhostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.voidGhostLeviathanSlowness.Value;
+                    voidGhostLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.voidGhostLeviathanBaseUpRotationSpeed.Value / MyModOptions.voidGhostLeviathanSlowness.Value;
+                    voidGhostLeviathan.GetComponent<GhostLeviatanVoid>().traitsAnimator.speed = MyModOptions.voidGhostLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.voidGhostLeviathanSlowness.Value;
                 }
             }
 
@@ -266,17 +266,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    ghostLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    ghostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    ghostLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    ghostLeviathan.GetComponent<GhostLeviathan>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.ghostLeviathanBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostLeviathan.GetComponent<GhostLeviathan>().traitsAnimator.speed = MyModOptions.ghostLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    ghostLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.ghostLeviathanSlowness.Value;
-                    ghostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.ghostLeviathanSlowness.Value;
-                    ghostLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.ghostLeviathanSlowness.Value;
-                    ghostLeviathan.GetComponent<GhostLeviathan>().traitsAnimator.speed /= MyModOptions.ghostLeviathanSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostLeviathanBaseMaxAcceleration.Value / MyModOptions.ghostLeviathanSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.ghostLeviathanSlowness.Value;
+                    ghostLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.ghostLeviathanBaseUpRotationSpeed.Value / MyModOptions.ghostLeviathanSlowness.Value;
+                    ghostLeviathan.GetComponent<GhostLeviathan>().traitsAnimator.speed = MyModOptions.ghostLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.ghostLeviathanSlowness.Value;
                 }
             }
 
@@ -284,17 +284,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    ghostRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    ghostRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    ghostRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    ghostRay.GetComponent<GhostRay>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.ghostRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    ghostRay.GetComponent<GhostRay>().traitsAnimator.speed = MyModOptions.ghostRayBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    ghostRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.ghostRaySlowness.Value;
-                    ghostRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.ghostRaySlowness.Value;
-                    ghostRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.ghostRaySlowness.Value;
-                    ghostRay.GetComponent<GhostRay>().traitsAnimator.speed /= MyModOptions.ghostRaySlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostRayBaseMaxAcceleration.Value / MyModOptions.ghostRaySlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostRayBaseForwardRotationSpeed.Value / MyModOptions.ghostRaySlowness.Value;
+                    ghostRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.ghostRayBaseUpRotationSpeed.Value / MyModOptions.ghostRaySlowness.Value;
+                    ghostRay.GetComponent<GhostRay>().traitsAnimator.speed = MyModOptions.ghostRayBaseTraitsAnimatorSpeed.Value / MyModOptions.ghostRaySlowness.Value;
                 }
             }
 
@@ -302,17 +302,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    holeFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    holeFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    holeFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    holeFish.GetComponent<Holefish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.holeFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.holeFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.holeFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    holeFish.GetComponent<Holefish>().traitsAnimator.speed = MyModOptions.holeFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    holeFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.holeFishSlowness.Value;
-                    holeFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.holeFishSlowness.Value;
-                    holeFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.holeFishSlowness.Value;
-                    holeFish.GetComponent<Holefish>().traitsAnimator.speed /= MyModOptions.holeFishSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.holeFishBaseMaxAcceleration.Value / MyModOptions.holeFishSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.holeFishBaseForwardRotationSpeed.Value / MyModOptions.holeFishSlowness.Value;
+                    holeFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.holeFishBaseUpRotationSpeed.Value / MyModOptions.holeFishSlowness.Value;
+                    holeFish.GetComponent<Holefish>().traitsAnimator.speed = MyModOptions.holeFishBaseTraitsAnimatorSpeed.Value / MyModOptions.holeFishSlowness.Value;
                 }
             }
 
@@ -320,17 +320,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    hoopFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    hoopFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    hoopFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    hoopFish.GetComponent<Hoopfish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoopFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoopFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.hoopFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    hoopFish.GetComponent<Hoopfish>().traitsAnimator.speed = MyModOptions.hoopFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    hoopFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.hoopFishSlowness.Value;
-                    hoopFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.hoopFishSlowness.Value;
-                    hoopFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.hoopFishSlowness.Value;
-                    hoopFish.GetComponent<Hoopfish>().traitsAnimator.speed /= MyModOptions.hoopFishSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoopFishBaseMaxAcceleration.Value / MyModOptions.hoopFishSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoopFishBaseForwardRotationSpeed.Value / MyModOptions.hoopFishSlowness.Value;
+                    hoopFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.hoopFishBaseUpRotationSpeed.Value / MyModOptions.hoopFishSlowness.Value;
+                    hoopFish.GetComponent<Hoopfish>().traitsAnimator.speed = MyModOptions.hoopFishBaseTraitsAnimatorSpeed.Value / MyModOptions.hoopFishSlowness.Value;
                 }
             }
 
@@ -338,17 +338,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    hoverFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    hoverFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    hoverFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    hoverFish.GetComponent<Hoverfish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoverFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoverFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.hoverFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    hoverFish.GetComponent<Hoverfish>().traitsAnimator.speed = MyModOptions.hoverFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    hoverFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.hoverFishSlowness.Value;
-                    hoverFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.hoverFishSlowness.Value;
-                    hoverFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.hoverFishSlowness.Value;
-                    hoverFish.GetComponent<Hoverfish>().traitsAnimator.speed /= MyModOptions.hoverFishSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoverFishBaseMaxAcceleration.Value / MyModOptions.hoverFishSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoverFishBaseForwardRotationSpeed.Value / MyModOptions.hoverFishSlowness.Value;
+                    hoverFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.hoverFishBaseUpRotationSpeed.Value / MyModOptions.hoverFishSlowness.Value;
+                    hoverFish.GetComponent<Hoverfish>().traitsAnimator.speed = MyModOptions.hoverFishBaseTraitsAnimatorSpeed.Value / MyModOptions.hoverFishSlowness.Value;
                 }
             }
 
@@ -356,17 +356,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    jellyRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    jellyRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    jellyRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    jellyRay.GetComponent<Jellyray>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jellyRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jellyRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.jellyRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    jellyRay.GetComponent<Jellyray>().traitsAnimator.speed = MyModOptions.jellyRayBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    jellyRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.jellyRaySlowness.Value;
-                    jellyRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.jellyRaySlowness.Value;
-                    jellyRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.jellyRaySlowness.Value;
-                    jellyRay.GetComponent<Jellyray>().traitsAnimator.speed /= MyModOptions.jellyRaySlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jellyRayBaseMaxAcceleration.Value / MyModOptions.jellyRaySlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jellyRayBaseForwardRotationSpeed.Value / MyModOptions.jellyRaySlowness.Value;
+                    jellyRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.jellyRayBaseUpRotationSpeed.Value / MyModOptions.jellyRaySlowness.Value;
+                    jellyRay.GetComponent<Jellyray>().traitsAnimator.speed = MyModOptions.jellyRayBaseTraitsAnimatorSpeed.Value / MyModOptions.jellyRaySlowness.Value;
                 }
             }
 
@@ -374,17 +374,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    jumper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    jumper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    jumper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    jumper.GetComponent<Jumper>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    jumper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jumperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    jumper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jumperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    jumper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.jumperBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    jumper.GetComponent<Jumper>().traitsAnimator.speed = MyModOptions.jumperBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    jumper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.jumperSlowness.Value;
-                    jumper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.jumperSlowness.Value;
-                    jumper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.jumperSlowness.Value;
-                    jumper.GetComponent<Jumper>().traitsAnimator.speed /= MyModOptions.jumperSlowness.Value;
+                    jumper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jumperBaseMaxAcceleration.Value / MyModOptions.jumperSlowness.Value;
+                    jumper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jumperBaseForwardRotationSpeed.Value / MyModOptions.jumperSlowness.Value;
+                    jumper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.jumperBaseUpRotationSpeed.Value / MyModOptions.jumperSlowness.Value;
+                    jumper.GetComponent<Jumper>().traitsAnimator.speed = MyModOptions.jumperBaseTraitsAnimatorSpeed.Value / MyModOptions.jumperSlowness.Value;
                 }
             }
 
@@ -392,17 +392,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    lavaLarva.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    lavaLarva.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    lavaLarva.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    lavaLarva.GetComponent<LavaLarva>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLarvaBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLarvaBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.lavaLarvaBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLarva.GetComponent<LavaLarva>().traitsAnimator.speed = MyModOptions.lavaLarvaBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    lavaLarva.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.lavaLarvaSlowness.Value;
-                    lavaLarva.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.lavaLarvaSlowness.Value;
-                    lavaLarva.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.lavaLarvaSlowness.Value;
-                    lavaLarva.GetComponent<LavaLarva>().traitsAnimator.speed /= MyModOptions.lavaLarvaSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLarvaBaseMaxAcceleration.Value / MyModOptions.lavaLarvaSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLarvaBaseForwardRotationSpeed.Value / MyModOptions.lavaLarvaSlowness.Value;
+                    lavaLarva.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.lavaLarvaBaseUpRotationSpeed.Value / MyModOptions.lavaLarvaSlowness.Value;
+                    lavaLarva.GetComponent<LavaLarva>().traitsAnimator.speed = MyModOptions.lavaLarvaBaseTraitsAnimatorSpeed.Value / MyModOptions.lavaLarvaSlowness.Value;
                 }
             }
 
@@ -410,17 +410,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    lavaLizard.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    lavaLizard.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    lavaLizard.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    lavaLizard.GetComponent<LavaLizard>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLizardBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLizardBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.lavaLizardBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    lavaLizard.GetComponent<LavaLizard>().traitsAnimator.speed = MyModOptions.lavaLizardBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    lavaLizard.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.lavaLizardSlowness.Value;
-                    lavaLizard.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.lavaLizardSlowness.Value;
-                    lavaLizard.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.lavaLizardSlowness.Value;
-                    lavaLizard.GetComponent<LavaLizard>().traitsAnimator.speed /= MyModOptions.lavaLizardSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLizardBaseMaxAcceleration.Value / MyModOptions.lavaLizardSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLizardBaseForwardRotationSpeed.Value / MyModOptions.lavaLizardSlowness.Value;
+                    lavaLizard.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.lavaLizardBaseUpRotationSpeed.Value / MyModOptions.lavaLizardSlowness.Value;
+                    lavaLizard.GetComponent<LavaLizard>().traitsAnimator.speed = MyModOptions.lavaLizardBaseTraitsAnimatorSpeed.Value / MyModOptions.lavaLizardSlowness.Value;
                 }
             }
 
@@ -428,35 +428,35 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    mesmer.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    mesmer.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    mesmer.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    mesmer.GetComponent<Mesmer>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().maxAcceleration = MyModOptions.mesmerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.mesmerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.mesmerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    mesmer.GetComponent<Mesmer>().traitsAnimator.speed = MyModOptions.mesmerBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    mesmer.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.mesmerSlowness.Value;
-                    mesmer.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.mesmerSlowness.Value;
-                    mesmer.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.mesmerSlowness.Value;
-                    mesmer.GetComponent<Mesmer>().traitsAnimator.speed /= MyModOptions.mesmerSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().maxAcceleration = MyModOptions.mesmerBaseMaxAcceleration.Value / MyModOptions.mesmerSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.mesmerBaseForwardRotationSpeed.Value / MyModOptions.mesmerSlowness.Value;
+                    mesmer.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.mesmerBaseUpRotationSpeed.Value / MyModOptions.mesmerSlowness.Value;
+                    mesmer.GetComponent<Mesmer>().traitsAnimator.speed = MyModOptions.mesmerBaseTraitsAnimatorSpeed.Value / MyModOptions.mesmerSlowness.Value;
                 }
             }
 
-            if (__instance is OculusFish oculus)
+            if (__instance is OculusFish oculusFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    oculus.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    oculus.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    oculus.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    oculus.GetComponent<OculusFish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.oculusFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.oculusFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.oculusFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    oculusFish.GetComponent<OculusFish>().traitsAnimator.speed = MyModOptions.oculusFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    oculus.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.oculusFishSlowness.Value;
-                    oculus.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.oculusFishSlowness.Value;
-                    oculus.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.oculusFishSlowness.Value;
-                    oculus.GetComponent<OculusFish>().traitsAnimator.speed /= MyModOptions.oculusFishSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.oculusFishBaseMaxAcceleration.Value / MyModOptions.oculusFishSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.oculusFishBaseForwardRotationSpeed.Value / MyModOptions.oculusFishSlowness.Value;
+                    oculusFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.oculusFishBaseUpRotationSpeed.Value / MyModOptions.oculusFishSlowness.Value;
+                    oculusFish.GetComponent<OculusFish>().traitsAnimator.speed = MyModOptions.oculusFishBaseTraitsAnimatorSpeed.Value / MyModOptions.oculusFishSlowness.Value;
                 }
             }
 
@@ -464,17 +464,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    peeper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    peeper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    peeper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    peeper.GetComponent<Peeper>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    peeper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.peeperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    peeper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.peeperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    peeper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.peeperBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    peeper.GetComponent<Peeper>().traitsAnimator.speed = MyModOptions.peeperBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    peeper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.peeperSlowness.Value;
-                    peeper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.peeperSlowness.Value;
-                    peeper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.peeperSlowness.Value;
-                    peeper.GetComponent<Peeper>().traitsAnimator.speed /= MyModOptions.peeperSlowness.Value;
+                    peeper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.peeperBaseMaxAcceleration.Value / MyModOptions.peeperSlowness.Value;
+                    peeper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.peeperBaseForwardRotationSpeed.Value / MyModOptions.peeperSlowness.Value;
+                    peeper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.peeperBaseUpRotationSpeed.Value / MyModOptions.peeperSlowness.Value;
+                    peeper.GetComponent<Peeper>().traitsAnimator.speed = MyModOptions.peeperBaseTraitsAnimatorSpeed.Value / MyModOptions.peeperSlowness.Value;
                 }
             }
 
@@ -482,17 +482,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    rabbitRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    rabbitRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    rabbitRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    rabbitRay.GetComponent<RabbitRay>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rabbitRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.rabbitRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rabbitRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    rabbitRay.GetComponent<RabbitRay>().traitsAnimator.speed = MyModOptions.rabbitRayBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    rabbitRay.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.rabbitRaySlowness.Value;
-                    rabbitRay.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.rabbitRaySlowness.Value;
-                    rabbitRay.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.rabbitRaySlowness.Value;
-                    rabbitRay.GetComponent<RabbitRay>().traitsAnimator.speed /= MyModOptions.rabbitRaySlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rabbitRayBaseMaxAcceleration.Value / MyModOptions.rabbitRaySlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.rabbitRayBaseForwardRotationSpeed.Value / MyModOptions.rabbitRaySlowness.Value;
+                    rabbitRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rabbitRayBaseUpRotationSpeed.Value / MyModOptions.rabbitRaySlowness.Value;
+                    rabbitRay.GetComponent<RabbitRay>().traitsAnimator.speed = MyModOptions.rabbitRayBaseTraitsAnimatorSpeed.Value / MyModOptions.rabbitRaySlowness.Value;
                 }
             }
 
@@ -500,17 +500,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reaperLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    reaperLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reaperLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reaperLeviathan.GetComponent<ReaperLeviathan>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reaperLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reaperLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reaperLeviathanBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reaperLeviathan.GetComponent<ReaperLeviathan>().traitsAnimator.speed = MyModOptions.reaperLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    reaperLeviathan.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.reaperLeviathanSlowness.Value;
-                    reaperLeviathan.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.reaperLeviathanSlowness.Value;
-                    reaperLeviathan.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.reaperLeviathanSlowness.Value;
-                    reaperLeviathan.GetComponent<ReaperLeviathan>().traitsAnimator.speed /= MyModOptions.reaperLeviathanSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reaperLeviathanBaseMaxAcceleration.Value / MyModOptions.reaperLeviathanSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reaperLeviathanBaseForwardRotationSpeed.Value / MyModOptions.reaperLeviathanSlowness.Value;
+                    reaperLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reaperLeviathanBaseUpRotationSpeed.Value / MyModOptions.reaperLeviathanSlowness.Value;
+                    reaperLeviathan.GetComponent<ReaperLeviathan>().traitsAnimator.speed = MyModOptions.reaperLeviathanBaseTraitsAnimatorSpeed.Value / MyModOptions.reaperLeviathanSlowness.Value;
                 }
             }
 
@@ -518,17 +518,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reefback.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    reefback.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reefback.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reefback.GetComponent<Reefback>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    reefback.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reefbackBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    reefback.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reefbackBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reefback.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reefbackBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reefback.GetComponent<Reefback>().traitsAnimator.speed = MyModOptions.reefbackBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    reefback.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.reefbackSlowness.Value;
-                    reefback.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.reefbackSlowness.Value;
-                    reefback.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.reefbackSlowness.Value;
-                    reefback.GetComponent<Reefback>().traitsAnimator.speed /= MyModOptions.reefbackSlowness.Value;
+                    reefback.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reefbackBaseMaxAcceleration.Value / MyModOptions.reefbackSlowness.Value;
+                    reefback.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reefbackBaseForwardRotationSpeed.Value / MyModOptions.reefbackSlowness.Value;
+                    reefback.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reefbackBaseUpRotationSpeed.Value / MyModOptions.reefbackSlowness.Value;
+                    reefback.GetComponent<Reefback>().traitsAnimator.speed = MyModOptions.reefbackBaseTraitsAnimatorSpeed.Value / MyModOptions.reefbackSlowness.Value;
                 }
             }
 
@@ -536,17 +536,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    reginald.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    reginald.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reginald.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    reginald.GetComponent<Reginald>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    reginald.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reginaldBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    reginald.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reginaldBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reginald.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reginaldBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    reginald.GetComponent<Reginald>().traitsAnimator.speed = MyModOptions.reginaldBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    reginald.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.reginaldSlowness.Value;
-                    reginald.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.reginaldSlowness.Value;
-                    reginald.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.reginaldSlowness.Value;
-                    reginald.GetComponent<Reginald>().traitsAnimator.speed /= MyModOptions.reginaldSlowness.Value;
+                    reginald.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reginaldBaseMaxAcceleration.Value / MyModOptions.reginaldSlowness.Value;
+                    reginald.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reginaldBaseForwardRotationSpeed.Value / MyModOptions.reginaldSlowness.Value;
+                    reginald.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.reginaldBaseUpRotationSpeed.Value / MyModOptions.reginaldSlowness.Value;
+                    reginald.GetComponent<Reginald>().traitsAnimator.speed = MyModOptions.reginaldBaseTraitsAnimatorSpeed.Value / MyModOptions.reginaldSlowness.Value;
                 }
             }
 
@@ -554,17 +554,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    sandShark.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    sandShark.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    sandShark.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    sandShark.GetComponent<SandShark>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.sandSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.sandSharkBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.sandSharkBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    sandShark.GetComponent<SandShark>().traitsAnimator.speed = MyModOptions.sandSharkBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    sandShark.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.sandSharkSlowness.Value;
-                    sandShark.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.sandSharkSlowness.Value;
-                    sandShark.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.sandSharkSlowness.Value;
-                    sandShark.GetComponent<SandShark>().traitsAnimator.speed /= MyModOptions.sandSharkSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.sandSharkBaseMaxAcceleration.Value / MyModOptions.sandSharkSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.sandSharkBaseForwardRotationSpeed.Value / MyModOptions.sandSharkSlowness.Value;
+                    sandShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.sandSharkBaseUpRotationSpeed.Value / MyModOptions.sandSharkSlowness.Value;
+                    sandShark.GetComponent<SandShark>().traitsAnimator.speed = MyModOptions.sandSharkBaseTraitsAnimatorSpeed.Value / MyModOptions.sandSharkSlowness.Value;
                 }
             }
 
@@ -572,53 +572,53 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaDragon.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    seaDragon.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaDragon.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaDragon.GetComponent<SeaDragon>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaDragonBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaDragonBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaDragonBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaDragon.GetComponent<SeaDragon>().traitsAnimator.speed = MyModOptions.seaDragonBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    seaDragon.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.seaDragonSlowness.Value;
-                    seaDragon.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.seaDragonSlowness.Value;
-                    seaDragon.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.seaDragonSlowness.Value;
-                    seaDragon.GetComponent<SeaDragon>().traitsAnimator.speed /= MyModOptions.seaDragonSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaDragonBaseMaxAcceleration.Value / MyModOptions.seaDragonSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaDragonBaseForwardRotationSpeed.Value / MyModOptions.seaDragonSlowness.Value;
+                    seaDragon.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaDragonBaseUpRotationSpeed.Value / MyModOptions.seaDragonSlowness.Value;
+                    seaDragon.GetComponent<SeaDragon>().traitsAnimator.speed = MyModOptions.seaDragonBaseTraitsAnimatorSpeed.Value / MyModOptions.seaDragonSlowness.Value;
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmporerBaby)
+            if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaEmporerBaby.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerBaby.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerBaby.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerBaby.GetComponent<SeaEmperorBaby>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorBabyBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorBabyBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaEmperorBabyBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorBaby.GetComponent<SeaEmperorBaby>().traitsAnimator.speed = MyModOptions.seaEmperorBabyBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    seaEmporerBaby.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.seaEmporerBabySlowness.Value;
-                    seaEmporerBaby.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.seaEmporerBabySlowness.Value;
-                    seaEmporerBaby.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.seaEmporerBabySlowness.Value;
-                    seaEmporerBaby.GetComponent<SeaEmperorBaby>().traitsAnimator.speed /= MyModOptions.seaEmporerBabySlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorBabyBaseMaxAcceleration.Value / MyModOptions.seaEmperorBabySlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorBabyBaseForwardRotationSpeed.Value / MyModOptions.seaEmperorBabySlowness.Value;
+                    seaEmperorBaby.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaEmperorBabyBaseUpRotationSpeed.Value / MyModOptions.seaEmperorBabySlowness.Value;
+                    seaEmperorBaby.GetComponent<SeaEmperorBaby>().traitsAnimator.speed = MyModOptions.seaEmperorBabyBaseTraitsAnimatorSpeed.Value / MyModOptions.seaEmperorBabySlowness.Value;
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmporerJuvenile)
+            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaEmporerJuvenile.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<SeaEmperorJuvenile>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorJuvenileBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorJuvenileBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaEmperorJuvenileBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<SeaEmperorJuvenile>().traitsAnimator.speed = MyModOptions.seaEmperorJuvenileBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    seaEmporerJuvenile.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.seaEmporerJuvenileSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.seaEmporerJuvenileSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.seaEmporerJuvenileSlowness.Value;
-                    seaEmporerJuvenile.GetComponent<SeaEmperorJuvenile>().traitsAnimator.speed /= MyModOptions.seaEmporerJuvenileSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorJuvenileBaseMaxAcceleration.Value / MyModOptions.seaEmperorJuvenileSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorJuvenileBaseForwardRotationSpeed.Value / MyModOptions.seaEmperorJuvenileSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaEmperorJuvenileBaseUpRotationSpeed.Value / MyModOptions.seaEmperorJuvenileSlowness.Value;
+                    seaEmperorJuvenile.GetComponent<SeaEmperorJuvenile>().traitsAnimator.speed = MyModOptions.seaEmperorJuvenileBaseTraitsAnimatorSpeed.Value / MyModOptions.seaEmperorJuvenileSlowness.Value;
                 }
             }
 
@@ -626,17 +626,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    seaTreader.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    seaTreader.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaTreader.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    seaTreader.GetComponent<SeaTreader>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaTreaderBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaTreaderBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaTreaderBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    seaTreader.GetComponent<SeaTreader>().traitsAnimator.speed = MyModOptions.seaTreaderBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    seaTreader.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.seaTreaderSlowness.Value;
-                    seaTreader.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.seaTreaderSlowness.Value;
-                    seaTreader.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.seaTreaderSlowness.Value;
-                    seaTreader.GetComponent<SeaTreader>().traitsAnimator.speed /= MyModOptions.seaTreaderSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaTreaderBaseMaxAcceleration.Value / MyModOptions.seaTreaderSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaTreaderBaseForwardRotationSpeed.Value / MyModOptions.seaTreaderSlowness.Value;
+                    seaTreader.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaTreaderBaseUpRotationSpeed.Value / MyModOptions.seaTreaderSlowness.Value;
+                    seaTreader.GetComponent<SeaTreader>().traitsAnimator.speed = MyModOptions.seaTreaderBaseTraitsAnimatorSpeed.Value / MyModOptions.seaTreaderSlowness.Value;
                 }
             }
 
@@ -644,17 +644,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    shocker.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    shocker.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    shocker.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    shocker.GetComponent<Shocker>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    shocker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.shockerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    shocker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.shockerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    shocker.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.shockerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    shocker.GetComponent<Shocker>().traitsAnimator.speed = MyModOptions.shockerBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    shocker.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.shockerSlowness.Value;
-                    shocker.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.shockerSlowness.Value;
-                    shocker.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.shockerSlowness.Value;
-                    shocker.GetComponent<Shocker>().traitsAnimator.speed /= MyModOptions.shockerSlowness.Value;
+                    shocker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.shockerBaseMaxAcceleration.Value / MyModOptions.shockerSlowness.Value;
+                    shocker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.shockerBaseForwardRotationSpeed.Value / MyModOptions.shockerSlowness.Value;
+                    shocker.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.shockerBaseUpRotationSpeed.Value / MyModOptions.shockerSlowness.Value;
+                    shocker.GetComponent<Shocker>().traitsAnimator.speed = MyModOptions.shockerBaseTraitsAnimatorSpeed.Value / MyModOptions.shockerSlowness.Value;
                 }
             }
 
@@ -662,17 +662,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    spadeFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    spadeFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    spadeFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    spadeFish.GetComponent<Spadefish>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spadeFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spadeFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.spadeFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    spadeFish.GetComponent<Spadefish>().traitsAnimator.speed = MyModOptions.spadeFishBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    spadeFish.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.spadeFishSlowness.Value;
-                    spadeFish.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.spadeFishSlowness.Value;
-                    spadeFish.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.spadeFishSlowness.Value;
-                    spadeFish.GetComponent<Spadefish>().traitsAnimator.speed /= MyModOptions.spadeFishSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spadeFishBaseMaxAcceleration.Value / MyModOptions.spadeFishSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spadeFishBaseForwardRotationSpeed.Value / MyModOptions.spadeFishSlowness.Value;
+                    spadeFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.spadeFishBaseUpRotationSpeed.Value / MyModOptions.spadeFishSlowness.Value;
+                    spadeFish.GetComponent<Spadefish>().traitsAnimator.speed = MyModOptions.spadeFishBaseTraitsAnimatorSpeed.Value / MyModOptions.spadeFishSlowness.Value;
                 }
             }
 
@@ -680,17 +680,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    spineEel.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    spineEel.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    spineEel.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    spineEel.GetComponent<SpineEel>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spineEelBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spineEelBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.spineEelBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    spineEel.GetComponent<SpineEel>().traitsAnimator.speed = MyModOptions.spineEelBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    spineEel.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.spineEelSlowness.Value;
-                    spineEel.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.spineEelSlowness.Value;
-                    spineEel.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.spineEelSlowness.Value;
-                    spineEel.GetComponent<SpineEel>().traitsAnimator.speed /= MyModOptions.spineEelSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spineEelBaseMaxAcceleration.Value / MyModOptions.spineEelSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spineEelBaseForwardRotationSpeed.Value / MyModOptions.spineEelSlowness.Value;
+                    spineEel.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.spineEelBaseUpRotationSpeed.Value / MyModOptions.spineEelSlowness.Value;
+                    spineEel.GetComponent<SpineEel>().traitsAnimator.speed = MyModOptions.spineEelBaseTraitsAnimatorSpeed.Value / MyModOptions.spineEelSlowness.Value;
                 }
             }
 
@@ -698,17 +698,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    stalker.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    stalker.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    stalker.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    stalker.GetComponent<Stalker>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    stalker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.stalkerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    stalker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.stalkerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    stalker.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.stalkerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    stalker.GetComponent<Stalker>().traitsAnimator.speed = MyModOptions.stalkerBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    stalker.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.stalkerSlowness.Value;
-                    stalker.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.stalkerSlowness.Value;
-                    stalker.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.stalkerSlowness.Value;
-                    stalker.GetComponent<Stalker>().traitsAnimator.speed /= MyModOptions.stalkerSlowness.Value;
+                    stalker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.stalkerBaseMaxAcceleration.Value / MyModOptions.stalkerSlowness.Value;
+                    stalker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.stalkerBaseForwardRotationSpeed.Value / MyModOptions.stalkerSlowness.Value;
+                    stalker.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.stalkerBaseUpRotationSpeed.Value / MyModOptions.stalkerSlowness.Value;
+                    stalker.GetComponent<Stalker>().traitsAnimator.speed = MyModOptions.stalkerBaseTraitsAnimatorSpeed.Value / MyModOptions.stalkerSlowness.Value;
                 }
             }
 
@@ -716,17 +716,17 @@ namespace BiggerFishMod
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
-                    warper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.proportionalSlowness.Value;
-                    warper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    warper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.proportionalSlowness.Value;
-                    warper.GetComponent<Warper>().traitsAnimator.speed /= MyModOptions.proportionalSlowness.Value;
+                    warper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.warperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    warper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.warperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    warper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.warperBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    warper.GetComponent<Warper>().traitsAnimator.speed = MyModOptions.warperBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
                 }
                 else
                 {
-                    warper.GetComponent<Locomotion>().maxAcceleration /= MyModOptions.warperSlowness.Value;
-                    warper.GetComponent<Locomotion>().forwardRotationSpeed /= MyModOptions.warperSlowness.Value;
-                    warper.GetComponent<Locomotion>().upRotationSpeed /= MyModOptions.warperSlowness.Value;
-                    warper.GetComponent<Warper>().traitsAnimator.speed /= MyModOptions.warperSlowness.Value;
+                    warper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.warperBaseMaxAcceleration.Value / MyModOptions.warperSlowness.Value;
+                    warper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.warperBaseForwardRotationSpeed.Value / MyModOptions.warperSlowness.Value;
+                    warper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.warperBaseUpRotationSpeed.Value / MyModOptions.warperSlowness.Value;
+                    warper.GetComponent<Warper>().traitsAnimator.speed = MyModOptions.warperBaseTraitsAnimatorSpeed.Value / MyModOptions.warperSlowness.Value;
                 }
             }
         }

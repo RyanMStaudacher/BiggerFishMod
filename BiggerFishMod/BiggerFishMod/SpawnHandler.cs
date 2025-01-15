@@ -40,8 +40,8 @@ namespace BiggerFishMod
         public static List<GameObject> totalReginalds = new List<GameObject>();
         public static List<GameObject> totalSandSharks = new List<GameObject>();
         public static List<GameObject> totalSeaDragons = new List<GameObject>();
-        public static List<GameObject> totalSeaEmporerBabies = new List<GameObject>();
-        public static List<GameObject> totalSeaEmporerJuveniles = new List<GameObject>();
+        public static List<GameObject> totalSeaEmperorBabies = new List<GameObject>();
+        public static List<GameObject> totalSeaEmperorJuveniles = new List<GameObject>();
         public static List<GameObject> totalSeaTreaders = new List<GameObject>();
         public static List<GameObject> totalShockers = new List<GameObject>();
         public static List<GameObject> totalSpadeFish = new List<GameObject>();
@@ -80,8 +80,8 @@ namespace BiggerFishMod
         public static float maxReginalds = 4;
         public static float maxSandSharks = 4;
         public static float maxSeaDragons = 4;
-        public static float maxSeaEmporerBabies = 4;
-        public static float maxSeaEmporerJuveniles = 4;
+        public static float maxSeaEmperorBabies = 4;
+        public static float maxSeaEmperorJuveniles = 4;
         public static float maxSeaTreaders = 4;
         public static float maxShockers = 4;
         public static float maxSpadeFish = 4;
@@ -126,8 +126,8 @@ namespace BiggerFishMod
                 maxReginalds = MyModOptions.proportionalCreatureLimit.Value;
                 maxSandSharks = MyModOptions.proportionalCreatureLimit.Value;
                 maxSeaDragons = MyModOptions.proportionalCreatureLimit.Value;
-                maxSeaEmporerBabies = MyModOptions.proportionalCreatureLimit.Value;
-                maxSeaEmporerJuveniles = MyModOptions.proportionalCreatureLimit.Value;
+                maxSeaEmperorBabies = MyModOptions.proportionalCreatureLimit.Value;
+                maxSeaEmperorJuveniles = MyModOptions.proportionalCreatureLimit.Value;
                 maxSeaTreaders = MyModOptions.proportionalCreatureLimit.Value;
                 maxShockers = MyModOptions.proportionalCreatureLimit.Value;
                 maxSpadeFish = MyModOptions.proportionalCreatureLimit.Value;
@@ -169,8 +169,8 @@ namespace BiggerFishMod
                 maxReginalds = MyModOptions.reginaldLimit.Value;
                 maxSandSharks = MyModOptions.sandSharkLimit.Value;
                 maxSeaDragons = MyModOptions.seaDragonLimit.Value;
-                maxSeaEmporerBabies = MyModOptions.seaEmporerBabyLimit.Value;
-                maxSeaEmporerJuveniles = MyModOptions.seaEmporerJuvenileLimit.Value;
+                maxSeaEmperorBabies = MyModOptions.seaEmperorBabyLimit.Value;
+                maxSeaEmperorJuveniles = MyModOptions.seaEmperorJuvenileLimit.Value;
                 maxSeaTreaders = MyModOptions.seaTreaderLimit.Value;
                 maxShockers = MyModOptions.shockerLimit.Value;
                 maxSpadeFish = MyModOptions.spadeFishLimit.Value;

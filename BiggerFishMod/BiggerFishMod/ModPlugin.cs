@@ -35,162 +35,202 @@ namespace BiggerFishMod
             MyModOptions.proportionalSlowness = biggerFishSettingsConfig.Bind("Proportional Slowness", "Proportional Slowness", 1.0f, "The value at which all creatures will be slowed down to when Proportional Toggle is enabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.proportionalHealth = biggerFishSettingsConfig.Bind("Proportional Health", "Proportional Health", 1.0f, "All creatures health will be multiplied by this value when Proportional Toggle is enabled.");
             MyModOptions.proportionalCreatureLimit = biggerFishSettingsConfig.Bind("Proportional Creature Limit", "Proportional Creature Limit", 50.0f, "Limits the amount of active creatures(per each creature) to this value (Bigger creatures can create lots of clutter, this helps with that).");
+
             MyModOptions.biterScale = biggerFishSettingsConfig.Bind("Biter Scale", "Biter Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.biterSlowness = biggerFishSettingsConfig.Bind("Biter Slowness", "Biter Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.biterHealth = biggerFishSettingsConfig.Bind("Biter Health", "Biter Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.biterLimit = biggerFishSettingsConfig.Bind("Biter Limit", "Biter Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.bladderFishScale = biggerFishSettingsConfig.Bind("Bladderfish Scale", "Bladderfish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.bladderFishSlowness = biggerFishSettingsConfig.Bind("Bladderfish Slowness", "Bladderfish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.bladderFishHealth = biggerFishSettingsConfig.Bind("Bladderfish Health", "Bladderfish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.bladderFishLimit = biggerFishSettingsConfig.Bind("Bladderfish Limit", "Bladderfish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+           
             MyModOptions.bleederScale = biggerFishSettingsConfig.Bind("Bleeder Scale", "Bleeder Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.bleederSlowness = biggerFishSettingsConfig.Bind("Bleeder Slowness", "Bleeder Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.bleederHealth = biggerFishSettingsConfig.Bind("Bleeder Health", "Bleeder Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.bleederLimit = biggerFishSettingsConfig.Bind("Bleeder Limit", "Bleeder Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.boneSharkScale = biggerFishSettingsConfig.Bind("Bone Shark Scale", "Bone Shark Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.boneSharkSlowness = biggerFishSettingsConfig.Bind("Bone Shark Slowness", "Bone Shark Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.boneSharkHealth = biggerFishSettingsConfig.Bind("Bone Shark Health", "Bone Shark Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.boneSharkLimit = biggerFishSettingsConfig.Bind("Bone Shark Limit", "Bone Shark Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.boomerangScale = biggerFishSettingsConfig.Bind("Boomerang Scale", "Boomerang Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.boomerangHealth = biggerFishSettingsConfig.Bind("Boomerang Health", "Boomerang Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.boomerangSlowness = biggerFishSettingsConfig.Bind("Boomerang Slowness", "Boomerang Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.boomerangLimit = biggerFishSettingsConfig.Bind("Boomerang Limit", "Boomerang Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.caveCrawlerScale = biggerFishSettingsConfig.Bind("Cave Crawler Scale", "Cave Crawler Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.caveCrawlerSlowness = biggerFishSettingsConfig.Bind("Cave Crawler Slowness", "Cave Crawler Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.caveCrawlerHealth = biggerFishSettingsConfig.Bind("Cave Crawler Health", "Cave Crawler Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.caveCrawlerLimit = biggerFishSettingsConfig.Bind("Cave Crawler Limit", "Cave Crawler Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.crabSnakeScale = biggerFishSettingsConfig.Bind("Crab Snake Scale", "Crab Snake Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.crabSnakeSlowness = biggerFishSettingsConfig.Bind("Crab Snake Slowness", "Crab Snake Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.crabSnakeHealth = biggerFishSettingsConfig.Bind("Crab Snake Health", "Crab Snake Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.crabSnakeLimit = biggerFishSettingsConfig.Bind("Crab Snake Limit", "Crab Snake Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.crabSquidScale = biggerFishSettingsConfig.Bind("Crab Squid Scale", "Crab Squid Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.crabSquidSlowness = biggerFishSettingsConfig.Bind("Crab Squid Slowness", "Crab Squid Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.crabSquidHealth = biggerFishSettingsConfig.Bind("Crab Squid Health", "Crab Squid Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.crabSquidLimit = biggerFishSettingsConfig.Bind("Crab Squid Limit", "Crab Squid Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.crashFishScale = biggerFishSettingsConfig.Bind("Crash Fish Scale", "Crash Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.crashFishSlowness = biggerFishSettingsConfig.Bind("Crash Fish Slowness", "Crash Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.crashFishHealth = biggerFishSettingsConfig.Bind("Crash Fish Health", "Crash Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.crashFishLimit = biggerFishSettingsConfig.Bind("Crash Fish Limit", "Crash Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.cuddleFishScale = biggerFishSettingsConfig.Bind("Cuddlefish Scale", "Cuddlefish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.cuddleFishSlowness = biggerFishSettingsConfig.Bind("Cuddlefish Slowness", "Cuddlefish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.cuddleFishHealth = biggerFishSettingsConfig.Bind("Cuddlefish Health", "Cuddlefish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.cuddleFishLimit = biggerFishSettingsConfig.Bind("Cuddlefish Limit", "Cuddlefish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.eyeyeScale = biggerFishSettingsConfig.Bind("Eyeye Scale", "Eyeye Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.eyeyeSlowness = biggerFishSettingsConfig.Bind("Eyeye Slowness", "Eyeye Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.eyeyeHealth = biggerFishSettingsConfig.Bind("Eyeye Health", "Eyeye Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.eyeyeLimit = biggerFishSettingsConfig.Bind("Eyeye Limit", "Eyeye Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.garryFishScale = biggerFishSettingsConfig.Bind("Garry Fish Scale", "Garry Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.garryFishSlowness = biggerFishSettingsConfig.Bind("Garry Fish Slowness", "Garry Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.garryFishHealth = biggerFishSettingsConfig.Bind("Garry Fish Health", "Garry Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.garryFishLimit = biggerFishSettingsConfig.Bind("Garry Fish Limit", "Garry Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.gasopodScale = biggerFishSettingsConfig.Bind("Gasopod Scale", "Gasopod Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.gasopodSlowness = biggerFishSettingsConfig.Bind("Gasopod Slowness", "Gasopod Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.gasopodHealth = biggerFishSettingsConfig.Bind("Gasopod Health", "Gasopod Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.gasopodLimit = biggerFishSettingsConfig.Bind("Gasopod Limit", "Gasopod Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.ghostLeviathanScale = biggerFishSettingsConfig.Bind("Ghost Leviathan Scale", "Ghost Leviathan Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.ghostLeviathanSlowness = biggerFishSettingsConfig.Bind("Ghost Leviathan Slowness", "Ghost Leviathan Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.ghostLeviathanHealth = biggerFishSettingsConfig.Bind("Ghost Leviathan Health", "Ghost Leviathan Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.ghostLeviathanLimit = biggerFishSettingsConfig.Bind("Ghost Leviathan Limit", "Ghost Leviathan Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.voidGhostLeviathanScale = biggerFishSettingsConfig.Bind("Ghost Leviathan(Void) Scale", "Ghost Leviathan(Void) Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.voidGhostLeviathanSlowness = biggerFishSettingsConfig.Bind("Ghost Leviathan(Void) Slowness", "Ghost Leviathan(Void) Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.voidGhostLeviathanHealth = biggerFishSettingsConfig.Bind("Ghost Leviathan(Void) Health", "Ghost Leviathan(Void) Health", 1.0f, "The value to multiply this creature's health by.");
-            MyModOptions.voidGhostLeviathanLimit = biggerFishSettingsConfig.Bind("Ghost Leviathan(Void) Limit", "Void Ghost Leviathan Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            MyModOptions.voidGhostLeviathanLimit = biggerFishSettingsConfig.Bind("Ghost Leviathan(Void) Limit", "Ghost Leviathan(Void) Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.ghostRayScale = biggerFishSettingsConfig.Bind("Ghost Ray Scale", "Ghost Ray Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.ghostRaySlowness = biggerFishSettingsConfig.Bind("Ghost Ray Slowness", "Ghost Ray Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.ghostRayHealth = biggerFishSettingsConfig.Bind("Ghost Ray Health", "Ghost Ray Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.ghostRayLimit = biggerFishSettingsConfig.Bind("Ghost Ray Limit", "Ghost Ray Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.holeFishScale = biggerFishSettingsConfig.Bind("Hole Fish Scale", "Hole Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.holeFishSlowness = biggerFishSettingsConfig.Bind("Hole Fish Slowness", "Hole Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.holeFishHealth = biggerFishSettingsConfig.Bind("Hole Fish Health", "Hole Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.holeFishLimit = biggerFishSettingsConfig.Bind("Hole Fish Limit", "Hole Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.hoopFishScale = biggerFishSettingsConfig.Bind("Hoop Fish Scale", "Hoop Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.hoopFishSlowness = biggerFishSettingsConfig.Bind("Hoop Fish Slowness", "Hoop Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.hoopFishHealth = biggerFishSettingsConfig.Bind("Hoop Fish Health", "Hoop Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.hoopFishLimit = biggerFishSettingsConfig.Bind("Hoop Fish Limit", "Hoop Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.hoverFishScale = biggerFishSettingsConfig.Bind("Hover Fish Scale", "Hover Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.hoverFishSlowness = biggerFishSettingsConfig.Bind("Hover Fish Slowness", "Hover Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.hoverFishHealth = biggerFishSettingsConfig.Bind("Hover Fish Health", "Hover Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.hoverFishLimit = biggerFishSettingsConfig.Bind("Hover Fish Limit", "Hover Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.jellyRayScale = biggerFishSettingsConfig.Bind("Jellyray Scale", "Jellyray Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.jellyRaySlowness = biggerFishSettingsConfig.Bind("Jellyray Slowness", "Jellyray Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.jellyRayHealth = biggerFishSettingsConfig.Bind("Jellyray Health", "Jellyray Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.jellyRayLimit = biggerFishSettingsConfig.Bind("Jellyray Limit", "Jellyray Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.jumperScale = biggerFishSettingsConfig.Bind("Shuttlebug Scale", "Shuttlebug Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.jumperSlowness = biggerFishSettingsConfig.Bind("Shuttlebug Slowness", "Shuttlebug Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.jumperHealth = biggerFishSettingsConfig.Bind("Shuttlebug Health", "Shuttlebug Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.jumperLimit = biggerFishSettingsConfig.Bind("Shuttlebug Limit", "Shuttlebug Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.lavaLarvaScale = biggerFishSettingsConfig.Bind("Lava Larva Scale", "Lava Larva Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.lavaLarvaSlowness = biggerFishSettingsConfig.Bind("Lava Larva Slowness", "Lava Larva Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.lavaLarvaHealth = biggerFishSettingsConfig.Bind("Lava Larva Health", "Lava Larva Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.lavaLarvaLimit = biggerFishSettingsConfig.Bind("Lava Larva Limit", "Lava Larva Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+           
             MyModOptions.lavaLizardScale = biggerFishSettingsConfig.Bind("Lava Lizard Scale", "Lava Lizard Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.lavaLizardSlowness = biggerFishSettingsConfig.Bind("Lava Lizard Slowness", "Lava Lizard Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.lavaLizardHealth = biggerFishSettingsConfig.Bind("Lava Lizard Health", "Lava Lizard Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.lavaLizardLimit = biggerFishSettingsConfig.Bind("Lava Lizard Limit", "Lava Lizard Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.mesmerScale = biggerFishSettingsConfig.Bind("Mesmer Scale", "Mesmer Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.mesmerSlowness = biggerFishSettingsConfig.Bind("Mesmer Slowness", "Mesmer Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.mesmerHealth = biggerFishSettingsConfig.Bind("Mesmer Health", "Mesmer Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.mesmerLimit = biggerFishSettingsConfig.Bind("Mesmer Limit", "Mesmer Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.oculusFishScale = biggerFishSettingsConfig.Bind("Oculus Fish Scale", "Oculus Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.oculusFishSlowness = biggerFishSettingsConfig.Bind("Oculus Fish Slowness", "Oculus Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.oculusFishHealth = biggerFishSettingsConfig.Bind("Oculus Fish Health", "Oculus Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.oculusFishLimit = biggerFishSettingsConfig.Bind("Oculus Fish Limit", "Oculus Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.peeperScale = biggerFishSettingsConfig.Bind("Peeper Scale", "Peeper Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.peeperSlowness = biggerFishSettingsConfig.Bind("Peeper Slowness", "Peeper Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.peeperHealth = biggerFishSettingsConfig.Bind("Peeper Health", "Peeper Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.peeperLimit = biggerFishSettingsConfig.Bind("Peeper Limit", "Peeper Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.rabbitRayScale = biggerFishSettingsConfig.Bind("Rabbit Ray Scale", "Rabbit Ray Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.rabbitRaySlowness = biggerFishSettingsConfig.Bind("Rabbit Ray Slowness", "Rabbit Ray Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.rabbitRayHealth = biggerFishSettingsConfig.Bind("Rabbit Ray Health", "Rabbit Ray Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.rabbitRayLimit = biggerFishSettingsConfig.Bind("Rabbit Ray Limit", "Rabbit Ray Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+           
             MyModOptions.reaperLeviathanScale = biggerFishSettingsConfig.Bind("Reaper Leviathan Scale", "Reaper Leviathan Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.reaperLeviathanSlowness = biggerFishSettingsConfig.Bind("Reaper Leviathan Slowness", "Reaper Leviathan Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.reaperLeviathanHealth = biggerFishSettingsConfig.Bind("Reaper Leviathan Health", "Reaper Leviathan Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.reaperLeviathanLimit = biggerFishSettingsConfig.Bind("Reaper Leviathan Limit", "Reaper Leviathan Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.reefbackScale = biggerFishSettingsConfig.Bind("Reefback Scale", "Reefback Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.reefbackSlowness = biggerFishSettingsConfig.Bind("Reefback Slowness", "Reefback Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.reefbackHealth = biggerFishSettingsConfig.Bind("Reefback Health", "Reefback Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.reefbackLimit = biggerFishSettingsConfig.Bind("Reefback Limit", "Reefback Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.reginaldScale = biggerFishSettingsConfig.Bind("Reginald Scale", "Reginald Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.reginaldSlowness = biggerFishSettingsConfig.Bind("Reginald Slowness", "Reginald Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.reginaldHealth = biggerFishSettingsConfig.Bind("Reginald Health", "Reginald Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.reginaldLimit = biggerFishSettingsConfig.Bind("Reginald Limit", "Reginald Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.sandSharkScale = biggerFishSettingsConfig.Bind("Sand Shark Scale", "Sand Shark Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.sandSharkSlowness = biggerFishSettingsConfig.Bind("Sand Shark Slowness", "Sand Shark Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.sandSharkHealth = biggerFishSettingsConfig.Bind("Sand Shark Health", "Sand Shark Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.sandSharkLimit = biggerFishSettingsConfig.Bind("Sand Shark Limit", "Sand Shark Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.seaDragonScale = biggerFishSettingsConfig.Bind("Sea Dragon Scale", "Sea Dragon Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.seaDragonSlowness = biggerFishSettingsConfig.Bind("Sea Dragon Slowness", "Sea Dragon Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.seaDragonHealth = biggerFishSettingsConfig.Bind("Sea Dragon Health", "Sea Dragon Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.seaDragonLimit = biggerFishSettingsConfig.Bind("Sea Dragon Limit", "Sea Dragon Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
-            MyModOptions.seaEmporerBabyScale = biggerFishSettingsConfig.Bind("Sea Emporer Baby Scale", "Sea Emporer Baby Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
-            MyModOptions.seaEmporerBabySlowness = biggerFishSettingsConfig.Bind("Sea Emporer Baby Slowness", "Sea Emporer Baby Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
-            MyModOptions.seaEmporerBabyHealth = biggerFishSettingsConfig.Bind("Sea Emporer Baby Health", "Sea Emporer Baby Health", 1.0f, "The value to multiply this creature's health by.");
-            MyModOptions.seaEmporerBabyLimit = biggerFishSettingsConfig.Bind("Sea Emporer Baby Limit", "Sea Emporer Baby Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
-            MyModOptions.seaEmporerJuvenileScale = biggerFishSettingsConfig.Bind("Sea Emporer Juvenile Scale", "Sea Emporer Juvenile Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
-            MyModOptions.seaEmporerJuvenileSlowness = biggerFishSettingsConfig.Bind("Sea Emporer Juvenile Slowness", "Sea Emporer Juvenile Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
-            MyModOptions.seaEmporerJuvenileHealth = biggerFishSettingsConfig.Bind("Sea Emporer Juvenile Health", "Sea Emporer Juvenile Health", 1.0f, "The value to multiply this creature's health by.");
-            MyModOptions.seaEmporerJuvenileLimit = biggerFishSettingsConfig.Bind("Sea Emporer Juvenile Limit", "Sea Emporer Juvenile Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
+            MyModOptions.seaEmperorBabyScale = biggerFishSettingsConfig.Bind("Sea Emperor Baby Scale", "Sea Emperor Baby Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
+            MyModOptions.seaEmperorBabySlowness = biggerFishSettingsConfig.Bind("Sea Emperor Baby Slowness", "Sea Emperor Baby Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
+            MyModOptions.seaEmperorBabyHealth = biggerFishSettingsConfig.Bind("Sea Emperor Baby Health", "Sea Emperor Baby Health", 1.0f, "The value to multiply this creature's health by.");
+            MyModOptions.seaEmperorBabyLimit = biggerFishSettingsConfig.Bind("Sea Emperor Baby Limit", "Sea Emperor Baby Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
+            MyModOptions.seaEmperorJuvenileScale = biggerFishSettingsConfig.Bind("Sea Emperor Juvenile Scale", "Sea Emperor Juvenile Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
+            MyModOptions.seaEmperorJuvenileSlowness = biggerFishSettingsConfig.Bind("Sea Emperor Juvenile Slowness", "Sea Emperor Juvenile Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
+            MyModOptions.seaEmperorJuvenileHealth = biggerFishSettingsConfig.Bind("Sea Emperor Juvenile Health", "Sea Emperor Juvenile Health", 1.0f, "The value to multiply this creature's health by.");
+            MyModOptions.seaEmperorJuvenileLimit = biggerFishSettingsConfig.Bind("Sea Emperor Juvenile Limit", "Sea Emperor Juvenile Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.seaTreaderScale = biggerFishSettingsConfig.Bind("Sea Treader Scale", "Sea Treader Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.seaTreaderSlowness = biggerFishSettingsConfig.Bind("Sea Treader Slowness", "Sea Treader Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.seaTreaderHealth = biggerFishSettingsConfig.Bind("Sea Treader Health", "Sea Treader Health", 1.0f, "The value to multiply this creature's health by.");
-            MyModOptions.biterHealth = biggerFishSettingsConfig.Bind("Biter Health", "Biter Health", 1.0f, "The value to multiply this creature's health by."); MyModOptions.seaTreaderLimit = biggerFishSettingsConfig.Bind("Sea Treader Limit", "Sea Treader Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            MyModOptions.seaTreaderHealth = biggerFishSettingsConfig.Bind("Sea Treader Health", "Sea Treader Health", 1.0f, "The value to multiply this creature's health by."); MyModOptions.seaTreaderLimit = biggerFishSettingsConfig.Bind("Sea Treader Limit", "Sea Treader Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.shockerScale = biggerFishSettingsConfig.Bind("Ampeel Scale", "Ampeel Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.shockerSlowness = biggerFishSettingsConfig.Bind("Ampeel Slowness", "Ampeel Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
-            MyModOptions.shockerHealth = biggerFishSettingsConfig.Bind("Ampeel Health", "Shocker Health", 1.0f, "The value to multiply this creature's health by.");
+            MyModOptions.shockerHealth = biggerFishSettingsConfig.Bind("Ampeel Health", "Ampeel Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.shockerLimit = biggerFishSettingsConfig.Bind("Ampeel Limit", "Ampeel Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.spadeFishScale = biggerFishSettingsConfig.Bind("Spade Fish Scale", "Spade Fish Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.spadeFishSlowness = biggerFishSettingsConfig.Bind("Spade Fish Slowness", "Spade Fish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.spadeFishHealth = biggerFishSettingsConfig.Bind("Spade Fish Health", "Spade Fish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.spadeFishLimit = biggerFishSettingsConfig.Bind("Spade Fish Limit", "Spade Fish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.spineEelScale = biggerFishSettingsConfig.Bind("River Prowler Scale", "River Prowler Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.spineEelSlowness = biggerFishSettingsConfig.Bind("River Prowler Slowness", "River Prowler Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.spineEelHealth = biggerFishSettingsConfig.Bind("River Prowler Health", "River Prowler Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.spineEelLimit = biggerFishSettingsConfig.Bind("River Prowler Limit", "River Prowler Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            
             MyModOptions.stalkerScale = biggerFishSettingsConfig.Bind("Stalker Scale", "Stalker Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.stalkerSlowness = biggerFishSettingsConfig.Bind("Stalker Slowness", "Stalker Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.stalkerHealth = biggerFishSettingsConfig.Bind("Stalker Health", "Stalker Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.stalkerLimit = biggerFishSettingsConfig.Bind("Stalker Limit", "Stalker Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+           
             MyModOptions.warperScale = biggerFishSettingsConfig.Bind("Warper Scale", "Warper Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");
             MyModOptions.warperSlowness = biggerFishSettingsConfig.Bind("Warper Slowness", "Warper Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.warperHealth = biggerFishSettingsConfig.Bind("Warper Health", "Warper Health", 1.0f, "The value to multiply this creature's health by.");

@@ -29,8 +29,6 @@ namespace BiggerFishMod
 
             if (__instance is Bladderfish bladderFish)
             {
-                bladderFish.gameObject.SetActive(false);
-
                 float sizeScale = 4.0f;
 
                 if (MyModOptions.proportionalToggle.Value == true)
@@ -535,7 +533,7 @@ namespace BiggerFishMod
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaEmporerBabyScale.Value;
+                    sizeScale = MyModOptions.seaEmperorBabyScale.Value;
                 }
 
                 seaEmporerBaby.SetScale(sizeScale);
@@ -551,7 +549,7 @@ namespace BiggerFishMod
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaEmporerJuvenileScale.Value;
+                    sizeScale = MyModOptions.seaEmperorJuvenileScale.Value;
                 }
 
                 seaEmporerJuvenile.SetScale(sizeScale);

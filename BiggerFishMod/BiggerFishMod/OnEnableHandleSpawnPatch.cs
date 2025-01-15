@@ -393,27 +393,27 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmporerBaby)
+            if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
-                if (SpawnHandler.totalSeaEmporerBabies.Count < SpawnHandler.maxSeaEmporerBabies)
+                if (SpawnHandler.totalSeaEmperorBabies.Count < SpawnHandler.maxSeaEmperorBabies)
                 {
-                    SpawnHandler.totalSeaEmporerBabies.Add(seaEmporerBaby.gameObject);
+                    SpawnHandler.totalSeaEmperorBabies.Add(seaEmperorBaby.gameObject);
                 }
-                else if (SpawnHandler.totalSeaEmporerBabies.Count >= SpawnHandler.maxSeaEmporerBabies)
+                else if (SpawnHandler.totalSeaEmperorBabies.Count >= SpawnHandler.maxSeaEmperorBabies)
                 {
-                    seaEmporerBaby.gameObject.SetActive(false);
+                    seaEmperorBaby.gameObject.SetActive(false);
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmporerJuvenile)
+            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
-                if (SpawnHandler.totalSeaEmporerJuveniles.Count < SpawnHandler.maxSeaEmporerJuveniles)
+                if (SpawnHandler.totalSeaEmperorJuveniles.Count < SpawnHandler.maxSeaEmperorJuveniles)
                 {
-                    SpawnHandler.totalSeaEmporerJuveniles.Add(seaEmporerJuvenile.gameObject);
+                    SpawnHandler.totalSeaEmperorJuveniles.Add(seaEmperorJuvenile.gameObject);
                 }
-                else if (SpawnHandler.totalSeaEmporerJuveniles.Count >= SpawnHandler.maxSeaEmporerJuveniles)
+                else if (SpawnHandler.totalSeaEmperorJuveniles.Count >= SpawnHandler.maxSeaEmperorJuveniles)
                 {
-                    seaEmporerJuvenile.gameObject.SetActive(false);
+                    seaEmperorJuvenile.gameObject.SetActive(false);
                 }
             }
 

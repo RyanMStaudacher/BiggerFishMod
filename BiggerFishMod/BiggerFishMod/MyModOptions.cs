@@ -2,301 +2,425 @@
 using JetBrains.Annotations;
 using Nautilus.Handlers;
 using Nautilus.Options;
+using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace BiggerFishMod
 {
 #if SUBNAUTICA
     public class MyModOptions : ModOptions
     {
+        #region Config Entries
+        public static ConfigEntry<bool> removeFishSchools;
         public static ConfigEntry<bool> proportionalToggle;
         public static ConfigEntry<float> proportionalScale;
         public static ConfigEntry<float> proportionalSlowness;
         public static ConfigEntry<float> proportionalHealth;
         public static ConfigEntry<float> proportionalCreatureLimit;
-        //public static ConfigEntry<bool> randomizeAllToggle;
-        //public static ConfigEntry<float> randomizeAllMin;
-        //public static ConfigEntry<float> randomizeAllMax;
-        public static ConfigEntry<bool> removeFishSchools;
-        //public static ConfigEntry<bool> biterRandomize;
-        //public static ConfigEntry<float> biterRandomizeMin;
-        //public static ConfigEntry<float> biterRandomizeMax;
+
         public static ConfigEntry<float> biterScale;
         public static ConfigEntry<float> biterSlowness;
         public static ConfigEntry<float> biterHealth;
         public static ConfigEntry<float> biterLimit;
-        //public static ConfigEntry<bool> bladderFishrRandomize;
-        //public static ConfigEntry<float> bladderFishRandomizeMin;
-        //public static ConfigEntry<float> bladderFishRandomizeMax;
+        public static ConfigEntry<float> biterBaseHealth;
+        public static ConfigEntry<float> biterBaseMaxAcceleration;
+        public static ConfigEntry<float> biterBaseForwardRotationSpeed;
+        public static ConfigEntry<float> biterBaseUpRotationSpeed;
+        public static ConfigEntry<float> biterBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> bladderFishScale;
         public static ConfigEntry<float> bladderFishSlowness;
         public static ConfigEntry<float> bladderFishHealth;
         public static ConfigEntry<float> bladderFishLimit;
-        //public static ConfigEntry<bool> bleederRandomize;
-        //public static ConfigEntry<float> bleederRandomizeMin;
-        //public static ConfigEntry<float> bleederRandomizeMax;
+        public static ConfigEntry<float> bladderFishBaseHealth;
+        public static ConfigEntry<float> bladderFishBaseMaxAcceleration;
+        public static ConfigEntry<float> bladderFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> bladderFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> bladderFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> bleederScale;
         public static ConfigEntry<float> bleederSlowness;
         public static ConfigEntry<float> bleederHealth;
         public static ConfigEntry<float> bleederLimit;
-        //public static ConfigEntry<bool> boneSharkRandomize;
-        //public static ConfigEntry<float> boneSharkRandomizeMin;
-        //public static ConfigEntry<float> boneSharkRandomizeMax;
+        public static ConfigEntry<float> bleederBaseHealth;
+        public static ConfigEntry<float> bleederBaseMaxAcceleration;
+        public static ConfigEntry<float> bleederBaseForwardRotationSpeed;
+        public static ConfigEntry<float> bleederBaseUpRotationSpeed;
+        public static ConfigEntry<float> bleederBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> boneSharkScale;
         public static ConfigEntry<float> boneSharkSlowness;
         public static ConfigEntry<float> boneSharkHealth;
         public static ConfigEntry<float> boneSharkLimit;
-        //public static ConfigEntry<bool> boomerangRandomize;
-        //public static ConfigEntry<float> boomerangRandomizeMin;
-        //public static ConfigEntry<float> boomerangRandomizeMax;
+        public static ConfigEntry<float> boneSharkBaseHealth;
+        public static ConfigEntry<float> boneSharkBaseMaxAcceleration;
+        public static ConfigEntry<float> boneSharkBaseForwardRotationSpeed;
+        public static ConfigEntry<float> boneSharkBaseUpRotationSpeed;
+        public static ConfigEntry<float> boneSharkBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> boomerangScale;
         public static ConfigEntry<float> boomerangSlowness;
         public static ConfigEntry<float> boomerangHealth;
         public static ConfigEntry<float> boomerangLimit;
-        //public static ConfigEntry<bool> caveCrawlerRandomize;
-        //public static ConfigEntry<float> caveCrawlerRandomizeMin;
-        //public static ConfigEntry<float> caveCrawlerRandomizeMax;
+        public static ConfigEntry<float> boomerangBaseHealth;
+        public static ConfigEntry<float> boomerangBaseMaxAcceleration;
+        public static ConfigEntry<float> boomerangBaseForwardRotationSpeed;
+        public static ConfigEntry<float> boomerangBaseUpRotationSpeed;
+        public static ConfigEntry<float> boomerangBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> caveCrawlerScale;
         public static ConfigEntry<float> caveCrawlerSlowness;
         public static ConfigEntry<float> caveCrawlerHealth;
         public static ConfigEntry<float> caveCrawlerLimit;
-        //public static ConfigEntry<bool> crabSnakeRandomize;
-        //public static ConfigEntry<float> crabSnakeRandomizeMin;
-        //public static ConfigEntry<float> crabSnakeRandomizeMax;
+        public static ConfigEntry<float> caveCrawlerBaseHealth;
+        public static ConfigEntry<float> caveCrawlerBaseMaxAcceleration;
+        public static ConfigEntry<float> caveCrawlerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> caveCrawlerBaseUpRotationSpeed;
+        public static ConfigEntry<float> caveCrawlerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> crabSnakeScale;
         public static ConfigEntry<float> crabSnakeSlowness;
         public static ConfigEntry<float> crabSnakeHealth;
         public static ConfigEntry<float> crabSnakeLimit;
-        //public static ConfigEntry<bool> crabSquidRandomize;
-        //public static ConfigEntry<float> crabSquidRandomizeMin;
-        //public static ConfigEntry<float> crabSquidRandomizeMax;
+        public static ConfigEntry<float> crabSnakeBaseHealth;
+        public static ConfigEntry<float> crabSnakeBaseMaxAcceleration;
+        public static ConfigEntry<float> crabSnakeBaseForwardRotationSpeed;
+        public static ConfigEntry<float> crabSnakeBaseUpRotationSpeed;
+        public static ConfigEntry<float> crabSnakeBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> crabSquidScale;
         public static ConfigEntry<float> crabSquidSlowness;
         public static ConfigEntry<float> crabSquidHealth;
         public static ConfigEntry<float> crabSquidLimit;
-        //public static ConfigEntry<bool> crashFishRandomize;
-        //public static ConfigEntry<float> crashFishRandomizeMin;
-        //public static ConfigEntry<float> crashFishRandomizeMax;
+        public static ConfigEntry<float> crabSquidBaseHealth;
+        public static ConfigEntry<float> crabSquidBaseMaxAcceleration;
+        public static ConfigEntry<float> crabSquidBaseForwardRotationSpeed;
+        public static ConfigEntry<float> crabSquidBaseUpRotationSpeed;
+        public static ConfigEntry<float> crabSquidBaseTraitsAnimatorSpeed;
+
+
         public static ConfigEntry<float> crashFishScale;
         public static ConfigEntry<float> crashFishSlowness;
         public static ConfigEntry<float> crashFishHealth;
         public static ConfigEntry<float> crashFishLimit;
-        //public static ConfigEntry<bool> cuddleFishRandomize;
-        //public static ConfigEntry<float> cuddleFishRandomizeMin;
-        //public static ConfigEntry<float> cuddleFishRandomizeMax;
+        public static ConfigEntry<float> crashFishBaseHealth;
+        public static ConfigEntry<float> crashFishBaseMaxAcceleration;
+        public static ConfigEntry<float> crashFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> crashFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> crashFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> cuddleFishScale;
         public static ConfigEntry<float> cuddleFishSlowness;
         public static ConfigEntry<float> cuddleFishHealth;
         public static ConfigEntry<float> cuddleFishLimit;
-        //public static ConfigEntry<bool> eyeyeRandomize;
-        //public static ConfigEntry<float> eyeyeRandomizeMin;
-        //public static ConfigEntry<float> eyeyeRandomizeMax;
+        public static ConfigEntry<float> cuddleFishBaseHealth;
+        public static ConfigEntry<float> cuddleFishBaseMaxAcceleration;
+        public static ConfigEntry<float> cuddleFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> cuddleFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> cuddleFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> eyeyeScale;
         public static ConfigEntry<float> eyeyeSlowness;
         public static ConfigEntry<float> eyeyeHealth;
         public static ConfigEntry<float> eyeyeLimit;
-        //public static ConfigEntry<bool> garryFishRandomize;
-        //public static ConfigEntry<float> garryFishRandomizeMin;
-        //public static ConfigEntry<float> garryFishRandomizeMax;
+        public static ConfigEntry<float> eyeyeBaseHealth;
+        public static ConfigEntry<float> eyeyeBaseMaxAcceleration;
+        public static ConfigEntry<float> eyeyeBaseForwardRotationSpeed;
+        public static ConfigEntry<float> eyeyeBaseUpRotationSpeed;
+        public static ConfigEntry<float> eyeyeBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> garryFishScale;
         public static ConfigEntry<float> garryFishSlowness;
         public static ConfigEntry<float> garryFishHealth;
         public static ConfigEntry<float> garryFishLimit;
-        //public static ConfigEntry<bool> gasopodRandomize;
-        //public static ConfigEntry<float> gasopodRandomizeMin;
-        //public static ConfigEntry<float> gasopodRandomizeMax;
+        public static ConfigEntry<float> garryFishBaseHealth;
+        public static ConfigEntry<float> garryFishBaseMaxAcceleration;
+        public static ConfigEntry<float> garryFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> garryFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> garryFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> gasopodScale;
         public static ConfigEntry<float> gasopodSlowness;
         public static ConfigEntry<float> gasopodHealth;
         public static ConfigEntry<float> gasopodLimit;
-        //public static ConfigEntry<bool> voidGhostLeviathanRandomize;
-        //public static ConfigEntry<float> voidGhostLeviathanRandomizeMin;
-        //public static ConfigEntry<float> voidGhostLeviathanRandomizeMax;
+        public static ConfigEntry<float> gasopodBaseHealth;
+        public static ConfigEntry<float> gasopodBaseMaxAcceleration;
+        public static ConfigEntry<float> gasopodBaseForwardRotationSpeed;
+        public static ConfigEntry<float> gasopodBaseUpRotationSpeed;
+        public static ConfigEntry<float> gasopodBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> voidGhostLeviathanScale;
         public static ConfigEntry<float> voidGhostLeviathanSlowness;
         public static ConfigEntry<float> voidGhostLeviathanHealth;
         public static ConfigEntry<float> voidGhostLeviathanLimit;
-        //public static ConfigEntry<bool> ghostLeviathanRandomize;
-        //public static ConfigEntry<float> ghostLeviathanRandomizeMin;
-        //public static ConfigEntry<float> ghostLeviathanRandomizeMax;
+        public static ConfigEntry<float> voidGhostLeviathanBaseHealth;
+        public static ConfigEntry<float> voidGhostLeviathanBaseMaxAcceleration;
+        public static ConfigEntry<float> voidGhostLeviathanBaseForwardRotationSpeed;
+        public static ConfigEntry<float> voidGhostLeviathanBaseUpRotationSpeed;
+        public static ConfigEntry<float> voidGhostLeviathanBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> ghostLeviathanScale;
         public static ConfigEntry<float> ghostLeviathanSlowness;
         public static ConfigEntry<float> ghostLeviathanHealth;
         public static ConfigEntry<float> ghostLeviathanLimit;
-        //public static ConfigEntry<bool> ghostRayRandomize;
-        //public static ConfigEntry<float> ghostRayRandomizeMin;
-        //public static ConfigEntry<float> ghostRayRandomizeMax;
+        public static ConfigEntry<float> ghostLeviathanBaseHealth;
+        public static ConfigEntry<float> ghostLeviathanBaseMaxAcceleration;
+        public static ConfigEntry<float> ghostLeviathanBaseForwardRotationSpeed;
+        public static ConfigEntry<float> ghostLeviathanBaseUpRotationSpeed;
+        public static ConfigEntry<float> ghostLeviathanBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> ghostRayScale;
         public static ConfigEntry<float> ghostRaySlowness;
         public static ConfigEntry<float> ghostRayHealth;
         public static ConfigEntry<float> ghostRayLimit;
-        //public static ConfigEntry<bool> holeFishRandomize;
-        //public static ConfigEntry<float> holeFishRandomizeMin;
-        //public static ConfigEntry<float> holeFishRandomizeMax;
+        public static ConfigEntry<float> ghostRayBaseHealth;
+        public static ConfigEntry<float> ghostRayBaseMaxAcceleration;
+        public static ConfigEntry<float> ghostRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> ghostRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> ghostRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> holeFishScale;
         public static ConfigEntry<float> holeFishSlowness;
         public static ConfigEntry<float> holeFishHealth;
         public static ConfigEntry<float> holeFishLimit;
-        //public static ConfigEntry<bool> hoopFishRandomize;
-        //public static ConfigEntry<float> hoopFishRandomizeMin;
-        //public static ConfigEntry<float> hoopFishRandomizeMax;
+        public static ConfigEntry<float> holeFishBaseHealth;
+        public static ConfigEntry<float> holeFishBaseMaxAcceleration;
+        public static ConfigEntry<float> holeFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> holeFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> holeFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> hoopFishScale;
         public static ConfigEntry<float> hoopFishSlowness;
         public static ConfigEntry<float> hoopFishHealth;
         public static ConfigEntry<float> hoopFishLimit;
-        //public static ConfigEntry<bool> hoverFishRandomize;
-        //public static ConfigEntry<float> hoverFishRandomizeMin;
-        //public static ConfigEntry<float> hoverFishRandomizeMax;
+        public static ConfigEntry<float> hoopFishBaseHealth;
+        public static ConfigEntry<float> hoopFishBaseMaxAcceleration;
+        public static ConfigEntry<float> hoopFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> hoopFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> hoopFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> hoverFishScale;
         public static ConfigEntry<float> hoverFishSlowness;
         public static ConfigEntry<float> hoverFishHealth;
         public static ConfigEntry<float> hoverFishLimit;
-        //public static ConfigEntry<bool> jellyRayRandomize;
-        //public static ConfigEntry<float> jellyRayRandomizeMin;
-        //public static ConfigEntry<float> jellyRayRandomizeMax;
+        public static ConfigEntry<float> hoverFishBaseHealth;
+        public static ConfigEntry<float> hoverFishBaseMaxAcceleration;
+        public static ConfigEntry<float> hoverFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> hoverFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> hoverFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> jellyRayScale;
         public static ConfigEntry<float> jellyRaySlowness;
         public static ConfigEntry<float> jellyRayHealth;
         public static ConfigEntry<float> jellyRayLimit;
-        //public static ConfigEntry<bool> jumperRandomize;
-        //public static ConfigEntry<float> jumperRandomizeMin;
-        //public static ConfigEntry<float> jumperRandomizeMax;
+        public static ConfigEntry<float> jellyRayBaseHealth;
+        public static ConfigEntry<float> jellyRayBaseMaxAcceleration;
+        public static ConfigEntry<float> jellyRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> jellyRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> jellyRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> jumperScale;
         public static ConfigEntry<float> jumperSlowness;
         public static ConfigEntry<float> jumperHealth;
         public static ConfigEntry<float> jumperLimit;
-        //public static ConfigEntry<bool> lavaLarvaRandomize;
-        //public static ConfigEntry<float> lavaLarvaRandomizeMin;
-        //public static ConfigEntry<float> lavaLarvaRandomizeMax;
+        public static ConfigEntry<float> jumperBaseHealth;
+        public static ConfigEntry<float> jumperBaseMaxAcceleration;
+        public static ConfigEntry<float> jumperBaseForwardRotationSpeed;
+        public static ConfigEntry<float> jumperBaseUpRotationSpeed;
+        public static ConfigEntry<float> jumperBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> lavaLarvaScale;
         public static ConfigEntry<float> lavaLarvaSlowness;
         public static ConfigEntry<float> lavaLarvaHealth;
         public static ConfigEntry<float> lavaLarvaLimit;
-        //public static ConfigEntry<bool> lavaLizardRandomize;
-        //public static ConfigEntry<float> lavaLizardRandomizeMin;
-        //public static ConfigEntry<float> lavaLizardRandomizeMax;
+        public static ConfigEntry<float> lavaLarvaBaseHealth;
+        public static ConfigEntry<float> lavaLarvaBaseMaxAcceleration;
+        public static ConfigEntry<float> lavaLarvaBaseForwardRotationSpeed;
+        public static ConfigEntry<float> lavaLarvaBaseUpRotationSpeed;
+        public static ConfigEntry<float> lavaLarvaBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> lavaLizardScale;
         public static ConfigEntry<float> lavaLizardSlowness;
         public static ConfigEntry<float> lavaLizardHealth;
         public static ConfigEntry<float> lavaLizardLimit;
-        //public static ConfigEntry<bool> mesmerRandomize;
-        //public static ConfigEntry<float> mesmerRandomizeMin;
-        //public static ConfigEntry<float> mesmerRandomizeMax;
+        public static ConfigEntry<float> lavaLizardBaseHealth;
+        public static ConfigEntry<float> lavaLizardBaseMaxAcceleration;
+        public static ConfigEntry<float> lavaLizardBaseForwardRotationSpeed;
+        public static ConfigEntry<float> lavaLizardBaseUpRotationSpeed;
+        public static ConfigEntry<float> lavaLizardBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> mesmerScale;
         public static ConfigEntry<float> mesmerSlowness;
         public static ConfigEntry<float> mesmerHealth;
         public static ConfigEntry<float> mesmerLimit;
-        //public static ConfigEntry<bool> oculusFishRandomize;
-        //public static ConfigEntry<float> oculusFishRandomizeMin;
-        //public static ConfigEntry<float> oculusFishRandomizeMax;
+        public static ConfigEntry<float> mesmerBaseHealth;
+        public static ConfigEntry<float> mesmerBaseMaxAcceleration;
+        public static ConfigEntry<float> mesmerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> mesmerBaseUpRotationSpeed;
+        public static ConfigEntry<float> mesmerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> oculusFishScale;
         public static ConfigEntry<float> oculusFishSlowness;
         public static ConfigEntry<float> oculusFishHealth;
         public static ConfigEntry<float> oculusFishLimit;
-        //public static ConfigEntry<bool> peeperRandomize;
-        //public static ConfigEntry<float> peeperRandomizeMin;
-        //public static ConfigEntry<float> peeperRandomizeMax;
+        public static ConfigEntry<float> oculusFishBaseHealth;
+        public static ConfigEntry<float> oculusFishBaseMaxAcceleration;
+        public static ConfigEntry<float> oculusFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> oculusFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> oculusFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> peeperScale;
         public static ConfigEntry<float> peeperSlowness;
         public static ConfigEntry<float> peeperHealth;
         public static ConfigEntry<float> peeperLimit;
-        //public static ConfigEntry<bool> rabbitRayRandomize;
-        //public static ConfigEntry<float> rabbitRayRandomizeMin;
-        //public static ConfigEntry<float> rabbitRayRandomizeMax;
+        public static ConfigEntry<float> peeperBaseHealth;
+        public static ConfigEntry<float> peeperBaseMaxAcceleration;
+        public static ConfigEntry<float> peeperBaseForwardRotationSpeed;
+        public static ConfigEntry<float> peeperBaseUpRotationSpeed;
+        public static ConfigEntry<float> peeperBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> rabbitRayScale;
         public static ConfigEntry<float> rabbitRaySlowness;
         public static ConfigEntry<float> rabbitRayHealth;
         public static ConfigEntry<float> rabbitRayLimit;
-        //public static ConfigEntry<bool> reaperLeviathanRandomize;
-        //public static ConfigEntry<float> reaperLeviathanRandomizeMin;
-        //public static ConfigEntry<float> reaperLeviathanRandomizeMax;
+        public static ConfigEntry<float> rabbitRayBaseHealth;
+        public static ConfigEntry<float> rabbitRayBaseMaxAcceleration;
+        public static ConfigEntry<float> rabbitRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> rabbitRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> rabbitRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> reaperLeviathanScale;
         public static ConfigEntry<float> reaperLeviathanSlowness;
         public static ConfigEntry<float> reaperLeviathanHealth;
         public static ConfigEntry<float> reaperLeviathanLimit;
-        //public static ConfigEntry<bool> reefbackRandomize;
-        //public static ConfigEntry<float> reefbackRandomizeMin;
-        //public static ConfigEntry<float> reefbackRandomizeMax;
+        public static ConfigEntry<float> reaperLeviathanBaseHealth;
+        public static ConfigEntry<float> reaperLeviathanBaseMaxAcceleration;
+        public static ConfigEntry<float> reaperLeviathanBaseForwardRotationSpeed;
+        public static ConfigEntry<float> reaperLeviathanBaseUpRotationSpeed;
+        public static ConfigEntry<float> reaperLeviathanBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> reefbackScale;
         public static ConfigEntry<float> reefbackSlowness;
         public static ConfigEntry<float> reefbackHealth;
         public static ConfigEntry<float> reefbackLimit;
-        //public static ConfigEntry<bool> reginaldRandomize;
-        //public static ConfigEntry<float> reginaldRandomizeMin;
-        //public static ConfigEntry<float> reginaldRandomizeMax;
+        public static ConfigEntry<float> reefbackBaseHealth;
+        public static ConfigEntry<float> reefbackBaseMaxAcceleration;
+        public static ConfigEntry<float> reefbackBaseForwardRotationSpeed;
+        public static ConfigEntry<float> reefbackBaseUpRotationSpeed;
+        public static ConfigEntry<float> reefbackBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> reginaldScale;
         public static ConfigEntry<float> reginaldSlowness;
         public static ConfigEntry<float> reginaldHealth;
         public static ConfigEntry<float> reginaldLimit;
-        //public static ConfigEntry<bool> sandSharkRandomize;
-        //public static ConfigEntry<float> sandSharkRandomizeMin;
-        //public static ConfigEntry<float> sandSharkRandomizeMax;
+        public static ConfigEntry<float> reginaldBaseHealth;
+        public static ConfigEntry<float> reginaldBaseMaxAcceleration;
+        public static ConfigEntry<float> reginaldBaseForwardRotationSpeed;
+        public static ConfigEntry<float> reginaldBaseUpRotationSpeed;
+        public static ConfigEntry<float> reginaldBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> sandSharkScale;
         public static ConfigEntry<float> sandSharkSlowness;
         public static ConfigEntry<float> sandSharkHealth;
         public static ConfigEntry<float> sandSharkLimit;
-        //public static ConfigEntry<bool> seaDragonRandomize;
-        //public static ConfigEntry<float> seaDragonRandomizeMin;
-        //public static ConfigEntry<float> seaDragonRandomizeMax;
+        public static ConfigEntry<float> sandSharkBaseHealth;
+        public static ConfigEntry<float> sandSharkBaseMaxAcceleration;
+        public static ConfigEntry<float> sandSharkBaseForwardRotationSpeed;
+        public static ConfigEntry<float> sandSharkBaseUpRotationSpeed;
+        public static ConfigEntry<float> sandSharkBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> seaDragonScale;
         public static ConfigEntry<float> seaDragonSlowness;
         public static ConfigEntry<float> seaDragonHealth;
         public static ConfigEntry<float> seaDragonLimit;
-        //public static ConfigEntry<bool> seaEmporerBabyRandomize;
-        //public static ConfigEntry<float> seaEmporerBabyRandomizeMin;
-        //public static ConfigEntry<float> seaEmporerBabyRandomizeMax;
-        public static ConfigEntry<float> seaEmporerBabyScale;
-        public static ConfigEntry<float> seaEmporerBabySlowness;
-        public static ConfigEntry<float> seaEmporerBabyHealth;
-        public static ConfigEntry<float> seaEmporerBabyLimit;
-        //public static ConfigEntry<bool> seaEmporerJuvenileRandomize;
-        //public static ConfigEntry<float> seaEmporerJuvenileRandomizeMin;
-        //public static ConfigEntry<float> seaEmporerJuvenileRandomizeMax;
-        public static ConfigEntry<float> seaEmporerJuvenileScale;
-        public static ConfigEntry<float> seaEmporerJuvenileSlowness;
-        public static ConfigEntry<float> seaEmporerJuvenileHealth;
-        public static ConfigEntry<float> seaEmporerJuvenileLimit;
-        //public static ConfigEntry<bool> seaTreaderRandomize;
-        //public static ConfigEntry<float> seaTreaderRandomizeMin;
-        //public static ConfigEntry<float> seaTreaderRandomizeMax;
+        public static ConfigEntry<float> seaDragonBaseHealth;
+        public static ConfigEntry<float> seaDragonBaseMaxAcceleration;
+        public static ConfigEntry<float> seaDragonBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaDragonBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaDragonBaseTraitsAnimatorSpeed;
+
+        public static ConfigEntry<float> seaEmperorBabyScale;
+        public static ConfigEntry<float> seaEmperorBabySlowness;
+        public static ConfigEntry<float> seaEmperorBabyHealth;
+        public static ConfigEntry<float> seaEmperorBabyLimit;
+        public static ConfigEntry<float> seaEmperorBabyBaseHealth;
+        public static ConfigEntry<float> seaEmperorBabyBaseMaxAcceleration;
+        public static ConfigEntry<float> seaEmperorBabyBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaEmperorBabyBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaEmperorBabyBaseTraitsAnimatorSpeed;
+
+        public static ConfigEntry<float> seaEmperorJuvenileScale;
+        public static ConfigEntry<float> seaEmperorJuvenileSlowness;
+        public static ConfigEntry<float> seaEmperorJuvenileHealth;
+        public static ConfigEntry<float> seaEmperorJuvenileLimit;
+        public static ConfigEntry<float> seaEmperorJuvenileBaseHealth;
+        public static ConfigEntry<float> seaEmperorJuvenileBaseMaxAcceleration;
+        public static ConfigEntry<float> seaEmperorJuvenileBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaEmperorJuvenileBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaEmperorJuvenileBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> seaTreaderScale;
         public static ConfigEntry<float> seaTreaderSlowness;
         public static ConfigEntry<float> seaTreaderHealth;
         public static ConfigEntry<float> seaTreaderLimit;
-        //public static ConfigEntry<bool> shockerRandomize;
-        //public static ConfigEntry<float> shockerRandomizeMin;
-        //public static ConfigEntry<float> shockerRandomizeMax;
+        public static ConfigEntry<float> seaTreaderBaseHealth;
+        public static ConfigEntry<float> seaTreaderBaseMaxAcceleration;
+        public static ConfigEntry<float> seaTreaderBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaTreaderBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaTreaderBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> shockerScale;
         public static ConfigEntry<float> shockerSlowness;
         public static ConfigEntry<float> shockerHealth;
         public static ConfigEntry<float> shockerLimit;
-        //public static ConfigEntry<bool> spadeFishRandomize;
-        //public static ConfigEntry<float> spadeFishRandomizeMin;
-        //public static ConfigEntry<float> spadeFishRandomizeMax;
+        public static ConfigEntry<float> shockerBaseHealth;
+        public static ConfigEntry<float> shockerBaseMaxAcceleration;
+        public static ConfigEntry<float> shockerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> shockerBaseUpRotationSpeed;
+        public static ConfigEntry<float> shockerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> spadeFishScale;
         public static ConfigEntry<float> spadeFishSlowness;
         public static ConfigEntry<float> spadeFishHealth;
         public static ConfigEntry<float> spadeFishLimit;
-        //public static ConfigEntry<bool> spineEelRandomize;
-        //public static ConfigEntry<float> spineEelRandomizeMin;
-        //public static ConfigEntry<float> spineEelRandomizeMax;
+        public static ConfigEntry<float> spadeFishBaseHealth;
+        public static ConfigEntry<float> spadeFishBaseMaxAcceleration;
+        public static ConfigEntry<float> spadeFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> spadeFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> spadeFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> spineEelScale;
         public static ConfigEntry<float> spineEelSlowness;
         public static ConfigEntry<float> spineEelHealth;
         public static ConfigEntry<float> spineEelLimit;
-        //public static ConfigEntry<bool> stalkerRandomize;
-        //public static ConfigEntry<float> stalkerRandomizeMin;
-        //public static ConfigEntry<float> stalkerRandomizeMax;
+        public static ConfigEntry<float> spineEelBaseHealth;
+        public static ConfigEntry<float> spineEelBaseMaxAcceleration;
+        public static ConfigEntry<float> spineEelBaseForwardRotationSpeed;
+        public static ConfigEntry<float> spineEelBaseUpRotationSpeed;
+        public static ConfigEntry<float> spineEelBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> stalkerScale;
         public static ConfigEntry<float> stalkerSlowness;
         public static ConfigEntry<float> stalkerHealth;
         public static ConfigEntry<float> stalkerLimit;
-        //public static ConfigEntry<bool> warperRandomize;
-        //public static ConfigEntry<float> warperRandomizeMin;
-        //public static ConfigEntry<float> warperRandomizeMax;
+        public static ConfigEntry<float> stalkerBaseHealth;
+        public static ConfigEntry<float> stalkerBaseMaxAcceleration;
+        public static ConfigEntry<float> stalkerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> stalkerBaseUpRotationSpeed;
+        public static ConfigEntry<float> stalkerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> warperScale;
         public static ConfigEntry<float> warperSlowness;
         public static ConfigEntry<float> warperHealth;
         public static ConfigEntry<float> warperLimit;
+        public static ConfigEntry<float> warperBaseHealth;
+        public static ConfigEntry<float> warperBaseMaxAcceleration;
+        public static ConfigEntry<float> warperBaseForwardRotationSpeed;
+        public static ConfigEntry<float> warperBaseUpRotationSpeed;
+        public static ConfigEntry<float> warperBaseTraitsAnimatorSpeed;
+
+        public static ConfigDefinition yup;
+        #endregion
 
         public MyModOptions() : base("Bigger Fish")
         {
@@ -324,577 +448,9 @@ namespace BiggerFishMod
             proportionalCreatureLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(proportionalCreatureLimitOption);
 
-            //ModToggleOption randomizeAllOption = randomizeAllToggle.ToModToggleOption();
-            //randomizeAllOption.OnChanged += ToggleOptionsChanged;
-            //AddItem(randomizeAllOption);
 
-            //ModSliderOption randomizeAllMinOption = randomizeAllMin.ToModSliderOption(1, 50);
-            //randomizeAllMinOption.OnChanged += SliderOptionsChanged;
-            //AddItem(randomizeAllMinOption);
 
-            //ModSliderOption randomizeAllMaxOption = randomizeAllMax.ToModSliderOption(1, 50);
-            //randomizeAllMaxOption.OnChanged += SliderOptionsChanged;
-            //AddItem(randomizeAllMaxOption);
 
-            ModSliderOption biterScaleOption = biterScale.ToModSliderOption(1, 50);
-            biterScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(biterScaleOption);
-
-            ModSliderOption biterSlownessOption = biterSlowness.ToModSliderOption(1, 100);
-            biterSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(biterSlownessOption);
-
-            ModSliderOption biterHealthOption = biterHealth.ToModSliderOption(1, 100);
-            biterHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(biterHealthOption);
-
-            ModSliderOption biterLimitOption = biterLimit.ToModSliderOption(0, 50);
-            biterLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(biterLimitOption);
-
-            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
-            bladderFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(bladderFishScaleOption);
-
-            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(1, 100);
-            bladderFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(bladderFishSlownessOption);
-
-            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(1, 100);
-            bladderFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(bladderFishHealthOption);
-
-            ModSliderOption bladderFishLimitOption = bladderFishLimit.ToModSliderOption(0, 50);
-            bladderFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(bladderFishLimitOption);
-
-            ModSliderOption bleederScaleOption = bleederScale.ToModSliderOption(1, 50);
-            bleederScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(bleederScaleOption);
-
-            ModSliderOption bleederSlownessOption = bleederSlowness.ToModSliderOption(1, 100);
-            bleederSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(bleederSlownessOption);
-
-            ModSliderOption bleederHealthOption = bleederHealth.ToModSliderOption(1, 100);
-            bleederHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(bleederHealthOption);
-
-            ModSliderOption bleederLimitOption = bleederLimit.ToModSliderOption(0, 50);
-            bleederLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(bleederLimitOption);
-
-            ModSliderOption boneSharkScaleOption = boneSharkScale.ToModSliderOption(1, 50);
-            boneSharkScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(boneSharkScaleOption);
-
-            ModSliderOption boneSharkSlownessOption = boneSharkSlowness.ToModSliderOption(1, 100);
-            boneSharkSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(boneSharkSlownessOption);
-
-            ModSliderOption boneSharkHealthOption = boneSharkHealth.ToModSliderOption(1, 100);
-            boneSharkHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(boneSharkHealthOption);
-
-            ModSliderOption boneSharkLimitOption = boneSharkLimit.ToModSliderOption(1, 100);
-            boneSharkLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(boneSharkLimitOption);
-
-            ModSliderOption boomerangScaleOption = boomerangScale.ToModSliderOption(1, 50);
-            boomerangScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(boomerangScaleOption);
-
-            ModSliderOption boomerangSlownessOption = boomerangSlowness.ToModSliderOption(1, 100);
-            boomerangSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(boomerangSlownessOption);
-
-            ModSliderOption boomerangHealthOption = boomerangHealth.ToModSliderOption(1, 100);
-            boomerangHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(boomerangHealthOption);
-
-            ModSliderOption boomerangLimitOption = boomerangLimit.ToModSliderOption(0, 50);
-            boomerangLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(boomerangLimitOption);
-
-            ModSliderOption caveCrawlerScaleOption = caveCrawlerScale.ToModSliderOption(1, 50);
-            caveCrawlerScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(caveCrawlerScaleOption);
-
-            ModSliderOption caveCrawlerSlownessOption = caveCrawlerSlowness.ToModSliderOption(1, 100);
-            caveCrawlerSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(caveCrawlerSlownessOption);
-
-            ModSliderOption caveCrawlerHealthOption = caveCrawlerHealth.ToModSliderOption(1, 100);
-            caveCrawlerHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(caveCrawlerHealthOption);
-
-            ModSliderOption caveCrawlerLimitOption = caveCrawlerLimit.ToModSliderOption(0, 50);
-            caveCrawlerLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(caveCrawlerLimitOption);
-
-            ModSliderOption crabSnakeScaleOption = crabSnakeScale.ToModSliderOption(1, 50);
-            crabSnakeScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSnakeScaleOption);
-
-            ModSliderOption crabSnakeSlownessOption = crabSnakeSlowness.ToModSliderOption(1, 100);
-            crabSnakeSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSnakeSlownessOption);
-
-            ModSliderOption crabSnakeHealthOption = crabSnakeHealth.ToModSliderOption(1, 100);
-            crabSnakeHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSnakeHealthOption);
-
-            ModSliderOption crabSnakeLimitOption = crabSnakeLimit.ToModSliderOption(0, 50);
-            crabSnakeLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSnakeLimitOption);
-
-            ModSliderOption crabSquidScaleOption = crabSquidScale.ToModSliderOption(1, 50);
-            crabSquidScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSquidScaleOption);
-
-            ModSliderOption crabSquidSlownessOption = crabSquidSlowness.ToModSliderOption(1, 100);
-            crabSquidSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSquidSlownessOption);
-
-            ModSliderOption crabSquidHealthOption = crabSquidHealth.ToModSliderOption(1, 100);
-            crabSquidHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSquidHealthOption);
-
-            ModSliderOption crabSquidLimitOption = crabSquidLimit.ToModSliderOption(0, 50);
-            crabSquidLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(crabSquidLimitOption);
-
-            ModSliderOption crashFishScaleOption = crashFishScale.ToModSliderOption(1, 50);
-            crashFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(crashFishScaleOption);
-
-            ModSliderOption crashFishSlownessOption = crashFishSlowness.ToModSliderOption(1, 100);
-            crashFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(crashFishSlownessOption);
-
-            ModSliderOption crashFishHealthOption = crashFishHealth.ToModSliderOption(1, 100);
-            crashFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(crashFishHealthOption);
-
-            ModSliderOption crashFishLimitOption = crashFishLimit.ToModSliderOption(0, 50);
-            crashFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(crashFishLimitOption);
-
-            ModSliderOption cuddleFishScaleOption = cuddleFishScale.ToModSliderOption(1, 50);
-            cuddleFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(cuddleFishScaleOption);
-
-            ModSliderOption cuddleFishSlownessOption = cuddleFishSlowness.ToModSliderOption(1, 100);
-            cuddleFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(cuddleFishSlownessOption);
-
-            ModSliderOption cuddleFishHealthOption = cuddleFishHealth.ToModSliderOption(1, 100);
-            cuddleFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(cuddleFishHealthOption);
-
-            ModSliderOption cuddleFishLimitOption = cuddleFishLimit.ToModSliderOption(0, 50);
-            cuddleFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(cuddleFishLimitOption);
-
-            ModSliderOption eyeyeScaleOption = eyeyeScale.ToModSliderOption(1, 50);
-            eyeyeScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(eyeyeScaleOption);
-
-            ModSliderOption eyeyeSlownessOption = eyeyeSlowness.ToModSliderOption(1, 100);
-            eyeyeSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(eyeyeSlownessOption);
-
-            ModSliderOption eyeyeHealthOption = eyeyeHealth.ToModSliderOption(1, 100);
-            eyeyeHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(eyeyeHealthOption);
-
-            ModSliderOption eyeyeLimitOption = eyeyeLimit.ToModSliderOption(0, 50);
-            eyeyeLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(eyeyeLimitOption);
-
-            ModSliderOption garryFishScaleOption = garryFishScale.ToModSliderOption(1, 50);
-            garryFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(garryFishScaleOption);
-
-            ModSliderOption garryFishSlownessOption = garryFishSlowness.ToModSliderOption(1, 100);
-            garryFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(garryFishSlownessOption);
-
-            ModSliderOption garryFishHealthOption = garryFishHealth.ToModSliderOption(1, 100);
-            garryFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(garryFishHealthOption);
-
-            ModSliderOption garryFishLimitOption = garryFishLimit.ToModSliderOption(0, 50);
-            garryFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(garryFishLimitOption);
-
-            ModSliderOption gasopodScaleOption = gasopodScale.ToModSliderOption(1, 50);
-            gasopodScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(gasopodScaleOption);
-
-            ModSliderOption gasopodSlownessOption = gasopodSlowness.ToModSliderOption(1, 100);
-            gasopodSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(gasopodSlownessOption);
-
-            ModSliderOption gasopodHealthOption = gasopodHealth.ToModSliderOption(1, 100);
-            gasopodHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(gasopodHealthOption);
-
-            ModSliderOption gasopodLimitOption = gasopodLimit.ToModSliderOption(0, 50);
-            gasopodLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(gasopodLimitOption);
-
-            ModSliderOption ghostLeviathanScaleOption = ghostLeviathanScale.ToModSliderOption(1, 50);
-            ghostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostLeviathanScaleOption);
-
-            ModSliderOption ghostLeviathanSlownessOption = ghostLeviathanSlowness.ToModSliderOption(1, 100);
-            ghostLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostLeviathanSlownessOption);
-
-            ModSliderOption ghostLeviathanHealthOption = ghostLeviathanHealth.ToModSliderOption(1, 100);
-            ghostLeviathanHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostLeviathanHealthOption);
-
-            ModSliderOption ghostLeviathanLimitOption = ghostLeviathanLimit.ToModSliderOption(0, 50);
-            ghostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostLeviathanLimitOption);
-
-            ModSliderOption voidGhostLeviathanScaleOption = voidGhostLeviathanScale.ToModSliderOption(1, 50);
-            voidGhostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(voidGhostLeviathanScaleOption);
-
-            ModSliderOption voidGhostLeviathanSlownessOption = voidGhostLeviathanSlowness.ToModSliderOption(1, 100);
-            voidGhostLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(voidGhostLeviathanSlownessOption);
-
-            ModSliderOption voidGhostLeviathanHealthOption = voidGhostLeviathanHealth.ToModSliderOption(1, 100);
-            voidGhostLeviathanHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(voidGhostLeviathanHealthOption);
-
-            ModSliderOption voidGhostLeviathanLimitOption = voidGhostLeviathanLimit.ToModSliderOption(0, 50);
-            voidGhostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(voidGhostLeviathanLimitOption);
-
-            ModSliderOption ghostRayScaleOption = ghostRayScale.ToModSliderOption(1, 50);
-            ghostRayScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostRayScaleOption);
-
-            ModSliderOption ghostRaySlownessOption = ghostRaySlowness.ToModSliderOption(1, 100);
-            ghostRaySlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostRaySlownessOption);
-
-            ModSliderOption ghostRayHealthOption = ghostRayHealth.ToModSliderOption(1, 100);
-            ghostRayHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostRayHealthOption);
-
-            ModSliderOption ghostRayLimitOption = ghostRayLimit.ToModSliderOption(0, 50);
-            ghostRayLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(ghostRayLimitOption);
-
-            ModSliderOption holeFishScaleOption = holeFishScale.ToModSliderOption(1, 50);
-            holeFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(holeFishScaleOption);
-
-            ModSliderOption holeFishSlownessOption = holeFishSlowness.ToModSliderOption(1, 100);
-            holeFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(holeFishSlownessOption);
-
-            ModSliderOption holeFishHealthOption = holeFishHealth.ToModSliderOption(1, 100);
-            holeFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(holeFishHealthOption);
-
-            ModSliderOption holeFishLimitOption = holeFishLimit.ToModSliderOption(0, 50);
-            holeFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(holeFishLimitOption);
-
-            ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
-            hoopFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishScaleOption);
-
-            ModSliderOption hoopFishSlownessOption = hoopFishSlowness.ToModSliderOption(1, 100);
-            hoopFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishSlownessOption);
-
-            ModSliderOption hoopFishHealthOption = hoopFishHealth.ToModSliderOption(1, 100);
-            hoopFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishHealthOption);
-
-            ModSliderOption hoopFishLimitOption = hoopFishLimit.ToModSliderOption(0, 50);
-            hoopFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishLimitOption);
-
-            ModSliderOption hoverFishScaleOption = hoverFishScale.ToModSliderOption(1, 50);
-            hoverFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoverFishScaleOption);
-
-            ModSliderOption hoverFishSlownessOption = hoverFishSlowness.ToModSliderOption(1, 100);
-            hoverFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoverFishSlownessOption);
-
-            ModSliderOption hoverFishHealthOption = hoverFishHealth.ToModSliderOption(1, 100);
-            hoverFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoverFishHealthOption);
-
-            ModSliderOption hoverFishLimitOption = hoverFishLimit.ToModSliderOption(0, 50);
-            hoverFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoverFishLimitOption);
-
-            ModSliderOption jellyRayScaleOption = jellyRayScale.ToModSliderOption(1, 50);
-            jellyRayScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(jellyRayScaleOption);
-
-            ModSliderOption jellyRaySlownessOption = jellyRaySlowness.ToModSliderOption(1, 100);
-            jellyRaySlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(jellyRaySlownessOption);
-
-            ModSliderOption jellyRayHealthOption = jellyRayHealth.ToModSliderOption(1, 100);
-            jellyRayHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(jellyRayHealthOption);
-
-            ModSliderOption jellyRayLimitOption = jellyRayLimit.ToModSliderOption(0, 50);
-            jellyRayLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(jellyRayLimitOption);
-
-            ModSliderOption jumperScaleOption = jumperScale.ToModSliderOption(1, 50);
-            jumperScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(jumperScaleOption);
-
-            ModSliderOption jumperSlownessOption = jumperSlowness.ToModSliderOption(1, 100);
-            jumperSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(jumperSlownessOption);
-
-            ModSliderOption jumperHealthOption = jumperHealth.ToModSliderOption(1, 100);
-            jumperHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(jumperHealthOption);
-
-            ModSliderOption jumperLimitOption = jumperLimit.ToModSliderOption(0, 50);
-            jumperLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(jumperLimitOption);
-
-            ModSliderOption lavaLarvaScaleOption = lavaLarvaScale.ToModSliderOption(1, 50);
-            lavaLarvaScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLarvaScaleOption);
-
-            ModSliderOption lavaLarvaSlownessOption = lavaLarvaSlowness.ToModSliderOption(1, 100);
-            lavaLarvaSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLarvaSlownessOption);
-
-            ModSliderOption lavaLarvaHealthOption = lavaLarvaHealth.ToModSliderOption(1, 100);
-            lavaLarvaHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLarvaHealthOption);
-
-            ModSliderOption lavaLarvaLimitOption = lavaLarvaLimit.ToModSliderOption(0, 50);
-            lavaLarvaLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLarvaLimitOption);
-
-            ModSliderOption lavaLizardScaleOption = lavaLizardScale.ToModSliderOption(1, 50);
-            lavaLizardScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLizardScaleOption);
-
-            ModSliderOption lavaLizardSlownessOption = lavaLizardSlowness.ToModSliderOption(1, 100);
-            lavaLizardSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLizardSlownessOption);
-
-            ModSliderOption lavaLizardHealthOption = lavaLizardHealth.ToModSliderOption(1, 100);
-            lavaLizardHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLizardHealthOption);
-
-            ModSliderOption lavaLizardLimitOption = lavaLizardLimit.ToModSliderOption(0, 50);
-            lavaLizardLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(lavaLizardLimitOption);
-
-            ModSliderOption mesmerScaleOption = mesmerScale.ToModSliderOption(1, 50);
-            mesmerScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(mesmerScaleOption);
-
-            ModSliderOption mesmerSlownessOption = mesmerSlowness.ToModSliderOption(1, 100);
-            mesmerSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(mesmerSlownessOption);
-
-            ModSliderOption mesmerHealthOption = mesmerHealth.ToModSliderOption(1, 100);
-            mesmerHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(mesmerHealthOption);
-
-            ModSliderOption mesmerLimitOption = mesmerLimit.ToModSliderOption(0, 50);
-            mesmerLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(mesmerLimitOption);
-
-            ModSliderOption oculusFishScaleOption = oculusFishScale.ToModSliderOption(1, 50);
-            oculusFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(oculusFishScaleOption);
-
-            ModSliderOption oculusFishSlownessOption = oculusFishSlowness.ToModSliderOption(1, 100);
-            oculusFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(oculusFishSlownessOption);
-
-            ModSliderOption oculusFishHealthOption = oculusFishHealth.ToModSliderOption(1, 100);
-            oculusFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(oculusFishHealthOption);
-
-            ModSliderOption oculusFishLimitOption = oculusFishLimit.ToModSliderOption(0, 50);
-            oculusFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(oculusFishLimitOption);
-
-            ModSliderOption peeperScaleOption = peeperScale.ToModSliderOption(1, 50);
-            peeperScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperScaleOption);
-
-            ModSliderOption peeperSlownessOption = peeperSlowness.ToModSliderOption(1, 100);
-            peeperSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperSlownessOption);
-
-            ModSliderOption peeperHealthOption = peeperHealth.ToModSliderOption(1, 100);
-            peeperHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperHealthOption);
-
-            ModSliderOption peeperLimitOption = peeperLimit.ToModSliderOption(0, 50);
-            peeperLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperLimitOption);
-
-            ModSliderOption rabbitRayScaleOption = rabbitRayScale.ToModSliderOption(1, 50);
-            rabbitRayScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(rabbitRayScaleOption);
-
-            ModSliderOption rabbitRaySlownessOption = rabbitRaySlowness.ToModSliderOption(1, 100);
-            rabbitRaySlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(rabbitRaySlownessOption);
-
-            ModSliderOption rabbitRayHealthOption = rabbitRayHealth.ToModSliderOption(1, 100);
-            rabbitRayHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(rabbitRayHealthOption);
-
-            ModSliderOption rabbitRayLimitOption = rabbitRayLimit.ToModSliderOption(0, 50);
-            rabbitRayLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(rabbitRayLimitOption);
-
-            ModSliderOption reaperLeviathanScaleOption = reaperLeviathanScale.ToModSliderOption(1, 50);
-            reaperLeviathanScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(reaperLeviathanScaleOption);
-
-            ModSliderOption reaperLeviathanSlownessOption = reaperLeviathanSlowness.ToModSliderOption(1, 100);
-            reaperLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(reaperLeviathanSlownessOption);
-
-            ModSliderOption reaperLeviathanHealthOption = reaperLeviathanHealth.ToModSliderOption(1, 100);
-            reaperLeviathanHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(reaperLeviathanHealthOption);
-
-            ModSliderOption reaperLeviathanLimitOption = reaperLeviathanLimit.ToModSliderOption(0, 50);
-            reaperLeviathanLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(reaperLeviathanLimitOption);
-
-            ModSliderOption reefbackScaleOption = reefbackScale.ToModSliderOption(1, 50);
-            reefbackScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(reefbackScaleOption);
-
-            ModSliderOption reefbackSlownessOption = reefbackSlowness.ToModSliderOption(1, 100);
-            reefbackSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(reefbackSlownessOption);
-
-            ModSliderOption reefbackHealthOption = reefbackHealth.ToModSliderOption(1, 100);
-            reefbackHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(reefbackHealthOption);
-
-            ModSliderOption reefbackLimitOption = reefbackLimit.ToModSliderOption(0, 50);
-            reefbackLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(reefbackLimitOption);
-
-            ModSliderOption reginaldScaleOption = reginaldScale.ToModSliderOption(1, 50);
-            reginaldScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(reginaldScaleOption);
-
-            ModSliderOption reginaldSlownessOption = reginaldSlowness.ToModSliderOption(1, 100);
-            reginaldSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(reginaldSlownessOption);
-
-            ModSliderOption reginaldHealthOption = reginaldHealth.ToModSliderOption(1, 100);
-            reginaldHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(reginaldHealthOption);
-
-            ModSliderOption reginaldLimitOption = reginaldLimit.ToModSliderOption(0, 50);
-            reginaldLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(reginaldLimitOption);
-
-            ModSliderOption sandSharkScaleOption = sandSharkScale.ToModSliderOption(1, 50);
-            sandSharkScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(sandSharkScaleOption);
-
-            ModSliderOption sandSharkSlownessOption = sandSharkSlowness.ToModSliderOption(1, 100);
-            sandSharkSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(sandSharkSlownessOption);
-
-            ModSliderOption sandSharkHealthOption = sandSharkHealth.ToModSliderOption(1, 100);
-            sandSharkHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(sandSharkHealthOption);
-
-            ModSliderOption sandSharkLimitOption = sandSharkLimit.ToModSliderOption(0, 50);
-            sandSharkLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(sandSharkLimitOption);
-
-            ModSliderOption seaDragonScaleOption = seaDragonScale.ToModSliderOption(1, 50);
-            seaDragonScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaDragonScaleOption);
-
-            ModSliderOption seaDragonSlownessOption = seaDragonSlowness.ToModSliderOption(1, 100);
-            seaDragonSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaDragonSlownessOption);
-
-            ModSliderOption seaDragonHealthOption = seaDragonHealth.ToModSliderOption(1, 100);
-            seaDragonHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaDragonHealthOption);
-
-            ModSliderOption seaDragonLimitOption = seaDragonLimit.ToModSliderOption(0, 50);
-            seaDragonLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaDragonLimitOption);
-
-            ModSliderOption seaEmporerBabyScaleOption = seaEmporerBabyScale.ToModSliderOption(1, 50);
-            seaEmporerBabyScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerBabyScaleOption);
-
-            ModSliderOption seaEmporerBabySlownessOption = seaEmporerBabySlowness.ToModSliderOption(1, 100);
-            seaEmporerBabySlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerBabySlownessOption);
-
-            ModSliderOption seaEmporerBabyHealthOption = seaEmporerBabyHealth.ToModSliderOption(1, 100);
-            seaEmporerBabyHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerBabyHealthOption);
-
-            ModSliderOption seaEmporerBabyLimitOption = seaEmporerBabyLimit.ToModSliderOption(0, 50);
-            seaEmporerBabyLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerBabyLimitOption);
-
-            ModSliderOption seaEmporerJuvenileScaleOption = seaEmporerJuvenileScale.ToModSliderOption(1, 50);
-            seaEmporerJuvenileScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerJuvenileScaleOption);
-
-            ModSliderOption seaEmporerJuvenileSlownessOption = seaEmporerJuvenileSlowness.ToModSliderOption(1, 100);
-            seaEmporerJuvenileSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerJuvenileSlownessOption);
-
-            ModSliderOption seaEmporerJuvenileHealthOption = seaEmporerJuvenileHealth.ToModSliderOption(1, 100);
-            seaEmporerJuvenileHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerJuvenileHealthOption);
-
-            ModSliderOption seaEmporerJuvenileLimitOption = seaEmporerJuvenileLimit.ToModSliderOption(0, 50);
-            seaEmporerJuvenileLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaEmporerJuvenileLimitOption);
-
-            ModSliderOption seaTreaderScaleOption = seaTreaderScale.ToModSliderOption(1, 50);
-            seaTreaderScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaTreaderScaleOption);
-
-            ModSliderOption seaTreaderSlownessOption = seaTreaderSlowness.ToModSliderOption(1, 100);
-            seaTreaderSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaTreaderSlownessOption);
-
-            ModSliderOption seaTreaderHealthOption = seaTreaderHealth.ToModSliderOption(1, 100);
-            seaTreaderHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaTreaderHealthOption);
-
-            ModSliderOption seaTreaderLimitOption = seaTreaderLimit.ToModSliderOption(0, 50);
-            seaTreaderLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(seaTreaderLimitOption);
 
             ModSliderOption shockerScaleOption = shockerScale.ToModSliderOption(1, 50);
             shockerScaleOption.OnChanged += SliderOptionsChanged;
@@ -912,21 +468,589 @@ namespace BiggerFishMod
             shockerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerLimitOption);
 
-            ModSliderOption spadeFishScaleOption = spadeFishScale.ToModSliderOption(1, 50);
-            spadeFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(spadeFishScaleOption);
+            
 
-            ModSliderOption spadeFishSlownessOption = spadeFishSlowness.ToModSliderOption(1, 100);
-            spadeFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(spadeFishSlownessOption);
 
-            ModSliderOption spadeFishHealthOption = spadeFishHealth.ToModSliderOption(1, 100);
-            spadeFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(spadeFishHealthOption);
 
-            ModSliderOption spadeFishLimitOption = spadeFishLimit.ToModSliderOption(0, 50);
-            spadeFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(spadeFishLimitOption);
+            ModSliderOption biterScaleOption = biterScale.ToModSliderOption(1, 50);
+            biterScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterScaleOption);
+
+            ModSliderOption biterSlownessOption = biterSlowness.ToModSliderOption(1, 100);
+            biterSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterSlownessOption);
+
+            ModSliderOption biterHealthOption = biterHealth.ToModSliderOption(1, 100);
+            biterHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterHealthOption);
+
+            ModSliderOption biterLimitOption = biterLimit.ToModSliderOption(0, 50);
+            biterLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterLimitOption);
+
+
+
+
+
+            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
+            bladderFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishScaleOption);
+
+            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(1, 100);
+            bladderFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishSlownessOption);
+
+            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(1, 100);
+            bladderFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishHealthOption);
+
+            ModSliderOption bladderFishLimitOption = bladderFishLimit.ToModSliderOption(0, 50);
+            bladderFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishLimitOption);
+
+
+
+
+
+            ModSliderOption bleederScaleOption = bleederScale.ToModSliderOption(1, 50);
+            bleederScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederScaleOption);
+
+            ModSliderOption bleederSlownessOption = bleederSlowness.ToModSliderOption(1, 100);
+            bleederSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederSlownessOption);
+
+            ModSliderOption bleederHealthOption = bleederHealth.ToModSliderOption(1, 100);
+            bleederHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederHealthOption);
+
+            ModSliderOption bleederLimitOption = bleederLimit.ToModSliderOption(0, 50);
+            bleederLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederLimitOption);
+
+
+
+
+
+            ModSliderOption boneSharkScaleOption = boneSharkScale.ToModSliderOption(1, 50);
+            boneSharkScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkScaleOption);
+
+            ModSliderOption boneSharkSlownessOption = boneSharkSlowness.ToModSliderOption(1, 100);
+            boneSharkSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkSlownessOption);
+
+            ModSliderOption boneSharkHealthOption = boneSharkHealth.ToModSliderOption(1, 100);
+            boneSharkHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkHealthOption);
+
+            ModSliderOption boneSharkLimitOption = boneSharkLimit.ToModSliderOption(1, 100);
+            boneSharkLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkLimitOption);
+
+
+
+
+
+            ModSliderOption boomerangScaleOption = boomerangScale.ToModSliderOption(1, 50);
+            boomerangScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangScaleOption);
+
+            ModSliderOption boomerangSlownessOption = boomerangSlowness.ToModSliderOption(1, 100);
+            boomerangSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangSlownessOption);
+
+            ModSliderOption boomerangHealthOption = boomerangHealth.ToModSliderOption(1, 100);
+            boomerangHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangHealthOption);
+
+            ModSliderOption boomerangLimitOption = boomerangLimit.ToModSliderOption(0, 50);
+            boomerangLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangLimitOption);
+
+
+
+
+
+            ModSliderOption caveCrawlerScaleOption = caveCrawlerScale.ToModSliderOption(1, 50);
+            caveCrawlerScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerScaleOption);
+
+            ModSliderOption caveCrawlerSlownessOption = caveCrawlerSlowness.ToModSliderOption(1, 100);
+            caveCrawlerSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerSlownessOption);
+
+            ModSliderOption caveCrawlerHealthOption = caveCrawlerHealth.ToModSliderOption(1, 100);
+            caveCrawlerHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerHealthOption);
+
+            ModSliderOption caveCrawlerLimitOption = caveCrawlerLimit.ToModSliderOption(0, 50);
+            caveCrawlerLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerLimitOption);
+
+
+
+
+
+            ModSliderOption crabSnakeScaleOption = crabSnakeScale.ToModSliderOption(1, 50);
+            crabSnakeScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeScaleOption);
+
+            ModSliderOption crabSnakeSlownessOption = crabSnakeSlowness.ToModSliderOption(1, 100);
+            crabSnakeSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeSlownessOption);
+
+            ModSliderOption crabSnakeHealthOption = crabSnakeHealth.ToModSliderOption(1, 100);
+            crabSnakeHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeHealthOption);
+
+            ModSliderOption crabSnakeLimitOption = crabSnakeLimit.ToModSliderOption(0, 50);
+            crabSnakeLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeLimitOption);
+
+
+
+
+
+            ModSliderOption crabSquidScaleOption = crabSquidScale.ToModSliderOption(1, 50);
+            crabSquidScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidScaleOption);
+
+            ModSliderOption crabSquidSlownessOption = crabSquidSlowness.ToModSliderOption(1, 100);
+            crabSquidSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidSlownessOption);
+
+            ModSliderOption crabSquidHealthOption = crabSquidHealth.ToModSliderOption(1, 100);
+            crabSquidHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidHealthOption);
+
+            ModSliderOption crabSquidLimitOption = crabSquidLimit.ToModSliderOption(0, 50);
+            crabSquidLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidLimitOption);
+
+
+
+
+
+            ModSliderOption crashFishScaleOption = crashFishScale.ToModSliderOption(1, 50);
+            crashFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishScaleOption);
+
+            ModSliderOption crashFishSlownessOption = crashFishSlowness.ToModSliderOption(1, 100);
+            crashFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishSlownessOption);
+
+            ModSliderOption crashFishHealthOption = crashFishHealth.ToModSliderOption(1, 100);
+            crashFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishHealthOption);
+
+            ModSliderOption crashFishLimitOption = crashFishLimit.ToModSliderOption(0, 50);
+            crashFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishLimitOption);
+
+
+
+
+
+            ModSliderOption cuddleFishScaleOption = cuddleFishScale.ToModSliderOption(1, 50);
+            cuddleFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishScaleOption);
+
+            ModSliderOption cuddleFishSlownessOption = cuddleFishSlowness.ToModSliderOption(1, 100);
+            cuddleFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishSlownessOption);
+
+            ModSliderOption cuddleFishHealthOption = cuddleFishHealth.ToModSliderOption(1, 100);
+            cuddleFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishHealthOption);
+
+            ModSliderOption cuddleFishLimitOption = cuddleFishLimit.ToModSliderOption(0, 50);
+            cuddleFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishLimitOption);
+
+
+
+
+
+            ModSliderOption eyeyeScaleOption = eyeyeScale.ToModSliderOption(1, 50);
+            eyeyeScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeScaleOption);
+
+            ModSliderOption eyeyeSlownessOption = eyeyeSlowness.ToModSliderOption(1, 100);
+            eyeyeSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeSlownessOption);
+
+            ModSliderOption eyeyeHealthOption = eyeyeHealth.ToModSliderOption(1, 100);
+            eyeyeHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeHealthOption);
+
+            ModSliderOption eyeyeLimitOption = eyeyeLimit.ToModSliderOption(0, 50);
+            eyeyeLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeLimitOption);
+
+
+
+
+
+            ModSliderOption garryFishScaleOption = garryFishScale.ToModSliderOption(1, 50);
+            garryFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishScaleOption);
+
+            ModSliderOption garryFishSlownessOption = garryFishSlowness.ToModSliderOption(1, 100);
+            garryFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishSlownessOption);
+
+            ModSliderOption garryFishHealthOption = garryFishHealth.ToModSliderOption(1, 100);
+            garryFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishHealthOption);
+
+            ModSliderOption garryFishLimitOption = garryFishLimit.ToModSliderOption(0, 50);
+            garryFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishLimitOption);
+
+
+
+
+
+            ModSliderOption gasopodScaleOption = gasopodScale.ToModSliderOption(1, 50);
+            gasopodScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodScaleOption);
+
+            ModSliderOption gasopodSlownessOption = gasopodSlowness.ToModSliderOption(1, 100);
+            gasopodSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodSlownessOption);
+
+            ModSliderOption gasopodHealthOption = gasopodHealth.ToModSliderOption(1, 100);
+            gasopodHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodHealthOption);
+
+            ModSliderOption gasopodLimitOption = gasopodLimit.ToModSliderOption(0, 50);
+            gasopodLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodLimitOption);
+
+
+
+
+
+            ModSliderOption ghostLeviathanScaleOption = ghostLeviathanScale.ToModSliderOption(1, 50);
+            ghostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanScaleOption);
+
+            ModSliderOption ghostLeviathanSlownessOption = ghostLeviathanSlowness.ToModSliderOption(1, 100);
+            ghostLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanSlownessOption);
+
+            ModSliderOption ghostLeviathanHealthOption = ghostLeviathanHealth.ToModSliderOption(1, 100);
+            ghostLeviathanHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanHealthOption);
+
+            ModSliderOption ghostLeviathanLimitOption = ghostLeviathanLimit.ToModSliderOption(0, 50);
+            ghostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanLimitOption);
+
+
+
+
+
+            ModSliderOption voidGhostLeviathanScaleOption = voidGhostLeviathanScale.ToModSliderOption(1, 50);
+            voidGhostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanScaleOption);
+
+            ModSliderOption voidGhostLeviathanSlownessOption = voidGhostLeviathanSlowness.ToModSliderOption(1, 100);
+            voidGhostLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanSlownessOption);
+
+            ModSliderOption voidGhostLeviathanHealthOption = voidGhostLeviathanHealth.ToModSliderOption(1, 100);
+            voidGhostLeviathanHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanHealthOption);
+
+            ModSliderOption voidGhostLeviathanLimitOption = voidGhostLeviathanLimit.ToModSliderOption(0, 50);
+            voidGhostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanLimitOption);
+
+
+
+
+
+            ModSliderOption ghostRayScaleOption = ghostRayScale.ToModSliderOption(1, 50);
+            ghostRayScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRayScaleOption);
+
+            ModSliderOption ghostRaySlownessOption = ghostRaySlowness.ToModSliderOption(1, 100);
+            ghostRaySlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRaySlownessOption);
+
+            ModSliderOption ghostRayHealthOption = ghostRayHealth.ToModSliderOption(1, 100);
+            ghostRayHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRayHealthOption);
+
+            ModSliderOption ghostRayLimitOption = ghostRayLimit.ToModSliderOption(0, 50);
+            ghostRayLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRayLimitOption);
+
+
+
+
+
+            ModSliderOption holeFishScaleOption = holeFishScale.ToModSliderOption(1, 50);
+            holeFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishScaleOption);
+
+            ModSliderOption holeFishSlownessOption = holeFishSlowness.ToModSliderOption(1, 100);
+            holeFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishSlownessOption);
+
+            ModSliderOption holeFishHealthOption = holeFishHealth.ToModSliderOption(1, 100);
+            holeFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishHealthOption);
+
+            ModSliderOption holeFishLimitOption = holeFishLimit.ToModSliderOption(0, 50);
+            holeFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishLimitOption);
+
+
+
+
+
+            ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
+            hoopFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishScaleOption);
+
+            ModSliderOption hoopFishSlownessOption = hoopFishSlowness.ToModSliderOption(1, 100);
+            hoopFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishSlownessOption);
+
+            ModSliderOption hoopFishHealthOption = hoopFishHealth.ToModSliderOption(1, 100);
+            hoopFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishHealthOption);
+
+            ModSliderOption hoopFishLimitOption = hoopFishLimit.ToModSliderOption(0, 50);
+            hoopFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishLimitOption);
+
+
+
+
+
+            ModSliderOption hoverFishScaleOption = hoverFishScale.ToModSliderOption(1, 50);
+            hoverFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishScaleOption);
+
+            ModSliderOption hoverFishSlownessOption = hoverFishSlowness.ToModSliderOption(1, 100);
+            hoverFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishSlownessOption);
+
+            ModSliderOption hoverFishHealthOption = hoverFishHealth.ToModSliderOption(1, 100);
+            hoverFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishHealthOption);
+
+            ModSliderOption hoverFishLimitOption = hoverFishLimit.ToModSliderOption(0, 50);
+            hoverFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishLimitOption);
+
+
+
+
+
+            ModSliderOption jellyRayScaleOption = jellyRayScale.ToModSliderOption(1, 50);
+            jellyRayScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRayScaleOption);
+
+            ModSliderOption jellyRaySlownessOption = jellyRaySlowness.ToModSliderOption(1, 100);
+            jellyRaySlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRaySlownessOption);
+
+            ModSliderOption jellyRayHealthOption = jellyRayHealth.ToModSliderOption(1, 100);
+            jellyRayHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRayHealthOption);
+
+            ModSliderOption jellyRayLimitOption = jellyRayLimit.ToModSliderOption(0, 50);
+            jellyRayLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRayLimitOption);
+
+
+
+
+
+            ModSliderOption lavaLarvaScaleOption = lavaLarvaScale.ToModSliderOption(1, 50);
+            lavaLarvaScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaScaleOption);
+
+            ModSliderOption lavaLarvaSlownessOption = lavaLarvaSlowness.ToModSliderOption(1, 100);
+            lavaLarvaSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaSlownessOption);
+
+            ModSliderOption lavaLarvaHealthOption = lavaLarvaHealth.ToModSliderOption(1, 100);
+            lavaLarvaHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaHealthOption);
+
+            ModSliderOption lavaLarvaLimitOption = lavaLarvaLimit.ToModSliderOption(0, 50);
+            lavaLarvaLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaLimitOption);
+
+
+
+
+
+            ModSliderOption lavaLizardScaleOption = lavaLizardScale.ToModSliderOption(1, 50);
+            lavaLizardScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardScaleOption);
+
+            ModSliderOption lavaLizardSlownessOption = lavaLizardSlowness.ToModSliderOption(1, 100);
+            lavaLizardSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardSlownessOption);
+
+            ModSliderOption lavaLizardHealthOption = lavaLizardHealth.ToModSliderOption(1, 100);
+            lavaLizardHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardHealthOption);
+
+            ModSliderOption lavaLizardLimitOption = lavaLizardLimit.ToModSliderOption(0, 50);
+            lavaLizardLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardLimitOption);
+
+
+
+
+
+            ModSliderOption mesmerScaleOption = mesmerScale.ToModSliderOption(1, 50);
+            mesmerScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerScaleOption);
+
+            ModSliderOption mesmerSlownessOption = mesmerSlowness.ToModSliderOption(1, 100);
+            mesmerSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerSlownessOption);
+
+            ModSliderOption mesmerHealthOption = mesmerHealth.ToModSliderOption(1, 100);
+            mesmerHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerHealthOption);
+
+            ModSliderOption mesmerLimitOption = mesmerLimit.ToModSliderOption(0, 50);
+            mesmerLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerLimitOption);
+
+
+
+
+
+            ModSliderOption oculusFishScaleOption = oculusFishScale.ToModSliderOption(1, 50);
+            oculusFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishScaleOption);
+
+            ModSliderOption oculusFishSlownessOption = oculusFishSlowness.ToModSliderOption(1, 100);
+            oculusFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishSlownessOption);
+
+            ModSliderOption oculusFishHealthOption = oculusFishHealth.ToModSliderOption(1, 100);
+            oculusFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishHealthOption);
+
+            ModSliderOption oculusFishLimitOption = oculusFishLimit.ToModSliderOption(0, 50);
+            oculusFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishLimitOption);
+
+
+
+
+
+            ModSliderOption peeperScaleOption = peeperScale.ToModSliderOption(1, 50);
+            peeperScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperScaleOption);
+
+            ModSliderOption peeperSlownessOption = peeperSlowness.ToModSliderOption(1, 100);
+            peeperSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperSlownessOption);
+
+            ModSliderOption peeperHealthOption = peeperHealth.ToModSliderOption(1, 100);
+            peeperHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperHealthOption);
+
+            ModSliderOption peeperLimitOption = peeperLimit.ToModSliderOption(0, 50);
+            peeperLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperLimitOption);
+
+
+
+
+
+            ModSliderOption rabbitRayScaleOption = rabbitRayScale.ToModSliderOption(1, 50);
+            rabbitRayScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRayScaleOption);
+
+            ModSliderOption rabbitRaySlownessOption = rabbitRaySlowness.ToModSliderOption(1, 100);
+            rabbitRaySlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRaySlownessOption);
+
+            ModSliderOption rabbitRayHealthOption = rabbitRayHealth.ToModSliderOption(1, 100);
+            rabbitRayHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRayHealthOption);
+
+            ModSliderOption rabbitRayLimitOption = rabbitRayLimit.ToModSliderOption(0, 50);
+            rabbitRayLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRayLimitOption);
+
+
+
+
+
+            ModSliderOption reaperLeviathanScaleOption = reaperLeviathanScale.ToModSliderOption(1, 50);
+            reaperLeviathanScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanScaleOption);
+
+            ModSliderOption reaperLeviathanSlownessOption = reaperLeviathanSlowness.ToModSliderOption(1, 100);
+            reaperLeviathanSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanSlownessOption);
+
+            ModSliderOption reaperLeviathanHealthOption = reaperLeviathanHealth.ToModSliderOption(1, 100);
+            reaperLeviathanHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanHealthOption);
+
+            ModSliderOption reaperLeviathanLimitOption = reaperLeviathanLimit.ToModSliderOption(0, 50);
+            reaperLeviathanLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanLimitOption);
+
+
+
+
+
+            ModSliderOption reefbackScaleOption = reefbackScale.ToModSliderOption(1, 50);
+            reefbackScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackScaleOption);
+
+            ModSliderOption reefbackSlownessOption = reefbackSlowness.ToModSliderOption(1, 100);
+            reefbackSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackSlownessOption);
+
+            ModSliderOption reefbackHealthOption = reefbackHealth.ToModSliderOption(1, 100);
+            reefbackHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackHealthOption);
+
+            ModSliderOption reefbackLimitOption = reefbackLimit.ToModSliderOption(0, 50);
+            reefbackLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackLimitOption);
+
+
+
+
+
+            ModSliderOption reginaldScaleOption = reginaldScale.ToModSliderOption(1, 50);
+            reginaldScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldScaleOption);
+
+            ModSliderOption reginaldSlownessOption = reginaldSlowness.ToModSliderOption(1, 100);
+            reginaldSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldSlownessOption);
+
+            ModSliderOption reginaldHealthOption = reginaldHealth.ToModSliderOption(1, 100);
+            reginaldHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldHealthOption);
+
+            ModSliderOption reginaldLimitOption = reginaldLimit.ToModSliderOption(0, 50);
+            reginaldLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldLimitOption);
+
+
+
+
 
             ModSliderOption spineEelScaleOption = spineEelScale.ToModSliderOption(1, 50);
             spineEelScaleOption.OnChanged += SliderOptionsChanged;
@@ -944,6 +1068,150 @@ namespace BiggerFishMod
             spineEelLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(spineEelLimitOption);
 
+
+
+
+
+            ModSliderOption sandSharkScaleOption = sandSharkScale.ToModSliderOption(1, 50);
+            sandSharkScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkScaleOption);
+
+            ModSliderOption sandSharkSlownessOption = sandSharkSlowness.ToModSliderOption(1, 100);
+            sandSharkSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkSlownessOption);
+
+            ModSliderOption sandSharkHealthOption = sandSharkHealth.ToModSliderOption(1, 100);
+            sandSharkHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkHealthOption);
+
+            ModSliderOption sandSharkLimitOption = sandSharkLimit.ToModSliderOption(0, 50);
+            sandSharkLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkLimitOption);
+
+
+
+
+
+            ModSliderOption seaDragonScaleOption = seaDragonScale.ToModSliderOption(1, 50);
+            seaDragonScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonScaleOption);
+
+            ModSliderOption seaDragonSlownessOption = seaDragonSlowness.ToModSliderOption(1, 100);
+            seaDragonSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonSlownessOption);
+
+            ModSliderOption seaDragonHealthOption = seaDragonHealth.ToModSliderOption(1, 100);
+            seaDragonHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonHealthOption);
+
+            ModSliderOption seaDragonLimitOption = seaDragonLimit.ToModSliderOption(0, 50);
+            seaDragonLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonLimitOption);
+
+
+
+
+
+            ModSliderOption seaEmperorBabyScaleOption = seaEmperorBabyScale.ToModSliderOption(1, 50);
+            seaEmperorBabyScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabyScaleOption);
+
+            ModSliderOption seaEmperorBabySlownessOption = seaEmperorBabySlowness.ToModSliderOption(1, 100);
+            seaEmperorBabySlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabySlownessOption);
+
+            ModSliderOption seaEmperorBabyHealthOption = seaEmperorBabyHealth.ToModSliderOption(1, 100);
+            seaEmperorBabyHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabyHealthOption);
+
+            ModSliderOption seaEmperorBabyLimitOption = seaEmperorBabyLimit.ToModSliderOption(0, 50);
+            seaEmperorBabyLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabyLimitOption);
+
+
+
+
+
+            ModSliderOption seaEmperorJuvenileScaleOption = seaEmperorJuvenileScale.ToModSliderOption(1, 50);
+            seaEmperorJuvenileScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileScaleOption);
+
+            ModSliderOption seaEmperorJuvenileSlownessOption = seaEmperorJuvenileSlowness.ToModSliderOption(1, 100);
+            seaEmperorJuvenileSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileSlownessOption);
+
+            ModSliderOption seaEmperorJuvenileHealthOption = seaEmperorJuvenileHealth.ToModSliderOption(1, 100);
+            seaEmperorJuvenileHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileHealthOption);
+
+            ModSliderOption seaEmperorJuvenileLimitOption = seaEmperorJuvenileLimit.ToModSliderOption(0, 50);
+            seaEmperorJuvenileLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileLimitOption);
+
+
+
+
+
+            ModSliderOption seaTreaderScaleOption = seaTreaderScale.ToModSliderOption(1, 50);
+            seaTreaderScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderScaleOption);
+
+            ModSliderOption seaTreaderSlownessOption = seaTreaderSlowness.ToModSliderOption(1, 100);
+            seaTreaderSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderSlownessOption);
+
+            ModSliderOption seaTreaderHealthOption = seaTreaderHealth.ToModSliderOption(1, 100);
+            seaTreaderHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderHealthOption);
+
+            ModSliderOption seaTreaderLimitOption = seaTreaderLimit.ToModSliderOption(0, 50);
+            seaTreaderLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderLimitOption);
+
+
+
+
+
+            ModSliderOption jumperScaleOption = jumperScale.ToModSliderOption(1, 50);
+            jumperScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperScaleOption);
+
+            ModSliderOption jumperSlownessOption = jumperSlowness.ToModSliderOption(1, 100);
+            jumperSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperSlownessOption);
+
+            ModSliderOption jumperHealthOption = jumperHealth.ToModSliderOption(1, 100);
+            jumperHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperHealthOption);
+
+            ModSliderOption jumperLimitOption = jumperLimit.ToModSliderOption(0, 50);
+            jumperLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperLimitOption);
+
+
+
+
+
+            ModSliderOption spadeFishScaleOption = spadeFishScale.ToModSliderOption(1, 50);
+            spadeFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishScaleOption);
+
+            ModSliderOption spadeFishSlownessOption = spadeFishSlowness.ToModSliderOption(1, 100);
+            spadeFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishSlownessOption);
+
+            ModSliderOption spadeFishHealthOption = spadeFishHealth.ToModSliderOption(1, 100);
+            spadeFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishHealthOption);
+
+            ModSliderOption spadeFishLimitOption = spadeFishLimit.ToModSliderOption(0, 50);
+            spadeFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishLimitOption);
+
+
+
+
+
             ModSliderOption stalkerScaleOption = stalkerScale.ToModSliderOption(1, 50);
             stalkerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerScaleOption);
@@ -959,6 +1227,10 @@ namespace BiggerFishMod
             ModSliderOption stalkerLimitOption = stalkerLimit.ToModSliderOption(0, 50);
             stalkerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerLimitOption);
+
+
+
+
 
             ModSliderOption warperScaleOption = warperScale.ToModSliderOption(1, 50);
             warperScaleOption.OnChanged += SliderOptionsChanged;
@@ -976,9 +1248,14 @@ namespace BiggerFishMod
             warperLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(warperLimitOption);
 
+
+
+
+
             OptionsPanelHandler.RegisterModOptions(this);
         }
 
+        #region OnChangedFunctions
         private void ToggleOptionsChanged(object sender, ToggleChangedEventArgs e)
         {
             switch (e.Id)
@@ -1164,16 +1441,16 @@ namespace BiggerFishMod
                 case "Gasopod Limit":
                     gasopodLimit.Value = e.Value;
                     break;
-                case "Void Ghost Leviathan Scale":
+                case "Ghost Leviathan Scale(Void)":
                     voidGhostLeviathanScale.Value = e.Value;
                     break;
-                case "Void Ghost Leviathan Slowness":
+                case "Ghost Leviathan Slowness(Void)":
                     voidGhostLeviathanSlowness.Value = e.Value;
                     break;
-                case "Void Ghost Leviathan Health":
+                case "Ghost Leviathan Health(Void)":
                     voidGhostLeviathanHealth.Value = e.Value;
                     break;
-                case "Void Ghost Leviathan Limit":
+                case "Ghost Leviathan Limit(Void)":
                     voidGhostLeviathanLimit.Value = e.Value;
                     break;
                 case "Ghost Leviathan Scale":
@@ -1392,29 +1669,29 @@ namespace BiggerFishMod
                 case "Sea Dragon Limit":
                     seaDragonLimit.Value = e.Value;
                     break;
-                case "Sea Emporer Baby Scale":
-                    seaEmporerBabyScale.Value = e.Value;
+                case "Sea Emperor Baby Scale":
+                    seaEmperorBabyScale.Value = e.Value;
                     break;
-                case "Sea Emporer Baby Slowness":
-                    seaEmporerBabySlowness.Value = e.Value;
+                case "Sea Emperor Baby Slowness":
+                    seaEmperorBabySlowness.Value = e.Value;
                     break;
-                case "Sea Emporer Baby Health":
-                    seaEmporerBabyHealth.Value = e.Value;
+                case "Sea Emperor Baby Health":
+                    seaEmperorBabyHealth.Value = e.Value;
                     break;
-                case "Sea Emporer Baby Limit":
-                    seaEmporerBabyLimit.Value = e.Value;
+                case "Sea Emperor Baby Limit":
+                    seaEmperorBabyLimit.Value = e.Value;
                     break;
-                case "Sea Emporer Juvenile Scale":
-                    seaEmporerJuvenileScale.Value = e.Value;
+                case "Sea Emperor Juvenile Scale":
+                    seaEmperorJuvenileScale.Value = e.Value;
                     break;
-                case "Sea Emporer Juvenile Slowness":
-                    seaEmporerJuvenileSlowness.Value = e.Value;
+                case "Sea Emperor Juvenile Slowness":
+                    seaEmperorJuvenileSlowness.Value = e.Value;
                     break;
-                case "Sea Emporer Juvenile Health":
-                    seaEmporerJuvenileHealth.Value = e.Value;
+                case "Sea Emperor Juvenile Health":
+                    seaEmperorJuvenileHealth.Value = e.Value;
                     break;
-                case "Sea Emporer Juvenile Limit":
-                    seaEmporerJuvenileLimit.Value = e.Value;
+                case "Sea Emperor Juvenile Limit":
+                    seaEmperorJuvenileLimit.Value = e.Value;
                     break;
                 case "Sea Treader Scale":
                     seaTreaderScale.Value = e.Value;
@@ -1488,6 +1765,7 @@ namespace BiggerFishMod
                 case "Warper Limit":
                     warperLimit.Value = e.Value;
                     break;
+                    #endregion
             }
         }
     }
