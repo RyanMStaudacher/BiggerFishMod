@@ -1781,149 +1781,357 @@ namespace BiggerFishMod
         public static ConfigEntry<float> proportionalSlowness;
         public static ConfigEntry<float> proportionalHealth;
         public static ConfigEntry<float> proportionalCreatureLimit;
-        public static ConfigEntry<float> peeperScale;
-        public static ConfigEntry<float> peeperSlowness;
-        public static ConfigEntry<float> peeperHealth;
-        public static ConfigEntry<float> peeperLimit;
+
+        public static ConfigEntry<float> arcticPeeperScale;
+        public static ConfigEntry<float> arcticPeeperSlowness;
+        public static ConfigEntry<float> arcticPeeperHealth;
+        public static ConfigEntry<float> arcticPeeperLimit;
+        public static ConfigEntry<float> arcticPeeperBaseHealth;
+        public static ConfigEntry<float> arcticPeeperBaseMaxAcceleration;
+        public static ConfigEntry<float> arcticPeeperBaseForwardRotationSpeed;
+        public static ConfigEntry<float> arcticPeeperBaseUpRotationSpeed;
+        public static ConfigEntry<float> arcticPeeperBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> arrowRayScale;
         public static ConfigEntry<float> arrowRaySlowness;
         public static ConfigEntry<float> arrowRayHealth;
         public static ConfigEntry<float> arrowRayLimit;
+        public static ConfigEntry<float> arrowRayBaseHealth;
+        public static ConfigEntry<float> arrowRayBaseMaxAcceleration;
+        public static ConfigEntry<float> arrowRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> arrowRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> arrowRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> boomerangScale;
         public static ConfigEntry<float> boomerangSlowness;
         public static ConfigEntry<float> boomerangHealth;
         public static ConfigEntry<float> boomerangLimit;
+        public static ConfigEntry<float> boomerangBaseHealth;
+        public static ConfigEntry<float> boomerangBaseMaxAcceleration;
+        public static ConfigEntry<float> boomerangBaseForwardRotationSpeed;
+        public static ConfigEntry<float> boomerangBaseUpRotationSpeed;
+        public static ConfigEntry<float> boomerangBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> bladderFishScale;
         public static ConfigEntry<float> bladderFishSlowness;
         public static ConfigEntry<float> bladderFishHealth;
         public static ConfigEntry<float> bladderFishLimit;
+        public static ConfigEntry<float> bladderFishBaseHealth;
+        public static ConfigEntry<float> bladderFishBaseMaxAcceleration;
+        public static ConfigEntry<float> bladderFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> bladderFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> bladderFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> hoopFishScale;
         public static ConfigEntry<float> hoopFishSlowness;
         public static ConfigEntry<float> hoopFishHealth;
         public static ConfigEntry<float> hoopFishLimit;
+        public static ConfigEntry<float> hoopFishBaseHealth;
+        public static ConfigEntry<float> hoopFishBaseMaxAcceleration;
+        public static ConfigEntry<float> hoopFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> hoopFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> hoopFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> discusFishScale;
         public static ConfigEntry<float> discusFishSlowness;
         public static ConfigEntry<float> discusFishHealth;
         public static ConfigEntry<float> discusFishLimit;
+        public static ConfigEntry<float> discusFishBaseHealth;
+        public static ConfigEntry<float> discusFishBaseMaxAcceleration;
+        public static ConfigEntry<float> discusFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> discusFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> discusFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> featherFishScale;
         public static ConfigEntry<float> featherFishSlowness;
         public static ConfigEntry<float> featherFishHealth;
         public static ConfigEntry<float> featherFishLimit;
+        public static ConfigEntry<float> featherFishBaseHealth;
+        public static ConfigEntry<float> featherFishBaseMaxAcceleration;
+        public static ConfigEntry<float> featherFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> featherFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> featherFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> nootFishScale;
         public static ConfigEntry<float> nootFishSlowness;
         public static ConfigEntry<float> nootFishHealth;
         public static ConfigEntry<float> nootFishLimit;
-        //public static ConfigEntry<float> spineFishScale; // Spine fish reference not working. Will enable once I figure out how to reference.
-        //public static ConfigEntry<float> spineFishSlowness; // Spine fish reference not working. Will enable once I figure out how to reference.
-        //public static ConfigEntry<float> spineFishLimit;
+        public static ConfigEntry<float> nootFishBaseHealth;
+        public static ConfigEntry<float> nootFishBaseMaxAcceleration;
+        public static ConfigEntry<float> nootFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> nootFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> nootFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> spinnerFishScale;
         public static ConfigEntry<float> spinnerFishSlowness;
         public static ConfigEntry<float> spinnerFishHealth;
         public static ConfigEntry<float> spinnerFishLimit;
+        public static ConfigEntry<float> spinnerFishBaseHealth;
+        public static ConfigEntry<float> spinnerFishBaseMaxAcceleration;
+        public static ConfigEntry<float> spinnerFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> spinnerFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> spinnerFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> arcticRayScale;
         public static ConfigEntry<float> arcticRaySlowness;
         public static ConfigEntry<float> arcticRayHealth;
         public static ConfigEntry<float> arcticRayLimit;
+        public static ConfigEntry<float> arcticRayBaseHealth;
+        public static ConfigEntry<float> arcticRayBaseMaxAcceleration;
+        public static ConfigEntry<float> arcticRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> arcticRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> arcticRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> jellyFishScale;
         public static ConfigEntry<float> jellyFishSlowness;
         public static ConfigEntry<float> jellyFishHealth;
         public static ConfigEntry<float> jellyFishLimit;
+        public static ConfigEntry<float> jellyFishBaseHealth;
+        public static ConfigEntry<float> jellyFishBaseMaxAcceleration;
+        public static ConfigEntry<float> jellyFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> jellyFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> jellyFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> titanHoleFishScale;
         public static ConfigEntry<float> titanHoleFishSlowness;
         public static ConfigEntry<float> titanHoleFishHealth;
         public static ConfigEntry<float> titanHoleFishLimit;
+        public static ConfigEntry<float> titanHoleFishBaseHealth;
+        public static ConfigEntry<float> titanHoleFishBaseMaxAcceleration;
+        public static ConfigEntry<float> titanHoleFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> titanHoleFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> titanHoleFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> glowWhaleScale;
         public static ConfigEntry<float> glowWhaleSlowness;
         public static ConfigEntry<float> glowWhaleHealth;
         public static ConfigEntry<float> glowWhaleLimit;
+        public static ConfigEntry<float> glowWhaleBaseHealth;
+        public static ConfigEntry<float> glowWhaleBaseMaxAcceleration;
+        public static ConfigEntry<float> glowWhaleBaseForwardRotationSpeed;
+        public static ConfigEntry<float> glowWhaleBaseUpRotationSpeed;
+        public static ConfigEntry<float> glowWhaleBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> pinnacaridScale;
         public static ConfigEntry<float> pinnacaridSlowness;
         public static ConfigEntry<float> pinnacaridHealth;
         public static ConfigEntry<float> pinnacaridLimit;
+        public static ConfigEntry<float> pinnacaridBaseHealth;
+        public static ConfigEntry<float> pinnacaridBaseMaxAcceleration;
+        public static ConfigEntry<float> pinnacaridBaseForwardRotationSpeed;
+        public static ConfigEntry<float> pinnacaridBaseUpRotationSpeed;
+        public static ConfigEntry<float> pinnacaridBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> triopsScale;
         public static ConfigEntry<float> triopsSlowness;
         public static ConfigEntry<float> triopsHealth;
         public static ConfigEntry<float> triopsLimit;
+        public static ConfigEntry<float> triopsBaseHealth;
+        public static ConfigEntry<float> triopsBaseMaxAcceleration;
+        public static ConfigEntry<float> triopsBaseForwardRotationSpeed;
+        public static ConfigEntry<float> triopsBaseUpRotationSpeed;
+        public static ConfigEntry<float> triopsBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> trivalveScale;
         public static ConfigEntry<float> trivalveSlowness;
         public static ConfigEntry<float> trivalveHealth;
         public static ConfigEntry<float> trivalveLimit;
+        public static ConfigEntry<float> trivalveBaseHealth;
+        public static ConfigEntry<float> trivalveBaseMaxAcceleration;
+        public static ConfigEntry<float> trivalveBaseForwardRotationSpeed;
+        public static ConfigEntry<float> trivalveBaseUpRotationSpeed;
+        public static ConfigEntry<float> trivalveBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> symbioteFishScale;
         public static ConfigEntry<float> symbioteFishSlowness;
         public static ConfigEntry<float> symbioteFishHealth;
         public static ConfigEntry<float> symbioteFishLimit;
+        public static ConfigEntry<float> symbioteFishBaseHealth;
+        public static ConfigEntry<float> symbioteFishBaseMaxAcceleration;
+        public static ConfigEntry<float> symbioteFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> symbioteFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> symbioteFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> rockGrubScale;
         public static ConfigEntry<float> rockGrubSlowness;
         public static ConfigEntry<float> rockGrubHealth;
         public static ConfigEntry<float> rockGrubLimit;
+        public static ConfigEntry<float> rockGrubBaseHealth;
+        public static ConfigEntry<float> rockGrubBaseMaxAcceleration;
+        public static ConfigEntry<float> rockGrubBaseForwardRotationSpeed;
+        public static ConfigEntry<float> rockGrubBaseUpRotationSpeed;
+        public static ConfigEntry<float> rockGrubBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> crashFishScale;
         public static ConfigEntry<float> crashFishSlowness;
         public static ConfigEntry<float> crashFishHealth;
         public static ConfigEntry<float> crashFishLimit;
+        public static ConfigEntry<float> crashFishBaseHealth;
+        public static ConfigEntry<float> crashFishBaseMaxAcceleration;
+        public static ConfigEntry<float> crashFishBaseForwardRotationSpeed;
+        public static ConfigEntry<float> crashFishBaseUpRotationSpeed;
+        public static ConfigEntry<float> crashFishBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> brineWingScale;
         public static ConfigEntry<float> brineWingSlowness;
         public static ConfigEntry<float> brineWingHealth;
         public static ConfigEntry<float> brineWingLimit;
+        public static ConfigEntry<float> brineWingBaseHealth;
+        public static ConfigEntry<float> brineWingBaseMaxAcceleration;
+        public static ConfigEntry<float> brineWingBaseForwardRotationSpeed;
+        public static ConfigEntry<float> brineWingBaseUpRotationSpeed;
+        public static ConfigEntry<float> brineWingBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> lilyPaddlerScale;
         public static ConfigEntry<float> lilyPaddlerSlowness;
         public static ConfigEntry<float> lilyPaddlerHealth;
         public static ConfigEntry<float> lilyPaddlerLimit;
+        public static ConfigEntry<float> lilyPaddlerBaseHealth;
+        public static ConfigEntry<float> lilyPaddlerBaseMaxAcceleration;
+        public static ConfigEntry<float> lilyPaddlerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> lilyPaddlerBaseUpRotationSpeed;
+        public static ConfigEntry<float> lilyPaddlerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> cryptosuchusScale;
         public static ConfigEntry<float> cryptosuchusSlowness;
         public static ConfigEntry<float> cryptosuchusHealth;
         public static ConfigEntry<float> cryptosuchusLimit;
+        public static ConfigEntry<float> cryptosuchusBaseHealth;
+        public static ConfigEntry<float> cryptosuchusBaseMaxAcceleration;
+        public static ConfigEntry<float> cryptosuchusBaseForwardRotationSpeed;
+        public static ConfigEntry<float> cryptosuchusBaseUpRotationSpeed;
+        public static ConfigEntry<float> cryptosuchusBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> bruteSharkScale;
         public static ConfigEntry<float> bruteSharkSlowness;
         public static ConfigEntry<float> bruteSharkHealth;
+        public static ConfigEntry<float> bruteSharkBaseHealth;
+        public static ConfigEntry<float> bruteSharkBaseMaxAcceleration;
+        public static ConfigEntry<float> bruteSharkBaseForwardRotationSpeed;
+        public static ConfigEntry<float> bruteSharkBaseUpRotationSpeed;
+        public static ConfigEntry<float> bruteSharkBaseTraitsAnimatorSpeed;
         public static ConfigEntry<float> bruteSharkLimit;
+
         public static ConfigEntry<float> squidSharkScale;
         public static ConfigEntry<float> squidSharkSlowness;
         public static ConfigEntry<float> squidSharkHealth;
         public static ConfigEntry<float> squidSharkLimit;
+        public static ConfigEntry<float> squidSharkBaseHealth;
+        public static ConfigEntry<float> squidSharkBaseMaxAcceleration;
+        public static ConfigEntry<float> squidSharkBaseForwardRotationSpeed;
+        public static ConfigEntry<float> squidSharkBaseUpRotationSpeed;
+        public static ConfigEntry<float> squidSharkBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> chelicerateScale;
         public static ConfigEntry<float> chelicerateSlowness;
         public static ConfigEntry<float> chelicerateHealth;
         public static ConfigEntry<float> chelicerateLimit;
+        public static ConfigEntry<float> chelicerateBaseHealth;
+        public static ConfigEntry<float> chelicerateBaseMaxAcceleration;
+        public static ConfigEntry<float> chelicerateBaseForwardRotationSpeed;
+        public static ConfigEntry<float> chelicerateBaseUpRotationSpeed;
+        public static ConfigEntry<float> chelicerateBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> shadowLeviathanScale;
         public static ConfigEntry<float> shadowLeviathanSlowness;
         public static ConfigEntry<float> shadowLeviathanHealth;
         public static ConfigEntry<float> shadowLeviathanLimit;
+        public static ConfigEntry<float> shadowLeviathanBaseHealth;
+        public static ConfigEntry<float> shadowLeviathanBaseMaxAcceleration;
+        public static ConfigEntry<float> shadowLeviathanBaseForwardRotationSpeed;
+        public static ConfigEntry<float> shadowLeviathanBaseUpRotationSpeed;
+        public static ConfigEntry<float> shadowLeviathanBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> voidLeviathanScale;
         public static ConfigEntry<float> voidLeviathanSlowness;
         public static ConfigEntry<float> voidLeviathanHealth;
         public static ConfigEntry<float> voidLeviathanLimit;
+        public static ConfigEntry<float> voidLeviathanBaseHealth;
+        public static ConfigEntry<float> voidLeviathanBaseMaxAcceleration;
+        public static ConfigEntry<float> voidLeviathanBaseForwardRotationSpeed;
+        public static ConfigEntry<float> voidLeviathanBaseUpRotationSpeed;
+        public static ConfigEntry<float> voidLeviathanBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> skyRayScale;
         public static ConfigEntry<float> skyRaySlowness;
         public static ConfigEntry<float> skyRayHealth;
         public static ConfigEntry<float> skyRayLimit;
+        public static ConfigEntry<float> skyRayBaseHealth;
+        public static ConfigEntry<float> skyRayBaseMaxAcceleration;
+        public static ConfigEntry<float> skyRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> skyRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> skyRayBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> penglingScale;
         public static ConfigEntry<float> penglingSlowness;
         public static ConfigEntry<float> penglingHealth;
         public static ConfigEntry<float> penglingLimit;
+        public static ConfigEntry<float> penglingBaseHealth;
+        public static ConfigEntry<float> penglingBaseMaxAcceleration;
+        public static ConfigEntry<float> penglingBaseForwardRotationSpeed;
+        public static ConfigEntry<float> penglingBaseUpRotationSpeed;
+        public static ConfigEntry<float> penglingBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> pengwingScale;
         public static ConfigEntry<float> pengwingSlowness;
         public static ConfigEntry<float> pengwingHealth;
         public static ConfigEntry<float> pengwingLimit;
+        public static ConfigEntry<float> pengwingBaseHealth;
+        public static ConfigEntry<float> pengwingBaseMaxAcceleration;
+        public static ConfigEntry<float> pengwingBaseForwardRotationSpeed;
+        public static ConfigEntry<float> pengwingBaseUpRotationSpeed;
+        public static ConfigEntry<float> pengwingBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> seaMonkeyBabyScale;
         public static ConfigEntry<float> seaMonkeyBabySlowness;
         public static ConfigEntry<float> seaMonkeyBabyHealth;
         public static ConfigEntry<float> seaMonkeyBabyLimit;
+        public static ConfigEntry<float> seaMonkeyBabyBaseHealth;
+        public static ConfigEntry<float> seaMonkeyBabyBaseMaxAcceleration;
+        public static ConfigEntry<float> seaMonkeyBabyBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaMonkeyBabyBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaMonkeyBabyBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> seaMonkeyScale;
         public static ConfigEntry<float> seaMonkeySlowness;
         public static ConfigEntry<float> seaMonkeyHealth;
         public static ConfigEntry<float> seaMonkeyLimit;
+        public static ConfigEntry<float> seaMonkeyBaseHealth;
+        public static ConfigEntry<float> seaMonkeyBaseMaxAcceleration;
+        public static ConfigEntry<float> seaMonkeyBaseForwardRotationSpeed;
+        public static ConfigEntry<float> seaMonkeyBaseUpRotationSpeed;
+        public static ConfigEntry<float> seaMonkeyBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> snowStalkerBabyScale;
         public static ConfigEntry<float> snowStalkerBabySlowness;
         public static ConfigEntry<float> snowStalkerBabyHealth;
         public static ConfigEntry<float> snowStalkerBabyLimit;
+        public static ConfigEntry<float> snowStalkerBabyBaseHealth;
+        public static ConfigEntry<float> snowStalkerBabyBaseMaxAcceleration;
+        public static ConfigEntry<float> snowStalkerBabyBaseForwardRotationSpeed;
+        public static ConfigEntry<float> snowStalkerBabyBaseUpRotationSpeed;
+        public static ConfigEntry<float> snowStalkerBabyBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> snowStalkerScale;
         public static ConfigEntry<float> snowStalkerSlowness;
         public static ConfigEntry<float> snowStalkerHealth;
         public static ConfigEntry<float> snowStalkerLimit;
+        public static ConfigEntry<float> snowStalkerBaseHealth;
+        public static ConfigEntry<float> snowStalkerBaseMaxAcceleration;
+        public static ConfigEntry<float> snowStalkerBaseForwardRotationSpeed;
+        public static ConfigEntry<float> snowStalkerBaseUpRotationSpeed;
+        public static ConfigEntry<float> snowStalkerBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> rockPuncherScale;
         public static ConfigEntry<float> rockPuncherSlowness;
         public static ConfigEntry<float> rockPuncherHealth;
         public static ConfigEntry<float> rockPuncherLimit;
+        public static ConfigEntry<float> rockPuncherBaseHealth;
+        public static ConfigEntry<float> rockPuncherBaseMaxAcceleration;
+        public static ConfigEntry<float> rockPuncherBaseForwardRotationSpeed;
+        public static ConfigEntry<float> rockPuncherBaseUpRotationSpeed;
+        public static ConfigEntry<float> rockPuncherBaseTraitsAnimatorSpeed;
+
         public static ConfigEntry<float> smallVentGardenScale;
         public static ConfigEntry<float> largeVentGardenScale;
         #endregion
@@ -1954,6 +2162,30 @@ namespace BiggerFishMod
             proportionalCreatureLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(proportionalCreatureLimitOption);
 
+
+
+
+
+            ModSliderOption peeperScaleOption = arcticPeeperScale.ToModSliderOption(1, 50);
+            peeperScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperScaleOption);
+
+            ModSliderOption peeperSlownessOption = arcticPeeperSlowness.ToModSliderOption(1, 100);
+            peeperSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperSlownessOption);
+
+            ModSliderOption peeperHealthOption = arcticPeeperHealth.ToModSliderOption(1, 100);
+            peeperHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperHealthOption);
+
+            ModSliderOption peeperLimitOption = arcticPeeperLimit.ToModSliderOption(0, 50);
+            peeperLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperLimitOption);
+
+
+
+
+
             ModSliderOption arcticRayScaleOption = arcticRayScale.ToModSliderOption(1, 50);
             arcticRayScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(arcticRayScaleOption);
@@ -1969,6 +2201,10 @@ namespace BiggerFishMod
             ModSliderOption arcticRayLimitOption = arcticRayLimit.ToModSliderOption(0, 50);
             arcticRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(arcticRayLimitOption);
+
+
+
+
 
             ModSliderOption arrowRayScaleOption = arrowRayScale.ToModSliderOption(1, 50);
             arrowRayScaleOption.OnChanged += SliderOptionsChanged;
@@ -1986,6 +2222,10 @@ namespace BiggerFishMod
             arrowRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(arrowRayLimitOption);
 
+
+
+
+
             ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
             bladderFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishScaleOption);
@@ -2001,6 +2241,10 @@ namespace BiggerFishMod
             ModSliderOption bladderFishLimitOption = bladderFishLimit.ToModSliderOption(0, 50);
             bladderFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishLimitOption);
+
+
+
+
 
             ModSliderOption boomerangScaleOption = boomerangScale.ToModSliderOption(1, 50);
             boomerangScaleOption.OnChanged += SliderOptionsChanged;
@@ -2018,6 +2262,10 @@ namespace BiggerFishMod
             boomerangLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(boomerangLimitOption);
 
+
+
+
+
             ModSliderOption brineWingScaleOption = brineWingScale.ToModSliderOption(1, 50);
             brineWingScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(brineWingScaleOption);
@@ -2033,6 +2281,10 @@ namespace BiggerFishMod
             ModSliderOption brineWingLimitOption = brineWingLimit.ToModSliderOption(0, 50);
             brineWingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(brineWingLimitOption);
+
+
+
+
 
             ModSliderOption bruteSharkScaleOption = bruteSharkScale.ToModSliderOption(1, 50);
             bruteSharkScaleOption.OnChanged += SliderOptionsChanged;
@@ -2050,6 +2302,10 @@ namespace BiggerFishMod
             bruteSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bruteSharkLimitOption);
 
+
+
+
+
             ModSliderOption chelicerateScaleOption = chelicerateScale.ToModSliderOption(1, 50);
             chelicerateScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(chelicerateScaleOption);
@@ -2065,6 +2321,10 @@ namespace BiggerFishMod
             ModSliderOption chelicerateLimitOption = chelicerateLimit.ToModSliderOption(0, 50);
             chelicerateLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(chelicerateLimitOption);
+
+
+
+
 
             ModSliderOption crashFishScaleOption = crashFishScale.ToModSliderOption(1, 50);
             crashFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -2082,6 +2342,10 @@ namespace BiggerFishMod
             crashFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(crashFishLimitOption);
 
+
+
+
+
             ModSliderOption cryptosuchusScaleOption = cryptosuchusScale.ToModSliderOption(1, 50);
             cryptosuchusScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(cryptosuchusScaleOption);
@@ -2097,6 +2361,10 @@ namespace BiggerFishMod
             ModSliderOption cryptosuchusLimitOption = cryptosuchusLimit.ToModSliderOption(0, 50);
             cryptosuchusLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(cryptosuchusLimitOption);
+
+
+
+
 
             ModSliderOption discusFishScaleOption = discusFishScale.ToModSliderOption(1, 50);
             discusFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -2114,53 +2382,9 @@ namespace BiggerFishMod
             discusFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(discusFishLimitOption);
 
-            ModSliderOption featherFishScaleOption = featherFishScale.ToModSliderOption(1, 50);
-            featherFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(featherFishScaleOption);
 
-            ModSliderOption featherFishSlownessOption = featherFishSlowness.ToModSliderOption(1, 100);
-            featherFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(featherFishSlownessOption);
 
-            ModSliderOption featherFishHealthOption = featherFishHealth.ToModSliderOption(1, 100);
-            featherFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(featherFishHealthOption);
 
-            ModSliderOption featherFishLimitOption = featherFishLimit.ToModSliderOption(0, 50);
-            featherFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(featherFishLimitOption);
-
-            ModSliderOption glowWhaleScaleOption = glowWhaleScale.ToModSliderOption(1, 50);
-            glowWhaleScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(glowWhaleScaleOption);
-
-            ModSliderOption glowWhaleSlownessOption = glowWhaleSlowness.ToModSliderOption(1, 100);
-            glowWhaleSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(glowWhaleSlownessOption);
-
-            ModSliderOption glowWhaleHealthOption = glowWhaleHealth.ToModSliderOption(1, 100);
-            glowWhaleHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(glowWhaleHealthOption);
-
-            ModSliderOption glowWhaleLimitOption = glowWhaleLimit.ToModSliderOption(0, 50);
-            glowWhaleLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(glowWhaleLimitOption);
-
-            ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
-            hoopFishScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishScaleOption);
-
-            ModSliderOption hoopFishSlownessOption = hoopFishSlowness.ToModSliderOption(1, 100);
-            hoopFishSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishSlownessOption);
-
-            ModSliderOption hoopFishHealthOption = hoopFishHealth.ToModSliderOption(1, 100);
-            hoopFishHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishHealthOption);
-
-            ModSliderOption hoopFishLimitOption = hoopFishLimit.ToModSliderOption(0, 50);
-            hoopFishLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(hoopFishLimitOption);
 
             ModSliderOption jellyFishScaleOption = jellyFishScale.ToModSliderOption(1, 50);
             jellyFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -2178,6 +2402,70 @@ namespace BiggerFishMod
             jellyFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(jellyFishLimitOption);
 
+
+
+
+
+            ModSliderOption featherFishScaleOption = featherFishScale.ToModSliderOption(1, 50);
+            featherFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishScaleOption);
+
+            ModSliderOption featherFishSlownessOption = featherFishSlowness.ToModSliderOption(1, 100);
+            featherFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishSlownessOption);
+
+            ModSliderOption featherFishHealthOption = featherFishHealth.ToModSliderOption(1, 100);
+            featherFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishHealthOption);
+
+            ModSliderOption featherFishLimitOption = featherFishLimit.ToModSliderOption(0, 50);
+            featherFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishLimitOption);
+
+
+
+
+
+            ModSliderOption glowWhaleScaleOption = glowWhaleScale.ToModSliderOption(1, 50);
+            glowWhaleScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleScaleOption);
+
+            ModSliderOption glowWhaleSlownessOption = glowWhaleSlowness.ToModSliderOption(1, 100);
+            glowWhaleSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleSlownessOption);
+
+            ModSliderOption glowWhaleHealthOption = glowWhaleHealth.ToModSliderOption(1, 100);
+            glowWhaleHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleHealthOption);
+
+            ModSliderOption glowWhaleLimitOption = glowWhaleLimit.ToModSliderOption(0, 50);
+            glowWhaleLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleLimitOption);
+
+
+
+
+
+            ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
+            hoopFishScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishScaleOption);
+
+            ModSliderOption hoopFishSlownessOption = hoopFishSlowness.ToModSliderOption(1, 100);
+            hoopFishSlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishSlownessOption);
+
+            ModSliderOption hoopFishHealthOption = hoopFishHealth.ToModSliderOption(1, 100);
+            hoopFishHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishHealthOption);
+
+            ModSliderOption hoopFishLimitOption = hoopFishLimit.ToModSliderOption(0, 50);
+            hoopFishLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishLimitOption);
+
+
+
+
+
             ModSliderOption lilyPaddlerScaleOption = lilyPaddlerScale.ToModSliderOption(1, 50);
             lilyPaddlerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(lilyPaddlerScaleOption);
@@ -2193,6 +2481,10 @@ namespace BiggerFishMod
             ModSliderOption lilyPaddlerLimitOption = lilyPaddlerLimit.ToModSliderOption(0, 50);
             lilyPaddlerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(lilyPaddlerLimitOption);
+
+
+
+
 
             ModSliderOption nootFishScaleOption = nootFishScale.ToModSliderOption(1, 50);
             nootFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -2210,21 +2502,9 @@ namespace BiggerFishMod
             nootFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(nootFishLimitOption);
 
-            ModSliderOption peeperScaleOption = peeperScale.ToModSliderOption(1, 50);
-            peeperScaleOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperScaleOption);
 
-            ModSliderOption peeperSlownessOption = peeperSlowness.ToModSliderOption(1, 100);
-            peeperSlownessOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperSlownessOption);
 
-            ModSliderOption peeperHealthOption = peeperHealth.ToModSliderOption(1, 100);
-            peeperHealthOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperHealthOption);
 
-            ModSliderOption peeperLimitOption = peeperLimit.ToModSliderOption(0, 50);
-            peeperLimitOption.OnChanged += SliderOptionsChanged;
-            AddItem(peeperLimitOption);
 
             ModSliderOption penglingScaleOption = penglingScale.ToModSliderOption(1, 50);
             penglingScaleOption.OnChanged += SliderOptionsChanged;
@@ -2242,6 +2522,10 @@ namespace BiggerFishMod
             penglingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(penglingLimitOption);
 
+
+
+
+
             ModSliderOption pengwingScaleOption = pengwingScale.ToModSliderOption(1, 50);
             pengwingScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(pengwingScaleOption);
@@ -2257,6 +2541,10 @@ namespace BiggerFishMod
             ModSliderOption pengwingLimitOption = pengwingLimit.ToModSliderOption(0, 50);
             pengwingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(pengwingLimitOption);
+
+
+
+
 
             ModSliderOption pinnacaridScaleOption = pinnacaridScale.ToModSliderOption(1, 50);
             pinnacaridScaleOption.OnChanged += SliderOptionsChanged;
@@ -2274,6 +2562,10 @@ namespace BiggerFishMod
             pinnacaridLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(pinnacaridLimitOption);
 
+
+
+
+
             ModSliderOption rockGrubScaleOption = rockGrubScale.ToModSliderOption(1, 50);
             rockGrubScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(rockGrubScaleOption);
@@ -2289,6 +2581,10 @@ namespace BiggerFishMod
             ModSliderOption rockGrubLimitOption = rockGrubLimit.ToModSliderOption(0, 50);
             rockGrubLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(rockGrubLimitOption);
+
+
+
+
 
             ModSliderOption rockPuncherScaleOption = rockPuncherScale.ToModSliderOption(1, 50);
             rockPuncherScaleOption.OnChanged += SliderOptionsChanged;
@@ -2306,6 +2602,10 @@ namespace BiggerFishMod
             rockPuncherLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(rockPuncherLimitOption);
 
+
+
+
+
             ModSliderOption seaMonkeyScaleOption = seaMonkeyScale.ToModSliderOption(1, 50);
             seaMonkeyScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(seaMonkeyScaleOption);
@@ -2321,6 +2621,10 @@ namespace BiggerFishMod
             ModSliderOption seaMonkeyLimitOption = seaMonkeyLimit.ToModSliderOption(0, 50);
             seaMonkeyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaMonkeyLimitOption);
+
+
+
+
 
             ModSliderOption seaMonkeyBabyScaleOption = seaMonkeyBabyScale.ToModSliderOption(1, 50);
             seaMonkeyBabyScaleOption.OnChanged += SliderOptionsChanged;
@@ -2338,6 +2642,10 @@ namespace BiggerFishMod
            seaMonkeyBabyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaMonkeyBabyLimitOption);
 
+
+
+
+
             ModSliderOption shadowLeviathanScaleOption = shadowLeviathanScale.ToModSliderOption(1, 50);
             shadowLeviathanScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(shadowLeviathanScaleOption);
@@ -2353,6 +2661,10 @@ namespace BiggerFishMod
             ModSliderOption shadowLeviathanLimitOption = shadowLeviathanLimit.ToModSliderOption(0, 50);
             shadowLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(shadowLeviathanLimitOption);
+
+
+
+
 
             ModSliderOption skyRayScaleOption = skyRayScale.ToModSliderOption(1, 50);
             skyRayScaleOption.OnChanged += SliderOptionsChanged;
@@ -2370,6 +2682,10 @@ namespace BiggerFishMod
             skyRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(skyRayLimitOption);
 
+
+
+
+
             ModSliderOption snowStalkerScaleOption = snowStalkerScale.ToModSliderOption(1, 50);
             snowStalkerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(snowStalkerScaleOption);
@@ -2385,6 +2701,10 @@ namespace BiggerFishMod
             ModSliderOption snowStalkerLimitOption = snowStalkerLimit.ToModSliderOption(0, 50);
             snowStalkerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(snowStalkerLimitOption);
+
+
+
+
 
             ModSliderOption snowStalkerBabyScaleOption = snowStalkerBabyScale.ToModSliderOption(1, 50);
             snowStalkerBabyScaleOption.OnChanged += SliderOptionsChanged;
@@ -2402,6 +2722,10 @@ namespace BiggerFishMod
             snowStalkerBabyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(snowStalkerBabyLimitOption);
 
+
+
+
+
             ModSliderOption spinnerFishScaleOption = spinnerFishScale.ToModSliderOption(1, 50);
             spinnerFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(spinnerFishScaleOption);
@@ -2417,6 +2741,10 @@ namespace BiggerFishMod
             ModSliderOption spinnerFishLimitOption = spinnerFishLimit.ToModSliderOption(0, 50);
             spinnerFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(spinnerFishLimitOption);
+
+
+
+
 
             ModSliderOption squidSharkScaleOption = squidSharkScale.ToModSliderOption(1, 50);
             squidSharkScaleOption.OnChanged += SliderOptionsChanged;
@@ -2434,6 +2762,10 @@ namespace BiggerFishMod
             squidSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(squidSharkLimitOption);
 
+
+
+
+
             ModSliderOption symbioteFishScaleOption = symbioteFishScale.ToModSliderOption(1, 50);
             symbioteFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(symbioteFishScaleOption);
@@ -2449,6 +2781,10 @@ namespace BiggerFishMod
             ModSliderOption symbioteFishLimitOption = symbioteFishLimit.ToModSliderOption(0, 50);
             symbioteFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(symbioteFishLimitOption);
+
+
+
+
 
             ModSliderOption titanHoleFishScaleOption = titanHoleFishScale.ToModSliderOption(1, 50);
             titanHoleFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -2466,6 +2802,10 @@ namespace BiggerFishMod
             titanHoleFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(titanHoleFishLimitOption);
 
+
+
+
+
             ModSliderOption triopsScaleOption = triopsScale.ToModSliderOption(1, 50);
             triopsScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(triopsScaleOption);
@@ -2481,6 +2821,10 @@ namespace BiggerFishMod
             ModSliderOption triopsLimitOption = triopsLimit.ToModSliderOption(0, 50);
             triopsLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(triopsLimitOption);
+
+
+
+
 
             ModSliderOption trivalveScaleOption = trivalveScale.ToModSliderOption(1, 50);
             trivalveScaleOption.OnChanged += SliderOptionsChanged;
@@ -2498,6 +2842,10 @@ namespace BiggerFishMod
             trivalveLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(trivalveLimitOption);
 
+
+
+
+
             ModSliderOption voidLeviathanScaleOption = voidLeviathanScale.ToModSliderOption(1, 50);
             voidLeviathanScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(voidLeviathanScaleOption);
@@ -2514,6 +2862,10 @@ namespace BiggerFishMod
             voidLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(voidLeviathanLimitOption);
 
+
+
+
+
             ModSliderOption smallVentGardenScaleOption = smallVentGardenScale.ToModSliderOption(1, 50);
             smallVentGardenScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(smallVentGardenScaleOption);
@@ -2522,14 +2874,9 @@ namespace BiggerFishMod
             largeVentGardenScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(largeVentGardenScaleOption);
 
-            // Spine fish reference not working, will enable once reference is figured out.
-            //ModSliderOption spineFishScaleOption = spineFishScale.ToModSliderOption(1, 30);
-            //spineFishScaleOption.OnChanged += SliderOptionsChanged;
-            //AddItem(spineFishScaleOption);
 
-            //ModSliderOption spineFishSlownessOption = spineFishSlowness.ToModSliderOption(1, 10);
-            //spineFishSlownessOption.OnChanged += SliderOptionsChanged;
-            //AddItem(spineFishSlownessOption);
+
+
 
             OptionsPanelHandler.RegisterModOptions(this);
         }
@@ -2563,17 +2910,17 @@ namespace BiggerFishMod
                 case "Proportional Creature Limit":
                     proportionalCreatureLimit.Value = e.Value;
                     break;
-                case "Peeper Scale":
-                    peeperScale.Value = e.Value;
+                case "Arctic Peeper Scale":
+                    arcticPeeperScale.Value = e.Value;
                     break;
-                case "Peeper Slowness":
-                    peeperSlowness.Value = e.Value;
+                case "Arctic Peeper Slowness":
+                    arcticPeeperSlowness.Value = e.Value;
                     break;
-                case "Peeper Health":
-                    peeperHealth.Value = e.Value;
+                case "Arctic Peeper Health":
+                    arcticPeeperHealth.Value = e.Value;
                     break;
-                case "Peeper Limit":
-                    peeperLimit.Value = e.Value;
+                case "Arctic Peeper Limit":
+                    arcticPeeperLimit.Value = e.Value;
                     break;
                 case "Arrow Ray Scale":
                     arrowRayScale.Value = e.Value;
@@ -2659,13 +3006,6 @@ namespace BiggerFishMod
                 case "Nootfish Limit":
                     nootFishLimit.Value = e.Value;
                     break;
-                // Spine fish not working atm.
-                //case "Spinefish Scale":
-                //    spineFishScale.Value = e.Value;
-                //    break;
-                //case "Spinefish Slowness":
-                //    spineFishSlowness.Value = e.Value;
-                //    break;
                 case "Spinnerfish Scale":
                     spinnerFishScale.Value = e.Value;
                     break;

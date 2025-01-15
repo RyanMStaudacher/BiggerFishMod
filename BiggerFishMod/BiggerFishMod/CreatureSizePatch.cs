@@ -692,7 +692,7 @@ namespace BiggerFishMod
                 }
                 else
                 {
-                    sizeScale = MyModOptions.peeperScale.Value;
+                    sizeScale = MyModOptions.arcticPeeperScale.Value;
                 }
 
                 arcticPeeper.SetScale(sizeScale);

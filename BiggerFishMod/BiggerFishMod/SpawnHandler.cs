@@ -194,7 +194,6 @@ namespace BiggerFishMod
         public static List<GameObject> totalDiscusFish = new List<GameObject>();
         public static List<GameObject> totalFeatherFish = new List<GameObject>();
         public static List<GameObject> totalNootFish = new List<GameObject>();
-        //public static List<GameObject> totalSpineFish = new List<GameObject>(); Can't find reference to spine fish???
         public static List<GameObject> totalSpinnerFish = new List<GameObject>();
         public static List<GameObject> totalArcticRays = new List<GameObject>();
         public static List<GameObject> totalJellyfish = new List<GameObject>();
@@ -230,7 +229,6 @@ namespace BiggerFishMod
         public static float maxDiscusFish = 4;
         public static float maxFeatherFish = 4;
         public static float maxNootFish = 4;
-        //public static float maxSpineFish = 4; Can't find reference to spine fish???
         public static float maxSpinnerFish = 4;
         public static float maxArcticRays = 4;
         public static float maxJellyFish = 4;
@@ -302,7 +300,7 @@ namespace BiggerFishMod
             }
             else
             {
-                maxArcticPeepers = MyModOptions.peeperLimit.Value;
+                maxArcticPeepers = MyModOptions.arcticPeeperLimit.Value;
                 maxArrowRays = MyModOptions.arrowRayLimit.Value;
                 maxBoomerangs = MyModOptions.boomerangLimit.Value;
                 maxBladderFish = MyModOptions.bladderFishLimit.Value;

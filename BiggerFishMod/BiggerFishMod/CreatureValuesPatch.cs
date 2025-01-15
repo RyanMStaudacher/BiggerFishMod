@@ -2,6 +2,7 @@
 
 namespace BiggerFishMod
 {
+#if SUBNAUTICA
     [HarmonyPatch(typeof(Creature), nameof(Creature.InitializeOnce))]
     internal class CreatureValuesPatch
     {
@@ -369,4 +370,336 @@ namespace BiggerFishMod
             }
         }
     }
+#endif
+
+#if SUBNAUTICAZERO
+    [HarmonyPatch(typeof(Creature), nameof(Creature.InitializeOnce))]
+    internal class CreatureValuesPatch
+    {
+        [HarmonyPostfix]
+        public static void InitializeCreatureBaseValues(Creature __instance)
+        {
+            #region Passive Fish
+            if (__instance is ArcticPeeper arcticPeeper)
+            {
+                MyModOptions.arcticPeeperBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Peeper Values", "Arctic Peeper Base Health", arcticPeeper.liveMixin.health);
+                MyModOptions.arcticPeeperBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Peeper Values", "Arctic Peeper Base Max Acceleration", arcticPeeper.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.arcticPeeperBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Peeper Values", "Arctic Peeper Base Up Rotation Speed", arcticPeeper.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.arcticPeeperBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Peeper Values", "Arctic Peeper Base Forward Rotation Speed", arcticPeeper.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.arcticPeeperBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Peeper Values", "Arctic Peeper Base Traits Animator Speed", arcticPeeper.GetComponent<ArcticPeeper>().traitsAnimator.speed);
+            }
+
+            if (__instance is ArrowRay arrowRay)
+            {
+                MyModOptions.arrowRayBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Arrow Ray Values", "Arrow Ray Base Health", arrowRay.liveMixin.health);
+                MyModOptions.arrowRayBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Arrow Ray Values", "Arrow Ray Base Max Acceleration", arrowRay.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.arrowRayBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arrow Ray Values", "Arrow Ray Base Up Rotation Speed", arrowRay.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.arrowRayBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arrow Ray Values", "Arrow Ray Base Forward Rotation Speed", arrowRay.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.arrowRayBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arrow Ray Values", "Arrow Ray Base Traits Animator Speed", arrowRay.GetComponent<ArrowRay>().traitsAnimator.speed);
+            }
+
+            if (__instance is Boomerang boomerang)
+            {
+                MyModOptions.boomerangBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Boomerang Values", "Boomerang Base Health", boomerang.liveMixin.health);
+                MyModOptions.boomerangBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Boomerang Values", "Boomerang Base Max Acceleration", boomerang.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.boomerangBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Boomerang Values", "Boomerang Base Up Rotation Speed", boomerang.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.boomerangBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Boomerang Values", "Boomerang Base Forward Rotation Speed", boomerang.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.boomerangBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Boomerang Values", "Boomerang Base Traits Animator Speed", boomerang.GetComponent<Boomerang>().traitsAnimator.speed);
+            }
+
+            if (__instance is Bladderfish bladderFish)
+            {
+                MyModOptions.bladderFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("BladderFish Values", "BladderFish Base Health", bladderFish.liveMixin.health);
+                MyModOptions.bladderFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("BladderFish Values", "BladderFish Base Max Acceleration", bladderFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.bladderFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("BladderFish Values", "BladderFish Base Up Rotation Speed", bladderFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.bladderFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("BladderFish Values", "BladderFish Base Forward Rotation Speed", bladderFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.bladderFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("BladderFish Values", "BladderFish Base Traits Animator Speed", bladderFish.GetComponent<Bladderfish>().traitsAnimator.speed);
+            }
+
+            if (__instance is Hoopfish hoopFish)
+            {
+                MyModOptions.hoopFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Hoopfish Values", "Hoopfish Base Health", hoopFish.liveMixin.health);
+                MyModOptions.hoopFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Hoopfish Values", "Hoopfish Base Max Acceleration", hoopFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.hoopFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Hoopfish Values", "Hoopfish Base Up Rotation Speed", hoopFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.hoopFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Hoopfish Values", "Hoopfish Base Forward Rotation Speed", hoopFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.hoopFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Hoopfish Values", "Hoopfish Base Traits Animator Speed", hoopFish.GetComponent<Hoopfish>().traitsAnimator.speed);
+            }
+
+            if (__instance is DiscusFish discusFish)
+            {
+                MyModOptions.discusFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Discusfish Values", "Discusfish Base Health", discusFish.liveMixin.health);
+                MyModOptions.discusFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Discusfish Values", "Discusfish Base Max Acceleration", discusFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.discusFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Discusfish Values", "Discusfish Base Up Rotation Speed", discusFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.discusFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Discusfish Values", "Discusfish Base Forward Rotation Speed", discusFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.discusFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Discusfish Values", "Discusfish Base Traits Animator Speed", discusFish.GetComponent<DiscusFish>().traitsAnimator.speed);
+            }
+
+            if (__instance is FeatherFish featherFish)
+            {
+                MyModOptions.featherFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Featherfish Values", "Featherfish Base Health", featherFish.liveMixin.health);
+                MyModOptions.featherFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Featherfish Values", "Featherfish Base Max Acceleration", featherFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.featherFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Featherfish Values", "Featherfish Base Up Rotation Speed", featherFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.featherFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Featherfish Values", "Featherfish Base Forward Rotation Speed", featherFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.featherFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Featherfish Values", "Featherfish Base Traits Animator Speed", featherFish.GetComponent<FeatherFish>().traitsAnimator.speed);
+            }
+
+            if (__instance is NootFish nootFish)
+            {
+                MyModOptions.nootFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Nootfish Values", "Nootfish Base Health", nootFish.liveMixin.health);
+                MyModOptions.nootFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Nootfish Values", "Nootfish Base Max Acceleration", nootFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.nootFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Nootfish Values", "Nootfish Base Up Rotation Speed", nootFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.nootFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Nootfish Values", "Nootfish Base Forward Rotation Speed", nootFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.nootFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Nootfish Values", "Nootfish Base Traits Animator Speed", nootFish.GetComponent<NootFish>().traitsAnimator.speed);
+            }
+
+            if (__instance is SpinnerFish spinnerFish)
+            {
+                MyModOptions.spinnerFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Spinnerfish Values", "Spinnerfish Base Health", spinnerFish.liveMixin.health);
+                MyModOptions.spinnerFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Spinnerfish Values", "Spinnerfish Base Max Acceleration", spinnerFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.spinnerFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Spinnerfish Values", "Spinnerfish Base Up Rotation Speed", spinnerFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.spinnerFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Spinnerfish Values", "Spinnerfish Base Forward Rotation Speed", spinnerFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.spinnerFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Spinnerfish Values", "Spinnerfish Base Traits Animator Speed", spinnerFish.GetComponent<SpinnerFish>().traitsAnimator.speed);
+            }
+
+            if (__instance is ArcticRay arcticRay)
+            {
+                MyModOptions.arcticRayBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Ray Values", "Arctic Ray Base Health", arcticRay.liveMixin.health);
+                MyModOptions.arcticRayBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Ray Values", "Arctic Ray Base Max Acceleration", arcticRay.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.arcticRayBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Ray Values", "Arctic Ray Base Up Rotation Speed", arcticRay.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.arcticRayBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Ray Values", "Arctic Ray Base Forward Rotation Speed", arcticRay.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.arcticRayBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Arctic Ray Values", "Arctic Ray Base Traits Animator Speed", arcticRay.GetComponent<ArcticRay>().traitsAnimator.speed);
+            }
+
+            if (__instance is Jellyfish jellyFish)
+            {
+                MyModOptions.jellyFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Eye Jelly Values", "Eye Jelly Base Health", jellyFish.liveMixin.health);
+                MyModOptions.jellyFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Eye Jelly Values", "Eye Jelly Base Max Acceleration", jellyFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.jellyFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Eye Jelly Values", "Eye Jelly Base Up Rotation Speed", jellyFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.jellyFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Eye Jelly Values", "Eye Jelly Base Forward Rotation Speed", jellyFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.jellyFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Eye Jelly Values", "Eye Jelly Base Traits Animator Speed", jellyFish.GetComponent<Jellyfish>().traitsAnimator.speed);
+            }
+
+            if (__instance is TitanHolefish titanHoleFish)
+            {
+                MyModOptions.titanHoleFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Titan Hole Fish Values", "Titan Hole Fish Base Health", titanHoleFish.liveMixin.health);
+                MyModOptions.titanHoleFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Titan Hole Fish Values", "Titan Hole Fish Base Max Acceleration", titanHoleFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.titanHoleFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Titan Hole Fish Values", "Titan Hole Fish Base Up Rotation Speed", titanHoleFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.titanHoleFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Titan Hole Fish Values", "Titan Hole Fish Base Forward Rotation Speed", titanHoleFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.titanHoleFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Titan Hole Fish Values", "Titan Hole Fish Base Traits Animator Speed", titanHoleFish.GetComponent<TitanHolefish>().traitsAnimator.speed);
+            }
+
+            if (__instance is GlowWhale glowWhale)
+            {
+                MyModOptions.glowWhaleBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Glow Whale Values", "Glow Whale Base Health", glowWhale.liveMixin.health);
+                MyModOptions.glowWhaleBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Glow Whale Values", "Glow Whale Base Max Acceleration", glowWhale.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.glowWhaleBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Glow Whale Values", "Glow Whale Base Up Rotation Speed", glowWhale.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.glowWhaleBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Glow Whale Values", "Glow Whale Base Forward Rotation Speed", glowWhale.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.glowWhaleBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Glow Whale Values", "Glow Whale Base Traits Animator Speed", glowWhale.GetComponent<GlowWhale>().traitsAnimator.speed);
+            }
+
+            if (__instance is Pinnacarid pinnacarid)
+            {
+                MyModOptions.pinnacaridBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Pinnacarid Values", "Pinnacarid Base Health", pinnacarid.liveMixin.health);
+                MyModOptions.pinnacaridBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Pinnacarid Values", "Pinnacarid Base Max Acceleration", pinnacarid.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.pinnacaridBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pinnacarid Values", "Pinnacarid Base Up Rotation Speed", pinnacarid.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.pinnacaridBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pinnacarid Values", "Pinnacarid Base Forward Rotation Speed", pinnacarid.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.pinnacaridBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pinnacarid Values", "Pinnacarid Base Traits Animator Speed", pinnacarid.GetComponent<Pinnacarid>().traitsAnimator.speed);
+            }
+
+            if (__instance is Triops triops)
+            {
+                MyModOptions.triopsBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Triops Values", "Triops Base Health", triops.liveMixin.health);
+                MyModOptions.triopsBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Triops Values", "Triops Base Max Acceleration", triops.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.triopsBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Triops Values", "Triops Base Up Rotation Speed", triops.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.triopsBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Triops Values", "Triops Base Forward Rotation Speed", triops.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.triopsBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Triops Values", "Triops Base Traits Animator Speed", triops.GetComponent<Triops>().traitsAnimator.speed);
+            }
+
+            if (__instance is Trivalve trivalve)
+            {
+                MyModOptions.trivalveBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Trivalve Values", "Trivalve Base Health", trivalve.liveMixin.health);
+                MyModOptions.trivalveBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Trivalve Values", "Trivalve Base Max Acceleration", trivalve.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.trivalveBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Trivalve Values", "Trivalve Base Up Rotation Speed", trivalve.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.trivalveBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Trivalve Values", "Trivalve Base Forward Rotation Speed", trivalve.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.trivalveBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Trivalve Values", "Trivalve Base Traits Animator Speed", trivalve.GetComponent<Trivalve>().traitsAnimator.speed);
+            }
+
+            if (__instance is SymbioteFish symbioteFish)
+            {
+                MyModOptions.symbioteFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Symbiotefish Values", "Symbiotefish Base Health", symbioteFish.liveMixin.health);
+                MyModOptions.symbioteFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Symbiotefish Values", "Symbiotefish Base Max Acceleration", symbioteFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.symbioteFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Symbiotefish Values", "Symbiotefish Base Up Rotation Speed", symbioteFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.symbioteFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Symbiotefish Values", "Symbiotefish Base Forward Rotation Speed", symbioteFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.symbioteFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Symbiotefish Values", "Symbiotefish Base Traits Animator Speed", symbioteFish.GetComponent<SymbioteFish>().traitsAnimator.speed);
+            }
+
+            if (__instance is RockGrub rockGrub)
+            {
+                MyModOptions.rockGrubBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Rock Grub Values", "Rock Grub Base Health", rockGrub.liveMixin.health);
+                MyModOptions.rockGrubBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Rock Grub Values", "Rock Grub Base Max Acceleration", rockGrub.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.rockGrubBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Grub Values", "Rock Grub Base Up Rotation Speed", rockGrub.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.rockGrubBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Grub Values", "Rock Grub Base Forward Rotation Speed", rockGrub.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.rockGrubBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Grub Values", "Rock Grub Base Traits Animator Speed", rockGrub.GetComponent<RockGrub>().traitsAnimator.speed);
+            }
+            #endregion
+
+            #region Aggressive Fish
+            if (__instance is Crash crashFish)
+            {
+                MyModOptions.crashFishBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Crashfish Values", "Crashfish Base Health", crashFish.liveMixin.health);
+                MyModOptions.crashFishBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Crashfish Values", "Crashfish Base Max Acceleration", crashFish.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.crashFishBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Crashfish Values", "Crashfish Base Up Rotation Speed", crashFish.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.crashFishBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Crashfish Values", "Crashfish Base Forward Rotation Speed", crashFish.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.crashFishBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Crashfish Values", "Crashfish Base Traits Animator Speed", crashFish.GetComponent<Crash>().traitsAnimator.speed);
+            }
+
+            if (__instance is Brinewing brineWing)
+            {
+                MyModOptions.brineWingBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Brinewing Values", "Brinewing Base Health", brineWing.liveMixin.health);
+                MyModOptions.brineWingBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Brinewing Values", "Brinewing Base Max Acceleration", brineWing.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.brineWingBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brinewing Values", "Brinewing Base Up Rotation Speed", brineWing.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.brineWingBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brinewing Values", "Brinewing Base Forward Rotation Speed", brineWing.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.brineWingBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brinewing Values", "Brinewing Base Traits Animator Speed", brineWing.GetComponent<Brinewing>().traitsAnimator.speed);
+            }
+
+            if (__instance is LilyPaddler lilyPaddler)
+            {
+                MyModOptions.lilyPaddlerBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Lily Paddler Values", "Lily Paddler Base Health", lilyPaddler.liveMixin.health);
+                MyModOptions.lilyPaddlerBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Lily Paddler Values", "Lily Paddler Base Max Acceleration", lilyPaddler.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.lilyPaddlerBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Lily Paddler Values", "Lily Paddler Base Up Rotation Speed", lilyPaddler.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.lilyPaddlerBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Lily Paddler Values", "Lily Paddler Base Forward Rotation Speed", lilyPaddler.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.lilyPaddlerBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Lily Paddler Values", "Lily Paddler Base Traits Animator Speed", lilyPaddler.GetComponent<LilyPaddler>().traitsAnimator.speed);
+            }
+
+            if (__instance is Cryptosuchus cryptosuchus)
+            {
+                MyModOptions.cryptosuchusBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Cryptosuchus Values", "Cryptosuchus Base Health", cryptosuchus.liveMixin.health);
+                MyModOptions.cryptosuchusBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Cryptosuchus Values", "Cryptosuchus Base Max Acceleration", cryptosuchus.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.cryptosuchusBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Cryptosuchus Values", "Cryptosuchus Base Up Rotation Speed", cryptosuchus.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.cryptosuchusBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Cryptosuchus Values", "Cryptosuchus Base Forward Rotation Speed", cryptosuchus.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.cryptosuchusBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Cryptosuchus Values", "Cryptosuchus Base Traits Animator Speed", cryptosuchus.GetComponent<Cryptosuchus>().traitsAnimator.speed);
+            }
+
+            if (__instance is BruteShark bruteShark)
+            {
+                MyModOptions.bruteSharkBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Brute Shark Values", "Brute Shark Base Health", bruteShark.liveMixin.health);
+                MyModOptions.bruteSharkBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Brute Shark Values", "Brute Shark Base Max Acceleration", bruteShark.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.bruteSharkBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brute Shark Values", "Brute Shark Base Up Rotation Speed", bruteShark.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.bruteSharkBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brute Shark Values", "Brute Shark Base Forward Rotation Speed", bruteShark.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.bruteSharkBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Brute Shark Values", "Brute Shark Base Traits Animator Speed", bruteShark.GetComponent<BruteShark>().traitsAnimator.speed);
+            }
+
+            if (__instance is SquidShark squidShark)
+            {
+                MyModOptions.squidSharkBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Squid Shark Values", "Squid Shark Base Health", squidShark.liveMixin.health);
+                MyModOptions.squidSharkBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Squid Shark Values", "Squid Shark Base Max Acceleration", squidShark.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.squidSharkBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Squid Shark Values", "Squid Shark Base Up Rotation Speed", squidShark.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.squidSharkBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Squid Shark Values", "Squid Shark Base Forward Rotation Speed", squidShark.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.squidSharkBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Squid Shark Values", "Squid Shark Base Traits Animator Speed", squidShark.GetComponent<SquidShark>().traitsAnimator.speed);
+            }
+
+            if (__instance is Chelicerate chelicerate)
+            {
+                MyModOptions.chelicerateBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Chelicerate Values", "Chelicerate Base Health", chelicerate.liveMixin.health);
+                MyModOptions.chelicerateBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Chelicerate Values", "Chelicerate Base Max Acceleration", chelicerate.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.chelicerateBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Chelicerate Values", "Chelicerate Base Up Rotation Speed", chelicerate.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.chelicerateBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Chelicerate Values", "Chelicerate Base Forward Rotation Speed", chelicerate.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.chelicerateBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Chelicerate Values", "Chelicerate Base Traits Animator Speed", chelicerate.GetComponent<Chelicerate>().traitsAnimator.speed);
+            }
+
+            if (__instance is ShadowLeviathan shadowLeviathan)
+            {
+                MyModOptions.shadowLeviathanBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Shadow Leviathan Values", "Shadow Leviathan Base Health", shadowLeviathan.liveMixin.health);
+                MyModOptions.shadowLeviathanBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Shadow Leviathan Values", "Shadow Leviathan Base Max Acceleration", shadowLeviathan.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.shadowLeviathanBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Shadow Leviathan Values", "Shadow Leviathan Base Up Rotation Speed", shadowLeviathan.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.shadowLeviathanBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Shadow Leviathan Values", "Shadow Leviathan Base Forward Rotation Speed", shadowLeviathan.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.shadowLeviathanBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Shadow Leviathan Values", "Shadow Leviathan Base Traits Animator Speed", shadowLeviathan.GetComponent<ShadowLeviathan>().traitsAnimator.speed);
+            }
+
+            if (__instance is VoidLeviathan voidLeviathan)
+            {
+                MyModOptions.voidLeviathanBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Void Leviathan Values", "Void Leviathan Base Health", voidLeviathan.liveMixin.health);
+                MyModOptions.voidLeviathanBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Void Leviathan Values", "Void Leviathan Base Max Acceleration", voidLeviathan.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.voidLeviathanBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Void Leviathan Values", "Void Leviathan Base Up Rotation Speed", voidLeviathan.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.voidLeviathanBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Void Leviathan Values", "Void Leviathan Base Forward Rotation Speed", voidLeviathan.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.voidLeviathanBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Void Leviathan Values", "Void Leviathan Base Traits Animator Speed", voidLeviathan.GetComponent<VoidLeviathan>().traitsAnimator.speed);
+            }
+            #endregion
+
+            #region Not Fish
+            if (__instance is Skyray skyRay)
+            {
+                MyModOptions.skyRayBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Sky Ray Values", "Sky Ray Base Health", skyRay.liveMixin.health);
+                MyModOptions.skyRayBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Sky Ray Values", "Sky Ray Base Max Acceleration", skyRay.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.skyRayBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sky Ray Values", "Sky Ray Base Up Rotation Speed", skyRay.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.skyRayBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sky Ray Values", "Sky Ray Base Forward Rotation Speed", skyRay.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.skyRayBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sky Ray Values", "Sky Ray Base Traits Animator Speed", skyRay.GetComponent<Skyray>().traitsAnimator.speed);
+            }
+
+            if (__instance is PenguinBaby pengling)
+            {
+                MyModOptions.penglingBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Pengling Values", "Pengling Base Health", pengling.liveMixin.health);
+                MyModOptions.penglingBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Pengling Values", "Pengling Base Max Acceleration", pengling.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.penglingBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengling Values", "Pengling Base Up Rotation Speed", pengling.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.penglingBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengling Values", "Pengling Base Forward Rotation Speed", pengling.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.penglingBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengling Values", "Pengling Base Traits Animator Speed", pengling.GetComponent<PenguinBaby>().traitsAnimator.speed);
+            }
+
+            if (__instance is Penguin pengwing)
+            {
+                MyModOptions.pengwingBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Pengwing Values", "Pengwing Base Health", pengwing.liveMixin.health);
+                MyModOptions.pengwingBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Pengwing Values", "Pengwing Base Max Acceleration", pengwing.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.pengwingBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengwing Values", "Pengwing Base Up Rotation Speed", pengwing.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.pengwingBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengwing Values", "Pengwing Base Forward Rotation Speed", pengwing.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.pengwingBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Pengwing Values", "Pengwing Base Traits Animator Speed", pengwing.GetComponent<Penguin>().traitsAnimator.speed);
+            }
+
+            if (__instance is SeaMonkeyBaby seaMonkeyBaby)
+            {
+                MyModOptions.seaMonkeyBabyBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Baby Values", "Sea Monkey Baby Base Health", seaMonkeyBaby.liveMixin.health);
+                MyModOptions.seaMonkeyBabyBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Baby Values", "Sea Monkey Baby Base Max Acceleration", seaMonkeyBaby.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.seaMonkeyBabyBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Baby Values", "Sea Monkey Baby Base Up Rotation Speed", seaMonkeyBaby.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.seaMonkeyBabyBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Baby Values", "Sea Monkey Baby Base Forward Rotation Speed", seaMonkeyBaby.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.seaMonkeyBabyBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Baby Values", "Sea Monkey Baby Base Traits Animator Speed", seaMonkeyBaby.GetComponent<SeaMonkeyBaby>().traitsAnimator.speed);
+            }
+
+            if (__instance is SeaMonkey seaMonkey)
+            {
+                MyModOptions.seaMonkeyBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Values", "Sea Monkey Base Health", seaMonkey.liveMixin.health);
+                MyModOptions.seaMonkeyBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Values", "Sea Monkey Base Max Acceleration", seaMonkey.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.seaMonkeyBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Values", "Sea Monkey Base Up Rotation Speed", seaMonkey.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.seaMonkeyBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Values", "Sea Monkey Base Forward Rotation Speed", seaMonkey.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.seaMonkeyBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Sea Monkey Values", "Sea Monkey Base Traits Animator Speed", seaMonkey.GetComponent<SeaMonkey>().traitsAnimator.speed);
+            }
+
+            if (__instance is SnowStalkerBaby snowStalkerBaby)
+            {
+                MyModOptions.snowStalkerBabyBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Baby Values", "Snow Stalker Baby Base Health", snowStalkerBaby.liveMixin.health);
+                MyModOptions.snowStalkerBabyBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Baby Values", "Snow Stalker Baby Base Max Acceleration", snowStalkerBaby.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.snowStalkerBabyBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Baby Values", "Snow Stalker Baby Base Up Rotation Speed", snowStalkerBaby.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.snowStalkerBabyBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Baby Values", "Snow Stalker Baby Base Forward Rotation Speed", snowStalkerBaby.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.snowStalkerBabyBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Baby Values", "Snow Stalker Baby Base Traits Animator Speed", snowStalkerBaby.GetComponent<SnowStalkerBaby>().traitsAnimator.speed);
+            }
+
+            if (__instance is SnowStalker snowStalker)
+            {
+                MyModOptions.snowStalkerBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Values", "Snow Stalker Base Health", snowStalker.liveMixin.health);
+                MyModOptions.snowStalkerBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Values", "Snow Stalker Base Max Acceleration", snowStalker.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.snowStalkerBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Values", "Snow Stalker Base Up Rotation Speed", snowStalker.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.snowStalkerBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Values", "Snow Stalker Base Forward Rotation Speed", snowStalker.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.snowStalkerBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Snow Stalker Values", "Snow Stalker Base Traits Animator Speed", snowStalker.GetComponent<SnowStalker>().traitsAnimator.speed);
+            }
+
+            if (__instance is RockPuncher rockPuncher)
+            {
+                MyModOptions.rockPuncherBaseHealth = ModPlugin.biggerFishSettingsConfig.Bind("Rock Puncher Values", "Rock Puncher Base Health", rockPuncher.liveMixin.health);
+                MyModOptions.rockPuncherBaseMaxAcceleration = ModPlugin.biggerFishSettingsConfig.Bind("Rock Puncher Values", "Rock Puncher Base Max Acceleration", rockPuncher.GetComponent<Locomotion>().maxAcceleration);
+                MyModOptions.rockPuncherBaseUpRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Puncher Values", "Rock Puncher Base Up Rotation Speed", rockPuncher.GetComponent<Locomotion>().upRotationSpeed);
+                MyModOptions.rockPuncherBaseForwardRotationSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Puncher Values", "Rock Puncher Base Forward Rotation Speed", rockPuncher.GetComponent<Locomotion>().forwardRotationSpeed);
+                MyModOptions.rockPuncherBaseTraitsAnimatorSpeed = ModPlugin.biggerFishSettingsConfig.Bind("Rock Puncher Values", "Rock Puncher Base Traits Animator Speed", rockPuncher.GetComponent<RockPuncher>().traitsAnimator.speed);
+            }
+            #endregion
+        }
+    }
+#endif
 }
