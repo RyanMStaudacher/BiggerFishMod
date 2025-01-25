@@ -9,19 +9,19 @@ namespace BiggerFishMod
         [HarmonyPostfix]
         public static void OnEnablePostfixSpawn(Creature __instance)
         {
-            if(__instance is Biter biter)
+            if (__instance is Biter biter)
             {
-                if(SpawnHandler.totalBiters.Count < SpawnHandler.maxBiters)
+                if (SpawnHandler.totalBiters.Count < SpawnHandler.maxBiters)
                 {
                     SpawnHandler.totalBiters.Add(biter.gameObject);
                 }
-                else if(SpawnHandler.totalBiters.Count >= SpawnHandler.maxBiters)
+                else if (SpawnHandler.totalBiters.Count >= SpawnHandler.maxBiters)
                 {
                     biter.gameObject.SetActive(false);
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
                 if (SpawnHandler.totalBladderFish.Count < SpawnHandler.maxBladderFish)
                 {
@@ -33,7 +33,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bleeder bleeder)
+            else if (__instance is Bleeder bleeder)
             {
                 if (SpawnHandler.totalBleeders.Count < SpawnHandler.maxBleeders)
                 {
@@ -45,7 +45,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BoneShark boneShark)
+            else if (__instance is BoneShark boneShark)
             {
                 if (SpawnHandler.totalBoneSharks.Count < SpawnHandler.maxBoneSharks)
                 {
@@ -57,7 +57,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
                 if (SpawnHandler.totalBoomerangs.Count < SpawnHandler.maxBoomerangs)
                 {
@@ -69,7 +69,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CaveCrawler caveCrawler)
+            else if (__instance is CaveCrawler caveCrawler)
             {
                 if (SpawnHandler.totalCaveCrawlers.Count < SpawnHandler.maxCaveCrawlers)
                 {
@@ -81,7 +81,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSnake crabSnake)
+            else if (__instance is CrabSnake crabSnake)
             {
                 if (SpawnHandler.totalCrabSnakes.Count < SpawnHandler.maxCrabSnakes)
                 {
@@ -93,7 +93,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSquid crabSquid)
+            else if (__instance is CrabSquid crabSquid)
             {
                 if (SpawnHandler.totalCrabSquids.Count < SpawnHandler.maxCrabSquids)
                 {
@@ -105,7 +105,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
                 if (SpawnHandler.totalCrashFish.Count < SpawnHandler.maxCrashFish)
                 {
@@ -117,7 +117,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CuteFish cuddleFish)
+            else if (__instance is CuteFish cuddleFish)
             {
                 if (SpawnHandler.totalCuddleFish.Count < SpawnHandler.maxCuddleFish)
                 {
@@ -129,7 +129,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Eyeye eyeye)
+            else if (__instance is Eyeye eyeye)
             {
                 if (SpawnHandler.totalEyeyes.Count < SpawnHandler.maxEyeyes)
                 {
@@ -141,7 +141,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Garryfish garryFish)
+            else if (__instance is Garryfish garryFish)
             {
                 if (SpawnHandler.totalGarryFish.Count < SpawnHandler.maxGarryFish)
                 {
@@ -153,7 +153,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GasoPod gasopod)
+            else if (__instance is GasoPod gasopod)
             {
                 if (SpawnHandler.totalGasopods.Count < SpawnHandler.maxGasopods)
                 {
@@ -165,7 +165,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviatanVoid voidGhostLeviathan)
+            else if (__instance is GhostLeviatanVoid voidGhostLeviathan)
             {
                 if (SpawnHandler.totalVoidGhostLeviathans.Count < SpawnHandler.maxVoidGhostLeviathans)
                 {
@@ -177,7 +177,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviathan ghostLeviathan)
+            else if (__instance is GhostLeviathan ghostLeviathan)
             {
                 if (SpawnHandler.totalGhostLeviathans.Count < SpawnHandler.maxGhostLeviathans)
                 {
@@ -189,7 +189,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostRay ghostRay)
+            else if (__instance is GhostRay ghostRay)
             {
                 if (SpawnHandler.totalGhostRays.Count < SpawnHandler.maxGhostRays)
                 {
@@ -201,7 +201,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Holefish holeFish)
+            else if (__instance is Holefish holeFish)
             {
                 if (SpawnHandler.totalHoleFish.Count < SpawnHandler.maxHoleFish)
                 {
@@ -213,7 +213,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
                 if (SpawnHandler.totalHoopFish.Count < SpawnHandler.maxHoopFish)
                 {
@@ -225,7 +225,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoverfish hoverFish)
+            else if (__instance is Hoverfish hoverFish)
             {
                 if (SpawnHandler.totalHoverFish.Count < SpawnHandler.maxHoverFish)
                 {
@@ -237,7 +237,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyray jellyRay)
+            else if (__instance is Jellyray jellyRay)
             {
                 if (SpawnHandler.totalJellyRays.Count < SpawnHandler.maxJellyRays)
                 {
@@ -249,7 +249,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jumper jumper)
+            else if (__instance is Jumper jumper)
             {
                 if (SpawnHandler.totalJumpers.Count < SpawnHandler.maxJumpers)
                 {
@@ -261,7 +261,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLarva lavaLarva)
+            else if (__instance is LavaLarva lavaLarva)
             {
                 if (SpawnHandler.totalLavaLarvas.Count < SpawnHandler.maxLavaLarvas)
                 {
@@ -273,7 +273,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLizard lavaLizard)
+            else if (__instance is LavaLizard lavaLizard)
             {
                 if (SpawnHandler.totalLavaLizards.Count < SpawnHandler.maxLavaLizards)
                 {
@@ -285,7 +285,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Mesmer mesmer)
+            else if (__instance is Mesmer mesmer)
             {
                 if (SpawnHandler.totalMesmers.Count < SpawnHandler.maxMesmers)
                 {
@@ -297,7 +297,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is OculusFish oculus)
+            else if (__instance is OculusFish oculus)
             {
                 if (SpawnHandler.totalOculusFish.Count < SpawnHandler.maxOculusFish)
                 {
@@ -309,7 +309,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Peeper peeper)
+            else if (__instance is Peeper peeper)
             {
                 if (SpawnHandler.totalPeepers.Count < SpawnHandler.maxPeepers)
                 {
@@ -321,7 +321,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RabbitRay rabbitRay)
+            else if (__instance is RabbitRay rabbitRay)
             {
                 if (SpawnHandler.totalRabbitRays.Count < SpawnHandler.maxRabbitRays)
                 {
@@ -333,7 +333,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ReaperLeviathan reaperLeviathan)
+            else if (__instance is ReaperLeviathan reaperLeviathan)
             {
                 if (SpawnHandler.totalReaperLeviathans.Count < SpawnHandler.maxReaperLeviathans)
                 {
@@ -345,7 +345,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reefback reefback)
+            else if (__instance is Reefback reefback)
             {
                 if (SpawnHandler.totalReefbacks.Count < SpawnHandler.maxReefbacks)
                 {
@@ -357,7 +357,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reginald reginald)
+            else if (__instance is Reginald reginald)
             {
                 if (SpawnHandler.totalReginalds.Count < SpawnHandler.maxReginalds)
                 {
@@ -369,7 +369,19 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SandShark sandShark)
+            //else if (__instance is RockGrub rockGrub)
+            //{
+            //    if (SpawnHandler.totalRockGrubs.Count < SpawnHandler.maxRockGrubs)
+            //    {
+            //        SpawnHandler.totalRockGrubs.Add(rockGrub.gameObject);
+            //    }
+            //    else if (SpawnHandler.totalRockGrubs.Count >= SpawnHandler.maxRockGrubs)
+            //    {
+            //        rockGrub.gameObject.SetActive(false);
+            //    }
+            //}
+
+            else if (__instance is SandShark sandShark)
             {
                 if (SpawnHandler.totalSandSharks.Count < SpawnHandler.maxSandSharks)
                 {
@@ -381,7 +393,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaDragon seaDragon)
+            else if (__instance is SeaDragon seaDragon)
             {
                 if (SpawnHandler.totalSeaDragons.Count < SpawnHandler.maxSeaDragons)
                 {
@@ -393,7 +405,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmperorBaby)
+            else if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
                 if (SpawnHandler.totalSeaEmperorBabies.Count < SpawnHandler.maxSeaEmperorBabies)
                 {
@@ -405,7 +417,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
+            else if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
                 if (SpawnHandler.totalSeaEmperorJuveniles.Count < SpawnHandler.maxSeaEmperorJuveniles)
                 {
@@ -417,7 +429,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaTreader seaTreader)
+            else if (__instance is SeaTreader seaTreader)
             {
                 if (SpawnHandler.totalSeaTreaders.Count < SpawnHandler.maxSeaTreaders)
                 {
@@ -429,7 +441,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Shocker shocker)
+            else if (__instance is Shocker shocker)
             {
                 if (SpawnHandler.totalShockers.Count < SpawnHandler.maxShockers)
                 {
@@ -441,7 +453,19 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Spadefish spadeFish)
+            else if (__instance is Skyray skyRay)
+            {
+                if (SpawnHandler.totalSkyRays.Count < SpawnHandler.maxSkyRays)
+                {
+                    SpawnHandler.totalSkyRays.Add(skyRay.gameObject);
+                }
+                else if (SpawnHandler.totalSkyRays.Count >= SpawnHandler.maxSkyRays)
+                {
+                    skyRay.gameObject.SetActive(false);
+                }
+            }
+
+            else if (__instance is Spadefish spadeFish)
             {
                 if (SpawnHandler.totalSpadeFish.Count < SpawnHandler.maxSpadeFish)
                 {
@@ -453,7 +477,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SpineEel spineEel)
+            else if (__instance is SpineEel spineEel)
             {
                 if (SpawnHandler.totalSpineEels.Count < SpawnHandler.maxSpineEels)
                 {
@@ -465,7 +489,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Stalker stalker)
+            else if (__instance is Stalker stalker)
             {
                 if (SpawnHandler.totalStalkers.Count < SpawnHandler.maxStalkers)
                 {
@@ -477,7 +501,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Warper warper)
+            else if (__instance is Warper warper)
             {
                 if (SpawnHandler.totalWarpers.Count < SpawnHandler.maxWarpers)
                 {
@@ -512,7 +536,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArrowRay arrowRay)
+            else if (__instance is ArrowRay arrowRay)
             {
                 if (SpawnHandler.totalArrowRays.Count < SpawnHandler.maxArrowRays)
                 {
@@ -524,7 +548,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
                 if (SpawnHandler.totalBoomerangs.Count < SpawnHandler.maxBoomerangs)
                 {
@@ -536,7 +560,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
                 if (SpawnHandler.totalBladderFish.Count < SpawnHandler.maxBladderFish)
                 {
@@ -548,7 +572,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
                 if (SpawnHandler.totalHoopFish.Count < SpawnHandler.maxHoopFish)
                 {
@@ -560,7 +584,7 @@ namespace BiggerFishMod
                 } 
             }
 
-            if (__instance is DiscusFish discusFish)
+            else if (__instance is DiscusFish discusFish)
             {
                 if (SpawnHandler.totalDiscusFish.Count < SpawnHandler.maxDiscusFish)
                 {
@@ -572,7 +596,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is FeatherFish featherFish)
+            else if (__instance is FeatherFish featherFish)
             {
                 if (SpawnHandler.totalFeatherFish.Count < SpawnHandler.maxFeatherFish)
                 {
@@ -584,7 +608,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is NootFish nootFish)
+            else if (__instance is NootFish nootFish)
             {
                 if (SpawnHandler.totalNootFish.Count < SpawnHandler.maxNootFish)
                 {
@@ -596,20 +620,7 @@ namespace BiggerFishMod
                 }
             }
 
-            // Reference to spine fish doesn't exist? Will enable once I figure out how to reference spine fish.
-            //if (__instance is SpineFish spineFish)
-            //{
-            //    if (SpawnHandler.totalSpinFish.Count < SpawnHandler.maxSpineFish)
-            //    {
-            //        SpawnHandler.totalSpinFish.Add(spineFish.gameObject);
-            //    }
-            //    else if (SpawnHandler.totalSpinFish.Count >= SpawnHandler.maxSpineFish)
-            //    {
-            //        spineFish.gameObject.SetActive(false);
-            //    }
-            //}
-
-            if (__instance is SpinnerFish spinnerFish)
+            else if (__instance is SpinnerFish spinnerFish)
             {
                 if (SpawnHandler.totalSpinnerFish.Count < SpawnHandler.maxSpinnerFish)
                 {
@@ -621,7 +632,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArcticRay arcticRay)
+            else if (__instance is ArcticRay arcticRay)
             {
                 if (SpawnHandler.totalArcticRays.Count < SpawnHandler.maxArcticRays)
                 {
@@ -633,7 +644,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyfish eyeJelly)
+            else if (__instance is Jellyfish eyeJelly)
             {
                 if (SpawnHandler.totalJellyfish.Count < SpawnHandler.maxJellyFish)
                 {
@@ -645,7 +656,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is TitanHolefish titanHolefish)
+            else if (__instance is TitanHolefish titanHolefish)
             {
                 if (SpawnHandler.totalTitanHolefish.Count < SpawnHandler.maxTitanHolefish)
                 {
@@ -657,7 +668,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GlowWhale glowWhale)
+            else if (__instance is GlowWhale glowWhale)
             {
                 if (SpawnHandler.totalGlowWhales.Count < SpawnHandler.maxGlowWhales)
                 {
@@ -669,7 +680,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Pinnacarid pinnacarid)
+            else if (__instance is Pinnacarid pinnacarid)
             {
                 if (SpawnHandler.totalPinnacarids.Count < SpawnHandler.maxPinnacarids)
                 {
@@ -681,7 +692,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Triops triops)
+            else if (__instance is Triops triops)
             {
                 if (SpawnHandler.totalTriops.Count < SpawnHandler.maxTriops)
                 {
@@ -693,7 +704,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Trivalve trivalve)
+            else if (__instance is Trivalve trivalve)
             {
                 if (SpawnHandler.totalTrivalves.Count < SpawnHandler.maxTrivalves)
                 {
@@ -705,7 +716,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SymbioteFish symbioteFish)
+            else if (__instance is SymbioteFish symbioteFish)
             {
                 if (SpawnHandler.totalSymbioteFish.Count < SpawnHandler.maxSymbioteFish)
                 {
@@ -717,7 +728,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockGrub rockGrub)
+            else if (__instance is RockGrub rockGrub)
             {
                 if (SpawnHandler.totalRockGrubs.Count < SpawnHandler.maxRockGrubs)
                 {
@@ -731,7 +742,7 @@ namespace BiggerFishMod
             #endregion
 
             #region Aggressive Fish
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
                 if (SpawnHandler.totalCrashFish.Count < SpawnHandler.maxCrashFish)
                 {
@@ -743,7 +754,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Brinewing brinewing)
+            else if (__instance is Brinewing brinewing)
             {
                 if (SpawnHandler.totalBrineWings.Count < SpawnHandler.maxBrineWings)
                 {
@@ -755,7 +766,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LilyPaddler lilyPaddler)
+            else if (__instance is LilyPaddler lilyPaddler)
             {
                 if (SpawnHandler.totalLilyPaddlers.Count < SpawnHandler.maxLilyPaddlers)
                 {
@@ -767,7 +778,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Cryptosuchus cryptosuchus)
+            else if (__instance is Cryptosuchus cryptosuchus)
             {
                 if (SpawnHandler.totalCryptosuchus.Count < SpawnHandler.maxCryptosuchus)
                 {
@@ -779,7 +790,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BruteShark bruteShark)
+            else if (__instance is BruteShark bruteShark)
             {
                 if (SpawnHandler.totalBruteSharks.Count < SpawnHandler.maxBruteSharks)
                 {
@@ -791,7 +802,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SquidShark squidShark)
+            else if (__instance is SquidShark squidShark)
             {
                 if (SpawnHandler.totalSquidSharks.Count < SpawnHandler.maxSquidSharks)
                 {
@@ -803,7 +814,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Chelicerate chelicerate)
+            else if (__instance is Chelicerate chelicerate)
             {
                 if (SpawnHandler.totalChelicerates.Count < SpawnHandler.maxChelicerates)
                 {
@@ -815,7 +826,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ShadowLeviathan shadowLeviathan)
+            else if (__instance is ShadowLeviathan shadowLeviathan)
             {
                 if (SpawnHandler.totalShadowLeviathans.Count < SpawnHandler.maxShadowLeviathans)
                 {
@@ -827,7 +838,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is VoidLeviathan voidLeviathan)
+            else if (__instance is VoidLeviathan voidLeviathan)
             {
                 if (SpawnHandler.totalVoidLeviathans.Count < SpawnHandler.maxVoidLeviathans)
                 {
@@ -841,19 +852,19 @@ namespace BiggerFishMod
             #endregion
 
             #region Not Fish
-            if (__instance is Skyray skyray)
+            else if (__instance is Skyray skyRay)
             {
                 if (SpawnHandler.totalSkyRays.Count < SpawnHandler.maxSkyRays)
                 {
-                    SpawnHandler.totalSkyRays.Add(skyray.gameObject);
+                    SpawnHandler.totalSkyRays.Add(skyRay.gameObject);
                 }
                 else if (SpawnHandler.totalSkyRays.Count >= SpawnHandler.maxSkyRays)
                 {
-                    skyray.gameObject.SetActive(false);
+                    skyRay.gameObject.SetActive(false);
                 }
             }
 
-            if (__instance is PenguinBaby pengling)
+            else if (__instance is PenguinBaby pengling)
             {
                 if (SpawnHandler.totalPenglings.Count < SpawnHandler.maxPenglings)
                 {
@@ -865,7 +876,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Penguin pengwing)
+            else if (__instance is Penguin pengwing)
             {
                 if (SpawnHandler.totalPengwings.Count < SpawnHandler.maxPengwings)
                 {
@@ -877,7 +888,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkeyBaby seaMonkeyBaby)
+            else if (__instance is SeaMonkeyBaby seaMonkeyBaby)
             {
                 if (SpawnHandler.totalSeaMonkeyBabies.Count < SpawnHandler.maxSeaMonkeyBabies)
                 {
@@ -889,7 +900,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkey seaMonkey)
+            else if (__instance is SeaMonkey seaMonkey)
             {
                 if (SpawnHandler.totalSeaMonkeys.Count < SpawnHandler.maxSeaMonkeys)
                 {
@@ -901,7 +912,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalkerBaby snowStalkerBaby)
+            else if (__instance is SnowStalkerBaby snowStalkerBaby)
             {
                 if (SpawnHandler.totalSnowStalkerBabies.Count < SpawnHandler.maxSnowStalkerBabies)
                 {
@@ -913,7 +924,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalker snowStalker)
+            else if (__instance is SnowStalker snowStalker)
             {
                 if (SpawnHandler.totalSnowStalkers.Count < SpawnHandler.maxSnowStalkers)
                 {
@@ -925,7 +936,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockPuncher rockPuncher)
+            else if (__instance is RockPuncher rockPuncher)
             {
                 if (SpawnHandler.totalRockPunchers.Count < SpawnHandler.maxRockPunchers)
                 {

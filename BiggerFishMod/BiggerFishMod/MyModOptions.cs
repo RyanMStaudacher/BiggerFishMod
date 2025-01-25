@@ -1,8 +1,11 @@
 ﻿using BepInEx.Configuration;
+using ICSharpCode.SharpZipLib.Zip;
 using JetBrains.Annotations;
 using Nautilus.Handlers;
 using Nautilus.Options;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace BiggerFishMod
@@ -18,6 +21,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> proportionalHealth;
         public static ConfigEntry<float> proportionalCreatureLimit;
 
+        public static ConfigEntry<bool> biterExclude;
         public static ConfigEntry<float> biterScale;
         public static ConfigEntry<float> biterSlowness;
         public static ConfigEntry<float> biterHealth;
@@ -28,6 +32,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> biterBaseUpRotationSpeed;
         public static ConfigEntry<float> biterBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> bladderFishExclude;
         public static ConfigEntry<float> bladderFishScale;
         public static ConfigEntry<float> bladderFishSlowness;
         public static ConfigEntry<float> bladderFishHealth;
@@ -38,6 +43,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> bladderFishBaseUpRotationSpeed;
         public static ConfigEntry<float> bladderFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> bleederExclude;
         public static ConfigEntry<float> bleederScale;
         public static ConfigEntry<float> bleederSlowness;
         public static ConfigEntry<float> bleederHealth;
@@ -48,6 +54,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> bleederBaseUpRotationSpeed;
         public static ConfigEntry<float> bleederBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> boneSharkExclude;
         public static ConfigEntry<float> boneSharkScale;
         public static ConfigEntry<float> boneSharkSlowness;
         public static ConfigEntry<float> boneSharkHealth;
@@ -58,6 +65,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> boneSharkBaseUpRotationSpeed;
         public static ConfigEntry<float> boneSharkBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> boomerangExclude;
         public static ConfigEntry<float> boomerangScale;
         public static ConfigEntry<float> boomerangSlowness;
         public static ConfigEntry<float> boomerangHealth;
@@ -68,6 +76,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> boomerangBaseUpRotationSpeed;
         public static ConfigEntry<float> boomerangBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> caveCrawlerExclude;
         public static ConfigEntry<float> caveCrawlerScale;
         public static ConfigEntry<float> caveCrawlerSlowness;
         public static ConfigEntry<float> caveCrawlerHealth;
@@ -78,6 +87,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> caveCrawlerBaseUpRotationSpeed;
         public static ConfigEntry<float> caveCrawlerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> crabSnakeExclude;
         public static ConfigEntry<float> crabSnakeScale;
         public static ConfigEntry<float> crabSnakeSlowness;
         public static ConfigEntry<float> crabSnakeHealth;
@@ -88,6 +98,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crabSnakeBaseUpRotationSpeed;
         public static ConfigEntry<float> crabSnakeBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> crabSquidExclude;
         public static ConfigEntry<float> crabSquidScale;
         public static ConfigEntry<float> crabSquidSlowness;
         public static ConfigEntry<float> crabSquidHealth;
@@ -98,7 +109,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crabSquidBaseUpRotationSpeed;
         public static ConfigEntry<float> crabSquidBaseTraitsAnimatorSpeed;
 
-
+        public static ConfigEntry<bool> crashFishExclude;
         public static ConfigEntry<float> crashFishScale;
         public static ConfigEntry<float> crashFishSlowness;
         public static ConfigEntry<float> crashFishHealth;
@@ -109,6 +120,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crashFishBaseUpRotationSpeed;
         public static ConfigEntry<float> crashFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> cuddleFishExclude;
         public static ConfigEntry<float> cuddleFishScale;
         public static ConfigEntry<float> cuddleFishSlowness;
         public static ConfigEntry<float> cuddleFishHealth;
@@ -119,6 +131,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> cuddleFishBaseUpRotationSpeed;
         public static ConfigEntry<float> cuddleFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> eyeyeExclude;
         public static ConfigEntry<float> eyeyeScale;
         public static ConfigEntry<float> eyeyeSlowness;
         public static ConfigEntry<float> eyeyeHealth;
@@ -129,6 +142,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> eyeyeBaseUpRotationSpeed;
         public static ConfigEntry<float> eyeyeBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> garryFishExclude;
         public static ConfigEntry<float> garryFishScale;
         public static ConfigEntry<float> garryFishSlowness;
         public static ConfigEntry<float> garryFishHealth;
@@ -139,6 +153,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> garryFishBaseUpRotationSpeed;
         public static ConfigEntry<float> garryFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> gasopodExclude;
         public static ConfigEntry<float> gasopodScale;
         public static ConfigEntry<float> gasopodSlowness;
         public static ConfigEntry<float> gasopodHealth;
@@ -149,6 +164,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> gasopodBaseUpRotationSpeed;
         public static ConfigEntry<float> gasopodBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> voidGhostLeviathanExclude;
         public static ConfigEntry<float> voidGhostLeviathanScale;
         public static ConfigEntry<float> voidGhostLeviathanSlowness;
         public static ConfigEntry<float> voidGhostLeviathanHealth;
@@ -159,6 +175,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> voidGhostLeviathanBaseUpRotationSpeed;
         public static ConfigEntry<float> voidGhostLeviathanBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> ghostLeviathanExclude;
         public static ConfigEntry<float> ghostLeviathanScale;
         public static ConfigEntry<float> ghostLeviathanSlowness;
         public static ConfigEntry<float> ghostLeviathanHealth;
@@ -169,6 +186,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> ghostLeviathanBaseUpRotationSpeed;
         public static ConfigEntry<float> ghostLeviathanBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> ghostRayExclude;
         public static ConfigEntry<float> ghostRayScale;
         public static ConfigEntry<float> ghostRaySlowness;
         public static ConfigEntry<float> ghostRayHealth;
@@ -179,6 +197,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> ghostRayBaseUpRotationSpeed;
         public static ConfigEntry<float> ghostRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> holeFishExclude;
         public static ConfigEntry<float> holeFishScale;
         public static ConfigEntry<float> holeFishSlowness;
         public static ConfigEntry<float> holeFishHealth;
@@ -189,6 +208,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> holeFishBaseUpRotationSpeed;
         public static ConfigEntry<float> holeFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> hoopFishExclude;
         public static ConfigEntry<float> hoopFishScale;
         public static ConfigEntry<float> hoopFishSlowness;
         public static ConfigEntry<float> hoopFishHealth;
@@ -199,6 +219,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> hoopFishBaseUpRotationSpeed;
         public static ConfigEntry<float> hoopFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> hoverFishExclude;
         public static ConfigEntry<float> hoverFishScale;
         public static ConfigEntry<float> hoverFishSlowness;
         public static ConfigEntry<float> hoverFishHealth;
@@ -209,6 +230,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> hoverFishBaseUpRotationSpeed;
         public static ConfigEntry<float> hoverFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> jellyRayExclude;
         public static ConfigEntry<float> jellyRayScale;
         public static ConfigEntry<float> jellyRaySlowness;
         public static ConfigEntry<float> jellyRayHealth;
@@ -219,6 +241,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> jellyRayBaseUpRotationSpeed;
         public static ConfigEntry<float> jellyRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> jumperExclude;
         public static ConfigEntry<float> jumperScale;
         public static ConfigEntry<float> jumperSlowness;
         public static ConfigEntry<float> jumperHealth;
@@ -229,6 +252,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> jumperBaseUpRotationSpeed;
         public static ConfigEntry<float> jumperBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> lavaLarvaExclude;
         public static ConfigEntry<float> lavaLarvaScale;
         public static ConfigEntry<float> lavaLarvaSlowness;
         public static ConfigEntry<float> lavaLarvaHealth;
@@ -239,6 +263,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> lavaLarvaBaseUpRotationSpeed;
         public static ConfigEntry<float> lavaLarvaBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> lavaLizardExclude;
         public static ConfigEntry<float> lavaLizardScale;
         public static ConfigEntry<float> lavaLizardSlowness;
         public static ConfigEntry<float> lavaLizardHealth;
@@ -249,6 +274,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> lavaLizardBaseUpRotationSpeed;
         public static ConfigEntry<float> lavaLizardBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> mesmerExclude;
         public static ConfigEntry<float> mesmerScale;
         public static ConfigEntry<float> mesmerSlowness;
         public static ConfigEntry<float> mesmerHealth;
@@ -259,6 +285,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> mesmerBaseUpRotationSpeed;
         public static ConfigEntry<float> mesmerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> oculusFishExclude;
         public static ConfigEntry<float> oculusFishScale;
         public static ConfigEntry<float> oculusFishSlowness;
         public static ConfigEntry<float> oculusFishHealth;
@@ -269,6 +296,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> oculusFishBaseUpRotationSpeed;
         public static ConfigEntry<float> oculusFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> peeperExclude;
         public static ConfigEntry<float> peeperScale;
         public static ConfigEntry<float> peeperSlowness;
         public static ConfigEntry<float> peeperHealth;
@@ -279,6 +307,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> peeperBaseUpRotationSpeed;
         public static ConfigEntry<float> peeperBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> rabbitRayExclude;
         public static ConfigEntry<float> rabbitRayScale;
         public static ConfigEntry<float> rabbitRaySlowness;
         public static ConfigEntry<float> rabbitRayHealth;
@@ -289,6 +318,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> rabbitRayBaseUpRotationSpeed;
         public static ConfigEntry<float> rabbitRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> reaperLeviathanExclude;
         public static ConfigEntry<float> reaperLeviathanScale;
         public static ConfigEntry<float> reaperLeviathanSlowness;
         public static ConfigEntry<float> reaperLeviathanHealth;
@@ -299,6 +329,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reaperLeviathanBaseUpRotationSpeed;
         public static ConfigEntry<float> reaperLeviathanBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> reefbackExclude;
         public static ConfigEntry<float> reefbackScale;
         public static ConfigEntry<float> reefbackSlowness;
         public static ConfigEntry<float> reefbackHealth;
@@ -309,6 +340,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reefbackBaseUpRotationSpeed;
         public static ConfigEntry<float> reefbackBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> reginaldExclude;
         public static ConfigEntry<float> reginaldScale;
         public static ConfigEntry<float> reginaldSlowness;
         public static ConfigEntry<float> reginaldHealth;
@@ -319,6 +351,18 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reginaldBaseUpRotationSpeed;
         public static ConfigEntry<float> reginaldBaseTraitsAnimatorSpeed;
 
+        //public static ConfigEntry<bool> rockGrubExclude;
+        //public static ConfigEntry<float> rockGrubScale;
+        //public static ConfigEntry<float> rockGrubSlowness;
+        //public static ConfigEntry<float> rockGrubHealth;
+        //public static ConfigEntry<float> rockGrubLimit;
+        //public static ConfigEntry<float> rockGrubBaseHealth;
+        //public static ConfigEntry<float> rockGrubBaseMaxAcceleration;
+        //public static ConfigEntry<float> rockGrubBaseForwardRotationSpeed;
+        //public static ConfigEntry<float> rockGrubBaseUpRotationSpeed;
+        //public static ConfigEntry<float> rockGrubBaseTraitsAnimatorSpeed;
+
+        public static ConfigEntry<bool> sandSharkExclude;
         public static ConfigEntry<float> sandSharkScale;
         public static ConfigEntry<float> sandSharkSlowness;
         public static ConfigEntry<float> sandSharkHealth;
@@ -329,6 +373,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> sandSharkBaseUpRotationSpeed;
         public static ConfigEntry<float> sandSharkBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaDragonExclude;
         public static ConfigEntry<float> seaDragonScale;
         public static ConfigEntry<float> seaDragonSlowness;
         public static ConfigEntry<float> seaDragonHealth;
@@ -339,6 +384,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaDragonBaseUpRotationSpeed;
         public static ConfigEntry<float> seaDragonBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaEmperorBabyExclude;
         public static ConfigEntry<float> seaEmperorBabyScale;
         public static ConfigEntry<float> seaEmperorBabySlowness;
         public static ConfigEntry<float> seaEmperorBabyHealth;
@@ -349,6 +395,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaEmperorBabyBaseUpRotationSpeed;
         public static ConfigEntry<float> seaEmperorBabyBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaEmperorJuvenileExclude;
         public static ConfigEntry<float> seaEmperorJuvenileScale;
         public static ConfigEntry<float> seaEmperorJuvenileSlowness;
         public static ConfigEntry<float> seaEmperorJuvenileHealth;
@@ -359,6 +406,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaEmperorJuvenileBaseUpRotationSpeed;
         public static ConfigEntry<float> seaEmperorJuvenileBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaTreaderExclude;
         public static ConfigEntry<float> seaTreaderScale;
         public static ConfigEntry<float> seaTreaderSlowness;
         public static ConfigEntry<float> seaTreaderHealth;
@@ -369,6 +417,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaTreaderBaseUpRotationSpeed;
         public static ConfigEntry<float> seaTreaderBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> shockerExclude;
         public static ConfigEntry<float> shockerScale;
         public static ConfigEntry<float> shockerSlowness;
         public static ConfigEntry<float> shockerHealth;
@@ -379,6 +428,18 @@ namespace BiggerFishMod
         public static ConfigEntry<float> shockerBaseUpRotationSpeed;
         public static ConfigEntry<float> shockerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> skyRayExclude;
+        public static ConfigEntry<float> skyRayScale;
+        public static ConfigEntry<float> skyRaySlowness;
+        public static ConfigEntry<float> skyRayHealth;
+        public static ConfigEntry<float> skyRayLimit;
+        public static ConfigEntry<float> skyRayBaseHealth;
+        public static ConfigEntry<float> skyRayBaseMaxAcceleration;
+        public static ConfigEntry<float> skyRayBaseForwardRotationSpeed;
+        public static ConfigEntry<float> skyRayBaseUpRotationSpeed;
+        public static ConfigEntry<float> skyRayBaseTraitsAnimatorSpeed;
+
+        public static ConfigEntry<bool> spadeFishExclude;
         public static ConfigEntry<float> spadeFishScale;
         public static ConfigEntry<float> spadeFishSlowness;
         public static ConfigEntry<float> spadeFishHealth;
@@ -389,6 +450,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> spadeFishBaseUpRotationSpeed;
         public static ConfigEntry<float> spadeFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> spineEelExclude;
         public static ConfigEntry<float> spineEelScale;
         public static ConfigEntry<float> spineEelSlowness;
         public static ConfigEntry<float> spineEelHealth;
@@ -399,6 +461,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> spineEelBaseUpRotationSpeed;
         public static ConfigEntry<float> spineEelBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> stalkerExclude;
         public static ConfigEntry<float> stalkerScale;
         public static ConfigEntry<float> stalkerSlowness;
         public static ConfigEntry<float> stalkerHealth;
@@ -409,6 +472,7 @@ namespace BiggerFishMod
         public static ConfigEntry<float> stalkerBaseUpRotationSpeed;
         public static ConfigEntry<float> stalkerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> warperExclude;
         public static ConfigEntry<float> warperScale;
         public static ConfigEntry<float> warperSlowness;
         public static ConfigEntry<float> warperHealth;
@@ -418,9 +482,51 @@ namespace BiggerFishMod
         public static ConfigEntry<float> warperBaseForwardRotationSpeed;
         public static ConfigEntry<float> warperBaseUpRotationSpeed;
         public static ConfigEntry<float> warperBaseTraitsAnimatorSpeed;
-
-        public static ConfigDefinition yup;
         #endregion
+
+        List<OptionItem> miscOptions = new List<OptionItem>();
+        List<OptionItem> proportionalOptions = new List<OptionItem>();
+        List<OptionItem> ampeelOptions = new List<OptionItem>();
+        List<OptionItem> biterOptions = new List<OptionItem>();
+        List<OptionItem> bladderFishOptions = new List<OptionItem>();
+        List<OptionItem> bleederOptions = new List<OptionItem>();
+        List<OptionItem> boneSharkOptions = new List<OptionItem>();
+        List<OptionItem> boomerangOptions = new List<OptionItem>();
+        List<OptionItem> caveCrawlerOptions = new List<OptionItem>();
+        List<OptionItem> crabSnakeOptions = new List<OptionItem>();
+        List<OptionItem> crabSquidOptions = new List<OptionItem>();
+        List<OptionItem> crashFishOptions = new List<OptionItem>();
+        List<OptionItem> cuddleFishOptions = new List<OptionItem>();
+        List<OptionItem> eyeyeOptions = new List<OptionItem>();
+        List<OptionItem> garryFishOptions = new List<OptionItem>();
+        List<OptionItem> gasopodOptions = new List<OptionItem>();
+        List<OptionItem> ghostLeviathanOptions = new List<OptionItem>();
+        List<OptionItem> voidGhostLeviathanOptions = new List<OptionItem>();
+        List<OptionItem> ghostRayOptions = new List<OptionItem>();
+        List<OptionItem> holeFishOptions = new List<OptionItem>();
+        List<OptionItem> hoopFishOptions = new List<OptionItem>();
+        List<OptionItem> hoverFishOptions = new List<OptionItem>();
+        List<OptionItem> jellyRayOptions = new List<OptionItem>();
+        List<OptionItem> jumperOptions = new List<OptionItem>();
+        List<OptionItem> lavaLarvaOptions = new List<OptionItem>();
+        List<OptionItem> lavaLizardOptions = new List<OptionItem>();
+        List<OptionItem> mesmerOptions = new List<OptionItem>();
+        List<OptionItem> oculusFishOptions = new List<OptionItem>();
+        List<OptionItem> peeperOptions = new List<OptionItem>();
+        List<OptionItem> rabbitRayOptions = new List<OptionItem>();
+        List<OptionItem> reaperLeviathanOptions = new List<OptionItem>();
+        List<OptionItem> reefbackOptions = new List<OptionItem>();
+        List<OptionItem> reginaldOptions = new List<OptionItem>();
+        List<OptionItem> sandSharkOptions = new List<OptionItem>();
+        List<OptionItem> seaDragonOptions = new List<OptionItem>();
+        List<OptionItem> seaEmperorBabyOptions = new List<OptionItem>();
+        List<OptionItem> seaEmperorJuvenileOptions = new List<OptionItem>();
+        List<OptionItem> seaTreaderOptions = new List<OptionItem>();
+        List<OptionItem> skyRayOptions = new List<OptionItem>();
+        List<OptionItem> spadeFishOptions = new List<OptionItem>();
+        List<OptionItem> spineEelOptions = new List<OptionItem>();
+        List<OptionItem> stalkerOptions = new List<OptionItem>();
+        List<OptionItem> warperOptions = new List<OptionItem>();
 
         public MyModOptions() : base("Bigger Fish")
         {
@@ -452,15 +558,19 @@ namespace BiggerFishMod
 
 
 
-            ModSliderOption shockerScaleOption = shockerScale.ToModSliderOption(1, 50);
+            ModToggleOption shockerExcludeOption = shockerExclude.ToModToggleOption();
+            shockerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(shockerExcludeOption);
+
+            ModSliderOption shockerScaleOption = shockerScale.ToModSliderOption(-50, 50);
             shockerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerScaleOption);
 
-            ModSliderOption shockerSlownessOption = shockerSlowness.ToModSliderOption(1, 100);
+            ModSliderOption shockerSlownessOption = shockerSlowness.ToModSliderOption(-100, 100);
             shockerSlownessOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerSlownessOption);
 
-            ModSliderOption shockerHealthOption = shockerHealth.ToModSliderOption(1, 100);
+            ModSliderOption shockerHealthOption = shockerHealth.ToModSliderOption(-100, 100);
             shockerHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerHealthOption);
 
@@ -468,9 +578,13 @@ namespace BiggerFishMod
             shockerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerLimitOption);
 
-            
 
 
+
+
+            ModToggleOption biterExcludeOption = biterExclude.ToModToggleOption();
+            biterExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(biterExcludeOption);
 
             ModSliderOption biterScaleOption = biterScale.ToModSliderOption(1, 50);
             biterScaleOption.OnChanged += SliderOptionsChanged;
@@ -492,15 +606,19 @@ namespace BiggerFishMod
 
 
 
-            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
+            ModToggleOption bladderFishExcludeOption = bladderFishExclude.ToModToggleOption();
+            bladderFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bladderFishExcludeOption);
+
+            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(-50, 50);
             bladderFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishScaleOption);
 
-            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(1, 100);
+            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(-100, 100);
             bladderFishSlownessOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishSlownessOption);
 
-            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(1, 100);
+            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(-100, 100);
             bladderFishHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishHealthOption);
 
@@ -511,6 +629,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption bleederExcludeOption = bleederExclude.ToModToggleOption();
+            bleederExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bleederExcludeOption);
 
             ModSliderOption bleederScaleOption = bleederScale.ToModSliderOption(1, 50);
             bleederScaleOption.OnChanged += SliderOptionsChanged;
@@ -532,6 +654,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption boneSharkExcludeOption = boneSharkExclude.ToModToggleOption();
+            boneSharkExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boneSharkExcludeOption);
+
             ModSliderOption boneSharkScaleOption = boneSharkScale.ToModSliderOption(1, 50);
             boneSharkScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(boneSharkScaleOption);
@@ -544,13 +670,17 @@ namespace BiggerFishMod
             boneSharkHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(boneSharkHealthOption);
 
-            ModSliderOption boneSharkLimitOption = boneSharkLimit.ToModSliderOption(1, 100);
+            ModSliderOption boneSharkLimitOption = boneSharkLimit.ToModSliderOption(1, 50);
             boneSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(boneSharkLimitOption);
 
 
 
 
+
+            ModToggleOption boomerangExcludeOption = boomerangExclude.ToModToggleOption();
+            boomerangExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boomerangExcludeOption);
 
             ModSliderOption boomerangScaleOption = boomerangScale.ToModSliderOption(1, 50);
             boomerangScaleOption.OnChanged += SliderOptionsChanged;
@@ -572,6 +702,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption caveCrawlerExcludeOption = caveCrawlerExclude.ToModToggleOption();
+            caveCrawlerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(caveCrawlerExcludeOption);
+
             ModSliderOption caveCrawlerScaleOption = caveCrawlerScale.ToModSliderOption(1, 50);
             caveCrawlerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(caveCrawlerScaleOption);
@@ -591,6 +725,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption crabSnakeExcludeOption = crabSnakeExclude.ToModToggleOption();
+            crabSnakeExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crabSnakeExcludeOption);
 
             ModSliderOption crabSnakeScaleOption = crabSnakeScale.ToModSliderOption(1, 50);
             crabSnakeScaleOption.OnChanged += SliderOptionsChanged;
@@ -612,6 +750,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption crabSquidExcludeOption = crabSquidExclude.ToModToggleOption();
+            crabSquidExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crabSquidExcludeOption);
+
             ModSliderOption crabSquidScaleOption = crabSquidScale.ToModSliderOption(1, 50);
             crabSquidScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(crabSquidScaleOption);
@@ -631,6 +773,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption crashFishExcludeOption = crashFishExclude.ToModToggleOption();
+            crashFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crashFishExcludeOption);
 
             ModSliderOption crashFishScaleOption = crashFishScale.ToModSliderOption(1, 50);
             crashFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -652,6 +798,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption cuddleFishExcludeOption = cuddleFishExclude.ToModToggleOption();
+            cuddleFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(cuddleFishExcludeOption);
+
             ModSliderOption cuddleFishScaleOption = cuddleFishScale.ToModSliderOption(1, 50);
             cuddleFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(cuddleFishScaleOption);
@@ -671,6 +821,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption eyeyeExcludeOption = eyeyeExclude.ToModToggleOption();
+            eyeyeExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(eyeyeExcludeOption);
 
             ModSliderOption eyeyeScaleOption = eyeyeScale.ToModSliderOption(1, 50);
             eyeyeScaleOption.OnChanged += SliderOptionsChanged;
@@ -692,6 +846,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption garryFishExcludeOption = garryFishExclude.ToModToggleOption();
+            garryFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(garryFishExcludeOption);
+
             ModSliderOption garryFishScaleOption = garryFishScale.ToModSliderOption(1, 50);
             garryFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(garryFishScaleOption);
@@ -711,6 +869,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption gasopodExcludeOption = gasopodExclude.ToModToggleOption();
+            gasopodExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(gasopodExcludeOption);
 
             ModSliderOption gasopodScaleOption = gasopodScale.ToModSliderOption(1, 50);
             gasopodScaleOption.OnChanged += SliderOptionsChanged;
@@ -732,6 +894,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption ghostLeviathanExcludeOption = ghostLeviathanExclude.ToModToggleOption();
+            ghostLeviathanExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(ghostLeviathanExcludeOption);
+
             ModSliderOption ghostLeviathanScaleOption = ghostLeviathanScale.ToModSliderOption(1, 50);
             ghostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(ghostLeviathanScaleOption);
@@ -751,6 +917,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption voidGhostLeviathanExcludeOption = voidGhostLeviathanExclude.ToModToggleOption();
+            voidGhostLeviathanExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(voidGhostLeviathanExcludeOption);
 
             ModSliderOption voidGhostLeviathanScaleOption = voidGhostLeviathanScale.ToModSliderOption(1, 50);
             voidGhostLeviathanScaleOption.OnChanged += SliderOptionsChanged;
@@ -772,6 +942,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption ghostRayExcludeOption = ghostRayExclude.ToModToggleOption();
+            ghostRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(ghostRayExcludeOption);
+
             ModSliderOption ghostRayScaleOption = ghostRayScale.ToModSliderOption(1, 50);
             ghostRayScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(ghostRayScaleOption);
@@ -791,6 +965,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption holeFishExcludeOption = holeFishExclude.ToModToggleOption();
+            holeFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(holeFishExcludeOption);
 
             ModSliderOption holeFishScaleOption = holeFishScale.ToModSliderOption(1, 50);
             holeFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -812,6 +990,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption hoopFishExcludeOption = hoopFishExclude.ToModToggleOption();
+            hoopFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoopFishExcludeOption);
+
             ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
             hoopFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(hoopFishScaleOption);
@@ -831,6 +1013,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption hoverFishExcludeOption = hoverFishExclude.ToModToggleOption();
+            hoverFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoverFishExcludeOption);
 
             ModSliderOption hoverFishScaleOption = hoverFishScale.ToModSliderOption(1, 50);
             hoverFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -852,6 +1038,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption jellyRayExcludeOption = jellyRayExclude.ToModToggleOption();
+            jellyRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jellyRayExcludeOption);
+
             ModSliderOption jellyRayScaleOption = jellyRayScale.ToModSliderOption(1, 50);
             jellyRayScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(jellyRayScaleOption);
@@ -871,6 +1061,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption lavaLarvaExcludeOption = lavaLarvaExclude.ToModToggleOption();
+            lavaLarvaExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lavaLarvaExcludeOption);
 
             ModSliderOption lavaLarvaScaleOption = lavaLarvaScale.ToModSliderOption(1, 50);
             lavaLarvaScaleOption.OnChanged += SliderOptionsChanged;
@@ -892,6 +1086,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption lavaLizardExcludeOption = lavaLizardExclude.ToModToggleOption();
+            lavaLizardExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lavaLizardExcludeOption);
+
             ModSliderOption lavaLizardScaleOption = lavaLizardScale.ToModSliderOption(1, 50);
             lavaLizardScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(lavaLizardScaleOption);
@@ -911,6 +1109,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption mesmerExcludeOption = mesmerExclude.ToModToggleOption();
+            mesmerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(mesmerExcludeOption);
 
             ModSliderOption mesmerScaleOption = mesmerScale.ToModSliderOption(1, 50);
             mesmerScaleOption.OnChanged += SliderOptionsChanged;
@@ -932,6 +1134,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption oculusFishExcludeOption = oculusFishExclude.ToModToggleOption();
+            oculusFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(oculusFishExcludeOption);
+
             ModSliderOption oculusFishScaleOption = oculusFishScale.ToModSliderOption(1, 50);
             oculusFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(oculusFishScaleOption);
@@ -951,6 +1157,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption peeperExcludeOption = peeperExclude.ToModToggleOption();
+            peeperExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(peeperExcludeOption);
 
             ModSliderOption peeperScaleOption = peeperScale.ToModSliderOption(1, 50);
             peeperScaleOption.OnChanged += SliderOptionsChanged;
@@ -972,6 +1182,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption rabbitRayExcludeOption = rabbitRayExclude.ToModToggleOption();
+            rabbitRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rabbitRayExcludeOption);
+
             ModSliderOption rabbitRayScaleOption = rabbitRayScale.ToModSliderOption(1, 50);
             rabbitRayScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(rabbitRayScaleOption);
@@ -991,6 +1205,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption reaperLeviathanExcludeOption = reaperLeviathanExclude.ToModToggleOption();
+            reaperLeviathanExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reaperLeviathanExcludeOption);
 
             ModSliderOption reaperLeviathanScaleOption = reaperLeviathanScale.ToModSliderOption(1, 50);
             reaperLeviathanScaleOption.OnChanged += SliderOptionsChanged;
@@ -1012,6 +1230,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption reefbackExcludeOption = reefbackExclude.ToModToggleOption();
+            reefbackExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reefbackExcludeOption);
+
             ModSliderOption reefbackScaleOption = reefbackScale.ToModSliderOption(1, 50);
             reefbackScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(reefbackScaleOption);
@@ -1031,6 +1253,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption reginaldExcludeOption = reginaldExclude.ToModToggleOption();
+            reginaldExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reginaldExcludeOption);
 
             ModSliderOption reginaldScaleOption = reginaldScale.ToModSliderOption(1, 50);
             reginaldScaleOption.OnChanged += SliderOptionsChanged;
@@ -1052,6 +1278,34 @@ namespace BiggerFishMod
 
 
 
+            //ModToggleOption rockGrubExcludeOption = rockGrubExclude.ToModToggleOption();
+            //rockGrubExcludeOption.OnChanged += ToggleOptionsChanged;
+            //AddItem(rockGrubExcludeOption);
+
+            //ModSliderOption rockGrubScaleOption = rockGrubScale.ToModSliderOption(1, 50);
+            //rockGrubScaleOption.OnChanged += SliderOptionsChanged;
+            //AddItem(rockGrubScaleOption);
+
+            //ModSliderOption rockGrubSlownessOption = rockGrubSlowness.ToModSliderOption(1, 100);
+            //rockGrubSlownessOption.OnChanged += SliderOptionsChanged;
+            //AddItem(rockGrubSlownessOption);
+
+            //ModSliderOption rockGrubHealthOption = rockGrubHealth.ToModSliderOption(1, 100);
+            //rockGrubHealthOption.OnChanged += SliderOptionsChanged;
+            //AddItem(rockGrubHealthOption);
+
+            //ModSliderOption rockGrubLimitOption = rockGrubLimit.ToModSliderOption(0, 50);
+            //rockGrubLimitOption.OnChanged += SliderOptionsChanged;
+            //AddItem(rockGrubLimitOption);
+
+
+
+
+
+            ModToggleOption spineEelExcludeOption = spineEelExclude.ToModToggleOption();
+            spineEelExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spineEelExcludeOption);
+
             ModSliderOption spineEelScaleOption = spineEelScale.ToModSliderOption(1, 50);
             spineEelScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(spineEelScaleOption);
@@ -1071,6 +1325,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption sandSharkExcludeOption = sandSharkExclude.ToModToggleOption();
+            sandSharkExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(sandSharkExcludeOption);
 
             ModSliderOption sandSharkScaleOption = sandSharkScale.ToModSliderOption(1, 50);
             sandSharkScaleOption.OnChanged += SliderOptionsChanged;
@@ -1092,6 +1350,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption seaDragonExcludeOption = seaDragonExclude.ToModToggleOption();
+            seaDragonExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaDragonExcludeOption);
+
             ModSliderOption seaDragonScaleOption = seaDragonScale.ToModSliderOption(1, 50);
             seaDragonScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(seaDragonScaleOption);
@@ -1111,6 +1373,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption seaEmperorBabyExcludeOption = seaEmperorBabyExclude.ToModToggleOption();
+            seaEmperorBabyExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaEmperorBabyExcludeOption);
 
             ModSliderOption seaEmperorBabyScaleOption = seaEmperorBabyScale.ToModSliderOption(1, 50);
             seaEmperorBabyScaleOption.OnChanged += SliderOptionsChanged;
@@ -1132,6 +1398,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption seaEmperorJuvenileExcludeOption = seaEmperorJuvenileExclude.ToModToggleOption();
+            seaEmperorJuvenileExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaEmperorJuvenileExcludeOption);
+
             ModSliderOption seaEmperorJuvenileScaleOption = seaEmperorJuvenileScale.ToModSliderOption(1, 50);
             seaEmperorJuvenileScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(seaEmperorJuvenileScaleOption);
@@ -1151,6 +1421,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption seaTreaderExcludeOption = seaTreaderExclude.ToModToggleOption();
+            seaTreaderExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaTreaderExcludeOption);
 
             ModSliderOption seaTreaderScaleOption = seaTreaderScale.ToModSliderOption(1, 50);
             seaTreaderScaleOption.OnChanged += SliderOptionsChanged;
@@ -1172,6 +1446,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption jumperExcludeOption = jumperExclude.ToModToggleOption();
+            jumperExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jumperExcludeOption);
+
             ModSliderOption jumperScaleOption = jumperScale.ToModSliderOption(1, 50);
             jumperScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(jumperScaleOption);
@@ -1191,6 +1469,34 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption skyRayExcludeOption = skyRayExclude.ToModToggleOption();
+            skyRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(skyRayExcludeOption);
+
+            ModSliderOption skyRayScaleOption = skyRayScale.ToModSliderOption(1, 50);
+            skyRayScaleOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayScaleOption);
+
+            ModSliderOption skyRaySlownessOption = skyRaySlowness.ToModSliderOption(1, 100);
+            skyRaySlownessOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRaySlownessOption);
+
+            ModSliderOption skyRayHealthOption = skyRayHealth.ToModSliderOption(1, 100);
+            skyRayHealthOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayHealthOption);
+
+            ModSliderOption skyRayLimitOption = skyRayLimit.ToModSliderOption(0, 50);
+            skyRayLimitOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayLimitOption);
+
+
+
+
+
+            ModToggleOption spadeFishExcludeOption = spadeFishExclude.ToModToggleOption();
+            spadeFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spadeFishExcludeOption);
 
             ModSliderOption spadeFishScaleOption = spadeFishScale.ToModSliderOption(1, 50);
             spadeFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -1212,6 +1518,10 @@ namespace BiggerFishMod
 
 
 
+            ModToggleOption stalkerExcludeOption = stalkerExclude.ToModToggleOption();
+            stalkerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(stalkerExcludeOption);
+
             ModSliderOption stalkerScaleOption = stalkerScale.ToModSliderOption(1, 50);
             stalkerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerScaleOption);
@@ -1223,7 +1533,7 @@ namespace BiggerFishMod
             ModSliderOption stalkerHealthOption = stalkerHealth.ToModSliderOption(1, 100);
             stalkerHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerHealthOption);
-
+            
             ModSliderOption stalkerLimitOption = stalkerLimit.ToModSliderOption(0, 50);
             stalkerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerLimitOption);
@@ -1231,6 +1541,10 @@ namespace BiggerFishMod
 
 
 
+
+            ModToggleOption warperExcludeOption = warperExclude.ToModToggleOption();
+            warperExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(warperExcludeOption);
 
             ModSliderOption warperScaleOption = warperScale.ToModSliderOption(1, 50);
             warperScaleOption.OnChanged += SliderOptionsChanged;
@@ -1255,8 +1569,449 @@ namespace BiggerFishMod
             OptionsPanelHandler.RegisterModOptions(this);
         }
 
+        public override void BuildModOptions(uGUI_TabbedControlsPanel panel, int modsTabIndex, IReadOnlyCollection<OptionItem> options)
+        {
+            //List<OptionItem> optionItems = options.ToList<OptionItem>();
+            HashSet<OptionItem> optionItemsHash = options.ToHashSet<OptionItem>();
+
+            int p = panel.AddTab("Bigger Fish");
+
+            foreach(OptionItem option in optionItemsHash)
+            {
+                if (option.Id.Contains("Misc. Options"))
+                {
+                    miscOptions.Add(option);
+                }
+                else if(option.Id.Contains("Proportional Values"))
+                {
+                    proportionalOptions.Add(option);
+                }
+                else if(option.Id.Contains("Ampeel Values"))
+                {
+                    ampeelOptions.Add(option);
+                }
+                else if(option.Id.Contains("Biter Values"))
+                {
+                    biterOptions.Add(option);
+                }
+                else if(option.Id.Contains("Bladderfish Values"))
+                {
+                    bladderFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Bleeder Values"))
+                {
+                    bleederOptions.Add(option);
+                }
+                else if (option.Id.Contains("Bone Shark Values"))
+                {
+                    boneSharkOptions.Add(option);
+                }
+                else if (option.Id.Contains("Boomerang Values"))
+                {
+                    boomerangOptions.Add(option);
+                }
+                else if (option.Id.Contains("Cave Crawler Values"))
+                {
+                    caveCrawlerOptions.Add(option);
+                }
+                else if (option.Id.Contains("Crab Snake Values"))
+                {
+                    crabSnakeOptions.Add(option);
+                }
+                else if (option.Id.Contains("Crab Squid Values"))
+                {
+                    crabSquidOptions.Add(option);
+                }
+                else if (option.Id.Contains("Crash Fish Values"))
+                {
+                    crashFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Cuddlefish Values"))
+                {
+                    cuddleFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Eyeye Values"))
+                {
+                    eyeyeOptions.Add(option);
+                }
+                else if (option.Id.Contains("Garry Fish Values"))
+                {
+                    garryFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Gasopod Values"))
+                {
+                    gasopodOptions.Add(option);
+                }
+                else if (option.Id.Contains("Ghost Leviathan Values"))
+                {
+                    ghostLeviathanOptions.Add(option);
+                }
+                else if (option.Id.Contains("Ghost Leviathan(Void) Values"))
+                {
+                    voidGhostLeviathanOptions.Add(option);
+                }
+                else if (option.Id.Contains("Ghost Ray Values"))
+                {
+                    ghostRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Hole Fish Values"))
+                {
+                    holeFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Hoop Fish Values"))
+                {
+                    hoopFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Hover Fish Values"))
+                {
+                    hoverFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Jellyray Values"))
+                {
+                    jellyRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Shuttlebug Values"))
+                {
+                    jumperOptions.Add(option);
+                }
+                else if (option.Id.Contains("Lava Larva Values"))
+                {
+                    lavaLarvaOptions.Add(option);
+                }
+                else if (option.Id.Contains("Lava Lizard Values"))
+                {
+                    lavaLizardOptions.Add(option);
+                }
+                else if (option.Id.Contains("Mesmer Values"))
+                {
+                    mesmerOptions.Add(option);
+                }
+                else if (option.Id.Contains("Oculus Fish Values"))
+                {
+                    oculusFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Peeper Values"))
+                {
+                    peeperOptions.Add(option);
+                }
+                else if (option.Id.Contains("Rabbit Ray Values"))
+                {
+                    rabbitRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Reaper Leviathan Values"))
+                {
+                    reaperLeviathanOptions.Add(option);
+                }
+                else if (option.Id.Contains("Reefback Values"))
+                {
+                    reefbackOptions.Add(option);
+                }
+                else if (option.Id.Contains("Reginald Values"))
+                {
+                    reginaldOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sand Shark Values"))
+                {
+                    sandSharkOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Dragon Values"))
+                {
+                    seaDragonOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Emperor Baby Values"))
+                {
+                    seaEmperorBabyOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Emperor Juvenile Values"))
+                {
+                    seaEmperorJuvenileOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Treader Values"))
+                {
+                    seaTreaderOptions.Add(option);
+                }
+                else if (option.Id.Contains("Skyray Values"))
+                {
+                    skyRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Spade Fish Values"))
+                {
+                    spadeFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("River Prowler Values"))
+                {
+                    spineEelOptions.Add(option);
+                }
+                else if (option.Id.Contains("Stalker Values"))
+                {
+                    stalkerOptions.Add(option);
+                }
+                else if (option.Id.Contains("Warper Values"))
+                {
+                    warperOptions.Add(option);
+                }
+            }
+            panel.AddHeading(p, "~~~Misc. Options~~~");
+            foreach (OptionItem option in miscOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Proportional Options~~~");
+            foreach(OptionItem option in proportionalOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Ampeel Options~~~");
+            foreach(OptionItem option in ampeelOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Biter Options~~~");
+            foreach(OptionItem option in biterOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Bladderfish Options~~~");
+            foreach(OptionItem option in bladderFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Bleeder Options~~~");
+            foreach (OptionItem option in bleederOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Bone Shark Options~~~");
+            foreach (OptionItem option in boneSharkOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Boomerang Options~~~");
+            foreach (OptionItem option in boomerangOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Cave Crawler Options~~~");
+            foreach (OptionItem option in caveCrawlerOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Crab Snake Options~~~");
+            foreach (OptionItem option in crabSnakeOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Crab Squid Options~~~");
+            foreach (OptionItem option in crabSquidOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Crash Fish Options~~~");
+            foreach (OptionItem option in crashFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Cuddlefish Options~~~");
+            foreach (OptionItem option in cuddleFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Eyeye Options~~~");
+            foreach (OptionItem option in eyeyeOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Garry Fish Options~~~");
+            foreach (OptionItem option in garryFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Gasopod Options~~~");
+            foreach (OptionItem option in gasopodOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Ghost Leviathan Options~~~");
+            foreach (OptionItem option in ghostLeviathanOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Ghost Leviathan(Void) Options~~~");
+            foreach (OptionItem option in voidGhostLeviathanOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Ghost Ray Options~~~");
+            foreach (OptionItem option in ghostRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Hole Fish Options~~~");
+            foreach (OptionItem option in holeFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Hoop Fish Options~~~");
+            foreach (OptionItem option in hoopFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Hover Fish Options~~~");
+            foreach (OptionItem option in hoverFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Jellyray Options~~~");
+            foreach (OptionItem option in jellyRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Shuttlebug Options~~~");
+            foreach (OptionItem option in jumperOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Lava Larva Options~~~");
+            foreach (OptionItem option in lavaLarvaOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Lava Lizard Options~~~");
+            foreach (OptionItem option in lavaLizardOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Mesmer Options~~~");
+            foreach (OptionItem option in mesmerOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Oculus Fish Options~~~");
+            foreach (OptionItem option in oculusFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Peeper Options~~~");
+            foreach (OptionItem option in peeperOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Rabbit Ray Options~~~");
+            foreach (OptionItem option in rabbitRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Reaper Leviathan Options~~~");
+            foreach (OptionItem option in reaperLeviathanOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Reefback Options~~~");
+            foreach (OptionItem option in reefbackOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Reginald Options~~~");
+            foreach (OptionItem option in reginaldOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sand Shark Options~~~");
+            foreach (OptionItem option in sandSharkOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Dragon Options~~~");
+            foreach (OptionItem option in seaDragonOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Emperor Baby Options~~~");
+            foreach (OptionItem option in seaEmperorBabyOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Emperor Juvenile Options~~~");
+            foreach (OptionItem option in seaEmperorJuvenileOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Treader Options~~~");
+            foreach (OptionItem option in seaTreaderOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Skyray Options~~~");
+            foreach (OptionItem option in skyRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Spade Fish Options~~~");
+            foreach (OptionItem option in spadeFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~River Prowler Options~~~");
+            foreach (OptionItem option in spineEelOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Stalker Options~~~");
+            foreach (OptionItem option in stalkerOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Warper Options~~~");
+            foreach (OptionItem option in warperOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+        }
+
         #region OnChangedFunctions
-        private void ToggleOptionsChanged(object sender, ToggleChangedEventArgs e)
+        public void ToggleOptionsChanged(object sender, ToggleChangedEventArgs e)
         {
             switch (e.Id)
             {
@@ -1265,6 +2020,129 @@ namespace BiggerFishMod
                     break;
                 case "Remove Fish Schools":
                     removeFishSchools.Value = e.Value;
+                    break;
+                case "Biter Exclude":
+                    biterExclude.Value = e.Value;
+                    break;
+                case "Bladderfish Exlude":
+                    bladderFishExclude.Value = e.Value;
+                    break;
+                case "Bleeder Exclude":
+                    bleederExclude.Value = e.Value;
+                    break;
+                case "Bone Shark Exclude":
+                    boneSharkExclude.Value = e.Value;
+                    break;
+                case "Boomerang Exclude":
+                    boomerangExclude.Value = e.Value;
+                    break;
+                case "Cave Crawler Exclude":
+                    caveCrawlerExclude.Value = e.Value;
+                    break;
+                case "Crab Snake Exclude":
+                    crabSnakeExclude.Value = e.Value;
+                    break;
+                case "Crab Squid Exclude":
+                    crabSquidExclude.Value = e.Value;
+                    break;
+                case "Crashfish Exclude":
+                    crashFishExclude.Value = e.Value;
+                    break;
+                case "Cuddlefish Exclude":
+                    cuddleFishExclude.Value = e.Value;
+                    break;
+                case "Eyeye Exclude":
+                    eyeyeExclude.Value = e.Value;
+                    break;
+                case "Garryfish Exclude":
+                    garryFishExclude.Value = e.Value;
+                    break;
+                case "Gasopod Exclude":
+                    gasopodExclude.Value = e.Value;
+                    break;
+                case "Ghost Leviathan Exclude":
+                    ghostLeviathanExclude.Value = e.Value;
+                    break;
+                case "Ghost Leviathan(Void) Exclude":
+                    voidGhostLeviathanExclude.Value = e.Value;
+                    break;
+                case "Ghost Ray Exclude":
+                    ghostRayExclude.Value = e.Value;
+                    break;
+                case "Holefish Exclude":
+                    holeFishExclude.Value = e.Value;
+                    break;
+                case "Hoopfish Exclude":
+                    hoopFishExclude.Value = e.Value;
+                    break;
+                case "Hoverfish Exclude":
+                    hoverFishExclude.Value = e.Value;
+                    break;
+                case "Jelly Ray Exclude":
+                    jellyRayExclude.Value = e.Value;
+                    break;
+                case "Jumper Exclude":
+                    jumperExclude.Value = e.Value;
+                    break;
+                case "Lava Larva Exclude":
+                    lavaLarvaExclude.Value = e.Value;
+                    break;
+                case "Lava Lizard Exclude":
+                    lavaLizardExclude.Value = e.Value;
+                    break;
+                case "Mesmer Exclude":
+                    mesmerExclude.Value = e.Value;
+                    break;
+                case "Oculus Exclude":
+                    oculusFishExclude.Value = e.Value;
+                    break;
+                case "Peeper Exclude":
+                    peeperExclude.Value = e.Value;
+                    break;
+                case "Rabbit Ray Exclude":
+                    rabbitRayExclude.Value = e.Value;
+                    break;
+                case "Reaper Leviathan Exclude":
+                    reaperLeviathanExclude.Value = e.Value;
+                    break;
+                case "Reefback Exclude":
+                    reefbackExclude.Value = e.Value;
+                    break;
+                case "Reginald Exclude":
+                    reginaldExclude.Value = e.Value;
+                    break;
+                case "Sand Shark Exclude":
+                    sandSharkExclude.Value = e.Value;
+                    break;
+                case "Sea Dragon Exclude":
+                    seaDragonExclude.Value = e.Value;
+                    break;
+                case "Sea Emperor Baby Exclude":
+                    seaEmperorBabyExclude.Value = e.Value;
+                    break;
+                case "Sea Emperor Juvenile Exclude":
+                    seaEmperorJuvenileExclude.Value = e.Value;
+                    break;
+                case "Sea Treader Exclude":
+                    seaTreaderExclude.Value = e.Value;
+                    break;
+                case "Ampeel Exclude":
+                    shockerExclude.Value = e.Value;
+                    break;
+                case "Skyray Exclude":
+                    skyRayExclude.Value = e.Value;
+                    break;
+                case "Spadefish Exclude":
+                    spadeFishExclude.Value = e.Value;
+                    break;
+                case "Spine Eel Exclude":
+                    spineEelExclude.Value = e.Value;
+                    break;
+                case "Stalker Exclude":
+                    stalkerExclude.Value = e.Value;
+                    break;
+                case "Warper Exclude":
+                    warperExclude.Value = e.Value;
                     break;
             }
         }
@@ -1645,6 +2523,18 @@ namespace BiggerFishMod
                 case "Reginald Limit":
                     reginaldLimit.Value = e.Value;
                     break;
+                //case "Rock Grub Scale":
+                //    rockGrubScale.Value = e.Value;
+                //    break;
+                //case "Rock Grub Slowness":
+                //    rockGrubSlowness.Value = e.Value;
+                //    break;
+                //case "Rock Grub Health":
+                //    rockGrubHealth.Value = e.Value;
+                //    break;
+                //case "Rock Grub Limit":
+                //    rockGrubLimit.Value = e.Value;
+                //    break;
                 case "Sand Shark Scale":
                     sandSharkScale.Value = e.Value;
                     break;
@@ -1716,6 +2606,18 @@ namespace BiggerFishMod
                     break;
                 case "Shocker Limit":
                     shockerLimit.Value = e.Value;
+                    break;
+                case "Skyray Scale":
+                    skyRayScale.Value = e.Value;
+                    break;
+                case "Skyray Slowness":
+                    skyRaySlowness.Value = e.Value;
+                    break;
+                case "Skyray Health":
+                    skyRayHealth.Value = e.Value;
+                    break;
+                case "Skyray Limit":
+                    skyRayLimit.Value = e.Value;
                     break;
                 case "Spadefish Scale":
                     spadeFishScale.Value = e.Value;

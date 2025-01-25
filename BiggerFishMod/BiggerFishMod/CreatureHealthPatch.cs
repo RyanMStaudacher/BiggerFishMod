@@ -12,7 +12,7 @@ namespace BiggerFishMod
         {
             if (__instance is Biter biter)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     biter.liveMixin.health = MyModOptions.biterBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -22,9 +22,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
                 {
                     bladderFish.liveMixin.health = MyModOptions.bladderFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -34,9 +34,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bleeder bleeder)
+            else if (__instance is Bleeder bleeder)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bleederExclude.Value == false)
                 {
                     bleeder.liveMixin.health = MyModOptions.bleederBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -46,9 +46,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BoneShark boneShark)
+            else if (__instance is BoneShark boneShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boneSharkExclude.Value == false)
                 {
                     boneShark.liveMixin.health = MyModOptions.boneSharkBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -58,9 +58,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boomerangExclude.Value == false)
                 {
                     boomerang.liveMixin.health = MyModOptions.boomerangBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -70,9 +70,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CaveCrawler caveCrawler)
+            else if (__instance is CaveCrawler caveCrawler)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.caveCrawlerExclude.Value == false)
                 {
                     caveCrawler.liveMixin.health = MyModOptions.caveCrawlerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -82,9 +82,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSnake crabSnake)
+            else if (__instance is CrabSnake crabSnake)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSnakeExclude.Value == false)
                 {
                     crabSnake.liveMixin.health = MyModOptions.crabSnakeBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -94,9 +94,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSquid crabSquid)
+            else if (__instance is CrabSquid crabSquid)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSquidExclude.Value == false)
                 {
                     crabSquid.liveMixin.health = MyModOptions.crabSquidBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -106,9 +106,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crashFishExclude.Value == false)
                 {
                     crashFish.liveMixin.health = MyModOptions.crashFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -118,9 +118,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CuteFish cuddleFish)
+            else if (__instance is CuteFish cuddleFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.cuddleFishExclude.Value == false)
                 {
                     cuddleFish.liveMixin.health = MyModOptions.cuddleFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -130,9 +130,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Eyeye eyeye)
+            else if (__instance is Eyeye eyeye)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.eyeyeExclude.Value == false)
                 {
                     eyeye.liveMixin.health = MyModOptions.eyeyeBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -142,9 +142,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Garryfish garryFish)
+            else if (__instance is Garryfish garryFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.garryFishExclude.Value == false)
                 {
                     garryFish.liveMixin.health = MyModOptions.garryFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -154,9 +154,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GasoPod gasopod)
+            else if (__instance is GasoPod gasopod)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.gasopodExclude.Value == false)
                 {
                     gasopod.liveMixin.health = MyModOptions.gasopodBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -166,9 +166,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviatanVoid voidGhostLeviathan)
+            else if (__instance is GhostLeviatanVoid voidGhostLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.voidGhostLeviathanExclude.Value == false)
                 {
                     voidGhostLeviathan.liveMixin.health = MyModOptions.voidGhostLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -178,9 +178,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviathan ghostLeviathan)
+            else if (__instance is GhostLeviathan ghostLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostLeviathanExclude.Value == false)
                 {
                     ghostLeviathan.liveMixin.health = MyModOptions.ghostLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -190,9 +190,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostRay ghostRay)
+            else if (__instance is GhostRay ghostRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostRayExclude.Value == false)
                 {
                     ghostRay.liveMixin.health = MyModOptions.ghostRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -202,9 +202,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Holefish holeFish)
+            else if (__instance is Holefish holeFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.holeFishExclude.Value == false)
                 {
                     holeFish.liveMixin.health = MyModOptions.holeFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -214,9 +214,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoopFishExclude.Value == false)
                 {
                     hoopFish.liveMixin.health = MyModOptions.hoopFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -226,9 +226,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoverfish hoverFish)
+            else if (__instance is Hoverfish hoverFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoverFishExclude.Value == false)
                 {
                     hoverFish.liveMixin.health = MyModOptions.hoverFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -238,9 +238,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyray jellyRay)
+            else if (__instance is Jellyray jellyRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jellyRayExclude.Value == false)
                 {
                     jellyRay.liveMixin.health = MyModOptions.jellyRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -250,9 +250,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jumper jumper)
+            else if (__instance is Jumper jumper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jumperExclude.Value == false)
                 {
                     jumper.liveMixin.health = MyModOptions.jumperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -262,9 +262,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLarva lavaLarva)
+            else if (__instance is LavaLarva lavaLarva)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLarvaExclude.Value == false)
                 {
                     lavaLarva.liveMixin.health = MyModOptions.lavaLarvaBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -274,9 +274,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLizard lavaLizard)
+            else if (__instance is LavaLizard lavaLizard)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLizardExclude.Value == false)
                 {
                     lavaLizard.liveMixin.health = MyModOptions.lavaLizardBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -286,9 +286,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Mesmer mesmer)
+            else if (__instance is Mesmer mesmer)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.mesmerExclude.Value == false)
                 {
                     mesmer.liveMixin.health = MyModOptions.mesmerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -298,9 +298,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is OculusFish oculusFish)
+            else if (__instance is OculusFish oculusFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.oculusFishExclude.Value == false)
                 {
                     oculusFish.liveMixin.health = MyModOptions.oculusFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -310,9 +310,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Peeper peeper)
+            else if (__instance is Peeper peeper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.peeperExclude.Value == false)
                 {
                     peeper.liveMixin.health = MyModOptions.peeperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -322,9 +322,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RabbitRay rabbitRay)
+            else if (__instance is RabbitRay rabbitRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rabbitRayExclude.Value == false)
                 {
                     rabbitRay.liveMixin.health = MyModOptions.rabbitRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -334,9 +334,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ReaperLeviathan reaperLeviathan)
+            else if (__instance is ReaperLeviathan reaperLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reaperLeviathanExclude.Value == false)
                 {
                     reaperLeviathan.liveMixin.health = MyModOptions.reaperLeviathanBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -346,9 +346,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reefback reefback)
+            else if (__instance is Reefback reefback)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reefbackExclude.Value == false)
                 {
                     reefback.liveMixin.health = MyModOptions.reefbackBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -358,9 +358,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reginald reginald)
+            else if (__instance is Reginald reginald)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reginaldExclude.Value == false)
                 {
                     reginald.liveMixin.health = MyModOptions.reginaldBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -370,9 +370,21 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SandShark sandShark)
+            //else if (__instance is RockGrub rockGrub)
+            //{
+            //    if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rockGrubExclude.Value == false)
+            //    {
+            //        rockGrub.liveMixin.health = MyModOptions.rockGrubBaseHealth.Value * MyModOptions.proportionalHealth.Value;
+            //    }
+            //    else
+            //    {
+            //        rockGrub.liveMixin.health = MyModOptions.rockGrubBaseHealth.Value * MyModOptions.rockGrubHealth.Value;
+            //    }
+            //}
+
+            else if (__instance is SandShark sandShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.sandSharkExclude.Value == false)
                 {
                     sandShark.liveMixin.health = MyModOptions.sandSharkBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -382,9 +394,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaDragon seaDragon)
+            else if (__instance is SeaDragon seaDragon)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaDragonExclude.Value == false)
                 {
                     seaDragon.liveMixin.health = MyModOptions.seaDragonBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -394,9 +406,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmperorBaby)
+            else if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorBabyExclude.Value == false)
                 {
                     seaEmperorBaby.liveMixin.health = MyModOptions.seaEmperorBabyBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -406,9 +418,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
+            else if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorJuvenileExclude.Value == false)
                 {
                     seaEmperorJuvenile.liveMixin.health = MyModOptions.seaEmperorJuvenileBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -418,9 +430,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaTreader seaTreader)
+            else if (__instance is SeaTreader seaTreader)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaTreaderExclude.Value == false)
                 {
                     seaTreader.liveMixin.health = MyModOptions.seaTreaderBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -430,9 +442,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Shocker shocker)
+            else if (__instance is Shocker shocker)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.shockerExclude.Value == false)
                 {
                     shocker.liveMixin.health = MyModOptions.shockerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -442,9 +454,21 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Spadefish spadeFish)
+            else if (__instance is Skyray skyRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.skyRayExclude.Value == false)
+                {
+                    skyRay.liveMixin.health = MyModOptions.skyRayBaseHealth.Value * MyModOptions.proportionalHealth.Value;
+                }
+                else
+                {
+                    skyRay.liveMixin.health = MyModOptions.skyRayBaseHealth.Value * MyModOptions.skyRayHealth.Value;
+                }
+            }
+
+            else if (__instance is Spadefish spadeFish)
+            {
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spadeFishExclude.Value == false)
                 {
                     spadeFish.liveMixin.health = MyModOptions.spadeFishBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -454,9 +478,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SpineEel spineEel)
+            else if (__instance is SpineEel spineEel)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spineEelExclude.Value == false)
                 {
                     spineEel.liveMixin.health = MyModOptions.spineEelBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -466,9 +490,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Stalker stalker)
+            else if (__instance is Stalker stalker)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.stalkerExclude.Value == false)
                 {
                     stalker.liveMixin.health = MyModOptions.stalkerBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -478,9 +502,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Warper warper)
+            else if (__instance is Warper warper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.warperExclude.Value == false)
                 {
                     warper.liveMixin.health = MyModOptions.warperBaseHealth.Value * MyModOptions.proportionalHealth.Value;
                 }
@@ -513,7 +537,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArrowRay arrowRay)
+            else if (__instance is ArrowRay arrowRay)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -525,7 +549,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -537,7 +561,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -549,7 +573,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -561,7 +585,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is DiscusFish discusFish)
+            else if (__instance is DiscusFish discusFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -573,7 +597,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is FeatherFish featherFish)
+            else if (__instance is FeatherFish featherFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -585,7 +609,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is NootFish nootFish)
+            else if (__instance is NootFish nootFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -597,7 +621,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SpinnerFish spinnerFish)
+            else if (__instance is SpinnerFish spinnerFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -609,7 +633,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArcticRay arcticRay)
+            else if (__instance is ArcticRay arcticRay)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -621,7 +645,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyfish jellyFish)
+            else if (__instance is Jellyfish jellyFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -633,7 +657,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is TitanHolefish titanHoleFish)
+            else if (__instance is TitanHolefish titanHoleFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -645,7 +669,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GlowWhale glowWhale)
+            else if (__instance is GlowWhale glowWhale)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -657,7 +681,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Pinnacarid pinnacarid)
+            else if (__instance is Pinnacarid pinnacarid)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -669,7 +693,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Triops triops)
+            else if (__instance is Triops triops)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -681,7 +705,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Trivalve trivalve)
+            else if (__instance is Trivalve trivalve)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -693,7 +717,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SymbioteFish symbioteFish)
+            else if (__instance is SymbioteFish symbioteFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -705,7 +729,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockGrub rockGrub)
+            else if (__instance is RockGrub rockGrub)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -719,7 +743,7 @@ namespace BiggerFishMod
             #endregion
 
             #region Aggressive Fish
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -731,7 +755,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Brinewing brineWing)
+            else if (__instance is Brinewing brineWing)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -743,7 +767,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LilyPaddler lilyPaddler)
+            else if (__instance is LilyPaddler lilyPaddler)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -755,7 +779,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Cryptosuchus cryptosuchus)
+            else if (__instance is Cryptosuchus cryptosuchus)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -767,7 +791,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BruteShark bruteShark)
+            else if (__instance is BruteShark bruteShark)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -779,7 +803,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SquidShark squidShark)
+            else if (__instance is SquidShark squidShark)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -791,7 +815,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Chelicerate chelicerate)
+            else if (__instance is Chelicerate chelicerate)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -803,7 +827,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ShadowLeviathan shadowLeviathan)
+            else if (__instance is ShadowLeviathan shadowLeviathan)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -815,7 +839,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is VoidLeviathan voidLeviathan)
+            else if (__instance is VoidLeviathan voidLeviathan)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -829,7 +853,7 @@ namespace BiggerFishMod
             #endregion
 
             #region Not Fish
-            if (__instance is Skyray skyRay)
+            else if (__instance is Skyray skyRay)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -841,7 +865,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is PenguinBaby pengling)
+            else if (__instance is PenguinBaby pengling)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -853,7 +877,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Penguin pengwing)
+            else if (__instance is Penguin pengwing)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -865,7 +889,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkeyBaby seaMonkeyBaby)
+            else if (__instance is SeaMonkeyBaby seaMonkeyBaby)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -877,7 +901,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkey seaMonkey)
+            else if (__instance is SeaMonkey seaMonkey)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -889,7 +913,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalkerBaby snowStalkerBaby)
+            else if (__instance is SnowStalkerBaby snowStalkerBaby)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -901,7 +925,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalker snowStalker)
+            else if (__instance is SnowStalker snowStalker)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {
@@ -913,7 +937,7 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockPuncher rockPuncher)
+            else if (__instance is RockPuncher rockPuncher)
             {
                 if (MyModOptions.proportionalToggle.Value == true)
                 {

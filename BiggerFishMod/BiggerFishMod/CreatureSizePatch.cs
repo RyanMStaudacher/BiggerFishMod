@@ -15,7 +15,7 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -27,11 +27,11 @@ namespace BiggerFishMod
                 biter.SetScale(sizeScale);
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -43,11 +43,11 @@ namespace BiggerFishMod
                 bladderFish.SetScale(sizeScale);
             }
 
-            if (__instance is Bleeder bleeder)
+            else if (__instance is Bleeder bleeder)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bleederExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -59,11 +59,11 @@ namespace BiggerFishMod
                 bleeder.SetScale(sizeScale);
             }
 
-            if (__instance is BoneShark boneShark)
+            else if (__instance is BoneShark boneShark)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boneSharkExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -75,11 +75,11 @@ namespace BiggerFishMod
                 boneShark.SetScale(sizeScale);
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boomerangExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -91,11 +91,11 @@ namespace BiggerFishMod
                 boomerang.SetScale(sizeScale);
             }
 
-            if (__instance is CaveCrawler caveCrawler)
+            else if (__instance is CaveCrawler caveCrawler)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.caveCrawlerExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -107,11 +107,11 @@ namespace BiggerFishMod
                 caveCrawler.SetScale(sizeScale);
             }
 
-            if (__instance is CrabSnake crabSnake)
+            else if (__instance is CrabSnake crabSnake)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSnakeExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -123,11 +123,11 @@ namespace BiggerFishMod
                 crabSnake.SetScale(sizeScale);
             }
 
-            if (__instance is CrabSquid crabSquid)
+            else if (__instance is CrabSquid crabSquid)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSquidExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -139,11 +139,11 @@ namespace BiggerFishMod
                 crabSquid.SetScale(sizeScale);
             }
 
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crashFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -155,11 +155,11 @@ namespace BiggerFishMod
                 crashFish.SetScale(sizeScale);
             }
 
-            if (__instance is CuteFish cuddleFish)
+            else if (__instance is CuteFish cuddleFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.cuddleFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -171,11 +171,11 @@ namespace BiggerFishMod
                 cuddleFish.SetScale(sizeScale);
             }
 
-            if (__instance is Eyeye eyeye)
+            else if (__instance is Eyeye eyeye)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.eyeyeExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -187,11 +187,11 @@ namespace BiggerFishMod
                 eyeye.SetScale(sizeScale);
             }
 
-            if (__instance is Garryfish garryFish)
+            else if (__instance is Garryfish garryFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.garryFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -203,11 +203,11 @@ namespace BiggerFishMod
                 garryFish.SetScale(sizeScale);
             }
 
-            if (__instance is GasoPod gasopod)
+            else if (__instance is GasoPod gasopod)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.gasopodExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -219,11 +219,11 @@ namespace BiggerFishMod
                 gasopod.SetScale(sizeScale);
             }
 
-            if (__instance is GhostLeviatanVoid voidGhostLeviathan)
+            else if (__instance is GhostLeviatanVoid voidGhostLeviathan)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.voidGhostLeviathanExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -235,11 +235,11 @@ namespace BiggerFishMod
                 voidGhostLeviathan.SetScale(sizeScale);
             }
 
-            if (__instance is GhostLeviathan ghostLeviathan)
+            else if (__instance is GhostLeviathan ghostLeviathan)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostLeviathanExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -251,11 +251,11 @@ namespace BiggerFishMod
                 ghostLeviathan.SetScale(sizeScale);
             }
 
-            if (__instance is GhostRay ghostRay)
+            else if (__instance is GhostRay ghostRay)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostRayExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -267,11 +267,11 @@ namespace BiggerFishMod
                 ghostRay.SetScale(sizeScale);
             }
 
-            if (__instance is Holefish holeFish)
+            else if (__instance is Holefish holeFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.holeFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -283,11 +283,11 @@ namespace BiggerFishMod
                 holeFish.SetScale(sizeScale);
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoopFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -299,11 +299,11 @@ namespace BiggerFishMod
                 hoopFish.SetScale(sizeScale);
             }
 
-            if (__instance is Hoverfish hoverFish)
+            else if (__instance is Hoverfish hoverFish)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoverFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -315,11 +315,11 @@ namespace BiggerFishMod
                 hoverFish.SetScale(sizeScale);
             }
 
-            if (__instance is Jellyray jellyRay)
+            else if (__instance is Jellyray jellyRay)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jellyRayExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -331,11 +331,11 @@ namespace BiggerFishMod
                 jellyRay.SetScale(sizeScale);
             }
 
-            if (__instance is Jumper jumper)
+            else if (__instance is Jumper jumper)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jumperExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -347,11 +347,11 @@ namespace BiggerFishMod
                 jumper.SetScale(sizeScale);
             }
 
-            if (__instance is LavaLarva lavaLarva)
+            else if (__instance is LavaLarva lavaLarva)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLarvaExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -363,11 +363,11 @@ namespace BiggerFishMod
                 lavaLarva.SetScale(sizeScale);
             }
 
-            if (__instance is LavaLizard lavaLizard)
+            else if (__instance is LavaLizard lavaLizard)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLizardExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -379,11 +379,11 @@ namespace BiggerFishMod
                 lavaLizard.SetScale(sizeScale);
             }
 
-            if (__instance is Mesmer mesmer)
+            else if (__instance is Mesmer mesmer)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.mesmerExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -395,11 +395,11 @@ namespace BiggerFishMod
                 mesmer.SetScale(sizeScale);
             }
 
-            if (__instance is OculusFish oculus)
+            else if (__instance is OculusFish oculus)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.oculusFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -411,11 +411,11 @@ namespace BiggerFishMod
                 oculus.SetScale(sizeScale);
             }
 
-            if (__instance is Peeper peeper)
+            else if (__instance is Peeper peeper)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.peeperExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -427,11 +427,11 @@ namespace BiggerFishMod
                 peeper.SetScale(sizeScale);
             }
 
-            if (__instance is RabbitRay rabbitRay)
+            else if (__instance is RabbitRay rabbitRay)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rabbitRayExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -443,11 +443,11 @@ namespace BiggerFishMod
                 rabbitRay.SetScale(sizeScale);
             }
 
-            if (__instance is ReaperLeviathan reaperLeviathan)
+            else if (__instance is ReaperLeviathan reaperLeviathan)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reaperLeviathanExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -459,11 +459,11 @@ namespace BiggerFishMod
                 reaperLeviathan.SetScale(sizeScale);
             }
 
-            if (__instance is Reefback reefback)
+            else if (__instance is Reefback reefback)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reefbackExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -475,11 +475,11 @@ namespace BiggerFishMod
                 reefback.SetScale(sizeScale);
             }
 
-            if (__instance is Reginald reginald)
+            else if (__instance is Reginald reginald)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reginaldExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -491,11 +491,27 @@ namespace BiggerFishMod
                 reginald.SetScale(sizeScale);
             }
 
-            if (__instance is SandShark sandShark)
+            //else if (__instance is RockGrub rockGrub)
+            //{
+            //    float sizeScale = 4.0f;
+
+            //    if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rockGrubExclude.Value == false)
+            //    {
+            //        sizeScale = MyModOptions.proportionalScale.Value;
+            //    }
+            //    else
+            //    {
+            //        sizeScale = MyModOptions.rockGrubScale.Value;
+            //    }
+
+            //    rockGrub.SetScale(sizeScale);
+            //}
+
+            else if (__instance is SandShark sandShark)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.sandSharkExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -507,11 +523,11 @@ namespace BiggerFishMod
                 sandShark.SetScale(sizeScale);
             }
 
-            if (__instance is SeaDragon seaDragon)
+            else if (__instance is SeaDragon seaDragon)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaDragonExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -523,11 +539,11 @@ namespace BiggerFishMod
                 seaDragon.SetScale(sizeScale);
             }
 
-            if (__instance is SeaEmperorBaby seaEmporerBaby)
+            else if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorBabyExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -536,14 +552,14 @@ namespace BiggerFishMod
                     sizeScale = MyModOptions.seaEmperorBabyScale.Value;
                 }
 
-                seaEmporerBaby.SetScale(sizeScale);
+                seaEmperorBaby.SetScale(sizeScale);
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmporerJuvenile)
+            else if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorJuvenileExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -552,14 +568,14 @@ namespace BiggerFishMod
                     sizeScale = MyModOptions.seaEmperorJuvenileScale.Value;
                 }
 
-                seaEmporerJuvenile.SetScale(sizeScale);
+                seaEmperorJuvenile.SetScale(sizeScale);
             }
 
-            if (__instance is SeaTreader seaTreader)
+            else if (__instance is SeaTreader seaTreader)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaTreaderExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -571,11 +587,11 @@ namespace BiggerFishMod
                 seaTreader.SetScale(sizeScale);
             }
 
-            if (__instance is Shocker shocker)
+            else if (__instance is Shocker shocker)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.shockerExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -587,11 +603,27 @@ namespace BiggerFishMod
                 shocker.SetScale(sizeScale);
             }
 
-            if (__instance is Spadefish spadeFish)
+            else if (__instance is Skyray skyRay)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.skyRayExclude.Value == false)
+                {
+                    sizeScale = MyModOptions.proportionalScale.Value;
+                }
+                else
+                {
+                    sizeScale = MyModOptions.skyRayScale.Value;
+                }
+
+                skyRay.SetScale(sizeScale);
+            }
+
+            else if (__instance is Spadefish spadeFish)
+            {
+                float sizeScale = 4.0f;
+
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spadeFishExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -603,11 +635,11 @@ namespace BiggerFishMod
                 spadeFish.SetScale(sizeScale);
             }
 
-            if (__instance is SpineEel spineEel)
+            else if (__instance is SpineEel spineEel)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spineEelExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -619,11 +651,11 @@ namespace BiggerFishMod
                 spineEel.SetScale(sizeScale);
             }
 
-            if (__instance is Stalker stalker)
+            else if (__instance is Stalker stalker)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.stalkerExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -635,11 +667,11 @@ namespace BiggerFishMod
                 stalker.SetScale(sizeScale);
             }
 
-            if (__instance is Warper warper)
+            else if (__instance is Warper warper)
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.warperExclude.Value == false)
                 {
                     sizeScale = MyModOptions.proportionalScale.Value;
                 }
@@ -698,7 +730,7 @@ namespace BiggerFishMod
                 arcticPeeper.SetScale(sizeScale);
             }
 
-            if (__instance is ArrowRay arrowRay)
+            else if (__instance is ArrowRay arrowRay)
             {
                 float sizeScale = 4.0f;
 
@@ -714,7 +746,7 @@ namespace BiggerFishMod
                 arrowRay.SetScale(sizeScale);
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
                 float sizeScale = 4.0f;
 
@@ -730,7 +762,7 @@ namespace BiggerFishMod
                 boomerang.SetScale(sizeScale);
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
                 float sizeScale = 4.0f;
 
@@ -746,7 +778,7 @@ namespace BiggerFishMod
                 bladderFish.SetScale(sizeScale);
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
                 float sizeScale = 4.0f;
 
@@ -762,7 +794,7 @@ namespace BiggerFishMod
                 hoopFish.SetScale(sizeScale);
             }
 
-            if (__instance is DiscusFish discusFish)
+            else if (__instance is DiscusFish discusFish)
             {
                 float sizeScale = 4.0f;
 
@@ -778,7 +810,7 @@ namespace BiggerFishMod
                 discusFish.SetScale(sizeScale);
             }
 
-            if (__instance is FeatherFish featherFish)
+            else if (__instance is FeatherFish featherFish)
             {
                 float sizeScale = 4.0f;
 
@@ -794,7 +826,7 @@ namespace BiggerFishMod
                 featherFish.SetScale(sizeScale);
             }
 
-            if (__instance is NootFish nootFish)
+            else if (__instance is NootFish nootFish)
             {
                 float sizeScale = 4.0f;
 
@@ -810,21 +842,7 @@ namespace BiggerFishMod
                 nootFish.SetScale(sizeScale);
             }
 
-            // Reference to spine fish not working atm.
-            //if (__instance is SpineFish spineFish)
-            //{
-            //    float sizeScale = 4.0f;
-            //    float locomotionScale = 4.0f;
-
-            //    spineFish.SetScale(sizeScale);
-
-            //    spineFish.GetComponent<Locomotion>().maxVelocity /= locomotionScale;
-            //    spineFish.GetComponent<Locomotion>().maxAcceleration /= locomotionScale;
-            //    spineFish.GetComponent<Locomotion>().forwardRotationSpeed /= locomotionScale;
-            //    spineFish.GetComponent<Locomotion>().upRotationSpeed /= locomotionScale;
-            //}
-
-            if (__instance is SpinnerFish spinnerFish)
+            else if (__instance is SpinnerFish spinnerFish)
             {
                 float sizeScale = 4.0f;
 
@@ -840,7 +858,7 @@ namespace BiggerFishMod
                 spinnerFish.SetScale(sizeScale);
             }
 
-            if (__instance is ArcticRay arcticRay)
+            else if (__instance is ArcticRay arcticRay)
             {
                 float sizeScale = 4.0f;
 
@@ -856,7 +874,7 @@ namespace BiggerFishMod
                 arcticRay.SetScale(sizeScale);
             }
 
-            if (__instance is Jellyfish eyeJelly)
+            else if (__instance is Jellyfish eyeJelly)
             {
                 float sizeScale = 4.0f;
 
@@ -872,7 +890,7 @@ namespace BiggerFishMod
                 eyeJelly.SetScale(sizeScale);
             }
 
-            if (__instance is TitanHolefish titanHolefish)
+            else if (__instance is TitanHolefish titanHolefish)
             {
                 float sizeScale = 4.0f;
 
@@ -888,7 +906,7 @@ namespace BiggerFishMod
                 titanHolefish.SetScale(sizeScale);
             }
 
-            if (__instance is GlowWhale glowWhale)
+            else if (__instance is GlowWhale glowWhale)
             {
                 float sizeScale = 4.0f;
 
@@ -904,7 +922,7 @@ namespace BiggerFishMod
                 glowWhale.SetScale(sizeScale);
             }
 
-            if (__instance is Pinnacarid pinnacarid)
+            else if (__instance is Pinnacarid pinnacarid)
             {
                 float sizeScale = 4.0f;
 
@@ -920,7 +938,7 @@ namespace BiggerFishMod
                 pinnacarid.SetScale(sizeScale);
             }
 
-            if (__instance is Triops triops)
+            else if (__instance is Triops triops)
             {
                 float sizeScale = 4.0f;
 
@@ -936,7 +954,7 @@ namespace BiggerFishMod
                 triops.SetScale(sizeScale);
             }
 
-            if (__instance is Trivalve trivalve)
+            else if (__instance is Trivalve trivalve)
             {
                 float sizeScale = 4.0f;
 
@@ -952,7 +970,7 @@ namespace BiggerFishMod
                 trivalve.SetScale(sizeScale);
             }
 
-            if (__instance is SymbioteFish symbioteFish)
+            else if (__instance is SymbioteFish symbioteFish)
             {
                 float sizeScale = 4.0f;
 
@@ -968,7 +986,7 @@ namespace BiggerFishMod
                 symbioteFish.SetScale(sizeScale);
             }
 
-            if (__instance is RockGrub rockGrub)
+            else if (__instance is RockGrub rockGrub)
             {
                 float sizeScale = 4.0f;
 
@@ -986,7 +1004,7 @@ namespace BiggerFishMod
             #endregion
 
             #region Aggressive Fish
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
                 float sizeScale = 4.0f;
 
@@ -1002,7 +1020,7 @@ namespace BiggerFishMod
                 crashFish.SetScale(sizeScale);
             }
 
-            if (__instance is Brinewing brinewing)
+            else if (__instance is Brinewing brinewing)
             {
                 float sizeScale = 4.0f;
 
@@ -1018,7 +1036,7 @@ namespace BiggerFishMod
                 brinewing.SetScale(sizeScale);
             }
 
-            if (__instance is LilyPaddler lilyPaddler)
+            else if (__instance is LilyPaddler lilyPaddler)
             {
                 float sizeScale = 4.0f;
 
@@ -1034,7 +1052,7 @@ namespace BiggerFishMod
                 lilyPaddler.SetScale(sizeScale);
             }
 
-            if (__instance is Cryptosuchus cryptosuchus)
+            else if (__instance is Cryptosuchus cryptosuchus)
             {
                 float sizeScale = 4.0f;
 
@@ -1050,7 +1068,7 @@ namespace BiggerFishMod
                 cryptosuchus.SetScale(sizeScale);
             }
 
-            if (__instance is BruteShark bruteShark)
+            else if (__instance is BruteShark bruteShark)
             {
                 float sizeScale = 4.0f;
 
@@ -1066,7 +1084,7 @@ namespace BiggerFishMod
                 bruteShark.SetScale(sizeScale);
             }
 
-            if (__instance is SquidShark squidShark)
+            else if (__instance is SquidShark squidShark)
             {
                 float sizeScale = 4.0f;
 
@@ -1082,7 +1100,7 @@ namespace BiggerFishMod
                 squidShark.SetScale(sizeScale);
             }
 
-            if (__instance is Chelicerate chelicerate)
+            else if (__instance is Chelicerate chelicerate)
             {
                 float sizeScale = 4.0f;
 
@@ -1098,7 +1116,7 @@ namespace BiggerFishMod
                 chelicerate.SetScale(sizeScale);
             }
 
-            if (__instance is ShadowLeviathan shadowLeviathan)
+            else if (__instance is ShadowLeviathan shadowLeviathan)
             {
                 float sizeScale = 4.0f;
 
@@ -1114,7 +1132,7 @@ namespace BiggerFishMod
                 shadowLeviathan.SetScale(sizeScale);
             }
 
-            if (__instance is VoidLeviathan voidLeviathan)
+            else if (__instance is VoidLeviathan voidLeviathan)
             {
                 float sizeScale = 4.0f;
 
@@ -1132,7 +1150,7 @@ namespace BiggerFishMod
             #endregion
 
             #region Not Fish
-            if (__instance is Skyray skyray)
+            else if (__instance is Skyray skyRay)
             {
                 float sizeScale = 4.0f;
 
@@ -1145,10 +1163,10 @@ namespace BiggerFishMod
                     sizeScale = MyModOptions.skyRayScale.Value;
                 }
 
-                skyray.SetScale(sizeScale);
+                skyRay.SetScale(sizeScale);
             }
 
-            if (__instance is PenguinBaby pengling)
+            else if (__instance is PenguinBaby pengling)
             {
                 float sizeScale = 4.0f;
 
@@ -1164,7 +1182,7 @@ namespace BiggerFishMod
                 pengling.SetScale(sizeScale);
             }
 
-            if (__instance is Penguin pengwing)
+            else if (__instance is Penguin pengwing)
             {
                 float sizeScale = 4.0f;
 
@@ -1180,7 +1198,7 @@ namespace BiggerFishMod
                 pengwing.SetScale(sizeScale);
             }
 
-            if (__instance is SeaMonkeyBaby seaMonkeyBaby)
+            else if (__instance is SeaMonkeyBaby seaMonkeyBaby)
             {
                 float sizeScale = 4.0f;
 
@@ -1196,7 +1214,7 @@ namespace BiggerFishMod
                 seaMonkeyBaby.SetScale(sizeScale);
             }
 
-            if (__instance is SeaMonkey seaMonkey)
+            else if (__instance is SeaMonkey seaMonkey)
             {
                 float sizeScale = 4.0f;
 
@@ -1212,7 +1230,7 @@ namespace BiggerFishMod
                 seaMonkey.SetScale(sizeScale);
             }
 
-            if (__instance is SnowStalkerBaby snowStalkerBaby)
+            else if (__instance is SnowStalkerBaby snowStalkerBaby)
             {
                 float sizeScale = 4.0f;
 
@@ -1228,7 +1246,7 @@ namespace BiggerFishMod
                 snowStalkerBaby.SetScale(sizeScale);
             }
 
-            if (__instance is SnowStalker snowStalker)
+            else if (__instance is SnowStalker snowStalker)
             {
                 float sizeScale = 4.0f;
 
@@ -1244,7 +1262,7 @@ namespace BiggerFishMod
                 snowStalker.SetScale(sizeScale);
             }
 
-            if (__instance is RockPuncher rockPuncher)
+            else if (__instance is RockPuncher rockPuncher)
             {
                 float sizeScale = 4.0f;
 

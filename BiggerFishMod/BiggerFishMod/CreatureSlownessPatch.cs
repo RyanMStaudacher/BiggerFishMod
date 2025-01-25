@@ -12,7 +12,7 @@ namespace BiggerFishMod
         {
             if (__instance is Biter biter)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     biter.GetComponent<Locomotion>().maxAcceleration = MyModOptions.biterBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     biter.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.biterBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -28,9 +28,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
                 {
                     bladderFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bladderFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     bladderFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bladderFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -46,9 +46,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bleeder bleeder)
+            else if (__instance is Bleeder bleeder)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bleederExclude.Value == false)
                 {
                     bleeder.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bleederBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     bleeder.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.bleederBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -64,9 +64,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BoneShark boneShark)
+            else if (__instance is BoneShark boneShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boneSharkExclude.Value == false)
                 {
                     boneShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boneSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     boneShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boneSharkBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -82,9 +82,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boomerangExclude.Value == false)
                 {
                     boomerang.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boomerangBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     boomerang.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.boomerangBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -100,9 +100,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CaveCrawler caveCrawler)
+            else if (__instance is CaveCrawler caveCrawler)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.caveCrawlerExclude.Value == false)
                 {
                     caveCrawler.GetComponent<Locomotion>().maxAcceleration = MyModOptions.caveCrawlerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     caveCrawler.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.caveCrawlerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -118,9 +118,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSnake crabSnake)
+            else if (__instance is CrabSnake crabSnake)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSnakeExclude.Value == false)
                 {
                     crabSnake.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSnakeBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     crabSnake.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSnakeBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -136,9 +136,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CrabSquid crabSquid)
+            else if (__instance is CrabSquid crabSquid)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSquidExclude.Value == false)
                 {
                     crabSquid.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crabSquidBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     crabSquid.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crabSquidBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -154,9 +154,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crashFishExclude.Value == false)
                 {
                     crashFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crashFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     crashFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.crashFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -172,9 +172,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is CuteFish cuddleFish)
+            else if (__instance is CuteFish cuddleFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.cuddleFishExclude.Value == false)
                 {
                     cuddleFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.cuddleFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     cuddleFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.cuddleFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -190,9 +190,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Eyeye eyeye)
+            else if (__instance is Eyeye eyeye)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.eyeyeExclude.Value == false)
                 {
                     eyeye.GetComponent<Locomotion>().maxAcceleration = MyModOptions.eyeyeBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     eyeye.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.eyeyeBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -208,9 +208,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Garryfish garryFish)
+            else if (__instance is Garryfish garryFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.garryFishExclude.Value == false)
                 {
                     garryFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.garryFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     garryFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.garryFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -226,9 +226,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GasoPod gasopod)
+            else if (__instance is GasoPod gasopod)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.gasopodExclude.Value == false)
                 {
                     gasopod.GetComponent<Locomotion>().maxAcceleration = MyModOptions.gasopodBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     gasopod.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.gasopodBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -244,9 +244,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviatanVoid voidGhostLeviathan)
+            else if (__instance is GhostLeviatanVoid voidGhostLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.voidGhostLeviathanExclude.Value == false)
                 {
                     voidGhostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.voidGhostLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     voidGhostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.voidGhostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -262,9 +262,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostLeviathan ghostLeviathan)
+            else if (__instance is GhostLeviathan ghostLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostLeviathanExclude.Value == false)
                 {
                     ghostLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     ghostLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -280,9 +280,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GhostRay ghostRay)
+            else if (__instance is GhostRay ghostRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostRayExclude.Value == false)
                 {
                     ghostRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.ghostRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     ghostRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.ghostRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -298,9 +298,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Holefish holeFish)
+            else if (__instance is Holefish holeFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.holeFishExclude.Value == false)
                 {
                     holeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.holeFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     holeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.holeFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -316,9 +316,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoopFishExclude.Value == false)
                 {
                     hoopFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoopFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     hoopFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoopFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -334,9 +334,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoverfish hoverFish)
+            else if (__instance is Hoverfish hoverFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoverFishExclude.Value == false)
                 {
                     hoverFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoverFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     hoverFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.hoverFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -352,9 +352,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyray jellyRay)
+            else if (__instance is Jellyray jellyRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jellyRayExclude.Value == false)
                 {
                     jellyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jellyRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     jellyRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jellyRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -370,9 +370,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jumper jumper)
+            else if (__instance is Jumper jumper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jumperExclude.Value == false)
                 {
                     jumper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jumperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     jumper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.jumperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -388,9 +388,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLarva lavaLarva)
+            else if (__instance is LavaLarva lavaLarva)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLarvaExclude.Value == false)
                 {
                     lavaLarva.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLarvaBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     lavaLarva.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLarvaBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -406,9 +406,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LavaLizard lavaLizard)
+            else if (__instance is LavaLizard lavaLizard)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLizardExclude.Value == false)
                 {
                     lavaLizard.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lavaLizardBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     lavaLizard.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.lavaLizardBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -424,9 +424,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Mesmer mesmer)
+            else if (__instance is Mesmer mesmer)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.mesmerExclude.Value == false)
                 {
                     mesmer.GetComponent<Locomotion>().maxAcceleration = MyModOptions.mesmerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     mesmer.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.mesmerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -442,9 +442,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is OculusFish oculusFish)
+            else if (__instance is OculusFish oculusFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.oculusFishExclude.Value == false)
                 {
                     oculusFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.oculusFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     oculusFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.oculusFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -460,9 +460,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Peeper peeper)
+            else if (__instance is Peeper peeper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.peeperExclude.Value == false)
                 {
                     peeper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.peeperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     peeper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.peeperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -478,9 +478,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RabbitRay rabbitRay)
+            else if (__instance is RabbitRay rabbitRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rabbitRayExclude.Value == false)
                 {
                     rabbitRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rabbitRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     rabbitRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.rabbitRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -496,9 +496,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ReaperLeviathan reaperLeviathan)
+            else if (__instance is ReaperLeviathan reaperLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reaperLeviathanExclude.Value == false)
                 {
                     reaperLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reaperLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     reaperLeviathan.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reaperLeviathanBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -514,9 +514,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reefback reefback)
+            else if (__instance is Reefback reefback)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reefbackExclude.Value == false)
                 {
                     reefback.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reefbackBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     reefback.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reefbackBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -532,9 +532,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Reginald reginald)
+            else if (__instance is Reginald reginald)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reginaldExclude.Value == false)
                 {
                     reginald.GetComponent<Locomotion>().maxAcceleration = MyModOptions.reginaldBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     reginald.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.reginaldBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -550,9 +550,27 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SandShark sandShark)
+            //else if (__instance is RockGrub rockGrub)
+            //{
+            //    if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rockGrubExclude.Value == false)
+            //    {
+            //        rockGrub.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rockGrubBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+            //        rockGrub.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.rockGrubBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+            //        rockGrub.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rockGrubBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+            //        rockGrub.GetComponent<RockGrub>().traitsAnimator.speed = MyModOptions.rockGrubBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
+            //    }
+            //    else
+            //    {
+            //        rockGrub.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rockGrubBaseMaxAcceleration.Value / MyModOptions.rockGrubSlowness.Value;
+            //        rockGrub.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.rockGrubBaseForwardRotationSpeed.Value / MyModOptions.rockGrubSlowness.Value;
+            //        rockGrub.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rockGrubBaseUpRotationSpeed.Value / MyModOptions.rockGrubSlowness.Value;
+            //        rockGrub.GetComponent<BloomCreature>().traitsAnimator.speed = MyModOptions.rockGrubBaseTraitsAnimatorSpeed.Value / MyModOptions.rockGrubSlowness.Value;
+            //    }
+            //}
+
+            else if (__instance is SandShark sandShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.sandSharkExclude.Value == false)
                 {
                     sandShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.sandSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     sandShark.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.sandSharkBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -568,9 +586,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaDragon seaDragon)
+            else if (__instance is SeaDragon seaDragon)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaDragonExclude.Value == false)
                 {
                     seaDragon.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaDragonBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaDragon.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaDragonBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -586,9 +604,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorBaby seaEmperorBaby)
+            else if (__instance is SeaEmperorBaby seaEmperorBaby)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorBabyExclude.Value == false)
                 {
                     seaEmperorBaby.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorBabyBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaEmperorBaby.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorBabyBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -604,9 +622,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
+            else if (__instance is SeaEmperorJuvenile seaEmperorJuvenile)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorJuvenileExclude.Value == false)
                 {
                     seaEmperorJuvenile.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaEmperorJuvenileBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaEmperorJuvenile.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaEmperorJuvenileBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -622,9 +640,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaTreader seaTreader)
+            else if (__instance is SeaTreader seaTreader)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaTreaderExclude.Value == false)
                 {
                     seaTreader.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaTreaderBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaTreader.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.seaTreaderBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -640,9 +658,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Shocker shocker)
+            else if (__instance is Shocker shocker)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.shockerExclude.Value == false)
                 {
                     shocker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.shockerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     shocker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.shockerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -658,9 +676,27 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Spadefish spadeFish)
+            else if (__instance is Skyray skyRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.skyRayExclude.Value == false)
+                {
+                    skyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.skyRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
+                    skyRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.skyRayBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    skyRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.skyRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                    skyRay.GetComponent<Skyray>().traitsAnimator.speed = MyModOptions.skyRayBaseTraitsAnimatorSpeed.Value / MyModOptions.proportionalSlowness.Value;
+                }
+                else
+                {
+                    skyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.skyRayBaseMaxAcceleration.Value / MyModOptions.skyRaySlowness.Value;
+                    skyRay.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.skyRayBaseForwardRotationSpeed.Value / MyModOptions.skyRaySlowness.Value;
+                    skyRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.skyRayBaseUpRotationSpeed.Value / MyModOptions.skyRaySlowness.Value;
+                    skyRay.GetComponent<Skyray>().traitsAnimator.speed = MyModOptions.skyRayBaseTraitsAnimatorSpeed.Value / MyModOptions.skyRaySlowness.Value;
+                }
+            }
+
+            else if (__instance is Spadefish spadeFish)
+            {
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spadeFishExclude.Value == false)
                 {
                     spadeFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spadeFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     spadeFish.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spadeFishBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -676,9 +712,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SpineEel spineEel)
+            else if (__instance is SpineEel spineEel)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spineEelExclude.Value == false)
                 {
                     spineEel.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spineEelBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     spineEel.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.spineEelBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -694,9 +730,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Stalker stalker)
+            else if (__instance is Stalker stalker)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.stalkerExclude.Value == false)
                 {
                     stalker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.stalkerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     stalker.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.stalkerBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -712,9 +748,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Warper warper)
+            else if (__instance is Warper warper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.warperExclude.Value == false)
                 {
                     warper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.warperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     warper.GetComponent<Locomotion>().forwardRotationSpeed = MyModOptions.warperBaseForwardRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -743,7 +779,7 @@ namespace BiggerFishMod
             #region Passive Fish
             if (__instance is ArcticPeeper arcticPeeper)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     arcticPeeper.GetComponent<Locomotion>().maxAcceleration = MyModOptions.arcticPeeperBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     arcticPeeper.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.arcticPeeperBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -759,9 +795,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArrowRay arrowRay)
+            else if (__instance is ArrowRay arrowRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     arrowRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.arrowRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     arrowRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.arrowRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -777,9 +813,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Boomerang boomerang)
+            else if (__instance is Boomerang boomerang)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     boomerang.GetComponent<Locomotion>().maxAcceleration = MyModOptions.boomerangBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     boomerang.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.boomerangBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -795,9 +831,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Bladderfish bladderFish)
+            else if (__instance is Bladderfish bladderFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     bladderFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bladderFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     bladderFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bladderFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -813,9 +849,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Hoopfish hoopFish)
+            else if (__instance is Hoopfish hoopFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     hoopFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.hoopFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     hoopFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.hoopFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -831,9 +867,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is DiscusFish discusFish)
+            else if (__instance is DiscusFish discusFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     discusFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.discusFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     discusFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.discusFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -849,9 +885,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is FeatherFish featherFish)
+            else if (__instance is FeatherFish featherFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     featherFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.featherFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     featherFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.featherFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -867,9 +903,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is NootFish nootFish)
+            else if (__instance is NootFish nootFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     nootFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.nootFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     nootFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.nootFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -885,9 +921,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SpinnerFish spinnerFish)
+            else if (__instance is SpinnerFish spinnerFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     spinnerFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.spinnerFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     spinnerFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.spinnerFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -903,9 +939,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ArcticRay arcticRay)
+            else if (__instance is ArcticRay arcticRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     arcticRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.arcticRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     arcticRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.arcticRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -921,9 +957,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Jellyfish jellyFish)
+            else if (__instance is Jellyfish jellyFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     jellyFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.jellyFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     jellyFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.jellyFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -939,9 +975,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is TitanHolefish titanHoleFish)
+            else if (__instance is TitanHolefish titanHoleFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     titanHoleFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.titanHoleFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     titanHoleFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.titanHoleFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -957,9 +993,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is GlowWhale glowWhale)
+            else if (__instance is GlowWhale glowWhale)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     glowWhale.GetComponent<Locomotion>().maxAcceleration = MyModOptions.glowWhaleBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     glowWhale.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.glowWhaleBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -975,9 +1011,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Pinnacarid pinnacarid)
+            else if (__instance is Pinnacarid pinnacarid)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     pinnacarid.GetComponent<Locomotion>().maxAcceleration = MyModOptions.pinnacaridBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     pinnacarid.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.pinnacaridBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -993,9 +1029,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Triops triops)
+            else if (__instance is Triops triops)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     triops.GetComponent<Locomotion>().maxAcceleration = MyModOptions.triopsBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     triops.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.triopsBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1011,9 +1047,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Trivalve trivalve)
+            else if (__instance is Trivalve trivalve)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     trivalve.GetComponent<Locomotion>().maxAcceleration = MyModOptions.trivalveBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     trivalve.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.trivalveBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1029,9 +1065,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SymbioteFish symbioteFish)
+            else if (__instance is SymbioteFish symbioteFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     symbioteFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.symbioteFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     symbioteFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.symbioteFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1047,9 +1083,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockGrub rockGrub)
+            else if (__instance is RockGrub rockGrub)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     rockGrub.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rockGrubBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     rockGrub.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rockGrubBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1067,9 +1103,9 @@ namespace BiggerFishMod
             #endregion
 
             #region Aggressive Fish
-            if (__instance is Crash crashFish)
+            else if (__instance is Crash crashFish)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     crashFish.GetComponent<Locomotion>().maxAcceleration = MyModOptions.crashFishBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     crashFish.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.crashFishBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1085,9 +1121,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Brinewing brineWing)
+            else if (__instance is Brinewing brineWing)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     brineWing.GetComponent<Locomotion>().maxAcceleration = MyModOptions.brineWingBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     brineWing.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.brineWingBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1103,9 +1139,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is LilyPaddler lilyPaddler)
+            else if (__instance is LilyPaddler lilyPaddler)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     lilyPaddler.GetComponent<Locomotion>().maxAcceleration = MyModOptions.lilyPaddlerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     lilyPaddler.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.lilyPaddlerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1121,9 +1157,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Cryptosuchus cryptosuchus)
+            else if (__instance is Cryptosuchus cryptosuchus)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     cryptosuchus.GetComponent<Locomotion>().maxAcceleration = MyModOptions.cryptosuchusBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     cryptosuchus.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.cryptosuchusBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1139,9 +1175,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is BruteShark bruteShark)
+            else if (__instance is BruteShark bruteShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     bruteShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.bruteSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     bruteShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.bruteSharkBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1157,9 +1193,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SquidShark squidShark)
+            else if (__instance is SquidShark squidShark)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     squidShark.GetComponent<Locomotion>().maxAcceleration = MyModOptions.squidSharkBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     squidShark.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.squidSharkBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1175,9 +1211,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Chelicerate chelicerate)
+            else if (__instance is Chelicerate chelicerate)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     chelicerate.GetComponent<Locomotion>().maxAcceleration = MyModOptions.chelicerateBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     chelicerate.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.chelicerateBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1193,9 +1229,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is ShadowLeviathan shadowLeviathan)
+            else if (__instance is ShadowLeviathan shadowLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     shadowLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.shadowLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     shadowLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.shadowLeviathanBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1211,9 +1247,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is VoidLeviathan voidLeviathan)
+            else if (__instance is VoidLeviathan voidLeviathan)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     voidLeviathan.GetComponent<Locomotion>().maxAcceleration = MyModOptions.voidLeviathanBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     voidLeviathan.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.voidLeviathanBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1231,9 +1267,9 @@ namespace BiggerFishMod
             #endregion
 
             #region Not Fish
-            if (__instance is Skyray skyRay)
+            else if (__instance is Skyray skyRay)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     skyRay.GetComponent<Locomotion>().maxAcceleration = MyModOptions.skyRayBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     skyRay.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.skyRayBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1249,9 +1285,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is PenguinBaby pengling)
+            else if (__instance is PenguinBaby pengling)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     pengling.GetComponent<Locomotion>().maxAcceleration = MyModOptions.penglingBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     pengling.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.penglingBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1267,9 +1303,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is Penguin pengwing)
+            else if (__instance is Penguin pengwing)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     pengwing.GetComponent<Locomotion>().maxAcceleration = MyModOptions.pengwingBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     pengwing.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.pengwingBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1285,9 +1321,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkeyBaby seaMonkeyBaby)
+            else if (__instance is SeaMonkeyBaby seaMonkeyBaby)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     seaMonkeyBaby.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaMonkeyBabyBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaMonkeyBaby.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaMonkeyBabyBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1303,9 +1339,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SeaMonkey seaMonkey)
+            else if (__instance is SeaMonkey seaMonkey)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     seaMonkey.GetComponent<Locomotion>().maxAcceleration = MyModOptions.seaMonkeyBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     seaMonkey.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.seaMonkeyBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1321,9 +1357,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalkerBaby snowStalkerBaby)
+            else if (__instance is SnowStalkerBaby snowStalkerBaby)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     snowStalkerBaby.GetComponent<Locomotion>().maxAcceleration = MyModOptions.snowStalkerBabyBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     snowStalkerBaby.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.snowStalkerBabyBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1339,9 +1375,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is SnowStalker snowStalker)
+            else if (__instance is SnowStalker snowStalker)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     snowStalker.GetComponent<Locomotion>().maxAcceleration = MyModOptions.snowStalkerBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     snowStalker.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.snowStalkerBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
@@ -1357,9 +1393,9 @@ namespace BiggerFishMod
                 }
             }
 
-            if (__instance is RockPuncher rockPuncher)
+            else if (__instance is RockPuncher rockPuncher)
             {
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
                 {
                     rockPuncher.GetComponent<Locomotion>().maxAcceleration = MyModOptions.rockPuncherBaseMaxAcceleration.Value / MyModOptions.proportionalSlowness.Value;
                     rockPuncher.GetComponent<Locomotion>().upRotationSpeed = MyModOptions.rockPuncherBaseUpRotationSpeed.Value / MyModOptions.proportionalSlowness.Value;
