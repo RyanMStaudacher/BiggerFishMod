@@ -47,6 +47,9 @@ namespace BiggerFishMod
             MyModOptions.bladderFishSlowness = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Slowness", 1.0f, "The value at which this this creature will be slowed down to when Proportional Toggle is disabled (So bigger creatures don't move so quickly). Higher number = slower.");
             MyModOptions.bladderFishHealth = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Health", 1.0f, "The value to multiply this creature's health by.");
             MyModOptions.bladderFishLimit = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Limit", 50.0f, "Limits the amount of active creatures to this value (Bigger creatures can create lots of clutter, this helps with that).");
+            MyModOptions.bladderFishRandomize = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Randomize", false, "Randomize this creature's values.");
+            MyModOptions.bladderFishRandomizeMin = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Randomize Min", 1f, "The minimum amount the randomization can be set to.");
+            MyModOptions.bladderFishRandomizeMax = biggerFishSettingsConfig.Bind("Bladderfish Values", "Bladderfish Randomize Max", 50f, "The maximum amount the randomization can be set to.");
 
             MyModOptions.bleederExclude = biggerFishSettingsConfig.Bind("Bleeder Values", "Bleeder Exclude From Proportional", false, "Exclude this creature from the proportional toggle.");
             MyModOptions.bleederScale = biggerFishSettingsConfig.Bind("Bleeder Values", "Bleeder Scale", 1.0f, "The scale value this creature will use when Proportional Toggle is disabled.");

@@ -3,6 +3,7 @@ using ICSharpCode.SharpZipLib.Zip;
 using JetBrains.Annotations;
 using Nautilus.Handlers;
 using Nautilus.Options;
+using Nautilus.Options.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> bladderFishSlowness;
         public static ConfigEntry<float> bladderFishHealth;
         public static ConfigEntry<float> bladderFishLimit;
+        public static ConfigEntry<bool> bladderFishRandomize;
+        public static ConfigEntry<float> bladderFishRandomizeMin;
+        public static ConfigEntry<float> bladderFishRandomizeMax;
         public static ConfigEntry<float> bladderFishBaseHealth;
         public static ConfigEntry<float> bladderFishBaseMaxAcceleration;
         public static ConfigEntry<float> bladderFishBaseForwardRotationSpeed;
@@ -528,6 +532,8 @@ namespace BiggerFishMod
         List<OptionItem> stalkerOptions = new List<OptionItem>();
         List<OptionItem> warperOptions = new List<OptionItem>();
 
+        private int p = 0;
+
         public MyModOptions() : base("Bigger Fish")
         {
             ModToggleOption removeFishSchoolsOption = removeFishSchools.ToModToggleOption();
@@ -562,15 +568,15 @@ namespace BiggerFishMod
             shockerExcludeOption.OnChanged += ToggleOptionsChanged;
             AddItem(shockerExcludeOption);
 
-            ModSliderOption shockerScaleOption = shockerScale.ToModSliderOption(-50, 50);
+            ModSliderOption shockerScaleOption = shockerScale.ToModSliderOption(1, 50);
             shockerScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerScaleOption);
 
-            ModSliderOption shockerSlownessOption = shockerSlowness.ToModSliderOption(-100, 100);
+            ModSliderOption shockerSlownessOption = shockerSlowness.ToModSliderOption(1, 100);
             shockerSlownessOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerSlownessOption);
 
-            ModSliderOption shockerHealthOption = shockerHealth.ToModSliderOption(-100, 100);
+            ModSliderOption shockerHealthOption = shockerHealth.ToModSliderOption(1, 100);
             shockerHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerHealthOption);
 
@@ -602,7 +608,7 @@ namespace BiggerFishMod
             biterLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(biterLimitOption);
 
-
+            
 
 
 
@@ -610,21 +616,33 @@ namespace BiggerFishMod
             bladderFishExcludeOption.OnChanged += ToggleOptionsChanged;
             AddItem(bladderFishExcludeOption);
 
-            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(-50, 50);
+            ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
             bladderFishScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishScaleOption);
 
-            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(-100, 100);
+            ModSliderOption bladderFishSlownessOption = bladderFishSlowness.ToModSliderOption(1, 100);
             bladderFishSlownessOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishSlownessOption);
 
-            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(-100, 100);
+            ModSliderOption bladderFishHealthOption = bladderFishHealth.ToModSliderOption(1, 100);
             bladderFishHealthOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishHealthOption);
 
             ModSliderOption bladderFishLimitOption = bladderFishLimit.ToModSliderOption(0, 50);
             bladderFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishLimitOption);
+
+            ModToggleOption bladderFishRandomizeOption = bladderFishRandomize.ToModToggleOption();
+            bladderFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bladderFishRandomizeOption);
+
+            ModSliderOption bladderFishRandomizeMinOption = bladderFishRandomizeMin.ToModSliderOption(1, 50);
+            bladderFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishRandomizeMinOption);
+
+            ModSliderOption bladderFishRandomizeMaxOption = bladderFishRandomizeMax.ToModSliderOption(1, 50);
+            bladderFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishRandomizeMaxOption);
 
 
 
@@ -1576,177 +1594,177 @@ namespace BiggerFishMod
 
             int p = panel.AddTab("Bigger Fish");
 
-            foreach(OptionItem option in optionItemsHash)
+            foreach (OptionItem option in optionItemsHash)
             {
-                if (option.Id.Contains("Misc. Options"))
+                if (option.Id.Contains("Misc. Options") && !miscOptions.Contains(option))
                 {
                     miscOptions.Add(option);
                 }
-                else if(option.Id.Contains("Proportional Values"))
+                else if (option.Id.Contains("Proportional Values") && !proportionalOptions.Contains(option))
                 {
                     proportionalOptions.Add(option);
                 }
-                else if(option.Id.Contains("Ampeel Values"))
+                else if (option.Id.Contains("Ampeel Values") && !ampeelOptions.Contains(option))
                 {
                     ampeelOptions.Add(option);
                 }
-                else if(option.Id.Contains("Biter Values"))
+                else if (option.Id.Contains("Biter Values") && !biterOptions.Contains(option))
                 {
                     biterOptions.Add(option);
                 }
-                else if(option.Id.Contains("Bladderfish Values"))
+                else if (option.Id.Contains("Bladderfish Values") && !bladderFishOptions.Contains(option))
                 {
                     bladderFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Bleeder Values"))
+                else if (option.Id.Contains("Bleeder Values") && !bleederOptions.Contains(option))
                 {
                     bleederOptions.Add(option);
                 }
-                else if (option.Id.Contains("Bone Shark Values"))
+                else if (option.Id.Contains("Bone Shark Values") && !boneSharkOptions.Contains(option))
                 {
                     boneSharkOptions.Add(option);
                 }
-                else if (option.Id.Contains("Boomerang Values"))
+                else if (option.Id.Contains("Boomerang Values") && !boomerangOptions.Contains(option))
                 {
                     boomerangOptions.Add(option);
                 }
-                else if (option.Id.Contains("Cave Crawler Values"))
+                else if (option.Id.Contains("Cave Crawler Values") && !caveCrawlerOptions.Contains(option))
                 {
                     caveCrawlerOptions.Add(option);
                 }
-                else if (option.Id.Contains("Crab Snake Values"))
+                else if (option.Id.Contains("Crab Snake Values") && !crabSnakeOptions.Contains(option))
                 {
                     crabSnakeOptions.Add(option);
                 }
-                else if (option.Id.Contains("Crab Squid Values"))
+                else if (option.Id.Contains("Crab Squid Values") && !crabSquidOptions.Contains(option))
                 {
                     crabSquidOptions.Add(option);
                 }
-                else if (option.Id.Contains("Crash Fish Values"))
+                else if (option.Id.Contains("Crash Fish Values") && !crashFishOptions.Contains(option))
                 {
                     crashFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Cuddlefish Values"))
+                else if (option.Id.Contains("Cuddlefish Values") && !cuddleFishOptions.Contains(option))
                 {
                     cuddleFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Eyeye Values"))
+                else if (option.Id.Contains("Eyeye Values") && !eyeyeOptions.Contains(option))
                 {
                     eyeyeOptions.Add(option);
                 }
-                else if (option.Id.Contains("Garry Fish Values"))
+                else if (option.Id.Contains("Garry Fish Values") && !garryFishOptions.Contains(option))
                 {
                     garryFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Gasopod Values"))
+                else if (option.Id.Contains("Gasopod Values") && !gasopodOptions.Contains(option))
                 {
                     gasopodOptions.Add(option);
                 }
-                else if (option.Id.Contains("Ghost Leviathan Values"))
+                else if (option.Id.Contains("Ghost Leviathan Values") && !ghostLeviathanOptions.Contains(option))
                 {
                     ghostLeviathanOptions.Add(option);
                 }
-                else if (option.Id.Contains("Ghost Leviathan(Void) Values"))
+                else if (option.Id.Contains("Ghost Leviathan(Void) Values") && !voidGhostLeviathanOptions.Contains(option))
                 {
                     voidGhostLeviathanOptions.Add(option);
                 }
-                else if (option.Id.Contains("Ghost Ray Values"))
+                else if (option.Id.Contains("Ghost Ray Values") && !ghostRayOptions.Contains(option))
                 {
                     ghostRayOptions.Add(option);
                 }
-                else if (option.Id.Contains("Hole Fish Values"))
+                else if (option.Id.Contains("Hole Fish Values") && !holeFishOptions.Contains(option))
                 {
                     holeFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Hoop Fish Values"))
+                else if (option.Id.Contains("Hoop Fish Values") && !hoopFishOptions.Contains(option))
                 {
                     hoopFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Hover Fish Values"))
+                else if (option.Id.Contains("Hover Fish Values") && !hoverFishOptions.Contains(option))
                 {
                     hoverFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Jellyray Values"))
+                else if (option.Id.Contains("Jellyray Values") && !jellyRayOptions.Contains(option))
                 {
                     jellyRayOptions.Add(option);
                 }
-                else if (option.Id.Contains("Shuttlebug Values"))
+                else if (option.Id.Contains("Shuttlebug Values") && !jumperOptions.Contains(option))
                 {
                     jumperOptions.Add(option);
                 }
-                else if (option.Id.Contains("Lava Larva Values"))
+                else if (option.Id.Contains("Lava Larva Values") && !lavaLarvaOptions.Contains(option))
                 {
                     lavaLarvaOptions.Add(option);
                 }
-                else if (option.Id.Contains("Lava Lizard Values"))
+                else if (option.Id.Contains("Lava Lizard Values") && !lavaLizardOptions.Contains(option))
                 {
                     lavaLizardOptions.Add(option);
                 }
-                else if (option.Id.Contains("Mesmer Values"))
+                else if (option.Id.Contains("Mesmer Values") && !mesmerOptions.Contains(option))
                 {
                     mesmerOptions.Add(option);
                 }
-                else if (option.Id.Contains("Oculus Fish Values"))
+                else if (option.Id.Contains("Oculus Fish Values") && !oculusFishOptions.Contains(option))
                 {
                     oculusFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("Peeper Values"))
+                else if (option.Id.Contains("Peeper Values") && !peeperOptions.Contains(option))
                 {
                     peeperOptions.Add(option);
                 }
-                else if (option.Id.Contains("Rabbit Ray Values"))
+                else if (option.Id.Contains("Rabbit Ray Values") && !rabbitRayOptions.Contains(option))
                 {
                     rabbitRayOptions.Add(option);
                 }
-                else if (option.Id.Contains("Reaper Leviathan Values"))
+                else if (option.Id.Contains("Reaper Leviathan Values") && !reaperLeviathanOptions.Contains(option))
                 {
                     reaperLeviathanOptions.Add(option);
                 }
-                else if (option.Id.Contains("Reefback Values"))
+                else if (option.Id.Contains("Reefback Values") && !reefbackOptions.Contains(option))
                 {
                     reefbackOptions.Add(option);
                 }
-                else if (option.Id.Contains("Reginald Values"))
+                else if (option.Id.Contains("Reginald Values") && !reginaldOptions.Contains(option))
                 {
                     reginaldOptions.Add(option);
                 }
-                else if (option.Id.Contains("Sand Shark Values"))
+                else if (option.Id.Contains("Sand Shark Values") && !sandSharkOptions.Contains(option))
                 {
                     sandSharkOptions.Add(option);
                 }
-                else if (option.Id.Contains("Sea Dragon Values"))
+                else if (option.Id.Contains("Sea Dragon Values") && !seaDragonOptions.Contains(option))
                 {
                     seaDragonOptions.Add(option);
                 }
-                else if (option.Id.Contains("Sea Emperor Baby Values"))
+                else if (option.Id.Contains("Sea Emperor Baby Values") && !seaEmperorBabyOptions.Contains(option))
                 {
                     seaEmperorBabyOptions.Add(option);
                 }
-                else if (option.Id.Contains("Sea Emperor Juvenile Values"))
+                else if (option.Id.Contains("Sea Emperor Juvenile Values") && !seaEmperorJuvenileOptions.Contains(option))
                 {
                     seaEmperorJuvenileOptions.Add(option);
                 }
-                else if (option.Id.Contains("Sea Treader Values"))
+                else if (option.Id.Contains("Sea Treader Values") && !seaTreaderOptions.Contains(option))
                 {
                     seaTreaderOptions.Add(option);
                 }
-                else if (option.Id.Contains("Skyray Values"))
+                else if (option.Id.Contains("Skyray Values") && !skyRayOptions.Contains(option))
                 {
                     skyRayOptions.Add(option);
                 }
-                else if (option.Id.Contains("Spade Fish Values"))
+                else if (option.Id.Contains("Spade Fish Values") && !spadeFishOptions.Contains(option))
                 {
                     spadeFishOptions.Add(option);
                 }
-                else if (option.Id.Contains("River Prowler Values"))
+                else if (option.Id.Contains("River Prowler Values") && !spineEelOptions.Contains(option))
                 {
                     spineEelOptions.Add(option);
                 }
-                else if (option.Id.Contains("Stalker Values"))
+                else if (option.Id.Contains("Stalker Values") && !stalkerOptions.Contains(option))
                 {
                     stalkerOptions.Add(option);
                 }
-                else if (option.Id.Contains("Warper Values"))
+                else if (option.Id.Contains("Warper Values") && !warperOptions.Contains(option))
                 {
                     warperOptions.Add(option);
                 }
@@ -1758,25 +1776,25 @@ namespace BiggerFishMod
             }
 
             panel.AddHeading(p, "~~~Proportional Options~~~");
-            foreach(OptionItem option in proportionalOptions)
+            foreach (OptionItem option in proportionalOptions)
             {
                 option.AddToPanel(panel, p);
             }
 
             panel.AddHeading(p, "~~~Ampeel Options~~~");
-            foreach(OptionItem option in ampeelOptions)
+            foreach (OptionItem option in ampeelOptions)
             {
                 option.AddToPanel(panel, p);
             }
 
             panel.AddHeading(p, "~~~Biter Options~~~");
-            foreach(OptionItem option in biterOptions)
+            foreach (OptionItem option in biterOptions)
             {
                 option.AddToPanel(panel, p);
             }
 
             panel.AddHeading(p, "~~~Bladderfish Options~~~");
-            foreach(OptionItem option in bladderFishOptions)
+            foreach (OptionItem option in bladderFishOptions)
             {
                 option.AddToPanel(panel, p);
             }
@@ -2027,6 +2045,9 @@ namespace BiggerFishMod
                 case "Bladderfish Exlude":
                     bladderFishExclude.Value = e.Value;
                     break;
+                case "Bladderfish Randomize":
+                    bladderFishRandomize.Value = e.Value;
+                    break;
                 case "Bleeder Exclude":
                     bleederExclude.Value = e.Value;
                     break;
@@ -2186,6 +2207,12 @@ namespace BiggerFishMod
                     break;
                 case "Bladderfish Limit":
                     bladderFishLimit.Value = e.Value;
+                    break;
+                case "Bladderfish Randomize Min":
+                    bladderFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Bladderfish Randomize Max":
+                    bladderFishRandomizeMax.Value = e.Value;
                     break;
                 case "Bleeder Scale":
                     bleederScale.Value = e.Value;

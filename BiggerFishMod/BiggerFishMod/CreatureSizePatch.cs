@@ -31,14 +31,48 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
+                if(MyModOptions.bladderFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if(MyModOptions.bladderFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.bladderFishRandomizeMin.Value, MyModOptions.bladderFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.bladderFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.bladderFishScale.Value;
+                    if(MyModOptions.proportionalToggle.Value)
+                    {
+                        sizeScale = MyModOptions.proportionalScale.Value;
+                    }
+                    else
+                    {
+                        if(MyModOptions.bladderFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.bladderFishRandomizeMin.Value, MyModOptions.bladderFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.bladderFishScale.Value;
+                        }
+                    }
                 }
+
+                //if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
+                //{
+                    
+                //}
+                //else if(MyModOptions.proportionalToggle.Value == false && MyModOptions.bladderFishRandomize.Value == true)
+                //{
+                    
+                //}
+                //else
+                //{
+                    
+                //}
 
                 bladderFish.SetScale(sizeScale);
             }
