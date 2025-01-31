@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using BepInEx.Configuration;
 
 namespace BiggerFishMod
 {

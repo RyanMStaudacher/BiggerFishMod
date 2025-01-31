@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using static UnityEngine.PostProcessing.BuiltinDebugViewsComponent;
 
 namespace BiggerFishMod
 {
@@ -15,13 +14,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.biterExclude.Value == false)
+                if (MyModOptions.biterExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.biterRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.biterRandomizeMin.Value, MyModOptions.biterRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.biterScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.biterScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if(MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.biterRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.biterRandomizeMin.Value, MyModOptions.biterRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.biterScale.Value;
+                        }
+                    }
                 }
 
                 biter.SetScale(sizeScale);
@@ -46,7 +73,14 @@ namespace BiggerFishMod
                 {
                     if(MyModOptions.proportionalToggle.Value)
                     {
-                        sizeScale = MyModOptions.proportionalScale.Value;
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
                     }
                     else
                     {
@@ -61,19 +95,6 @@ namespace BiggerFishMod
                     }
                 }
 
-                //if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bladderFishExclude.Value == false)
-                //{
-                    
-                //}
-                //else if(MyModOptions.proportionalToggle.Value == false && MyModOptions.bladderFishRandomize.Value == true)
-                //{
-                    
-                //}
-                //else
-                //{
-                    
-                //}
-
                 bladderFish.SetScale(sizeScale);
             }
 
@@ -81,13 +102,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.bleederExclude.Value == false)
+                if (MyModOptions.bleederExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.bleederRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.bleederRandomizeMin.Value, MyModOptions.bleederRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.bleederScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.bleederScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.bleederRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.bleederRandomizeMin.Value, MyModOptions.bleederRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.bleederScale.Value;
+                        }
+                    }
                 }
 
                 bleeder.SetScale(sizeScale);
@@ -97,13 +146,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boneSharkExclude.Value == false)
+                if (MyModOptions.boneSharkExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.boneSharkRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.boneSharkRandomizeMin.Value, MyModOptions.boneSharkRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.boneSharkScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.boneSharkScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.boneSharkRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.boneSharkRandomizeMin.Value, MyModOptions.boneSharkRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.boneSharkScale.Value;
+                        }
+                    }
                 }
 
                 boneShark.SetScale(sizeScale);
@@ -113,13 +190,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.boomerangExclude.Value == false)
+                if (MyModOptions.boomerangExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.boomerangRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.boomerangRandomizeMin.Value, MyModOptions.boomerangRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.boomerangScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.boomerangScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.boomerangRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.boomerangRandomizeMin.Value, MyModOptions.boomerangRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.boomerangScale.Value;
+                        }
+                    }
                 }
 
                 boomerang.SetScale(sizeScale);
@@ -129,13 +234,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.caveCrawlerExclude.Value == false)
+                if (MyModOptions.caveCrawlerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.caveCrawlerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.caveCrawlerRandomizeMin.Value, MyModOptions.caveCrawlerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.caveCrawlerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.caveCrawlerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.caveCrawlerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.caveCrawlerRandomizeMin.Value, MyModOptions.caveCrawlerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.caveCrawlerScale.Value;
+                        }
+                    }
                 }
 
                 caveCrawler.SetScale(sizeScale);
@@ -145,13 +278,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSnakeExclude.Value == false)
+                if (MyModOptions.crabSnakeExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.crabSnakeRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.crabSnakeRandomizeMin.Value, MyModOptions.crabSnakeRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.crabSnakeScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.crabSnakeScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.crabSnakeRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.crabSnakeRandomizeMin.Value, MyModOptions.crabSnakeRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.crabSnakeScale.Value;
+                        }
+                    }
                 }
 
                 crabSnake.SetScale(sizeScale);
@@ -161,13 +322,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crabSquidExclude.Value == false)
+                if (MyModOptions.crabSquidExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.crabSquidRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.crabSquidRandomizeMin.Value, MyModOptions.crabSquidRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.crabSquidScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.crabSquidScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.crabSquidRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.crabSquidRandomizeMin.Value, MyModOptions.crabSquidRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.crabSquidScale.Value;
+                        }
+                    }
                 }
 
                 crabSquid.SetScale(sizeScale);
@@ -177,13 +366,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.crashFishExclude.Value == false)
+                if (MyModOptions.crashFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.crashFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.crashFishRandomizeMin.Value, MyModOptions.crashFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.crashFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.crashFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.crashFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.crashFishRandomizeMin.Value, MyModOptions.crashFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.crashFishScale.Value;
+                        }
+                    }
                 }
 
                 crashFish.SetScale(sizeScale);
@@ -193,13 +410,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.cuddleFishExclude.Value == false)
+                if (MyModOptions.cuddleFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.cuddleFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.cuddleFishRandomizeMin.Value, MyModOptions.cuddleFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.cuddleFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.cuddleFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.cuddleFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.cuddleFishRandomizeMin.Value, MyModOptions.cuddleFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.cuddleFishScale.Value;
+                        }
+                    }
                 }
 
                 cuddleFish.SetScale(sizeScale);
@@ -209,13 +454,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.eyeyeExclude.Value == false)
+                if (MyModOptions.eyeyeExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.eyeyeRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.eyeyeRandomizeMin.Value, MyModOptions.eyeyeRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.eyeyeScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.eyeyeScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.eyeyeRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.eyeyeRandomizeMin.Value, MyModOptions.eyeyeRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.eyeyeScale.Value;
+                        }
+                    }
                 }
 
                 eyeye.SetScale(sizeScale);
@@ -225,13 +498,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.garryFishExclude.Value == false)
+                if (MyModOptions.garryFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.garryFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.garryFishRandomizeMin.Value, MyModOptions.garryFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.garryFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.garryFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.garryFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.garryFishRandomizeMin.Value, MyModOptions.garryFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.garryFishScale.Value;
+                        }
+                    }
                 }
 
                 garryFish.SetScale(sizeScale);
@@ -241,13 +542,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.gasopodExclude.Value == false)
+                if (MyModOptions.gasopodExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.gasopodRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.gasopodRandomizeMin.Value, MyModOptions.gasopodRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.gasopodScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.gasopodScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.gasopodRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.gasopodRandomizeMin.Value, MyModOptions.gasopodRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.gasopodScale.Value;
+                        }
+                    }
                 }
 
                 gasopod.SetScale(sizeScale);
@@ -257,13 +586,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.voidGhostLeviathanExclude.Value == false)
+                if (MyModOptions.voidGhostLeviathanExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.voidGhostLeviathanRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.voidGhostLeviathanRandomizeMin.Value, MyModOptions.voidGhostLeviathanRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.voidGhostLeviathanScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.voidGhostLeviathanScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.voidGhostLeviathanRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.voidGhostLeviathanRandomizeMin.Value, MyModOptions.voidGhostLeviathanRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.voidGhostLeviathanScale.Value;
+                        }
+                    }
                 }
 
                 voidGhostLeviathan.SetScale(sizeScale);
@@ -273,13 +630,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostLeviathanExclude.Value == false)
+                if (MyModOptions.ghostLeviathanExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.ghostLeviathanRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.ghostLeviathanRandomizeMin.Value, MyModOptions.ghostLeviathanRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.ghostLeviathanScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.ghostLeviathanScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.ghostLeviathanRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.ghostLeviathanRandomizeMin.Value, MyModOptions.ghostLeviathanRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.ghostLeviathanScale.Value;
+                        }
+                    }
                 }
 
                 ghostLeviathan.SetScale(sizeScale);
@@ -289,13 +674,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.ghostRayExclude.Value == false)
+                if (MyModOptions.ghostRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.ghostRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.ghostRayRandomizeMin.Value, MyModOptions.ghostRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.ghostRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.ghostRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.ghostRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.ghostRayRandomizeMin.Value, MyModOptions.ghostRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.ghostRayScale.Value;
+                        }
+                    }
                 }
 
                 ghostRay.SetScale(sizeScale);
@@ -305,13 +718,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.holeFishExclude.Value == false)
+                if (MyModOptions.holeFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.holeFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.holeFishRandomizeMin.Value, MyModOptions.holeFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.holeFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.holeFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.holeFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.holeFishRandomizeMin.Value, MyModOptions.holeFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.holeFishScale.Value;
+                        }
+                    }
                 }
 
                 holeFish.SetScale(sizeScale);
@@ -321,13 +762,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoopFishExclude.Value == false)
+                if (MyModOptions.hoopFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.hoopFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.hoopFishRandomizeMin.Value, MyModOptions.hoopFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.hoopFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.hoopFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.hoopFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.hoopFishRandomizeMin.Value, MyModOptions.hoopFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.hoopFishScale.Value;
+                        }
+                    }
                 }
 
                 hoopFish.SetScale(sizeScale);
@@ -337,13 +806,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.hoverFishExclude.Value == false)
+                if (MyModOptions.hoverFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.hoverFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.hoverFishRandomizeMin.Value, MyModOptions.hoverFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.hoverFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.hoverFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.hoverFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.hoverFishRandomizeMin.Value, MyModOptions.hoverFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.hoverFishScale.Value;
+                        }
+                    }
                 }
 
                 hoverFish.SetScale(sizeScale);
@@ -353,13 +850,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jellyRayExclude.Value == false)
+                if (MyModOptions.jellyRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.jellyRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.jellyRayRandomizeMin.Value, MyModOptions.jellyRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.jellyRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.jellyRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.jellyRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.jellyRayRandomizeMin.Value, MyModOptions.jellyRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.jellyRayScale.Value;
+                        }
+                    }
                 }
 
                 jellyRay.SetScale(sizeScale);
@@ -369,13 +894,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.jumperExclude.Value == false)
+                if (MyModOptions.jumperExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.jumperRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.jumperRandomizeMin.Value, MyModOptions.jumperRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.jumperScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.jumperScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.jumperRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.jumperRandomizeMin.Value, MyModOptions.jumperRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.jumperScale.Value;
+                        }
+                    }
                 }
 
                 jumper.SetScale(sizeScale);
@@ -385,13 +938,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLarvaExclude.Value == false)
+                if (MyModOptions.lavaLarvaExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.lavaLarvaRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.lavaLarvaRandomizeMin.Value, MyModOptions.lavaLarvaRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.lavaLarvaScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.lavaLarvaScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.lavaLarvaRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.lavaLarvaRandomizeMin.Value, MyModOptions.lavaLarvaRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.lavaLarvaScale.Value;
+                        }
+                    }
                 }
 
                 lavaLarva.SetScale(sizeScale);
@@ -401,13 +982,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.lavaLizardExclude.Value == false)
+                if (MyModOptions.lavaLizardExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.lavaLizardRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.lavaLizardRandomizeMin.Value, MyModOptions.lavaLizardRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.lavaLizardScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.lavaLizardScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.lavaLizardRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.lavaLizardRandomizeMin.Value, MyModOptions.lavaLizardRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.lavaLizardScale.Value;
+                        }
+                    }
                 }
 
                 lavaLizard.SetScale(sizeScale);
@@ -417,13 +1026,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.mesmerExclude.Value == false)
+                if (MyModOptions.mesmerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.mesmerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.mesmerRandomizeMin.Value, MyModOptions.mesmerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.mesmerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.mesmerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.mesmerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.mesmerRandomizeMin.Value, MyModOptions.mesmerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.mesmerScale.Value;
+                        }
+                    }
                 }
 
                 mesmer.SetScale(sizeScale);
@@ -433,13 +1070,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.oculusFishExclude.Value == false)
+                if (MyModOptions.oculusFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.oculusFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.oculusFishRandomizeMin.Value, MyModOptions.oculusFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.oculusFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.oculusFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.oculusFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.oculusFishRandomizeMin.Value, MyModOptions.oculusFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.oculusFishScale.Value;
+                        }
+                    }
                 }
 
                 oculus.SetScale(sizeScale);
@@ -449,13 +1114,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.peeperExclude.Value == false)
+                if (MyModOptions.peeperExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.peeperRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.peeperRandomizeMin.Value, MyModOptions.peeperRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.peeperScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.peeperScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.peeperRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.peeperRandomizeMin.Value, MyModOptions.peeperRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.peeperScale.Value;
+                        }
+                    }
                 }
 
                 peeper.SetScale(sizeScale);
@@ -465,13 +1158,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.rabbitRayExclude.Value == false)
+                if (MyModOptions.rabbitRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.rabbitRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.rabbitRayRandomizeMin.Value, MyModOptions.rabbitRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.rabbitRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.rabbitRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.rabbitRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.rabbitRayRandomizeMin.Value, MyModOptions.rabbitRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.rabbitRayScale.Value;
+                        }
+                    }
                 }
 
                 rabbitRay.SetScale(sizeScale);
@@ -481,13 +1202,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reaperLeviathanExclude.Value == false)
+                if (MyModOptions.reaperLeviathanExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.reaperLeviathanRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.reaperLeviathanRandomizeMin.Value, MyModOptions.reaperLeviathanRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.reaperLeviathanScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.reaperLeviathanScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if(MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.reaperLeviathanRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.reaperLeviathanRandomizeMin.Value, MyModOptions.reaperLeviathanRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.reaperLeviathanScale.Value;
+                        }
+                    }
                 }
 
                 reaperLeviathan.SetScale(sizeScale);
@@ -497,13 +1246,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reefbackExclude.Value == false)
+                if (MyModOptions.reefbackExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.reefbackRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.reefbackRandomizeMin.Value, MyModOptions.reefbackRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.reefbackScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.reefbackScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.reefbackRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.reefbackRandomizeMin.Value, MyModOptions.reefbackRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.reefbackScale.Value;
+                        }
+                    }
                 }
 
                 reefback.SetScale(sizeScale);
@@ -513,13 +1290,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.reginaldExclude.Value == false)
+                if (MyModOptions.reginaldExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.reginaldRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.reginaldRandomizeMin.Value, MyModOptions.reginaldRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.reginaldScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.reginaldScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.reginaldRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.reginaldRandomizeMin.Value, MyModOptions.reginaldRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.reginaldScale.Value;
+                        }
+                    }
                 }
 
                 reginald.SetScale(sizeScale);
@@ -545,13 +1350,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.sandSharkExclude.Value == false)
+                if (MyModOptions.sandSharkExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.sandSharkRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.sandSharkRandomizeMin.Value, MyModOptions.sandSharkRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.sandSharkScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.sandSharkScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.sandSharkRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.sandSharkRandomizeMin.Value, MyModOptions.sandSharkRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.sandSharkScale.Value;
+                        }
+                    }
                 }
 
                 sandShark.SetScale(sizeScale);
@@ -561,13 +1394,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaDragonExclude.Value == false)
+                if (MyModOptions.seaDragonExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaDragonRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaDragonRandomizeMin.Value, MyModOptions.seaDragonRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaDragonScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaDragonScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaDragonRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaDragonRandomizeMin.Value, MyModOptions.seaDragonRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaDragonScale.Value;
+                        }
+                    }
                 }
 
                 seaDragon.SetScale(sizeScale);
@@ -577,13 +1438,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorBabyExclude.Value == false)
+                if (MyModOptions.seaEmperorBabyExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaEmperorBabyRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaEmperorBabyRandomizeMin.Value, MyModOptions.seaEmperorBabyRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaEmperorBabyScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaEmperorBabyScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaEmperorBabyRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaEmperorBabyRandomizeMin.Value, MyModOptions.seaEmperorBabyRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaEmperorBabyScale.Value;
+                        }
+                    }
                 }
 
                 seaEmperorBaby.SetScale(sizeScale);
@@ -593,13 +1482,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaEmperorJuvenileExclude.Value == false)
+                if (MyModOptions.seaEmperorJuvenileExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaEmperorJuvenileRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaEmperorJuvenileRandomizeMin.Value, MyModOptions.seaEmperorJuvenileRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaEmperorJuvenileScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaEmperorJuvenileScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaEmperorJuvenileRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaEmperorJuvenileRandomizeMin.Value, MyModOptions.seaEmperorJuvenileRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaEmperorJuvenileScale.Value;
+                        }
+                    }
                 }
 
                 seaEmperorJuvenile.SetScale(sizeScale);
@@ -609,13 +1526,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.seaTreaderExclude.Value == false)
+                if (MyModOptions.seaTreaderExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaTreaderRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaTreaderRandomizeMin.Value, MyModOptions.seaTreaderRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaTreaderScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaTreaderScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaTreaderRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaTreaderRandomizeMin.Value, MyModOptions.seaTreaderRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaTreaderScale.Value;
+                        }
+                    }
                 }
 
                 seaTreader.SetScale(sizeScale);
@@ -625,13 +1570,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.shockerExclude.Value == false)
+                if (MyModOptions.shockerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.shockerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.shockerRandomizeMin.Value, MyModOptions.shockerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.shockerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.shockerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.shockerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.shockerRandomizeMin.Value, MyModOptions.shockerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.shockerScale.Value;
+                        }
+                    }
                 }
 
                 shocker.SetScale(sizeScale);
@@ -641,13 +1614,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.skyRayExclude.Value == false)
+                if (MyModOptions.skyRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.skyRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.skyRayRandomizeMin.Value, MyModOptions.skyRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.skyRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.skyRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.skyRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.skyRayRandomizeMin.Value, MyModOptions.skyRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.skyRayScale.Value;
+                        }
+                    }
                 }
 
                 skyRay.SetScale(sizeScale);
@@ -657,13 +1658,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spadeFishExclude.Value == false)
+                if (MyModOptions.spadeFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.spadeFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.spadeFishRandomizeMin.Value, MyModOptions.spadeFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.spadeFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.spadeFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.spadeFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.spadeFishRandomizeMin.Value, MyModOptions.spadeFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.spadeFishScale.Value;
+                        }
+                    }
                 }
 
                 spadeFish.SetScale(sizeScale);
@@ -673,13 +1702,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.spineEelExclude.Value == false)
+                if (MyModOptions.spineEelExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.spineEelRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.spineEelRandomizeMin.Value, MyModOptions.spineEelRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.spineEelScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.spineEelScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.spineEelRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.spineEelRandomizeMin.Value, MyModOptions.spineEelRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.spineEelScale.Value;
+                        }
+                    }
                 }
 
                 spineEel.SetScale(sizeScale);
@@ -689,13 +1746,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.stalkerExclude.Value == false)
+                if (MyModOptions.stalkerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.stalkerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.stalkerRandomizeMin.Value, MyModOptions.stalkerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.stalkerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.stalkerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.stalkerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.stalkerRandomizeMin.Value, MyModOptions.stalkerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.stalkerScale.Value;
+                        }
+                    }
                 }
 
                 stalker.SetScale(sizeScale);
@@ -705,13 +1790,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true && MyModOptions.warperExclude.Value == false)
+                if (MyModOptions.warperExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.warperRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.warperRandomizeMin.Value, MyModOptions.warperRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.warperScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.warperScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.warperRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.warperRandomizeMin.Value, MyModOptions.warperRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.warperScale.Value;
+                        }
+                    }
                 }
 
                 warper.SetScale(sizeScale);
@@ -752,13 +1865,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if(MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.arcticPeeperExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.arcticPeeperRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.arcticPeeperRandomizeMin.Value, MyModOptions.arcticPeeperRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.arcticPeeperScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.arcticPeeperScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.arcticPeeperRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.arcticPeeperRandomizeMin.Value, MyModOptions.arcticPeeperRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.arcticPeeperScale.Value;
+                        }
+                    }
                 }
 
                 arcticPeeper.SetScale(sizeScale);
@@ -768,13 +1909,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.arrowRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.arrowRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.arrowRayRandomizeMin.Value, MyModOptions.arrowRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.arrowRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.arrowRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.arrowRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.arrowRayRandomizeMin.Value, MyModOptions.arrowRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.arrowRayScale.Value;
+                        }
+                    }
                 }
 
                 arrowRay.SetScale(sizeScale);
@@ -784,13 +1953,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.boomerangExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.boomerangRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.boomerangRandomizeMin.Value, MyModOptions.boomerangRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.boomerangScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.boomerangScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.boomerangRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.boomerangRandomizeMin.Value, MyModOptions.boomerangRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.boomerangScale.Value;
+                        }
+                    }
                 }
 
                 boomerang.SetScale(sizeScale);
@@ -800,13 +1997,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.bladderFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.bladderFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.bladderFishRandomizeMin.Value, MyModOptions.bladderFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.bladderFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.bladderFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.bladderFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.bladderFishRandomizeMin.Value, MyModOptions.bladderFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.bladderFishScale.Value;
+                        }
+                    }
                 }
 
                 bladderFish.SetScale(sizeScale);
@@ -816,13 +2041,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.hoopFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.hoopFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.hoopFishRandomizeMin.Value, MyModOptions.hoopFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.hoopFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.hoopFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.hoopFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.hoopFishRandomizeMin.Value, MyModOptions.hoopFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.hoopFishScale.Value;
+                        }
+                    }
                 }
 
                 hoopFish.SetScale(sizeScale);
@@ -832,13 +2085,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.discusFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.discusFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.discusFishRandomizeMin.Value, MyModOptions.discusFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.discusFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.discusFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.discusFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.discusFishRandomizeMin.Value, MyModOptions.discusFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.discusFishScale.Value;
+                        }
+                    }
                 }
 
                 discusFish.SetScale(sizeScale);
@@ -848,13 +2129,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.featherFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.featherFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.featherFishRandomizeMin.Value, MyModOptions.featherFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.featherFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.featherFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.featherFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.featherFishRandomizeMin.Value, MyModOptions.featherFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.featherFishScale.Value;
+                        }
+                    }
                 }
 
                 featherFish.SetScale(sizeScale);
@@ -864,13 +2173,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.nootFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.nootFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.nootFishRandomizeMin.Value, MyModOptions.nootFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.nootFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.nootFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.nootFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.nootFishRandomizeMin.Value, MyModOptions.nootFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.nootFishScale.Value;
+                        }
+                    }
                 }
 
                 nootFish.SetScale(sizeScale);
@@ -880,13 +2217,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.spinnerFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.spinnerFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.spinnerFishRandomizeMin.Value, MyModOptions.spinnerFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.spinnerFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.spinnerFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.spinnerFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.spinnerFishRandomizeMin.Value, MyModOptions.spinnerFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.spinnerFishScale.Value;
+                        }
+                    }
                 }
 
                 spinnerFish.SetScale(sizeScale);
@@ -896,13 +2261,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.arcticRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.arcticRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.arcticRayRandomizeMin.Value, MyModOptions.arcticRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.arcticRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.arcticRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.arcticRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.arcticRayRandomizeMin.Value, MyModOptions.arcticRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.arcticRayScale.Value;
+                        }
+                    }
                 }
 
                 arcticRay.SetScale(sizeScale);
@@ -912,13 +2305,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.jellyFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.jellyFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.jellyFishRandomizeMin.Value, MyModOptions.jellyFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.jellyFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.jellyFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.jellyFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.jellyFishRandomizeMin.Value, MyModOptions.jellyFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.jellyFishScale.Value;
+                        }
+                    }
                 }
 
                 eyeJelly.SetScale(sizeScale);
@@ -928,13 +2349,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.titanHoleFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.titanHoleFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.titanHoleFishRandomizeMin.Value, MyModOptions.titanHoleFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.titanHoleFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.titanHoleFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.titanHoleFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.titanHoleFishRandomizeMin.Value, MyModOptions.titanHoleFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.titanHoleFishScale.Value;
+                        }
+                    }
                 }
 
                 titanHolefish.SetScale(sizeScale);
@@ -944,13 +2393,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.glowWhaleExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.glowWhaleRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.glowWhaleRandomizeMin.Value, MyModOptions.glowWhaleRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.glowWhaleScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.glowWhaleScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.glowWhaleRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.glowWhaleRandomizeMin.Value, MyModOptions.glowWhaleRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.glowWhaleScale.Value;
+                        }
+                    }
                 }
 
                 glowWhale.SetScale(sizeScale);
@@ -960,13 +2437,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.pinnacaridExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.pinnacaridRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.pinnacaridRandomizeMin.Value, MyModOptions.pinnacaridRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.pinnacaridScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.pinnacaridScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.pinnacaridRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.pinnacaridRandomizeMin.Value, MyModOptions.pinnacaridRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.pinnacaridScale.Value;
+                        }
+                    }
                 }
 
                 pinnacarid.SetScale(sizeScale);
@@ -976,13 +2481,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.triopsExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.triopsRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.triopsRandomizeMin.Value, MyModOptions.triopsRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.triopsScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.triopsScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.triopsRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.triopsRandomizeMin.Value, MyModOptions.triopsRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.triopsScale.Value;
+                        }
+                    }
                 }
 
                 triops.SetScale(sizeScale);
@@ -992,13 +2525,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.trivalveExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.trivalveRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.trivalveRandomizeMin.Value, MyModOptions.trivalveRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.trivalveScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.trivalveScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.trivalveRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.trivalveRandomizeMin.Value, MyModOptions.trivalveRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.trivalveScale.Value;
+                        }
+                    }
                 }
 
                 trivalve.SetScale(sizeScale);
@@ -1008,13 +2569,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.symbioteFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.symbioteFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.symbioteFishRandomizeMin.Value, MyModOptions.symbioteFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.symbioteFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.symbioteFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.symbioteFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.symbioteFishRandomizeMin.Value, MyModOptions.symbioteFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.symbioteFishScale.Value;
+                        }
+                    }
                 }
 
                 symbioteFish.SetScale(sizeScale);
@@ -1024,13 +2613,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.rockGrubExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.rockGrubRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.rockGrubRandomizeMin.Value, MyModOptions.rockGrubRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.rockGrubScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.rockGrubScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.rockGrubRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.rockGrubRandomizeMin.Value, MyModOptions.rockGrubRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.rockGrubScale.Value;
+                        }
+                    }
                 }
 
                 rockGrub.SetScale(sizeScale);
@@ -1042,13 +2659,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.crashFishExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.crashFishRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.crashFishRandomizeMin.Value, MyModOptions.crashFishRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.crashFishScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.crashFishScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.crashFishRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.crashFishRandomizeMin.Value, MyModOptions.crashFishRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.crashFishScale.Value;
+                        }
+                    }
                 }
 
                 crashFish.SetScale(sizeScale);
@@ -1058,13 +2703,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.brineWingExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.brineWingRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.brineWingRandomizeMin.Value, MyModOptions.brineWingRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.brineWingScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.brineWingScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.brineWingRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.brineWingRandomizeMin.Value, MyModOptions.brineWingRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.brineWingScale.Value;
+                        }
+                    }
                 }
 
                 brinewing.SetScale(sizeScale);
@@ -1074,13 +2747,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.lilyPaddlerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.lilyPaddlerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.lilyPaddlerRandomizeMin.Value, MyModOptions.lilyPaddlerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.lilyPaddlerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.lilyPaddlerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.lilyPaddlerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.lilyPaddlerRandomizeMin.Value, MyModOptions.lilyPaddlerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.lilyPaddlerScale.Value;
+                        }
+                    }
                 }
 
                 lilyPaddler.SetScale(sizeScale);
@@ -1090,13 +2791,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.cryptosuchusExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.cryptosuchusRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.cryptosuchusRandomizeMin.Value, MyModOptions.cryptosuchusRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.cryptosuchusScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.cryptosuchusScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.cryptosuchusRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.cryptosuchusRandomizeMin.Value, MyModOptions.cryptosuchusRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.cryptosuchusScale.Value;
+                        }
+                    }
                 }
 
                 cryptosuchus.SetScale(sizeScale);
@@ -1106,13 +2835,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.bruteSharkExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.bruteSharkRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.bruteSharkRandomizeMin.Value, MyModOptions.bruteSharkRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.bruteSharkScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.bruteSharkScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.bruteSharkRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.bruteSharkRandomizeMin.Value, MyModOptions.bruteSharkRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.bruteSharkScale.Value;
+                        }
+                    }
                 }
 
                 bruteShark.SetScale(sizeScale);
@@ -1122,13 +2879,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.squidSharkExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.squidSharkRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.squidSharkRandomizeMin.Value, MyModOptions.squidSharkRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.squidSharkScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.squidSharkScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.squidSharkRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.squidSharkRandomizeMin.Value, MyModOptions.squidSharkRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.squidSharkScale.Value;
+                        }
+                    }
                 }
 
                 squidShark.SetScale(sizeScale);
@@ -1138,13 +2923,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.chelicerateExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.chelicerateRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.chelicerateRandomizeMin.Value, MyModOptions.chelicerateRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.chelicerateScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.chelicerateScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.chelicerateRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.chelicerateRandomizeMin.Value, MyModOptions.chelicerateRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.chelicerateScale.Value;
+                        }
+                    }
                 }
 
                 chelicerate.SetScale(sizeScale);
@@ -1154,13 +2967,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.shadowLeviathanExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.shadowLeviathanRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.shadowLeviathanRandomizeMin.Value, MyModOptions.shadowLeviathanRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.shadowLeviathanScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.shadowLeviathanScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.shadowLeviathanRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.shadowLeviathanRandomizeMin.Value, MyModOptions.shadowLeviathanRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.shadowLeviathanScale.Value;
+                        }
+                    }
                 }
 
                 shadowLeviathan.SetScale(sizeScale);
@@ -1170,13 +3011,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.voidLeviathanExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.voidLeviathanRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.voidLeviathanRandomizeMin.Value, MyModOptions.voidLeviathanRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.voidLeviathanScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.voidLeviathanScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.voidLeviathanRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.voidLeviathanRandomizeMin.Value, MyModOptions.voidLeviathanRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.voidLeviathanScale.Value;
+                        }
+                    }
                 }
 
                 voidLeviathan.SetScale(sizeScale);
@@ -1188,13 +3057,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.skyRayExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.skyRayRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.skyRayRandomizeMin.Value, MyModOptions.skyRayRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.skyRayScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.skyRayScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.skyRayRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.skyRayRandomizeMin.Value, MyModOptions.skyRayRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.skyRayScale.Value;
+                        }
+                    }
                 }
 
                 skyRay.SetScale(sizeScale);
@@ -1204,13 +3101,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.penglingExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.penglingRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.penglingRandomizeMin.Value, MyModOptions.penglingRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.penglingScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.penglingScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.penglingRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.penglingRandomizeMin.Value, MyModOptions.penglingRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.penglingScale.Value;
+                        }
+                    }
                 }
 
                 pengling.SetScale(sizeScale);
@@ -1220,13 +3145,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.pengwingExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.pengwingRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.pengwingRandomizeMin.Value, MyModOptions.pengwingRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.pengwingScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.pengwingScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.pengwingRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.pengwingRandomizeMin.Value, MyModOptions.pengwingRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.pengwingScale.Value;
+                        }
+                    }
                 }
 
                 pengwing.SetScale(sizeScale);
@@ -1236,13 +3189,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.seaMonkeyBabyExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaMonkeyBabyRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaMonkeyBabyRandomizeMin.Value, MyModOptions.seaMonkeyBabyRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaMonkeyBabyScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaMonkeyBabyScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaMonkeyBabyRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaMonkeyBabyRandomizeMin.Value, MyModOptions.seaMonkeyBabyRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaMonkeyBabyScale.Value;
+                        }
+                    }
                 }
 
                 seaMonkeyBaby.SetScale(sizeScale);
@@ -1252,13 +3233,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.seaMonkeyExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.seaMonkeyRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.seaMonkeyRandomizeMin.Value, MyModOptions.seaMonkeyRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.seaMonkeyScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.seaMonkeyScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.seaMonkeyRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.seaMonkeyRandomizeMin.Value, MyModOptions.seaMonkeyRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.seaMonkeyScale.Value;
+                        }
+                    }
                 }
 
                 seaMonkey.SetScale(sizeScale);
@@ -1268,13 +3277,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.snowStalkerBabyExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.snowStalkerBabyRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.snowStalkerBabyRandomizeMin.Value, MyModOptions.snowStalkerBabyRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.snowStalkerBabyScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.snowStalkerBabyScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.snowStalkerBabyRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.snowStalkerBabyRandomizeMin.Value, MyModOptions.snowStalkerBabyRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.snowStalkerBabyScale.Value;
+                        }
+                    }
                 }
 
                 snowStalkerBaby.SetScale(sizeScale);
@@ -1284,13 +3321,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.snowStalkerExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.snowStalkerRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.snowStalkerRandomizeMin.Value, MyModOptions.snowStalkerRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.snowStalkerScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.snowStalkerScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.snowStalkerRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.snowStalkerRandomizeMin.Value, MyModOptions.snowStalkerRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.snowStalkerScale.Value;
+                        }
+                    }
                 }
 
                 snowStalker.SetScale(sizeScale);
@@ -1300,13 +3365,41 @@ namespace BiggerFishMod
             {
                 float sizeScale = 4.0f;
 
-                if (MyModOptions.proportionalToggle.Value == true)
+                if (MyModOptions.rockPuncherExclude.Value)
                 {
-                    sizeScale = MyModOptions.proportionalScale.Value;
+                    if (MyModOptions.rockPuncherRandomize.Value)
+                    {
+                        sizeScale = Random.Range(MyModOptions.rockPuncherRandomizeMin.Value, MyModOptions.rockPuncherRandomizeMax.Value);
+                    }
+                    else
+                    {
+                        sizeScale = MyModOptions.rockPuncherScale.Value;
+                    }
                 }
                 else
                 {
-                    sizeScale = MyModOptions.rockPuncherScale.Value;
+                    if (MyModOptions.proportionalToggle.Value)
+                    {
+                        if (MyModOptions.proportionalRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.proportionalRandomizeMin.Value, MyModOptions.proportionalRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.proportionalScale.Value;
+                        }
+                    }
+                    else
+                    {
+                        if (MyModOptions.rockPuncherRandomize.Value)
+                        {
+                            sizeScale = Random.Range(MyModOptions.rockPuncherRandomizeMin.Value, MyModOptions.rockPuncherRandomizeMax.Value);
+                        }
+                        else
+                        {
+                            sizeScale = MyModOptions.rockPuncherScale.Value;
+                        }
+                    }
                 }
 
                 rockPuncher.SetScale(sizeScale);
@@ -1323,7 +3416,15 @@ namespace BiggerFishMod
         {
             if (__instance is VentGardenSmall smollVent)
             {
-                smollVent.gameObject.transform.localScale = new Vector3(MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value);
+                if(MyModOptions.ventgardenRandomize.Value)
+                {
+                    float scaleValue = Random.Range(MyModOptions.ventgardenRandomizeMin.Value, MyModOptions.ventgardenRandomizeMax.Value);
+                    smollVent.gameObject.transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
+                }
+                else
+                {
+                    smollVent.gameObject.transform.localScale = new Vector3(MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value);
+                }
             }
         }
     }
@@ -1336,7 +3437,15 @@ namespace BiggerFishMod
         {
             if (__instance is VentGardenLarge bigVent)
             {
-                bigVent.gameObject.transform.localScale = new Vector3(MyModOptions.largeVentGardenScale.Value, MyModOptions.largeVentGardenScale.Value, MyModOptions.largeVentGardenScale.Value);
+                if (MyModOptions.ventgardenRandomize.Value)
+                {
+                    float scaleValue = Random.Range(MyModOptions.ventgardenRandomizeMin.Value, MyModOptions.ventgardenRandomizeMax.Value);
+                    bigVent.gameObject.transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
+                }
+                else
+                {
+                    bigVent.gameObject.transform.localScale = new Vector3(MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value, MyModOptions.smallVentGardenScale.Value);
+                }
             }
         }
     }

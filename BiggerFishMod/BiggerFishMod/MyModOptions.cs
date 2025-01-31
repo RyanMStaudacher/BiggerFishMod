@@ -1,13 +1,8 @@
 ﻿using BepInEx.Configuration;
-using ICSharpCode.SharpZipLib.Zip;
-using JetBrains.Annotations;
 using Nautilus.Handlers;
 using Nautilus.Options;
-using Nautilus.Options.Attributes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 
 namespace BiggerFishMod
 {
@@ -21,12 +16,18 @@ namespace BiggerFishMod
         public static ConfigEntry<float> proportionalSlowness;
         public static ConfigEntry<float> proportionalHealth;
         public static ConfigEntry<float> proportionalCreatureLimit;
+        public static ConfigEntry<bool> proportionalRandomize;
+        public static ConfigEntry<float> proportionalRandomizeMin;
+        public static ConfigEntry<float> proportionalRandomizeMax;
 
         public static ConfigEntry<bool> biterExclude;
         public static ConfigEntry<float> biterScale;
         public static ConfigEntry<float> biterSlowness;
         public static ConfigEntry<float> biterHealth;
         public static ConfigEntry<float> biterLimit;
+        public static ConfigEntry<bool> biterRandomize;
+        public static ConfigEntry<float> biterRandomizeMin;
+        public static ConfigEntry<float> biterRandomizeMax;
         public static ConfigEntry<float> biterBaseHealth;
         public static ConfigEntry<float> biterBaseMaxAcceleration;
         public static ConfigEntry<float> biterBaseForwardRotationSpeed;
@@ -52,6 +53,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> bleederSlowness;
         public static ConfigEntry<float> bleederHealth;
         public static ConfigEntry<float> bleederLimit;
+        public static ConfigEntry<bool> bleederRandomize;
+        public static ConfigEntry<float> bleederRandomizeMin;
+        public static ConfigEntry<float> bleederRandomizeMax;
         public static ConfigEntry<float> bleederBaseHealth;
         public static ConfigEntry<float> bleederBaseMaxAcceleration;
         public static ConfigEntry<float> bleederBaseForwardRotationSpeed;
@@ -63,6 +67,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> boneSharkSlowness;
         public static ConfigEntry<float> boneSharkHealth;
         public static ConfigEntry<float> boneSharkLimit;
+        public static ConfigEntry<bool> boneSharkRandomize;
+        public static ConfigEntry<float> boneSharkRandomizeMin;
+        public static ConfigEntry<float> boneSharkRandomizeMax;
         public static ConfigEntry<float> boneSharkBaseHealth;
         public static ConfigEntry<float> boneSharkBaseMaxAcceleration;
         public static ConfigEntry<float> boneSharkBaseForwardRotationSpeed;
@@ -74,6 +81,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> boomerangSlowness;
         public static ConfigEntry<float> boomerangHealth;
         public static ConfigEntry<float> boomerangLimit;
+        public static ConfigEntry<bool> boomerangRandomize;
+        public static ConfigEntry<float> boomerangRandomizeMin;
+        public static ConfigEntry<float> boomerangRandomizeMax;
         public static ConfigEntry<float> boomerangBaseHealth;
         public static ConfigEntry<float> boomerangBaseMaxAcceleration;
         public static ConfigEntry<float> boomerangBaseForwardRotationSpeed;
@@ -85,6 +95,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> caveCrawlerSlowness;
         public static ConfigEntry<float> caveCrawlerHealth;
         public static ConfigEntry<float> caveCrawlerLimit;
+        public static ConfigEntry<bool> caveCrawlerRandomize;
+        public static ConfigEntry<float> caveCrawlerRandomizeMin;
+        public static ConfigEntry<float> caveCrawlerRandomizeMax;
         public static ConfigEntry<float> caveCrawlerBaseHealth;
         public static ConfigEntry<float> caveCrawlerBaseMaxAcceleration;
         public static ConfigEntry<float> caveCrawlerBaseForwardRotationSpeed;
@@ -96,6 +109,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crabSnakeSlowness;
         public static ConfigEntry<float> crabSnakeHealth;
         public static ConfigEntry<float> crabSnakeLimit;
+        public static ConfigEntry<bool> crabSnakeRandomize;
+        public static ConfigEntry<float> crabSnakeRandomizeMin;
+        public static ConfigEntry<float> crabSnakeRandomizeMax;
         public static ConfigEntry<float> crabSnakeBaseHealth;
         public static ConfigEntry<float> crabSnakeBaseMaxAcceleration;
         public static ConfigEntry<float> crabSnakeBaseForwardRotationSpeed;
@@ -107,6 +123,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crabSquidSlowness;
         public static ConfigEntry<float> crabSquidHealth;
         public static ConfigEntry<float> crabSquidLimit;
+        public static ConfigEntry<bool> crabSquidRandomize;
+        public static ConfigEntry<float> crabSquidRandomizeMin;
+        public static ConfigEntry<float> crabSquidRandomizeMax;
         public static ConfigEntry<float> crabSquidBaseHealth;
         public static ConfigEntry<float> crabSquidBaseMaxAcceleration;
         public static ConfigEntry<float> crabSquidBaseForwardRotationSpeed;
@@ -118,6 +137,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> crashFishSlowness;
         public static ConfigEntry<float> crashFishHealth;
         public static ConfigEntry<float> crashFishLimit;
+        public static ConfigEntry<bool> crashFishRandomize;
+        public static ConfigEntry<float> crashFishRandomizeMin;
+        public static ConfigEntry<float> crashFishRandomizeMax;
         public static ConfigEntry<float> crashFishBaseHealth;
         public static ConfigEntry<float> crashFishBaseMaxAcceleration;
         public static ConfigEntry<float> crashFishBaseForwardRotationSpeed;
@@ -129,6 +151,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> cuddleFishSlowness;
         public static ConfigEntry<float> cuddleFishHealth;
         public static ConfigEntry<float> cuddleFishLimit;
+        public static ConfigEntry<bool> cuddleFishRandomize;
+        public static ConfigEntry<float> cuddleFishRandomizeMin;
+        public static ConfigEntry<float> cuddleFishRandomizeMax;
         public static ConfigEntry<float> cuddleFishBaseHealth;
         public static ConfigEntry<float> cuddleFishBaseMaxAcceleration;
         public static ConfigEntry<float> cuddleFishBaseForwardRotationSpeed;
@@ -140,6 +165,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> eyeyeSlowness;
         public static ConfigEntry<float> eyeyeHealth;
         public static ConfigEntry<float> eyeyeLimit;
+        public static ConfigEntry<bool> eyeyeRandomize;
+        public static ConfigEntry<float> eyeyeRandomizeMin;
+        public static ConfigEntry<float> eyeyeRandomizeMax;
         public static ConfigEntry<float> eyeyeBaseHealth;
         public static ConfigEntry<float> eyeyeBaseMaxAcceleration;
         public static ConfigEntry<float> eyeyeBaseForwardRotationSpeed;
@@ -151,6 +179,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> garryFishSlowness;
         public static ConfigEntry<float> garryFishHealth;
         public static ConfigEntry<float> garryFishLimit;
+        public static ConfigEntry<bool> garryFishRandomize;
+        public static ConfigEntry<float> garryFishRandomizeMin;
+        public static ConfigEntry<float> garryFishRandomizeMax;
         public static ConfigEntry<float> garryFishBaseHealth;
         public static ConfigEntry<float> garryFishBaseMaxAcceleration;
         public static ConfigEntry<float> garryFishBaseForwardRotationSpeed;
@@ -162,6 +193,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> gasopodSlowness;
         public static ConfigEntry<float> gasopodHealth;
         public static ConfigEntry<float> gasopodLimit;
+        public static ConfigEntry<bool> gasopodRandomize;
+        public static ConfigEntry<float> gasopodRandomizeMin;
+        public static ConfigEntry<float> gasopodRandomizeMax;
         public static ConfigEntry<float> gasopodBaseHealth;
         public static ConfigEntry<float> gasopodBaseMaxAcceleration;
         public static ConfigEntry<float> gasopodBaseForwardRotationSpeed;
@@ -173,6 +207,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> voidGhostLeviathanSlowness;
         public static ConfigEntry<float> voidGhostLeviathanHealth;
         public static ConfigEntry<float> voidGhostLeviathanLimit;
+        public static ConfigEntry<bool> voidGhostLeviathanRandomize;
+        public static ConfigEntry<float> voidGhostLeviathanRandomizeMin;
+        public static ConfigEntry<float> voidGhostLeviathanRandomizeMax;
         public static ConfigEntry<float> voidGhostLeviathanBaseHealth;
         public static ConfigEntry<float> voidGhostLeviathanBaseMaxAcceleration;
         public static ConfigEntry<float> voidGhostLeviathanBaseForwardRotationSpeed;
@@ -184,6 +221,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> ghostLeviathanSlowness;
         public static ConfigEntry<float> ghostLeviathanHealth;
         public static ConfigEntry<float> ghostLeviathanLimit;
+        public static ConfigEntry<bool> ghostLeviathanRandomize;
+        public static ConfigEntry<float> ghostLeviathanRandomizeMin;
+        public static ConfigEntry<float> ghostLeviathanRandomizeMax;
         public static ConfigEntry<float> ghostLeviathanBaseHealth;
         public static ConfigEntry<float> ghostLeviathanBaseMaxAcceleration;
         public static ConfigEntry<float> ghostLeviathanBaseForwardRotationSpeed;
@@ -195,6 +235,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> ghostRaySlowness;
         public static ConfigEntry<float> ghostRayHealth;
         public static ConfigEntry<float> ghostRayLimit;
+        public static ConfigEntry<bool> ghostRayRandomize;
+        public static ConfigEntry<float> ghostRayRandomizeMin;
+        public static ConfigEntry<float> ghostRayRandomizeMax;
         public static ConfigEntry<float> ghostRayBaseHealth;
         public static ConfigEntry<float> ghostRayBaseMaxAcceleration;
         public static ConfigEntry<float> ghostRayBaseForwardRotationSpeed;
@@ -206,6 +249,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> holeFishSlowness;
         public static ConfigEntry<float> holeFishHealth;
         public static ConfigEntry<float> holeFishLimit;
+        public static ConfigEntry<bool> holeFishRandomize;
+        public static ConfigEntry<float> holeFishRandomizeMin;
+        public static ConfigEntry<float> holeFishRandomizeMax;
         public static ConfigEntry<float> holeFishBaseHealth;
         public static ConfigEntry<float> holeFishBaseMaxAcceleration;
         public static ConfigEntry<float> holeFishBaseForwardRotationSpeed;
@@ -217,6 +263,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> hoopFishSlowness;
         public static ConfigEntry<float> hoopFishHealth;
         public static ConfigEntry<float> hoopFishLimit;
+        public static ConfigEntry<bool> hoopFishRandomize;
+        public static ConfigEntry<float> hoopFishRandomizeMin;
+        public static ConfigEntry<float> hoopFishRandomizeMax;
         public static ConfigEntry<float> hoopFishBaseHealth;
         public static ConfigEntry<float> hoopFishBaseMaxAcceleration;
         public static ConfigEntry<float> hoopFishBaseForwardRotationSpeed;
@@ -228,6 +277,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> hoverFishSlowness;
         public static ConfigEntry<float> hoverFishHealth;
         public static ConfigEntry<float> hoverFishLimit;
+        public static ConfigEntry<bool> hoverFishRandomize;
+        public static ConfigEntry<float> hoverFishRandomizeMin;
+        public static ConfigEntry<float> hoverFishRandomizeMax;
         public static ConfigEntry<float> hoverFishBaseHealth;
         public static ConfigEntry<float> hoverFishBaseMaxAcceleration;
         public static ConfigEntry<float> hoverFishBaseForwardRotationSpeed;
@@ -239,6 +291,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> jellyRaySlowness;
         public static ConfigEntry<float> jellyRayHealth;
         public static ConfigEntry<float> jellyRayLimit;
+        public static ConfigEntry<bool> jellyRayRandomize;
+        public static ConfigEntry<float> jellyRayRandomizeMin;
+        public static ConfigEntry<float> jellyRayRandomizeMax;
         public static ConfigEntry<float> jellyRayBaseHealth;
         public static ConfigEntry<float> jellyRayBaseMaxAcceleration;
         public static ConfigEntry<float> jellyRayBaseForwardRotationSpeed;
@@ -250,6 +305,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> jumperSlowness;
         public static ConfigEntry<float> jumperHealth;
         public static ConfigEntry<float> jumperLimit;
+        public static ConfigEntry<bool> jumperRandomize;
+        public static ConfigEntry<float> jumperRandomizeMin;
+        public static ConfigEntry<float> jumperRandomizeMax;
         public static ConfigEntry<float> jumperBaseHealth;
         public static ConfigEntry<float> jumperBaseMaxAcceleration;
         public static ConfigEntry<float> jumperBaseForwardRotationSpeed;
@@ -261,6 +319,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> lavaLarvaSlowness;
         public static ConfigEntry<float> lavaLarvaHealth;
         public static ConfigEntry<float> lavaLarvaLimit;
+        public static ConfigEntry<bool> lavaLarvaRandomize;
+        public static ConfigEntry<float> lavaLarvaRandomizeMin;
+        public static ConfigEntry<float> lavaLarvaRandomizeMax;
         public static ConfigEntry<float> lavaLarvaBaseHealth;
         public static ConfigEntry<float> lavaLarvaBaseMaxAcceleration;
         public static ConfigEntry<float> lavaLarvaBaseForwardRotationSpeed;
@@ -272,6 +333,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> lavaLizardSlowness;
         public static ConfigEntry<float> lavaLizardHealth;
         public static ConfigEntry<float> lavaLizardLimit;
+        public static ConfigEntry<bool> lavaLizardRandomize;
+        public static ConfigEntry<float> lavaLizardRandomizeMin;
+        public static ConfigEntry<float> lavaLizardRandomizeMax;
         public static ConfigEntry<float> lavaLizardBaseHealth;
         public static ConfigEntry<float> lavaLizardBaseMaxAcceleration;
         public static ConfigEntry<float> lavaLizardBaseForwardRotationSpeed;
@@ -283,6 +347,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> mesmerSlowness;
         public static ConfigEntry<float> mesmerHealth;
         public static ConfigEntry<float> mesmerLimit;
+        public static ConfigEntry<bool> mesmerRandomize;
+        public static ConfigEntry<float> mesmerRandomizeMin;
+        public static ConfigEntry<float> mesmerRandomizeMax;
         public static ConfigEntry<float> mesmerBaseHealth;
         public static ConfigEntry<float> mesmerBaseMaxAcceleration;
         public static ConfigEntry<float> mesmerBaseForwardRotationSpeed;
@@ -294,6 +361,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> oculusFishSlowness;
         public static ConfigEntry<float> oculusFishHealth;
         public static ConfigEntry<float> oculusFishLimit;
+        public static ConfigEntry<bool> oculusFishRandomize;
+        public static ConfigEntry<float> oculusFishRandomizeMin;
+        public static ConfigEntry<float> oculusFishRandomizeMax;
         public static ConfigEntry<float> oculusFishBaseHealth;
         public static ConfigEntry<float> oculusFishBaseMaxAcceleration;
         public static ConfigEntry<float> oculusFishBaseForwardRotationSpeed;
@@ -305,6 +375,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> peeperSlowness;
         public static ConfigEntry<float> peeperHealth;
         public static ConfigEntry<float> peeperLimit;
+        public static ConfigEntry<bool> peeperRandomize;
+        public static ConfigEntry<float> peeperRandomizeMin;
+        public static ConfigEntry<float> peeperRandomizeMax;
         public static ConfigEntry<float> peeperBaseHealth;
         public static ConfigEntry<float> peeperBaseMaxAcceleration;
         public static ConfigEntry<float> peeperBaseForwardRotationSpeed;
@@ -316,6 +389,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> rabbitRaySlowness;
         public static ConfigEntry<float> rabbitRayHealth;
         public static ConfigEntry<float> rabbitRayLimit;
+        public static ConfigEntry<bool> rabbitRayRandomize;
+        public static ConfigEntry<float> rabbitRayRandomizeMin;
+        public static ConfigEntry<float> rabbitRayRandomizeMax;
         public static ConfigEntry<float> rabbitRayBaseHealth;
         public static ConfigEntry<float> rabbitRayBaseMaxAcceleration;
         public static ConfigEntry<float> rabbitRayBaseForwardRotationSpeed;
@@ -327,6 +403,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reaperLeviathanSlowness;
         public static ConfigEntry<float> reaperLeviathanHealth;
         public static ConfigEntry<float> reaperLeviathanLimit;
+        public static ConfigEntry<bool> reaperLeviathanRandomize;
+        public static ConfigEntry<float> reaperLeviathanRandomizeMin;
+        public static ConfigEntry<float> reaperLeviathanRandomizeMax;
         public static ConfigEntry<float> reaperLeviathanBaseHealth;
         public static ConfigEntry<float> reaperLeviathanBaseMaxAcceleration;
         public static ConfigEntry<float> reaperLeviathanBaseForwardRotationSpeed;
@@ -338,6 +417,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reefbackSlowness;
         public static ConfigEntry<float> reefbackHealth;
         public static ConfigEntry<float> reefbackLimit;
+        public static ConfigEntry<bool> reefbackRandomize;
+        public static ConfigEntry<float> reefbackRandomizeMin;
+        public static ConfigEntry<float> reefbackRandomizeMax;
         public static ConfigEntry<float> reefbackBaseHealth;
         public static ConfigEntry<float> reefbackBaseMaxAcceleration;
         public static ConfigEntry<float> reefbackBaseForwardRotationSpeed;
@@ -349,6 +431,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> reginaldSlowness;
         public static ConfigEntry<float> reginaldHealth;
         public static ConfigEntry<float> reginaldLimit;
+        public static ConfigEntry<bool> reginaldRandomize;
+        public static ConfigEntry<float> reginaldRandomizeMin;
+        public static ConfigEntry<float> reginaldRandomizeMax;
         public static ConfigEntry<float> reginaldBaseHealth;
         public static ConfigEntry<float> reginaldBaseMaxAcceleration;
         public static ConfigEntry<float> reginaldBaseForwardRotationSpeed;
@@ -371,6 +456,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> sandSharkSlowness;
         public static ConfigEntry<float> sandSharkHealth;
         public static ConfigEntry<float> sandSharkLimit;
+        public static ConfigEntry<bool> sandSharkRandomize;
+        public static ConfigEntry<float> sandSharkRandomizeMin;
+        public static ConfigEntry<float> sandSharkRandomizeMax;
         public static ConfigEntry<float> sandSharkBaseHealth;
         public static ConfigEntry<float> sandSharkBaseMaxAcceleration;
         public static ConfigEntry<float> sandSharkBaseForwardRotationSpeed;
@@ -382,6 +470,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaDragonSlowness;
         public static ConfigEntry<float> seaDragonHealth;
         public static ConfigEntry<float> seaDragonLimit;
+        public static ConfigEntry<bool> seaDragonRandomize;
+        public static ConfigEntry<float> seaDragonRandomizeMin;
+        public static ConfigEntry<float> seaDragonRandomizeMax;
         public static ConfigEntry<float> seaDragonBaseHealth;
         public static ConfigEntry<float> seaDragonBaseMaxAcceleration;
         public static ConfigEntry<float> seaDragonBaseForwardRotationSpeed;
@@ -393,6 +484,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaEmperorBabySlowness;
         public static ConfigEntry<float> seaEmperorBabyHealth;
         public static ConfigEntry<float> seaEmperorBabyLimit;
+        public static ConfigEntry<bool> seaEmperorBabyRandomize;
+        public static ConfigEntry<float> seaEmperorBabyRandomizeMin;
+        public static ConfigEntry<float> seaEmperorBabyRandomizeMax;
         public static ConfigEntry<float> seaEmperorBabyBaseHealth;
         public static ConfigEntry<float> seaEmperorBabyBaseMaxAcceleration;
         public static ConfigEntry<float> seaEmperorBabyBaseForwardRotationSpeed;
@@ -404,6 +498,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaEmperorJuvenileSlowness;
         public static ConfigEntry<float> seaEmperorJuvenileHealth;
         public static ConfigEntry<float> seaEmperorJuvenileLimit;
+        public static ConfigEntry<bool> seaEmperorJuvenileRandomize;
+        public static ConfigEntry<float> seaEmperorJuvenileRandomizeMin;
+        public static ConfigEntry<float> seaEmperorJuvenileRandomizeMax;
         public static ConfigEntry<float> seaEmperorJuvenileBaseHealth;
         public static ConfigEntry<float> seaEmperorJuvenileBaseMaxAcceleration;
         public static ConfigEntry<float> seaEmperorJuvenileBaseForwardRotationSpeed;
@@ -415,6 +512,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> seaTreaderSlowness;
         public static ConfigEntry<float> seaTreaderHealth;
         public static ConfigEntry<float> seaTreaderLimit;
+        public static ConfigEntry<bool> seaTreaderRandomize;
+        public static ConfigEntry<float> seaTreaderRandomizeMin;
+        public static ConfigEntry<float> seaTreaderRandomizeMax;
         public static ConfigEntry<float> seaTreaderBaseHealth;
         public static ConfigEntry<float> seaTreaderBaseMaxAcceleration;
         public static ConfigEntry<float> seaTreaderBaseForwardRotationSpeed;
@@ -426,6 +526,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> shockerSlowness;
         public static ConfigEntry<float> shockerHealth;
         public static ConfigEntry<float> shockerLimit;
+        public static ConfigEntry<bool> shockerRandomize;
+        public static ConfigEntry<float> shockerRandomizeMin;
+        public static ConfigEntry<float> shockerRandomizeMax;
         public static ConfigEntry<float> shockerBaseHealth;
         public static ConfigEntry<float> shockerBaseMaxAcceleration;
         public static ConfigEntry<float> shockerBaseForwardRotationSpeed;
@@ -437,6 +540,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> skyRaySlowness;
         public static ConfigEntry<float> skyRayHealth;
         public static ConfigEntry<float> skyRayLimit;
+        public static ConfigEntry<bool> skyRayRandomize;
+        public static ConfigEntry<float> skyRayRandomizeMin;
+        public static ConfigEntry<float> skyRayRandomizeMax;
         public static ConfigEntry<float> skyRayBaseHealth;
         public static ConfigEntry<float> skyRayBaseMaxAcceleration;
         public static ConfigEntry<float> skyRayBaseForwardRotationSpeed;
@@ -448,6 +554,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> spadeFishSlowness;
         public static ConfigEntry<float> spadeFishHealth;
         public static ConfigEntry<float> spadeFishLimit;
+        public static ConfigEntry<bool> spadeFishRandomize;
+        public static ConfigEntry<float> spadeFishRandomizeMin;
+        public static ConfigEntry<float> spadeFishRandomizeMax;
         public static ConfigEntry<float> spadeFishBaseHealth;
         public static ConfigEntry<float> spadeFishBaseMaxAcceleration;
         public static ConfigEntry<float> spadeFishBaseForwardRotationSpeed;
@@ -459,6 +568,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> spineEelSlowness;
         public static ConfigEntry<float> spineEelHealth;
         public static ConfigEntry<float> spineEelLimit;
+        public static ConfigEntry<bool> spineEelRandomize;
+        public static ConfigEntry<float> spineEelRandomizeMin;
+        public static ConfigEntry<float> spineEelRandomizeMax;
         public static ConfigEntry<float> spineEelBaseHealth;
         public static ConfigEntry<float> spineEelBaseMaxAcceleration;
         public static ConfigEntry<float> spineEelBaseForwardRotationSpeed;
@@ -470,6 +582,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> stalkerSlowness;
         public static ConfigEntry<float> stalkerHealth;
         public static ConfigEntry<float> stalkerLimit;
+        public static ConfigEntry<bool> stalkerRandomize;
+        public static ConfigEntry<float> stalkerRandomizeMin;
+        public static ConfigEntry<float> stalkerRandomizeMax;
         public static ConfigEntry<float> stalkerBaseHealth;
         public static ConfigEntry<float> stalkerBaseMaxAcceleration;
         public static ConfigEntry<float> stalkerBaseForwardRotationSpeed;
@@ -481,6 +596,9 @@ namespace BiggerFishMod
         public static ConfigEntry<float> warperSlowness;
         public static ConfigEntry<float> warperHealth;
         public static ConfigEntry<float> warperLimit;
+        public static ConfigEntry<bool> warperRandomize;
+        public static ConfigEntry<float> warperRandomizeMin;
+        public static ConfigEntry<float> warperRandomizeMax;
         public static ConfigEntry<float> warperBaseHealth;
         public static ConfigEntry<float> warperBaseMaxAcceleration;
         public static ConfigEntry<float> warperBaseForwardRotationSpeed;
@@ -532,8 +650,6 @@ namespace BiggerFishMod
         List<OptionItem> stalkerOptions = new List<OptionItem>();
         List<OptionItem> warperOptions = new List<OptionItem>();
 
-        private int p = 0;
-
         public MyModOptions() : base("Bigger Fish")
         {
             ModToggleOption removeFishSchoolsOption = removeFishSchools.ToModToggleOption();
@@ -560,6 +676,18 @@ namespace BiggerFishMod
             proportionalCreatureLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(proportionalCreatureLimitOption);
 
+            ModToggleOption proportionalRandomizeOption = proportionalRandomize.ToModToggleOption();
+            proportionalRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(proportionalRandomizeOption);
+
+            ModSliderOption proportionalRandomizeMinOption = proportionalRandomizeMin.ToModSliderOption(1, 50);
+            proportionalRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(proportionalRandomizeMinOption);
+
+            ModSliderOption proportionalRandomizeMaxOption = proportionalRandomizeMax.ToModSliderOption(1, 50);
+            proportionalRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(proportionalRandomizeMaxOption);
+
 
 
 
@@ -583,6 +711,18 @@ namespace BiggerFishMod
             ModSliderOption shockerLimitOption = shockerLimit.ToModSliderOption(0, 50);
             shockerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(shockerLimitOption);
+
+            ModToggleOption shockerRandomizeOption = shockerRandomize.ToModToggleOption();
+            shockerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(shockerRandomizeOption);
+
+            ModSliderOption shockerRandomizeMinOption = shockerRandomizeMin.ToModSliderOption(1, 50);
+            shockerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(shockerRandomizeMinOption);
+
+            ModSliderOption shockerRandomizeMaxOption = shockerRandomizeMax.ToModSliderOption(1, 50);
+            shockerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(shockerRandomizeMaxOption);
 
 
 
@@ -608,7 +748,19 @@ namespace BiggerFishMod
             biterLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(biterLimitOption);
 
-            
+            ModToggleOption biterRandomizeOption = biterRandomize.ToModToggleOption();
+            biterRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(biterRandomizeOption);
+
+            ModSliderOption biterRandomizeMinOption = biterRandomizeMin.ToModSliderOption(1, 50);
+            biterRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterRandomizeMinOption);
+
+            ModSliderOption biterRandomizeMaxOption = biterRandomizeMax.ToModSliderOption(1, 50);
+            biterRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(biterRandomizeMaxOption);
+
+
 
 
 
@@ -668,6 +820,18 @@ namespace BiggerFishMod
             bleederLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bleederLimitOption);
 
+            ModToggleOption bleederRandomizeOption = bleederRandomize.ToModToggleOption();
+            bleederRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bleederRandomizeOption);
+
+            ModSliderOption bleederRandomizeMinOption = bleederRandomizeMin.ToModSliderOption(1, 50);
+            bleederRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederRandomizeMinOption);
+
+            ModSliderOption bleederRandomizeMaxOption = bleederRandomizeMax.ToModSliderOption(1, 50);
+            bleederRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(bleederRandomizeMaxOption);
+
 
 
 
@@ -691,6 +855,18 @@ namespace BiggerFishMod
             ModSliderOption boneSharkLimitOption = boneSharkLimit.ToModSliderOption(1, 50);
             boneSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(boneSharkLimitOption);
+
+            ModToggleOption boneSharkRandomizeOption = boneSharkRandomize.ToModToggleOption();
+            boneSharkRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boneSharkRandomizeOption);
+
+            ModSliderOption boneSharkRandomizeMinOption = boneSharkRandomizeMin.ToModSliderOption(1, 50);
+            boneSharkRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkRandomizeMinOption);
+
+            ModSliderOption boneSharkRandomizeMaxOption = boneSharkRandomizeMax.ToModSliderOption(1, 50);
+            boneSharkRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(boneSharkRandomizeMaxOption);
 
 
 
@@ -716,6 +892,18 @@ namespace BiggerFishMod
             boomerangLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(boomerangLimitOption);
 
+            ModToggleOption boomerangRandomizeOption = boomerangRandomize.ToModToggleOption();
+            boomerangRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boomerangRandomizeOption);
+
+            ModSliderOption boomerangRandomizeMinOption = boomerangRandomizeMin.ToModSliderOption(1, 50);
+            boomerangRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangRandomizeMinOption);
+
+            ModSliderOption boomerangRandomizeMaxOption = boomerangRandomizeMax.ToModSliderOption(1, 50);
+            boomerangRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangRandomizeMaxOption);
+
 
 
 
@@ -739,6 +927,18 @@ namespace BiggerFishMod
             ModSliderOption caveCrawlerLimitOption = caveCrawlerLimit.ToModSliderOption(0, 50);
             caveCrawlerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(caveCrawlerLimitOption);
+
+            ModToggleOption caveCrawlerRandomizeOption = caveCrawlerRandomize.ToModToggleOption();
+            caveCrawlerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(caveCrawlerRandomizeOption);
+
+            ModSliderOption caveCrawlerRandomizeMinOption = caveCrawlerRandomizeMin.ToModSliderOption(1, 50);
+            caveCrawlerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerRandomizeMinOption);
+
+            ModSliderOption caveCrawlerRandomizeMaxOption = caveCrawlerRandomizeMax.ToModSliderOption(1, 50);
+            caveCrawlerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(caveCrawlerRandomizeMaxOption);
 
 
 
@@ -764,6 +964,18 @@ namespace BiggerFishMod
             crabSnakeLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(crabSnakeLimitOption);
 
+            ModToggleOption crabSnakeRandomizeOption = crabSnakeRandomize.ToModToggleOption();
+            crabSnakeRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crabSnakeRandomizeOption);
+
+            ModSliderOption crabSnakeRandomizeMinOption = crabSnakeRandomizeMin.ToModSliderOption(1, 50);
+            crabSnakeRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeRandomizeMinOption);
+
+            ModSliderOption crabSnakeRandomizeMaxOption = crabSnakeRandomizeMax.ToModSliderOption(1, 50);
+            crabSnakeRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSnakeRandomizeMaxOption);
+
 
 
 
@@ -787,6 +999,18 @@ namespace BiggerFishMod
             ModSliderOption crabSquidLimitOption = crabSquidLimit.ToModSliderOption(0, 50);
             crabSquidLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(crabSquidLimitOption);
+
+            ModToggleOption crabSquidRandomizeOption = crabSquidRandomize.ToModToggleOption();
+            crabSquidRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crabSquidRandomizeOption);
+
+            ModSliderOption crabSquidRandomizeMinOption = crabSquidRandomizeMin.ToModSliderOption(1, 50);
+            crabSquidRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidRandomizeMinOption);
+
+            ModSliderOption crabSquidRandomizeMaxOption = crabSquidRandomizeMax.ToModSliderOption(1, 50);
+            crabSquidRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(crabSquidRandomizeMaxOption);
 
 
 
@@ -812,6 +1036,18 @@ namespace BiggerFishMod
             crashFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(crashFishLimitOption);
 
+            ModToggleOption crashFishRandomizeOption = crashFishRandomize.ToModToggleOption();
+            crashFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crashFishRandomizeOption);
+
+            ModSliderOption crashFishRandomizeMinOption = crashFishRandomizeMin.ToModSliderOption(1, 50);
+            crashFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishRandomizeMinOption);
+
+            ModSliderOption crashFishRandomizeMaxOption = crashFishRandomizeMax.ToModSliderOption(1, 50);
+            crashFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishRandomizeMaxOption);
+
 
 
 
@@ -835,6 +1071,18 @@ namespace BiggerFishMod
             ModSliderOption cuddleFishLimitOption = cuddleFishLimit.ToModSliderOption(0, 50);
             cuddleFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(cuddleFishLimitOption);
+
+            ModToggleOption cuddleFishRandomizeOption = cuddleFishRandomize.ToModToggleOption();
+            cuddleFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(cuddleFishRandomizeOption);
+
+            ModSliderOption cuddleFishRandomizeMinOption = cuddleFishRandomizeMin.ToModSliderOption(1, 50);
+            cuddleFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishRandomizeMinOption);
+
+            ModSliderOption cuddleFishRandomizeMaxOption = cuddleFishRandomizeMax.ToModSliderOption(1, 50);
+            cuddleFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(cuddleFishRandomizeMaxOption);
 
 
 
@@ -860,6 +1108,18 @@ namespace BiggerFishMod
             eyeyeLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(eyeyeLimitOption);
 
+            ModToggleOption eyeyeRandomizeOption = eyeyeRandomize.ToModToggleOption();
+            eyeyeRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(eyeyeRandomizeOption);
+
+            ModSliderOption eyeyeRandomizeMinOption = eyeyeRandomizeMin.ToModSliderOption(1, 50);
+            eyeyeRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeRandomizeMinOption);
+
+            ModSliderOption eyeyeRandomizeMaxOption = eyeyeRandomizeMax.ToModSliderOption(1, 50);
+            eyeyeRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(eyeyeRandomizeMaxOption);
+
 
 
 
@@ -883,6 +1143,18 @@ namespace BiggerFishMod
             ModSliderOption garryFishLimitOption = garryFishLimit.ToModSliderOption(0, 50);
             garryFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(garryFishLimitOption);
+
+            ModToggleOption garryFishRandomizeOption = garryFishRandomize.ToModToggleOption();
+            garryFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(garryFishRandomizeOption);
+
+            ModSliderOption garryFishRandomizeMinOption = garryFishRandomizeMin.ToModSliderOption(1, 50);
+            garryFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishRandomizeMinOption);
+
+            ModSliderOption garryFishRandomizeMaxOption = garryFishRandomizeMax.ToModSliderOption(1, 50);
+            garryFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(garryFishRandomizeMaxOption);
 
 
 
@@ -908,6 +1180,18 @@ namespace BiggerFishMod
             gasopodLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(gasopodLimitOption);
 
+            ModToggleOption gasopodRandomizeOption = gasopodRandomize.ToModToggleOption();
+            gasopodRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(gasopodRandomizeOption);
+
+            ModSliderOption gasopodRandomizeMinOption = gasopodRandomizeMin.ToModSliderOption(1, 50);
+            gasopodRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodRandomizeMinOption);
+
+            ModSliderOption gasopodRandomizeMaxOption = gasopodRandomizeMax.ToModSliderOption(1, 50);
+            gasopodRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(gasopodRandomizeMaxOption);
+
 
 
 
@@ -931,6 +1215,18 @@ namespace BiggerFishMod
             ModSliderOption ghostLeviathanLimitOption = ghostLeviathanLimit.ToModSliderOption(0, 50);
             ghostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(ghostLeviathanLimitOption);
+
+            ModToggleOption ghostLeviathanRandomizeOption = ghostLeviathanRandomize.ToModToggleOption();
+            ghostLeviathanRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(ghostLeviathanRandomizeOption);
+
+            ModSliderOption ghostLeviathanRandomizeMinOption = ghostLeviathanRandomizeMin.ToModSliderOption(1, 50);
+            ghostLeviathanRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanRandomizeMinOption);
+
+            ModSliderOption ghostLeviathanRandomizeMaxOption = ghostLeviathanRandomizeMax.ToModSliderOption(1, 50);
+            ghostLeviathanRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostLeviathanRandomizeMaxOption);
 
 
 
@@ -956,6 +1252,18 @@ namespace BiggerFishMod
             voidGhostLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(voidGhostLeviathanLimitOption);
 
+            ModToggleOption voidGhostLeviathanRandomizeOption = voidGhostLeviathanRandomize.ToModToggleOption();
+            voidGhostLeviathanRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(voidGhostLeviathanRandomizeOption);
+
+            ModSliderOption voidGhostLeviathanRandomizeMinOption = voidGhostLeviathanRandomizeMin.ToModSliderOption(1, 50);
+            voidGhostLeviathanRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanRandomizeMinOption);
+
+            ModSliderOption voidGhostLeviathanRandomizeMaxOption = voidGhostLeviathanRandomizeMax.ToModSliderOption(1, 50);
+            voidGhostLeviathanRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidGhostLeviathanRandomizeMaxOption);
+
 
 
 
@@ -979,6 +1287,18 @@ namespace BiggerFishMod
             ModSliderOption ghostRayLimitOption = ghostRayLimit.ToModSliderOption(0, 50);
             ghostRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(ghostRayLimitOption);
+
+            ModToggleOption ghostRayRandomizeOption = ghostRayRandomize.ToModToggleOption();
+            ghostRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(ghostRayRandomizeOption);
+
+            ModSliderOption ghostRayRandomizeMinOption = ghostRayRandomizeMin.ToModSliderOption(1, 50);
+            ghostRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRayRandomizeMinOption);
+
+            ModSliderOption ghostRayRandomizeMaxOption = ghostRayRandomizeMax.ToModSliderOption(1, 50);
+            ghostRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(ghostRayRandomizeMaxOption);
 
 
 
@@ -1004,6 +1324,18 @@ namespace BiggerFishMod
             holeFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(holeFishLimitOption);
 
+            ModToggleOption holeFishRandomizeOption = holeFishRandomize.ToModToggleOption();
+            holeFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(holeFishRandomizeOption);
+
+            ModSliderOption holeFishRandomizeMinOption = holeFishRandomizeMin.ToModSliderOption(1, 50);
+            holeFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishRandomizeMinOption);
+
+            ModSliderOption holeFishRandomizeMaxOption = holeFishRandomizeMax.ToModSliderOption(1, 50);
+            holeFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(holeFishRandomizeMaxOption);
+
 
 
 
@@ -1027,6 +1359,18 @@ namespace BiggerFishMod
             ModSliderOption hoopFishLimitOption = hoopFishLimit.ToModSliderOption(0, 50);
             hoopFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(hoopFishLimitOption);
+
+            ModToggleOption hoopFishRandomizeOption = hoopFishRandomize.ToModToggleOption();
+            hoopFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoopFishRandomizeOption);
+
+            ModSliderOption hoopFishRandomizeMinOption = hoopFishRandomizeMin.ToModSliderOption(1, 50);
+            hoopFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishRandomizeMinOption);
+
+            ModSliderOption hoopFishRandomizeMaxOption = hoopFishRandomizeMax.ToModSliderOption(1, 50);
+            hoopFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishRandomizeMaxOption);
 
 
 
@@ -1052,6 +1396,18 @@ namespace BiggerFishMod
             hoverFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(hoverFishLimitOption);
 
+            ModToggleOption hoverFishRandomizeOption = hoverFishRandomize.ToModToggleOption();
+            hoverFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoverFishRandomizeOption);
+
+            ModSliderOption hoverFishRandomizeMinOption = hoverFishRandomizeMin.ToModSliderOption(1, 50);
+            hoverFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishRandomizeMinOption);
+
+            ModSliderOption hoverFishRandomizeMaxOption = hoverFishRandomizeMax.ToModSliderOption(1, 50);
+            hoverFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoverFishRandomizeMaxOption);
+
 
 
 
@@ -1075,6 +1431,18 @@ namespace BiggerFishMod
             ModSliderOption jellyRayLimitOption = jellyRayLimit.ToModSliderOption(0, 50);
             jellyRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(jellyRayLimitOption);
+
+            ModToggleOption jellyRayRandomizeOption = jellyRayRandomize.ToModToggleOption();
+            jellyRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jellyRayRandomizeOption);
+
+            ModSliderOption jellyRayRandomizeMinOption = jellyRayRandomizeMin.ToModSliderOption(1, 50);
+            jellyRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRayRandomizeMinOption);
+
+            ModSliderOption jellyRayRandomizeMaxOption = jellyRayRandomizeMax.ToModSliderOption(1, 50);
+            jellyRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyRayRandomizeMaxOption);
 
 
 
@@ -1100,6 +1468,18 @@ namespace BiggerFishMod
             lavaLarvaLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(lavaLarvaLimitOption);
 
+            ModToggleOption lavaLarvaRandomizeOption = lavaLarvaRandomize.ToModToggleOption();
+            lavaLarvaRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lavaLarvaRandomizeOption);
+
+            ModSliderOption lavaLarvaRandomizeMinOption = lavaLarvaRandomizeMin.ToModSliderOption(1, 50);
+            lavaLarvaRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaRandomizeMinOption);
+
+            ModSliderOption lavaLarvaRandomizeMaxOption = lavaLarvaRandomizeMax.ToModSliderOption(1, 50);
+            lavaLarvaRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLarvaRandomizeMaxOption);
+
 
 
 
@@ -1123,6 +1503,18 @@ namespace BiggerFishMod
             ModSliderOption lavaLizardLimitOption = lavaLizardLimit.ToModSliderOption(0, 50);
             lavaLizardLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(lavaLizardLimitOption);
+
+            ModToggleOption lavaLizardRandomizeOption = lavaLizardRandomize.ToModToggleOption();
+            lavaLizardRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lavaLizardRandomizeOption);
+
+            ModSliderOption lavaLizardRandomizeMinOption = lavaLizardRandomizeMin.ToModSliderOption(1, 50);
+            lavaLizardRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardRandomizeMinOption);
+
+            ModSliderOption lavaLizardRandomizeMaxOption = lavaLizardRandomizeMax.ToModSliderOption(1, 50);
+            lavaLizardRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(lavaLizardRandomizeMaxOption);
 
 
 
@@ -1148,6 +1540,18 @@ namespace BiggerFishMod
             mesmerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(mesmerLimitOption);
 
+            ModToggleOption mesmerRandomizeOption = mesmerRandomize.ToModToggleOption();
+            mesmerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(mesmerRandomizeOption);
+
+            ModSliderOption mesmerRandomizeMinOption = mesmerRandomizeMin.ToModSliderOption(1, 50);
+            mesmerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerRandomizeMinOption);
+
+            ModSliderOption mesmerRandomizeMaxOption = mesmerRandomizeMax.ToModSliderOption(1, 50);
+            mesmerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(mesmerRandomizeMaxOption);
+
 
 
 
@@ -1171,6 +1575,18 @@ namespace BiggerFishMod
             ModSliderOption oculusFishLimitOption = oculusFishLimit.ToModSliderOption(0, 50);
             oculusFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(oculusFishLimitOption);
+
+            ModToggleOption oculusFishRandomizeOption = oculusFishRandomize.ToModToggleOption();
+            oculusFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(oculusFishRandomizeOption);
+
+            ModSliderOption oculusFishRandomizeMinOption = oculusFishRandomizeMin.ToModSliderOption(1, 50);
+            oculusFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishRandomizeMinOption);
+
+            ModSliderOption oculusFishRandomizeMaxOption = oculusFishRandomizeMax.ToModSliderOption(1, 50);
+            oculusFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(oculusFishRandomizeMaxOption);
 
 
 
@@ -1196,6 +1612,18 @@ namespace BiggerFishMod
             peeperLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(peeperLimitOption);
 
+            ModToggleOption peeperRandomizeOption = peeperRandomize.ToModToggleOption();
+            peeperRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(peeperRandomizeOption);
+
+            ModSliderOption peeperRandomizeMinOption = peeperRandomizeMin.ToModSliderOption(1, 50);
+            peeperRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperRandomizeMinOption);
+
+            ModSliderOption peeperRandomizeMaxOption = peeperRandomizeMax.ToModSliderOption(1, 50);
+            peeperRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperRandomizeMaxOption);
+
 
 
 
@@ -1219,6 +1647,18 @@ namespace BiggerFishMod
             ModSliderOption rabbitRayLimitOption = rabbitRayLimit.ToModSliderOption(0, 50);
             rabbitRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(rabbitRayLimitOption);
+
+            ModToggleOption rabbitRayRandomizeOption = rabbitRayRandomize.ToModToggleOption();
+            rabbitRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rabbitRayRandomizeOption);
+
+            ModSliderOption rabbitRayRandomizeMinOption = rabbitRayRandomizeMin.ToModSliderOption(1, 50);
+            rabbitRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRayRandomizeMinOption);
+
+            ModSliderOption rabbitRayRandomizeMaxOption = rabbitRayRandomizeMax.ToModSliderOption(1, 50);
+            rabbitRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(rabbitRayRandomizeMaxOption);
 
 
 
@@ -1244,6 +1684,18 @@ namespace BiggerFishMod
             reaperLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(reaperLeviathanLimitOption);
 
+            ModToggleOption reaperLeviathanRandomizeOption = reaperLeviathanRandomize.ToModToggleOption();
+            reaperLeviathanRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reaperLeviathanRandomizeOption);
+
+            ModSliderOption reaperLeviathanRandomizeMinOption = reaperLeviathanRandomizeMin.ToModSliderOption(1, 50);
+            reaperLeviathanRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanRandomizeMinOption);
+
+            ModSliderOption reaperLeviathanRandomizeMaxOption = reaperLeviathanRandomizeMax.ToModSliderOption(1, 50);
+            reaperLeviathanRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(reaperLeviathanRandomizeMaxOption);
+
 
 
 
@@ -1268,6 +1720,18 @@ namespace BiggerFishMod
             reefbackLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(reefbackLimitOption);
 
+            ModToggleOption reefbackRandomizeOption = reefbackRandomize.ToModToggleOption();
+            reefbackRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reefbackRandomizeOption);
+
+            ModSliderOption reefbackRandomizeMinOption = reefbackRandomizeMin.ToModSliderOption(1, 50);
+            reefbackRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackRandomizeMinOption);
+
+            ModSliderOption reefbackRandomizeMaxOption = reefbackRandomizeMax.ToModSliderOption(1, 50);
+            reefbackRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(reefbackRandomizeMaxOption);
+
 
 
 
@@ -1291,6 +1755,18 @@ namespace BiggerFishMod
             ModSliderOption reginaldLimitOption = reginaldLimit.ToModSliderOption(0, 50);
             reginaldLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(reginaldLimitOption);
+
+            ModToggleOption reginaldRandomizeOption = reginaldRandomize.ToModToggleOption();
+            reginaldRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(reginaldRandomizeOption);
+
+            ModSliderOption reginaldRandomizeMinOption = reginaldRandomizeMin.ToModSliderOption(1, 50);
+            reginaldRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldRandomizeMinOption);
+
+            ModSliderOption reginaldRandomizeMaxOption = reginaldRandomizeMax.ToModSliderOption(1, 50);
+            reginaldRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(reginaldRandomizeMaxOption);
 
 
 
@@ -1340,6 +1816,18 @@ namespace BiggerFishMod
             spineEelLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(spineEelLimitOption);
 
+            ModToggleOption spineEelRandomizeOption = spineEelRandomize.ToModToggleOption();
+            spineEelRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spineEelRandomizeOption);
+
+            ModSliderOption spineEelRandomizeMinOption = spineEelRandomizeMin.ToModSliderOption(1, 50);
+            spineEelRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(spineEelRandomizeMinOption);
+
+            ModSliderOption spineEelRandomizeMaxOption = spineEelRandomizeMax.ToModSliderOption(1, 50);
+            spineEelRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(spineEelRandomizeMaxOption);
+
 
 
 
@@ -1363,6 +1851,18 @@ namespace BiggerFishMod
             ModSliderOption sandSharkLimitOption = sandSharkLimit.ToModSliderOption(0, 50);
             sandSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(sandSharkLimitOption);
+
+            ModToggleOption sandSharkRandomizeOption = sandSharkRandomize.ToModToggleOption();
+            sandSharkRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(sandSharkRandomizeOption);
+
+            ModSliderOption sandSharkRandomizeMinOption = sandSharkRandomizeMin.ToModSliderOption(1, 50);
+            sandSharkRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkRandomizeMinOption);
+
+            ModSliderOption sandSharkRandomizeMaxOption = sandSharkRandomizeMax.ToModSliderOption(1, 50);
+            sandSharkRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(sandSharkRandomizeMaxOption);
 
 
 
@@ -1388,6 +1888,18 @@ namespace BiggerFishMod
             seaDragonLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaDragonLimitOption);
 
+            ModToggleOption seaDragonRandomizeOption = seaDragonRandomize.ToModToggleOption();
+            seaDragonRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaDragonRandomizeOption);
+
+            ModSliderOption seaDragonRandomizeMinOption = seaDragonRandomizeMin.ToModSliderOption(1, 50);
+            seaDragonRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonRandomizeMinOption);
+
+            ModSliderOption seaDragonRandomizeMaxOption = seaDragonRandomizeMax.ToModSliderOption(1, 50);
+            seaDragonRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaDragonRandomizeMaxOption);
+
 
 
 
@@ -1411,6 +1923,18 @@ namespace BiggerFishMod
             ModSliderOption seaEmperorBabyLimitOption = seaEmperorBabyLimit.ToModSliderOption(0, 50);
             seaEmperorBabyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaEmperorBabyLimitOption);
+
+            ModToggleOption seaEmperorBabyRandomizeOption = seaEmperorBabyRandomize.ToModToggleOption();
+            seaEmperorBabyRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaEmperorBabyRandomizeOption);
+
+            ModSliderOption seaEmperorBabyRandomizeMinOption = seaEmperorBabyRandomizeMin.ToModSliderOption(1, 50);
+            seaEmperorBabyRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabyRandomizeMinOption);
+
+            ModSliderOption seaEmperorBabyRandomizeMaxOption = seaEmperorBabyRandomizeMax.ToModSliderOption(1, 50);
+            seaEmperorBabyRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorBabyRandomizeMaxOption);
 
 
 
@@ -1436,6 +1960,18 @@ namespace BiggerFishMod
             seaEmperorJuvenileLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaEmperorJuvenileLimitOption);
 
+            ModToggleOption seaEmperorJuvenileRandomizeOption = seaEmperorJuvenileRandomize.ToModToggleOption();
+            seaEmperorJuvenileRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaEmperorJuvenileRandomizeOption);
+
+            ModSliderOption seaEmperorJuvenileRandomizeMinOption = seaEmperorJuvenileRandomizeMin.ToModSliderOption(1, 50);
+            seaEmperorJuvenileRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileRandomizeMinOption);
+
+            ModSliderOption seaEmperorJuvenileRandomizeMaxOption = seaEmperorJuvenileRandomizeMax.ToModSliderOption(1, 50);
+            seaEmperorJuvenileRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaEmperorJuvenileRandomizeMaxOption);
+
 
 
 
@@ -1459,6 +1995,18 @@ namespace BiggerFishMod
             ModSliderOption seaTreaderLimitOption = seaTreaderLimit.ToModSliderOption(0, 50);
             seaTreaderLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaTreaderLimitOption);
+
+            ModToggleOption seaTreaderRandomizeOption = seaTreaderRandomize.ToModToggleOption();
+            seaTreaderRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaTreaderRandomizeOption);
+
+            ModSliderOption seaTreaderRandomizeMinOption = seaTreaderRandomizeMin.ToModSliderOption(1, 50);
+            seaTreaderRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderRandomizeMinOption);
+
+            ModSliderOption seaTreaderRandomizeMaxOption = seaTreaderRandomizeMax.ToModSliderOption(1, 50);
+            seaTreaderRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaTreaderRandomizeMaxOption);
 
 
 
@@ -1484,6 +2032,18 @@ namespace BiggerFishMod
             jumperLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(jumperLimitOption);
 
+            ModToggleOption jumperRandomizeOption = jumperRandomize.ToModToggleOption();
+            jumperRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jumperRandomizeOption);
+
+            ModSliderOption jumperRandomizeMinOption = jumperRandomizeMin.ToModSliderOption(1, 50);
+            jumperRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperRandomizeMinOption);
+
+            ModSliderOption jumperRandomizeMaxOption = jumperRandomizeMax.ToModSliderOption(1, 50);
+            jumperRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(jumperRandomizeMaxOption);
+
 
 
 
@@ -1507,6 +2067,18 @@ namespace BiggerFishMod
             ModSliderOption skyRayLimitOption = skyRayLimit.ToModSliderOption(0, 50);
             skyRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(skyRayLimitOption);
+
+            ModToggleOption skyRayRandomizeOption = skyRayRandomize.ToModToggleOption();
+            skyRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(skyRayRandomizeOption);
+
+            ModSliderOption skyRayRandomizeMinOption = skyRayRandomizeMin.ToModSliderOption(1, 50);
+            skyRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayRandomizeMinOption);
+
+            ModSliderOption skyRayRandomizeMaxOption = skyRayRandomizeMax.ToModSliderOption(1, 50);
+            skyRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayRandomizeMaxOption);
 
 
 
@@ -1532,6 +2104,18 @@ namespace BiggerFishMod
             spadeFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(spadeFishLimitOption);
 
+            ModToggleOption spadeFishRandomizeOption = spadeFishRandomize.ToModToggleOption();
+            spadeFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spadeFishRandomizeOption);
+
+            ModSliderOption spadeFishRandomizeMinOption = spadeFishRandomizeMin.ToModSliderOption(1, 50);
+            spadeFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishRandomizeMinOption);
+
+            ModSliderOption spadeFishRandomizeMaxOption = spadeFishRandomizeMax.ToModSliderOption(1, 50);
+            spadeFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(spadeFishRandomizeMaxOption);
+
 
 
 
@@ -1555,6 +2139,18 @@ namespace BiggerFishMod
             ModSliderOption stalkerLimitOption = stalkerLimit.ToModSliderOption(0, 50);
             stalkerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(stalkerLimitOption);
+
+            ModToggleOption stalkerRandomizeOption = stalkerRandomize.ToModToggleOption();
+            stalkerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(stalkerRandomizeOption);
+
+            ModSliderOption stalkerRandomizeMinOption = stalkerRandomizeMin.ToModSliderOption(1, 50);
+            stalkerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(stalkerRandomizeMinOption);
+
+            ModSliderOption stalkerRandomizeMaxOption = stalkerRandomizeMax.ToModSliderOption(1, 50);
+            stalkerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(stalkerRandomizeMaxOption);
 
 
 
@@ -1580,6 +2176,18 @@ namespace BiggerFishMod
             warperLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(warperLimitOption);
 
+            ModToggleOption warperRandomizeOption = warperRandomize.ToModToggleOption();
+            warperRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(warperRandomizeOption);
+
+            ModSliderOption warperRandomizeMinOption = warperRandomizeMin.ToModSliderOption(1, 50);
+            warperRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(warperRandomizeMinOption);
+
+            ModSliderOption warperRandomizeMaxOption = warperRandomizeMax.ToModSliderOption(1, 50);
+            warperRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(warperRandomizeMaxOption);
+
 
 
 
@@ -1589,7 +2197,6 @@ namespace BiggerFishMod
 
         public override void BuildModOptions(uGUI_TabbedControlsPanel panel, int modsTabIndex, IReadOnlyCollection<OptionItem> options)
         {
-            //List<OptionItem> optionItems = options.ToList<OptionItem>();
             HashSet<OptionItem> optionItemsHash = options.ToHashSet<OptionItem>();
 
             int p = panel.AddTab("Bigger Fish");
@@ -2036,11 +2643,17 @@ namespace BiggerFishMod
                 case "Proportional":
                     proportionalToggle.Value = e.Value;
                     break;
+                case "Proportional Randomize":
+                    proportionalRandomize.Value = e.Value;
+                    break;
                 case "Remove Fish Schools":
                     removeFishSchools.Value = e.Value;
                     break;
                 case "Biter Exclude":
                     biterExclude.Value = e.Value;
+                    break;
+                case "Biter Randomize":
+                    biterRandomize.Value = e.Value;
                     break;
                 case "Bladderfish Exlude":
                     bladderFishExclude.Value = e.Value;
@@ -2051,119 +2664,236 @@ namespace BiggerFishMod
                 case "Bleeder Exclude":
                     bleederExclude.Value = e.Value;
                     break;
+                case "Bleeder Randomize":
+                    bleederRandomize.Value = e.Value;
+                    break;
                 case "Bone Shark Exclude":
                     boneSharkExclude.Value = e.Value;
+                    break;
+                case "Bone Shark Randomize":
+                    boneSharkRandomize.Value = e.Value;
                     break;
                 case "Boomerang Exclude":
                     boomerangExclude.Value = e.Value;
                     break;
+                case "Boomerang Randomize":
+                    boomerangRandomize.Value = e.Value;
+                    break;
                 case "Cave Crawler Exclude":
                     caveCrawlerExclude.Value = e.Value;
+                    break;
+                case "Cave Crawler Randomize":
+                    caveCrawlerRandomize.Value = e.Value;
                     break;
                 case "Crab Snake Exclude":
                     crabSnakeExclude.Value = e.Value;
                     break;
+                case "Crab Snake Randomize":
+                    crabSnakeRandomize.Value = e.Value;
+                    break;
                 case "Crab Squid Exclude":
                     crabSquidExclude.Value = e.Value;
+                    break;
+                case "Crab Squid Randomize":
+                    crabSquidRandomize.Value = e.Value;
                     break;
                 case "Crashfish Exclude":
                     crashFishExclude.Value = e.Value;
                     break;
+                case "Crashfish Randomize":
+                    crashFishRandomize.Value = e.Value;
+                    break;
                 case "Cuddlefish Exclude":
                     cuddleFishExclude.Value = e.Value;
+                    break;
+                case "Cuddlefish Randomize":
+                    cuddleFishRandomize.Value = e.Value;
                     break;
                 case "Eyeye Exclude":
                     eyeyeExclude.Value = e.Value;
                     break;
+                case "Eyeye Randomize":
+                    eyeyeRandomize.Value = e.Value;
+                    break;
                 case "Garryfish Exclude":
                     garryFishExclude.Value = e.Value;
+                    break;
+                case "Garryfish Randomize":
+                    garryFishRandomize.Value = e.Value;
                     break;
                 case "Gasopod Exclude":
                     gasopodExclude.Value = e.Value;
                     break;
+                case "Gasopod Randomize":
+                    gasopodRandomize.Value = e.Value;
+                    break;
                 case "Ghost Leviathan Exclude":
                     ghostLeviathanExclude.Value = e.Value;
+                    break;
+                case "Ghost Leviathan Randomize":
+                    ghostLeviathanRandomize.Value = e.Value;
                     break;
                 case "Ghost Leviathan(Void) Exclude":
                     voidGhostLeviathanExclude.Value = e.Value;
                     break;
+                case "Ghost Leviathan(Void) Randomize":
+                    voidGhostLeviathanRandomize.Value = e.Value;
+                    break;
                 case "Ghost Ray Exclude":
                     ghostRayExclude.Value = e.Value;
+                    break;
+                case "Ghost Ray Randomize":
+                    ghostRayRandomize.Value = e.Value;
                     break;
                 case "Holefish Exclude":
                     holeFishExclude.Value = e.Value;
                     break;
+                case "Holefish Randomize":
+                    holeFishRandomize.Value = e.Value;
+                    break;
                 case "Hoopfish Exclude":
                     hoopFishExclude.Value = e.Value;
+                    break;
+                case "Hoopfish Randomize":
+                    hoopFishRandomize.Value = e.Value;
                     break;
                 case "Hoverfish Exclude":
                     hoverFishExclude.Value = e.Value;
                     break;
+                case "Hoverfish Randomize":
+                    hoverFishRandomize.Value = e.Value;
+                    break;
                 case "Jelly Ray Exclude":
                     jellyRayExclude.Value = e.Value;
+                    break;
+                case "Jellyray Randomize":
+                    jellyRayRandomize.Value = e.Value;
                     break;
                 case "Jumper Exclude":
                     jumperExclude.Value = e.Value;
                     break;
+                case "Jumper Randomize":
+                    jumperRandomize.Value = e.Value;
+                    break;
                 case "Lava Larva Exclude":
                     lavaLarvaExclude.Value = e.Value;
+                    break;
+                case "Lava Larva Randomize":
+                    lavaLarvaRandomize.Value = e.Value;
                     break;
                 case "Lava Lizard Exclude":
                     lavaLizardExclude.Value = e.Value;
                     break;
+                case "Lava Lizard Randomize":
+                    lavaLizardRandomize.Value = e.Value;
+                    break;
                 case "Mesmer Exclude":
                     mesmerExclude.Value = e.Value;
+                    break;
+                case "Mesmer Randomize":
+                    mesmerRandomize.Value = e.Value;
                     break;
                 case "Oculus Exclude":
                     oculusFishExclude.Value = e.Value;
                     break;
+                case "Oculus Randomize":
+                    oculusFishRandomize.Value = e.Value;
+                    break;
                 case "Peeper Exclude":
                     peeperExclude.Value = e.Value;
+                    break;
+                case "Peeper Randomize":
+                    peeperRandomize.Value = e.Value;
                     break;
                 case "Rabbit Ray Exclude":
                     rabbitRayExclude.Value = e.Value;
                     break;
+                case "Rabbit Ray Randomize":
+                    rabbitRayRandomize.Value = e.Value;
+                    break;
                 case "Reaper Leviathan Exclude":
                     reaperLeviathanExclude.Value = e.Value;
+                    break;
+                case "Reaper Leviathan Randomize":
+                    reaperLeviathanRandomize.Value = e.Value;
                     break;
                 case "Reefback Exclude":
                     reefbackExclude.Value = e.Value;
                     break;
+                case "Reefback Randomize":
+                    reefbackRandomize.Value = e.Value;
+                    break;
                 case "Reginald Exclude":
                     reginaldExclude.Value = e.Value;
+                    break;
+                case "Reginald Randomize":
+                    reginaldRandomize.Value = e.Value;
                     break;
                 case "Sand Shark Exclude":
                     sandSharkExclude.Value = e.Value;
                     break;
+                case "Sand Shark Randomize":
+                    sandSharkRandomize.Value = e.Value;
+                    break;
                 case "Sea Dragon Exclude":
                     seaDragonExclude.Value = e.Value;
+                    break;
+                case "Sea Dragon Randomize":
+                    seaDragonRandomize.Value = e.Value;
                     break;
                 case "Sea Emperor Baby Exclude":
                     seaEmperorBabyExclude.Value = e.Value;
                     break;
+                case "Sea Emperor Baby Randomize":
+                    seaEmperorBabyRandomize.Value = e.Value;
+                    break;
                 case "Sea Emperor Juvenile Exclude":
                     seaEmperorJuvenileExclude.Value = e.Value;
+                    break;
+                case "Sea Emperor Juvenile Randomize":
+                    seaEmperorJuvenileRandomize.Value = e.Value;
                     break;
                 case "Sea Treader Exclude":
                     seaTreaderExclude.Value = e.Value;
                     break;
+                case "Sea Treader Randomize":
+                    seaTreaderRandomize.Value = e.Value;
+                    break;
                 case "Ampeel Exclude":
                     shockerExclude.Value = e.Value;
+                    break;
+                case "Ampeel Randomize":
+                    shockerRandomize.Value = e.Value;
                     break;
                 case "Skyray Exclude":
                     skyRayExclude.Value = e.Value;
                     break;
+                case "Skyray Randomize":
+                    skyRayRandomize.Value = e.Value;
+                    break;
                 case "Spadefish Exclude":
                     spadeFishExclude.Value = e.Value;
+                    break;
+                case "Spadefish Randomize":
+                    spadeFishRandomize.Value = e.Value;
                     break;
                 case "Spine Eel Exclude":
                     spineEelExclude.Value = e.Value;
                     break;
+                case "Spine Eel Randomize":
+                    spineEelRandomize.Value = e.Value;
+                    break;
                 case "Stalker Exclude":
                     stalkerExclude.Value = e.Value;
                     break;
+                case "Stalker Randomize":
+                    stalkerRandomize.Value = e.Value;
+                    break;
                 case "Warper Exclude":
                     warperExclude.Value = e.Value;
+                    break;
+                case "Warper Randomize":
+                    warperRandomize.Value = e.Value;
                     break;
             }
         }
@@ -2184,6 +2914,13 @@ namespace BiggerFishMod
                 case "Proportional Creature Limit":
                     proportionalCreatureLimit.Value = e.Value;
                     break;
+                case "Proportional Randomize Min":
+                    proportionalRandomizeMin.Value = e.Value;
+                    break;
+                case "Proportional Randomize Max":
+                    proportionalRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Biter Scale":
                     biterScale.Value = e.Value;
                     break;
@@ -2196,6 +2933,13 @@ namespace BiggerFishMod
                 case "Biter Limit":
                     biterLimit.Value = e.Value;
                     break;
+                case "Biter Randomize Min":
+                    biterRandomizeMin.Value = e.Value;
+                    break;
+                case "Biter Randomize Max":
+                    biterRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Bladderfish Scale":
                     bladderFishScale.Value = e.Value;
                     break;
@@ -2214,6 +2958,7 @@ namespace BiggerFishMod
                 case "Bladderfish Randomize Max":
                     bladderFishRandomizeMax.Value = e.Value;
                     break;
+
                 case "Bleeder Scale":
                     bleederScale.Value = e.Value;
                     break;
@@ -2226,6 +2971,13 @@ namespace BiggerFishMod
                 case "Bleeder Limit":
                     bleederLimit.Value = e.Value;
                     break;
+                case "Bleeder Randomize Min":
+                    bleederRandomizeMin.Value = e.Value;
+                    break;
+                case "Bleeder Randomize Max":
+                    bleederRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Bone Shark Scale":
                     boneSharkScale.Value = e.Value;
                     break;
@@ -2238,6 +2990,13 @@ namespace BiggerFishMod
                 case "Bone Shark Limit":
                     boneSharkLimit.Value = e.Value;
                     break;
+                case "Bone Shark Randomize Min":
+                    boneSharkRandomizeMin.Value = e.Value;
+                    break;
+                case "Bone Shark Randomize Max":
+                    boneSharkRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Boomerang Scale":
                     boomerangScale.Value = e.Value;
                     break;
@@ -2250,6 +3009,13 @@ namespace BiggerFishMod
                 case "Boomerang Limit":
                     boomerangLimit.Value = e.Value;
                     break;
+                case "Boomerang Randomize Min":
+                    boomerangRandomizeMin.Value = e.Value;
+                    break;
+                case "Boomerang Randomize Max":
+                    boomerangRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Cave Crawler Scale":
                     caveCrawlerScale.Value = e.Value;
                     break;
@@ -2262,6 +3028,13 @@ namespace BiggerFishMod
                 case "Cave Crawler Limit":
                     caveCrawlerLimit.Value = e.Value;
                     break;
+                case "Cave Crawler Randomize Min":
+                    caveCrawlerRandomizeMin.Value = e.Value;
+                    break;
+                case "Cave Crawler Randomize Max":
+                    caveCrawlerRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Crab Snake Scale":
                     crabSnakeScale.Value = e.Value;
                     break;
@@ -2274,6 +3047,13 @@ namespace BiggerFishMod
                 case "Crab Snake Limit":
                     crabSnakeLimit.Value = e.Value;
                     break;
+                case "Crab Snake Randomize Min":
+                    crabSnakeRandomizeMin.Value = e.Value;
+                    break;
+                case "Crab Snake Randomize Max":
+                    crabSnakeRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Crab Squid Scale":
                     crabSquidScale.Value = e.Value;
                     break;
@@ -2286,6 +3066,13 @@ namespace BiggerFishMod
                 case "Crab Squid Limit":
                     crabSquidLimit.Value = e.Value;
                     break;
+                case "Crab Squid Randomize Min":
+                    crabSquidRandomizeMin.Value = e.Value;
+                    break;
+                case "Crab Squid Randomize Max":
+                    crabSquidRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Crash Fish Scale":
                     crashFishScale.Value = e.Value;
                     break;
@@ -2298,6 +3085,13 @@ namespace BiggerFishMod
                 case "Crash Fish Limit":
                     crashFishLimit.Value = e.Value;
                     break;
+                case "Crash Fish Randomize Min":
+                    crashFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Crash Fish Randomize Max":
+                    crashFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Cuddlefish Scale":
                     cuddleFishScale.Value = e.Value;
                     break;
@@ -2310,6 +3104,13 @@ namespace BiggerFishMod
                 case "Cuddlefish Limit":
                     cuddleFishLimit.Value = e.Value;
                     break;
+                case "Cuddlefish Randomize Min":
+                    cuddleFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Cuddlefish Randomize Max":
+                    cuddleFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Eyeye Scale":
                     eyeyeScale.Value = e.Value;
                     break;
@@ -2322,6 +3123,13 @@ namespace BiggerFishMod
                 case "Eyeye Limit":
                     eyeyeLimit.Value = e.Value;
                     break;
+                case "Eyeye Randomize Min":
+                    eyeyeRandomizeMin.Value = e.Value;
+                    break;
+                case "Eyeye Randomize Max":
+                    eyeyeRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Garry Fish Scale":
                     garryFishScale.Value = e.Value;
                     break;
@@ -2334,6 +3142,13 @@ namespace BiggerFishMod
                 case "Garry Fish Limit":
                     garryFishLimit.Value = e.Value;
                     break;
+                case "Garry Fish Randomize Min":
+                    garryFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Garry Fish Randomize Max":
+                    garryFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Gasopod Scale":
                     gasopodScale.Value = e.Value;
                     break;
@@ -2345,6 +3160,13 @@ namespace BiggerFishMod
                     break;
                 case "Gasopod Limit":
                     gasopodLimit.Value = e.Value;
+                    break;
+                case "Gasopod Randomize Min":
+                    gasopodRandomizeMin.Value = e.Value;
+                    break;
+                case "Gasopod Randomize Max":
+                    gasopodRandomizeMax.Value = e.Value;
+
                     break;
                 case "Ghost Leviathan Scale(Void)":
                     voidGhostLeviathanScale.Value = e.Value;
@@ -2358,6 +3180,13 @@ namespace BiggerFishMod
                 case "Ghost Leviathan Limit(Void)":
                     voidGhostLeviathanLimit.Value = e.Value;
                     break;
+                case "Ghost Leviathan(Void) Randomize Min":
+                    voidGhostLeviathanRandomizeMin.Value = e.Value;
+                    break;
+                case "Ghost Leviathan(Void) Randomize Max":
+                    voidGhostLeviathanRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Ghost Leviathan Scale":
                     ghostLeviathanScale.Value = e.Value;
                     break;
@@ -2370,6 +3199,13 @@ namespace BiggerFishMod
                 case "Ghost Leviathan Limit":
                     ghostLeviathanLimit.Value = e.Value;
                     break;
+                case "Ghost Leviathan Randomize Min":
+                    ghostLeviathanRandomizeMin.Value = e.Value;
+                    break;
+                case "Ghost Leviathan Randomize Max":
+                    ghostLeviathanRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Ghost Ray Scale":
                     ghostRayScale.Value = e.Value;
                     break;
@@ -2382,6 +3218,13 @@ namespace BiggerFishMod
                 case "Ghost Ray Limit":
                     ghostRayLimit.Value = e.Value;
                     break;
+                case "Ghost Ray Randomize Min":
+                    ghostRayRandomizeMin.Value = e.Value;
+                    break;
+                case "Ghost Ray Randomize Max":
+                    ghostRayRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Holefish Scale":
                     holeFishScale.Value = e.Value;
                     break;
@@ -2394,6 +3237,13 @@ namespace BiggerFishMod
                 case "Holefish Limit":
                     holeFishLimit.Value = e.Value;
                     break;
+                case "Holefish Randomize Min":
+                    holeFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Holefish Randomize Max":
+                    holeFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Hoopfish Scale":
                     hoopFishScale.Value = e.Value;
                     break;
@@ -2406,6 +3256,13 @@ namespace BiggerFishMod
                 case "Hoopfish Limit":
                     hoopFishLimit.Value = e.Value;
                     break;
+                case "Hoopfish Randomize Min":
+                    hoopFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Hoopfish Randomize Max":
+                    hoopFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Hoverfish Scale":
                     hoverFishScale.Value = e.Value;
                     break;
@@ -2417,6 +3274,13 @@ namespace BiggerFishMod
                     break;
                 case "Hoverfish Limit":
                     hoverFishLimit.Value = e.Value;
+                    break;
+                case "Hoverfish Randomize Min":
+                    hoverFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Hoverfish Randomize Max":
+                    hoverFishRandomizeMax.Value = e.Value;
+
                     break;
                 case "Jellyray Scale":
                     jellyRayScale.Value = e.Value;
@@ -2430,6 +3294,13 @@ namespace BiggerFishMod
                 case "Jellyray Limit":
                     jellyRayLimit.Value = e.Value;
                     break;
+                case "Jellyray Randomize Min":
+                    jellyRayRandomizeMin.Value = e.Value;
+                    break;
+                case "Jellyray Randomize Max":
+                    jellyRayRandomizeMax.Value = e.Value;
+
+                    break;
                 case "Jumper Scale":
                     jumperScale.Value = e.Value;
                     break;
@@ -2441,6 +3312,13 @@ namespace BiggerFishMod
                     break;
                 case "Jumper Limit":
                     jumperLimit.Value = e.Value;
+                    break;
+                case "Jumper Randomize Min":
+                    jumperRandomizeMin.Value = e.Value;
+                    break;
+                case "Jumper Randomize Max":
+                    jumperRandomizeMax.Value = e.Value;
+
                     break;
                 case "Lava Larva Scale":
                     lavaLarvaScale.Value = e.Value;
@@ -2454,6 +3332,13 @@ namespace BiggerFishMod
                 case "Lava Larva Limit":
                     lavaLarvaLimit.Value = e.Value;
                     break;
+                case "Lava Larva Randomize Min":
+                    lavaLarvaRandomizeMin.Value = e.Value;
+                    break;
+                case "Lava Larva Randomize Max":
+                    lavaLarvaRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Lava Lizard Scale":
                     lavaLizardScale.Value = e.Value;
                     break;
@@ -2466,6 +3351,13 @@ namespace BiggerFishMod
                 case "Lava Lizard Limit":
                     lavaLizardLimit.Value = e.Value;
                     break;
+                case "Lava Lizard Randomize Min":
+                    lavaLizardRandomizeMin.Value = e.Value;
+                    break;
+                case "Lava Lizard Randomize Max":
+                    lavaLizardRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Mesmer Scale":
                     mesmerScale.Value = e.Value;
                     break;
@@ -2478,6 +3370,13 @@ namespace BiggerFishMod
                 case "Mesmer Limit":
                     mesmerLimit.Value = e.Value;
                     break;
+                case "Mesmer Randomize Min":
+                    mesmerRandomizeMin.Value = e.Value;
+                    break;
+                case "Mesmer Randomize Max":
+                    mesmerRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Oculus Scale":
                     oculusFishScale.Value = e.Value;
                     break;
@@ -2490,6 +3389,13 @@ namespace BiggerFishMod
                 case "Oculus Limit":
                     oculusFishLimit.Value = e.Value;
                     break;
+                case "Oculus Randomize Min":
+                    oculusFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Oculus Randomize Max":
+                    oculusFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Peeper Scale":
                     peeperScale.Value = e.Value;
                     break;
@@ -2501,6 +3407,13 @@ namespace BiggerFishMod
                     break;
                 case "Peeper Limit":
                     peeperLimit.Value = e.Value;
+                    break;
+                case "Peeper Randomize Min":
+                    peeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Peeper Randomize Max":
+                    peeperRandomizeMax.Value = e.Value;
+
                     break;
                 case "Rabbit Ray Scale":
                     rabbitRayScale.Value = e.Value;
@@ -2514,6 +3427,13 @@ namespace BiggerFishMod
                 case "Rabbit Ray Limit":
                     rabbitRayLimit.Value = e.Value;
                     break;
+                case "Rabbit Ray Randomize Min":
+                    rabbitRayRandomizeMin.Value = e.Value;
+                    break;
+                case "Rabbit Ray Randomize Max":
+                    rabbitRayRandomizeMax.Value = e.Value;
+
+                    break;
                 case "Reaper Leviathan Scale":
                     reaperLeviathanScale.Value = e.Value;
                     break;
@@ -2525,6 +3445,13 @@ namespace BiggerFishMod
                     break;
                 case "Reaper Leviathan Limit":
                     reaperLeviathanLimit.Value = e.Value;
+                    break;
+                case "Reaper Leviathan Randomize Min":
+                    reaperLeviathanRandomizeMin.Value = e.Value;
+                    break;
+                case "Reaper Leviathan Randomize Max":
+                    reaperLeviathanRandomizeMax.Value = e.Value;
+
                     break;
                 case "Reefback Scale":
                     reefbackScale.Value = e.Value;
@@ -2538,6 +3465,13 @@ namespace BiggerFishMod
                 case "Reefback Limit":
                     reefbackLimit.Value = e.Value;
                     break;
+                case "Reefback Randomize Min":
+                    reefbackRandomizeMin.Value = e.Value;
+                    break;
+                case "Reefback Randomize Max":
+                    reefbackRandomizeMax.Value = e.Value;
+
+                    break;
                 case "Reginald Scale":
                     reginaldScale.Value = e.Value;
                     break;
@@ -2550,6 +3484,13 @@ namespace BiggerFishMod
                 case "Reginald Limit":
                     reginaldLimit.Value = e.Value;
                     break;
+                case "Reginald Randomize Min":
+                    reginaldRandomizeMin.Value = e.Value;
+                    break;
+                case "Reginald Randomize Max":
+                    reginaldRandomizeMax.Value = e.Value;
+                    break;
+
                 //case "Rock Grub Scale":
                 //    rockGrubScale.Value = e.Value;
                 //    break;
@@ -2562,6 +3503,7 @@ namespace BiggerFishMod
                 //case "Rock Grub Limit":
                 //    rockGrubLimit.Value = e.Value;
                 //    break;
+
                 case "Sand Shark Scale":
                     sandSharkScale.Value = e.Value;
                     break;
@@ -2574,6 +3516,13 @@ namespace BiggerFishMod
                 case "Sand Shark Limit":
                     sandSharkLimit.Value = e.Value;
                     break;
+                case "Sand Shark Randomize Min":
+                    sandSharkRandomizeMin.Value = e.Value;
+                    break;
+                case "Sand Shark Randomize Max":
+                    sandSharkRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Dragon Scale":
                     seaDragonScale.Value = e.Value;
                     break;
@@ -2586,6 +3535,13 @@ namespace BiggerFishMod
                 case "Sea Dragon Limit":
                     seaDragonLimit.Value = e.Value;
                     break;
+                case "Sea Dragon Randomize Min":
+                    seaDragonRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Dragon Randomize Max":
+                    seaDragonRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Emperor Baby Scale":
                     seaEmperorBabyScale.Value = e.Value;
                     break;
@@ -2598,6 +3554,13 @@ namespace BiggerFishMod
                 case "Sea Emperor Baby Limit":
                     seaEmperorBabyLimit.Value = e.Value;
                     break;
+                case "Sea Emperor Baby Randomize Min":
+                    seaEmperorBabyRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Emperor Baby Randomize Max":
+                    seaEmperorBabyRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Emperor Juvenile Scale":
                     seaEmperorJuvenileScale.Value = e.Value;
                     break;
@@ -2610,6 +3573,13 @@ namespace BiggerFishMod
                 case "Sea Emperor Juvenile Limit":
                     seaEmperorJuvenileLimit.Value = e.Value;
                     break;
+                case "Sea Emperor Juvenile Randomize Min":
+                    seaEmperorJuvenileRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Emperor Juvenile Randomize Max":
+                    seaEmperorJuvenileRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Treader Scale":
                     seaTreaderScale.Value = e.Value;
                     break;
@@ -2622,6 +3592,13 @@ namespace BiggerFishMod
                 case "Sea Treader Limit":
                     seaTreaderLimit.Value = e.Value;
                     break;
+                case "Sea Treader Randomize Min":
+                    seaTreaderRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Treader Randomize Max":
+                    seaTreaderRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Shocker Scale":
                     shockerScale.Value = e.Value;
                     break;
@@ -2634,6 +3611,13 @@ namespace BiggerFishMod
                 case "Shocker Limit":
                     shockerLimit.Value = e.Value;
                     break;
+                case "Shocker Randomize Min":
+                    shockerRandomizeMin.Value = e.Value;
+                    break;
+                case "Shocker Randomize Max":
+                    shockerRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Skyray Scale":
                     skyRayScale.Value = e.Value;
                     break;
@@ -2646,6 +3630,13 @@ namespace BiggerFishMod
                 case "Skyray Limit":
                     skyRayLimit.Value = e.Value;
                     break;
+                case "Skyray Randomize Min":
+                    skyRayRandomizeMin.Value = e.Value;
+                    break;
+                case "Skyray Randomize Max":
+                    skyRayRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Spadefish Scale":
                     spadeFishScale.Value = e.Value;
                     break;
@@ -2658,6 +3649,13 @@ namespace BiggerFishMod
                 case "Spadefish Limit":
                     spadeFishLimit.Value = e.Value;
                     break;
+                case "Spadefish Randomize Min":
+                    spadeFishRandomizeMin.Value = e.Value;
+                    break;
+                case "Spadefish Randomize Max":
+                    spadeFishRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Spine Eel Scale":
                     spineEelScale.Value = e.Value;
                     break;
@@ -2670,6 +3668,13 @@ namespace BiggerFishMod
                 case "Spine Eel Limit":
                     spineEelLimit.Value = e.Value;
                     break;
+                case "Spine Eel Randomize Min":
+                    spineEelRandomizeMin.Value = e.Value;
+                    break;
+                case "Spine Eel Randomize Max":
+                    spineEelRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Stalker Scale":
                     stalkerScale.Value = e.Value;
                     break;
@@ -2682,6 +3687,13 @@ namespace BiggerFishMod
                 case "Stalker Limit":
                     stalkerLimit.Value = e.Value;
                     break;
+                case "Stalker Randomize Min":
+                    stalkerRandomizeMin.Value = e.Value;
+                    break;
+                case "Stalker Randomize Max":
+                    stalkerRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Warper Scale":
                     warperScale.Value = e.Value;
                     break;
@@ -2693,6 +3705,12 @@ namespace BiggerFishMod
                     break;
                 case "Warper Limit":
                     warperLimit.Value = e.Value;
+                    break;
+                case "Warper Randomize Min":
+                    warperRandomizeMin.Value = e.Value;
+                    break;
+                case "Warper Randomize Max":
+                    warperRandomizeMax.Value = e.Value;
                     break;
                     #endregion
             }
@@ -2710,351 +3728,494 @@ namespace BiggerFishMod
         public static ConfigEntry<float> proportionalSlowness;
         public static ConfigEntry<float> proportionalHealth;
         public static ConfigEntry<float> proportionalCreatureLimit;
+        public static ConfigEntry<bool> proportionalRandomize;
+        public static ConfigEntry<float> proportionalRandomizeMin;
+        public static ConfigEntry<float> proportionalRandomizeMax;
 
+        public static ConfigEntry<bool> arcticPeeperExclude;
         public static ConfigEntry<float> arcticPeeperScale;
         public static ConfigEntry<float> arcticPeeperSlowness;
         public static ConfigEntry<float> arcticPeeperHealth;
         public static ConfigEntry<float> arcticPeeperLimit;
+        public static ConfigEntry<bool> arcticPeeperRandomize;
+        public static ConfigEntry<float> arcticPeeperRandomizeMin;
+        public static ConfigEntry<float> arcticPeeperRandomizeMax;
         public static ConfigEntry<float> arcticPeeperBaseHealth;
         public static ConfigEntry<float> arcticPeeperBaseMaxAcceleration;
         public static ConfigEntry<float> arcticPeeperBaseForwardRotationSpeed;
         public static ConfigEntry<float> arcticPeeperBaseUpRotationSpeed;
         public static ConfigEntry<float> arcticPeeperBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> arrowRayExclude;
         public static ConfigEntry<float> arrowRayScale;
         public static ConfigEntry<float> arrowRaySlowness;
         public static ConfigEntry<float> arrowRayHealth;
         public static ConfigEntry<float> arrowRayLimit;
+        public static ConfigEntry<bool> arrowRayRandomize;
+        public static ConfigEntry<float> arrowRayRandomizeMin;
+        public static ConfigEntry<float> arrowRayRandomizeMax;
         public static ConfigEntry<float> arrowRayBaseHealth;
         public static ConfigEntry<float> arrowRayBaseMaxAcceleration;
         public static ConfigEntry<float> arrowRayBaseForwardRotationSpeed;
         public static ConfigEntry<float> arrowRayBaseUpRotationSpeed;
         public static ConfigEntry<float> arrowRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> boomerangExclude;
         public static ConfigEntry<float> boomerangScale;
         public static ConfigEntry<float> boomerangSlowness;
         public static ConfigEntry<float> boomerangHealth;
         public static ConfigEntry<float> boomerangLimit;
+        public static ConfigEntry<bool> boomerangRandomize;
+        public static ConfigEntry<float> boomerangRandomizeMin;
+        public static ConfigEntry<float> boomerangRandomizeMax;
         public static ConfigEntry<float> boomerangBaseHealth;
         public static ConfigEntry<float> boomerangBaseMaxAcceleration;
         public static ConfigEntry<float> boomerangBaseForwardRotationSpeed;
         public static ConfigEntry<float> boomerangBaseUpRotationSpeed;
         public static ConfigEntry<float> boomerangBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> bladderFishExclude;
         public static ConfigEntry<float> bladderFishScale;
         public static ConfigEntry<float> bladderFishSlowness;
         public static ConfigEntry<float> bladderFishHealth;
         public static ConfigEntry<float> bladderFishLimit;
+        public static ConfigEntry<bool> bladderFishRandomize;
+        public static ConfigEntry<float> bladderFishRandomizeMin;
+        public static ConfigEntry<float> bladderFishRandomizeMax;
         public static ConfigEntry<float> bladderFishBaseHealth;
         public static ConfigEntry<float> bladderFishBaseMaxAcceleration;
         public static ConfigEntry<float> bladderFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> bladderFishBaseUpRotationSpeed;
         public static ConfigEntry<float> bladderFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> hoopFishExclude;
         public static ConfigEntry<float> hoopFishScale;
         public static ConfigEntry<float> hoopFishSlowness;
         public static ConfigEntry<float> hoopFishHealth;
         public static ConfigEntry<float> hoopFishLimit;
+        public static ConfigEntry<bool> hoopFishRandomize;
+        public static ConfigEntry<float> hoopFishRandomizeMin;
+        public static ConfigEntry<float> hoopFishRandomizeMax;
         public static ConfigEntry<float> hoopFishBaseHealth;
         public static ConfigEntry<float> hoopFishBaseMaxAcceleration;
         public static ConfigEntry<float> hoopFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> hoopFishBaseUpRotationSpeed;
         public static ConfigEntry<float> hoopFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> discusFishExclude;
         public static ConfigEntry<float> discusFishScale;
         public static ConfigEntry<float> discusFishSlowness;
         public static ConfigEntry<float> discusFishHealth;
         public static ConfigEntry<float> discusFishLimit;
+        public static ConfigEntry<bool> discusFishRandomize;
+        public static ConfigEntry<float> discusFishRandomizeMin;
+        public static ConfigEntry<float> discusFishRandomizeMax;
         public static ConfigEntry<float> discusFishBaseHealth;
         public static ConfigEntry<float> discusFishBaseMaxAcceleration;
         public static ConfigEntry<float> discusFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> discusFishBaseUpRotationSpeed;
         public static ConfigEntry<float> discusFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> featherFishExclude;
         public static ConfigEntry<float> featherFishScale;
         public static ConfigEntry<float> featherFishSlowness;
         public static ConfigEntry<float> featherFishHealth;
         public static ConfigEntry<float> featherFishLimit;
+        public static ConfigEntry<bool> featherFishRandomize;
+        public static ConfigEntry<float> featherFishRandomizeMin;
+        public static ConfigEntry<float> featherFishRandomizeMax;
         public static ConfigEntry<float> featherFishBaseHealth;
         public static ConfigEntry<float> featherFishBaseMaxAcceleration;
         public static ConfigEntry<float> featherFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> featherFishBaseUpRotationSpeed;
         public static ConfigEntry<float> featherFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> nootFishExclude;
         public static ConfigEntry<float> nootFishScale;
         public static ConfigEntry<float> nootFishSlowness;
         public static ConfigEntry<float> nootFishHealth;
         public static ConfigEntry<float> nootFishLimit;
+        public static ConfigEntry<bool> nootFishRandomize;
+        public static ConfigEntry<float> nootFishRandomizeMin;
+        public static ConfigEntry<float> nootFishRandomizeMax;
         public static ConfigEntry<float> nootFishBaseHealth;
         public static ConfigEntry<float> nootFishBaseMaxAcceleration;
         public static ConfigEntry<float> nootFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> nootFishBaseUpRotationSpeed;
         public static ConfigEntry<float> nootFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> spinnerFishExclude;
         public static ConfigEntry<float> spinnerFishScale;
         public static ConfigEntry<float> spinnerFishSlowness;
         public static ConfigEntry<float> spinnerFishHealth;
         public static ConfigEntry<float> spinnerFishLimit;
+        public static ConfigEntry<bool> spinnerFishRandomize;
+        public static ConfigEntry<float> spinnerFishRandomizeMin;
+        public static ConfigEntry<float> spinnerFishRandomizeMax;
         public static ConfigEntry<float> spinnerFishBaseHealth;
         public static ConfigEntry<float> spinnerFishBaseMaxAcceleration;
         public static ConfigEntry<float> spinnerFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> spinnerFishBaseUpRotationSpeed;
         public static ConfigEntry<float> spinnerFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> arcticRayExclude;
         public static ConfigEntry<float> arcticRayScale;
         public static ConfigEntry<float> arcticRaySlowness;
         public static ConfigEntry<float> arcticRayHealth;
         public static ConfigEntry<float> arcticRayLimit;
+        public static ConfigEntry<bool> arcticRayRandomize;
+        public static ConfigEntry<float> arcticRayRandomizeMin;
+        public static ConfigEntry<float> arcticRayRandomizeMax;
         public static ConfigEntry<float> arcticRayBaseHealth;
         public static ConfigEntry<float> arcticRayBaseMaxAcceleration;
         public static ConfigEntry<float> arcticRayBaseForwardRotationSpeed;
         public static ConfigEntry<float> arcticRayBaseUpRotationSpeed;
         public static ConfigEntry<float> arcticRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> jellyFishExclude;
         public static ConfigEntry<float> jellyFishScale;
         public static ConfigEntry<float> jellyFishSlowness;
         public static ConfigEntry<float> jellyFishHealth;
         public static ConfigEntry<float> jellyFishLimit;
+        public static ConfigEntry<bool> jellyFishRandomize;
+        public static ConfigEntry<float> jellyFishRandomizeMin;
+        public static ConfigEntry<float> jellyFishRandomizeMax;
         public static ConfigEntry<float> jellyFishBaseHealth;
         public static ConfigEntry<float> jellyFishBaseMaxAcceleration;
         public static ConfigEntry<float> jellyFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> jellyFishBaseUpRotationSpeed;
         public static ConfigEntry<float> jellyFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> titanHoleFishExclude;
         public static ConfigEntry<float> titanHoleFishScale;
         public static ConfigEntry<float> titanHoleFishSlowness;
         public static ConfigEntry<float> titanHoleFishHealth;
         public static ConfigEntry<float> titanHoleFishLimit;
+        public static ConfigEntry<bool> titanHoleFishRandomize;
+        public static ConfigEntry<float> titanHoleFishRandomizeMin;
+        public static ConfigEntry<float> titanHoleFishRandomizeMax;
         public static ConfigEntry<float> titanHoleFishBaseHealth;
         public static ConfigEntry<float> titanHoleFishBaseMaxAcceleration;
         public static ConfigEntry<float> titanHoleFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> titanHoleFishBaseUpRotationSpeed;
         public static ConfigEntry<float> titanHoleFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> glowWhaleExclude;
         public static ConfigEntry<float> glowWhaleScale;
         public static ConfigEntry<float> glowWhaleSlowness;
         public static ConfigEntry<float> glowWhaleHealth;
         public static ConfigEntry<float> glowWhaleLimit;
+        public static ConfigEntry<bool> glowWhaleRandomize;
+        public static ConfigEntry<float> glowWhaleRandomizeMin;
+        public static ConfigEntry<float> glowWhaleRandomizeMax;
         public static ConfigEntry<float> glowWhaleBaseHealth;
         public static ConfigEntry<float> glowWhaleBaseMaxAcceleration;
         public static ConfigEntry<float> glowWhaleBaseForwardRotationSpeed;
         public static ConfigEntry<float> glowWhaleBaseUpRotationSpeed;
         public static ConfigEntry<float> glowWhaleBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> pinnacaridExclude;
         public static ConfigEntry<float> pinnacaridScale;
         public static ConfigEntry<float> pinnacaridSlowness;
         public static ConfigEntry<float> pinnacaridHealth;
         public static ConfigEntry<float> pinnacaridLimit;
+        public static ConfigEntry<bool> pinnacaridRandomize;
+        public static ConfigEntry<float> pinnacaridRandomizeMin;
+        public static ConfigEntry<float> pinnacaridRandomizeMax;
         public static ConfigEntry<float> pinnacaridBaseHealth;
         public static ConfigEntry<float> pinnacaridBaseMaxAcceleration;
         public static ConfigEntry<float> pinnacaridBaseForwardRotationSpeed;
         public static ConfigEntry<float> pinnacaridBaseUpRotationSpeed;
         public static ConfigEntry<float> pinnacaridBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> triopsExclude;
         public static ConfigEntry<float> triopsScale;
         public static ConfigEntry<float> triopsSlowness;
         public static ConfigEntry<float> triopsHealth;
         public static ConfigEntry<float> triopsLimit;
+        public static ConfigEntry<bool> triopsRandomize;
+        public static ConfigEntry<float> triopsRandomizeMin;
+        public static ConfigEntry<float> triopsRandomizeMax;
         public static ConfigEntry<float> triopsBaseHealth;
         public static ConfigEntry<float> triopsBaseMaxAcceleration;
         public static ConfigEntry<float> triopsBaseForwardRotationSpeed;
         public static ConfigEntry<float> triopsBaseUpRotationSpeed;
         public static ConfigEntry<float> triopsBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> trivalveExclude;
         public static ConfigEntry<float> trivalveScale;
         public static ConfigEntry<float> trivalveSlowness;
         public static ConfigEntry<float> trivalveHealth;
         public static ConfigEntry<float> trivalveLimit;
+        public static ConfigEntry<bool> trivalveRandomize;
+        public static ConfigEntry<float> trivalveRandomizeMin;
+        public static ConfigEntry<float> trivalveRandomizeMax;
         public static ConfigEntry<float> trivalveBaseHealth;
         public static ConfigEntry<float> trivalveBaseMaxAcceleration;
         public static ConfigEntry<float> trivalveBaseForwardRotationSpeed;
         public static ConfigEntry<float> trivalveBaseUpRotationSpeed;
         public static ConfigEntry<float> trivalveBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> symbioteFishExclude;
         public static ConfigEntry<float> symbioteFishScale;
         public static ConfigEntry<float> symbioteFishSlowness;
         public static ConfigEntry<float> symbioteFishHealth;
         public static ConfigEntry<float> symbioteFishLimit;
+        public static ConfigEntry<bool> symbioteFishRandomize;
+        public static ConfigEntry<float> symbioteFishRandomizeMin;
+        public static ConfigEntry<float> symbioteFishRandomizeMax;
         public static ConfigEntry<float> symbioteFishBaseHealth;
         public static ConfigEntry<float> symbioteFishBaseMaxAcceleration;
         public static ConfigEntry<float> symbioteFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> symbioteFishBaseUpRotationSpeed;
         public static ConfigEntry<float> symbioteFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> rockGrubExclude;
         public static ConfigEntry<float> rockGrubScale;
         public static ConfigEntry<float> rockGrubSlowness;
         public static ConfigEntry<float> rockGrubHealth;
         public static ConfigEntry<float> rockGrubLimit;
+        public static ConfigEntry<bool> rockGrubRandomize;
+        public static ConfigEntry<float> rockGrubRandomizeMin;
+        public static ConfigEntry<float> rockGrubRandomizeMax;
         public static ConfigEntry<float> rockGrubBaseHealth;
         public static ConfigEntry<float> rockGrubBaseMaxAcceleration;
         public static ConfigEntry<float> rockGrubBaseForwardRotationSpeed;
         public static ConfigEntry<float> rockGrubBaseUpRotationSpeed;
         public static ConfigEntry<float> rockGrubBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> crashFishExclude;
         public static ConfigEntry<float> crashFishScale;
         public static ConfigEntry<float> crashFishSlowness;
         public static ConfigEntry<float> crashFishHealth;
         public static ConfigEntry<float> crashFishLimit;
+        public static ConfigEntry<bool> crashFishRandomize;
+        public static ConfigEntry<float> crashFishRandomizeMin;
+        public static ConfigEntry<float> crashFishRandomizeMax;
         public static ConfigEntry<float> crashFishBaseHealth;
         public static ConfigEntry<float> crashFishBaseMaxAcceleration;
         public static ConfigEntry<float> crashFishBaseForwardRotationSpeed;
         public static ConfigEntry<float> crashFishBaseUpRotationSpeed;
         public static ConfigEntry<float> crashFishBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> brineWingExclude;
         public static ConfigEntry<float> brineWingScale;
         public static ConfigEntry<float> brineWingSlowness;
         public static ConfigEntry<float> brineWingHealth;
         public static ConfigEntry<float> brineWingLimit;
+        public static ConfigEntry<bool> brineWingRandomize;
+        public static ConfigEntry<float> brineWingRandomizeMin;
+        public static ConfigEntry<float> brineWingRandomizeMax;
         public static ConfigEntry<float> brineWingBaseHealth;
         public static ConfigEntry<float> brineWingBaseMaxAcceleration;
         public static ConfigEntry<float> brineWingBaseForwardRotationSpeed;
         public static ConfigEntry<float> brineWingBaseUpRotationSpeed;
         public static ConfigEntry<float> brineWingBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> lilyPaddlerExclude;
         public static ConfigEntry<float> lilyPaddlerScale;
         public static ConfigEntry<float> lilyPaddlerSlowness;
         public static ConfigEntry<float> lilyPaddlerHealth;
         public static ConfigEntry<float> lilyPaddlerLimit;
+        public static ConfigEntry<bool> lilyPaddlerRandomize;
+        public static ConfigEntry<float> lilyPaddlerRandomizeMin;
+        public static ConfigEntry<float> lilyPaddlerRandomizeMax;
         public static ConfigEntry<float> lilyPaddlerBaseHealth;
         public static ConfigEntry<float> lilyPaddlerBaseMaxAcceleration;
         public static ConfigEntry<float> lilyPaddlerBaseForwardRotationSpeed;
         public static ConfigEntry<float> lilyPaddlerBaseUpRotationSpeed;
         public static ConfigEntry<float> lilyPaddlerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> cryptosuchusExclude;
         public static ConfigEntry<float> cryptosuchusScale;
         public static ConfigEntry<float> cryptosuchusSlowness;
         public static ConfigEntry<float> cryptosuchusHealth;
         public static ConfigEntry<float> cryptosuchusLimit;
+        public static ConfigEntry<bool> cryptosuchusRandomize;
+        public static ConfigEntry<float> cryptosuchusRandomizeMin;
+        public static ConfigEntry<float> cryptosuchusRandomizeMax;
         public static ConfigEntry<float> cryptosuchusBaseHealth;
         public static ConfigEntry<float> cryptosuchusBaseMaxAcceleration;
         public static ConfigEntry<float> cryptosuchusBaseForwardRotationSpeed;
         public static ConfigEntry<float> cryptosuchusBaseUpRotationSpeed;
         public static ConfigEntry<float> cryptosuchusBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> bruteSharkExclude;
         public static ConfigEntry<float> bruteSharkScale;
         public static ConfigEntry<float> bruteSharkSlowness;
         public static ConfigEntry<float> bruteSharkHealth;
         public static ConfigEntry<float> bruteSharkBaseHealth;
+        public static ConfigEntry<float> bruteSharkLimit;
+        public static ConfigEntry<bool> bruteSharkRandomize;
+        public static ConfigEntry<float> bruteSharkRandomizeMin;
+        public static ConfigEntry<float> bruteSharkRandomizeMax;
         public static ConfigEntry<float> bruteSharkBaseMaxAcceleration;
         public static ConfigEntry<float> bruteSharkBaseForwardRotationSpeed;
         public static ConfigEntry<float> bruteSharkBaseUpRotationSpeed;
         public static ConfigEntry<float> bruteSharkBaseTraitsAnimatorSpeed;
-        public static ConfigEntry<float> bruteSharkLimit;
 
+        public static ConfigEntry<bool> squidSharkExclude;
         public static ConfigEntry<float> squidSharkScale;
         public static ConfigEntry<float> squidSharkSlowness;
         public static ConfigEntry<float> squidSharkHealth;
         public static ConfigEntry<float> squidSharkLimit;
+        public static ConfigEntry<bool> squidSharkRandomize;
+        public static ConfigEntry<float> squidSharkRandomizeMin;
+        public static ConfigEntry<float> squidSharkRandomizeMax;
         public static ConfigEntry<float> squidSharkBaseHealth;
         public static ConfigEntry<float> squidSharkBaseMaxAcceleration;
         public static ConfigEntry<float> squidSharkBaseForwardRotationSpeed;
         public static ConfigEntry<float> squidSharkBaseUpRotationSpeed;
         public static ConfigEntry<float> squidSharkBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> chelicerateExclude;
         public static ConfigEntry<float> chelicerateScale;
         public static ConfigEntry<float> chelicerateSlowness;
         public static ConfigEntry<float> chelicerateHealth;
         public static ConfigEntry<float> chelicerateLimit;
+        public static ConfigEntry<bool> chelicerateRandomize;
+        public static ConfigEntry<float> chelicerateRandomizeMin;
+        public static ConfigEntry<float> chelicerateRandomizeMax;
         public static ConfigEntry<float> chelicerateBaseHealth;
         public static ConfigEntry<float> chelicerateBaseMaxAcceleration;
         public static ConfigEntry<float> chelicerateBaseForwardRotationSpeed;
         public static ConfigEntry<float> chelicerateBaseUpRotationSpeed;
         public static ConfigEntry<float> chelicerateBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> shadowLeviathanExclude;
         public static ConfigEntry<float> shadowLeviathanScale;
         public static ConfigEntry<float> shadowLeviathanSlowness;
         public static ConfigEntry<float> shadowLeviathanHealth;
         public static ConfigEntry<float> shadowLeviathanLimit;
+        public static ConfigEntry<bool> shadowLeviathanRandomize;
+        public static ConfigEntry<float> shadowLeviathanRandomizeMin;
+        public static ConfigEntry<float> shadowLeviathanRandomizeMax;
         public static ConfigEntry<float> shadowLeviathanBaseHealth;
         public static ConfigEntry<float> shadowLeviathanBaseMaxAcceleration;
         public static ConfigEntry<float> shadowLeviathanBaseForwardRotationSpeed;
         public static ConfigEntry<float> shadowLeviathanBaseUpRotationSpeed;
         public static ConfigEntry<float> shadowLeviathanBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> voidLeviathanExclude;
         public static ConfigEntry<float> voidLeviathanScale;
         public static ConfigEntry<float> voidLeviathanSlowness;
         public static ConfigEntry<float> voidLeviathanHealth;
         public static ConfigEntry<float> voidLeviathanLimit;
+        public static ConfigEntry<bool> voidLeviathanRandomize;
+        public static ConfigEntry<float> voidLeviathanRandomizeMin;
+        public static ConfigEntry<float> voidLeviathanRandomizeMax;
         public static ConfigEntry<float> voidLeviathanBaseHealth;
         public static ConfigEntry<float> voidLeviathanBaseMaxAcceleration;
         public static ConfigEntry<float> voidLeviathanBaseForwardRotationSpeed;
         public static ConfigEntry<float> voidLeviathanBaseUpRotationSpeed;
         public static ConfigEntry<float> voidLeviathanBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> skyRayExclude;
         public static ConfigEntry<float> skyRayScale;
         public static ConfigEntry<float> skyRaySlowness;
         public static ConfigEntry<float> skyRayHealth;
         public static ConfigEntry<float> skyRayLimit;
+        public static ConfigEntry<bool> skyRayRandomize;
+        public static ConfigEntry<float> skyRayRandomizeMin;
+        public static ConfigEntry<float> skyRayRandomizeMax;
         public static ConfigEntry<float> skyRayBaseHealth;
         public static ConfigEntry<float> skyRayBaseMaxAcceleration;
         public static ConfigEntry<float> skyRayBaseForwardRotationSpeed;
         public static ConfigEntry<float> skyRayBaseUpRotationSpeed;
         public static ConfigEntry<float> skyRayBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> penglingExclude;
         public static ConfigEntry<float> penglingScale;
         public static ConfigEntry<float> penglingSlowness;
         public static ConfigEntry<float> penglingHealth;
         public static ConfigEntry<float> penglingLimit;
+        public static ConfigEntry<bool> penglingRandomize;
+        public static ConfigEntry<float> penglingRandomizeMin;
+        public static ConfigEntry<float> penglingRandomizeMax;
         public static ConfigEntry<float> penglingBaseHealth;
         public static ConfigEntry<float> penglingBaseMaxAcceleration;
         public static ConfigEntry<float> penglingBaseForwardRotationSpeed;
         public static ConfigEntry<float> penglingBaseUpRotationSpeed;
         public static ConfigEntry<float> penglingBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> pengwingExclude;
         public static ConfigEntry<float> pengwingScale;
         public static ConfigEntry<float> pengwingSlowness;
         public static ConfigEntry<float> pengwingHealth;
         public static ConfigEntry<float> pengwingLimit;
+        public static ConfigEntry<bool> pengwingRandomize;
+        public static ConfigEntry<float> pengwingRandomizeMin;
+        public static ConfigEntry<float> pengwingRandomizeMax;
         public static ConfigEntry<float> pengwingBaseHealth;
         public static ConfigEntry<float> pengwingBaseMaxAcceleration;
         public static ConfigEntry<float> pengwingBaseForwardRotationSpeed;
         public static ConfigEntry<float> pengwingBaseUpRotationSpeed;
         public static ConfigEntry<float> pengwingBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaMonkeyBabyExclude;
         public static ConfigEntry<float> seaMonkeyBabyScale;
         public static ConfigEntry<float> seaMonkeyBabySlowness;
         public static ConfigEntry<float> seaMonkeyBabyHealth;
         public static ConfigEntry<float> seaMonkeyBabyLimit;
+        public static ConfigEntry<bool> seaMonkeyBabyRandomize;
+        public static ConfigEntry<float> seaMonkeyBabyRandomizeMin;
+        public static ConfigEntry<float> seaMonkeyBabyRandomizeMax;
         public static ConfigEntry<float> seaMonkeyBabyBaseHealth;
         public static ConfigEntry<float> seaMonkeyBabyBaseMaxAcceleration;
         public static ConfigEntry<float> seaMonkeyBabyBaseForwardRotationSpeed;
         public static ConfigEntry<float> seaMonkeyBabyBaseUpRotationSpeed;
         public static ConfigEntry<float> seaMonkeyBabyBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> seaMonkeyExclude;
         public static ConfigEntry<float> seaMonkeyScale;
         public static ConfigEntry<float> seaMonkeySlowness;
         public static ConfigEntry<float> seaMonkeyHealth;
         public static ConfigEntry<float> seaMonkeyLimit;
+        public static ConfigEntry<bool> seaMonkeyRandomize;
+        public static ConfigEntry<float> seaMonkeyRandomizeMin;
+        public static ConfigEntry<float> seaMonkeyRandomizeMax;
         public static ConfigEntry<float> seaMonkeyBaseHealth;
         public static ConfigEntry<float> seaMonkeyBaseMaxAcceleration;
         public static ConfigEntry<float> seaMonkeyBaseForwardRotationSpeed;
         public static ConfigEntry<float> seaMonkeyBaseUpRotationSpeed;
         public static ConfigEntry<float> seaMonkeyBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> snowStalkerBabyExclude;
         public static ConfigEntry<float> snowStalkerBabyScale;
         public static ConfigEntry<float> snowStalkerBabySlowness;
         public static ConfigEntry<float> snowStalkerBabyHealth;
         public static ConfigEntry<float> snowStalkerBabyLimit;
+        public static ConfigEntry<bool> snowStalkerBabyRandomize;
+        public static ConfigEntry<float> snowStalkerBabyRandomizeMin;
+        public static ConfigEntry<float> snowStalkerBabyRandomizeMax;
         public static ConfigEntry<float> snowStalkerBabyBaseHealth;
         public static ConfigEntry<float> snowStalkerBabyBaseMaxAcceleration;
         public static ConfigEntry<float> snowStalkerBabyBaseForwardRotationSpeed;
         public static ConfigEntry<float> snowStalkerBabyBaseUpRotationSpeed;
         public static ConfigEntry<float> snowStalkerBabyBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> snowStalkerExclude;
         public static ConfigEntry<float> snowStalkerScale;
         public static ConfigEntry<float> snowStalkerSlowness;
         public static ConfigEntry<float> snowStalkerHealth;
         public static ConfigEntry<float> snowStalkerLimit;
+        public static ConfigEntry<bool> snowStalkerRandomize;
+        public static ConfigEntry<float> snowStalkerRandomizeMin;
+        public static ConfigEntry<float> snowStalkerRandomizeMax;
         public static ConfigEntry<float> snowStalkerBaseHealth;
         public static ConfigEntry<float> snowStalkerBaseMaxAcceleration;
         public static ConfigEntry<float> snowStalkerBaseForwardRotationSpeed;
         public static ConfigEntry<float> snowStalkerBaseUpRotationSpeed;
         public static ConfigEntry<float> snowStalkerBaseTraitsAnimatorSpeed;
 
+        public static ConfigEntry<bool> rockPuncherExclude;
         public static ConfigEntry<float> rockPuncherScale;
         public static ConfigEntry<float> rockPuncherSlowness;
         public static ConfigEntry<float> rockPuncherHealth;
         public static ConfigEntry<float> rockPuncherLimit;
+        public static ConfigEntry<bool> rockPuncherRandomize;
+        public static ConfigEntry<float> rockPuncherRandomizeMin;
+        public static ConfigEntry<float> rockPuncherRandomizeMax;
         public static ConfigEntry<float> rockPuncherBaseHealth;
         public static ConfigEntry<float> rockPuncherBaseMaxAcceleration;
         public static ConfigEntry<float> rockPuncherBaseForwardRotationSpeed;
@@ -3063,6 +4224,48 @@ namespace BiggerFishMod
 
         public static ConfigEntry<float> smallVentGardenScale;
         public static ConfigEntry<float> largeVentGardenScale;
+        public static ConfigEntry<bool> ventgardenRandomize;
+        public static ConfigEntry<float> ventgardenRandomizeMin;
+        public static ConfigEntry<float> ventgardenRandomizeMax;
+
+        List<OptionItem> miscOptions = new List<OptionItem>();
+        List<OptionItem> proportionalOptions = new List<OptionItem>();
+        List<OptionItem> arcticPeeperOptions = new List<OptionItem>();
+        List<OptionItem> arrowRayOptions = new List<OptionItem>();
+        List<OptionItem> boomerangOptions = new List<OptionItem>();
+        List<OptionItem> bladderFishOptions = new List<OptionItem>();
+        List<OptionItem> hoopFishOptions = new List<OptionItem>();
+        List<OptionItem> discusFishOptions = new List<OptionItem>();
+        List<OptionItem> featherFishOptions = new List<OptionItem>();
+        List<OptionItem> nootFishOptions = new List<OptionItem>();
+        List<OptionItem> spinnerFishOptions = new List<OptionItem>();
+        List<OptionItem> arcticRayOptions = new List<OptionItem>();
+        List<OptionItem> jellyFishOptions = new List<OptionItem>();
+        List<OptionItem> titanHoleFishOptions = new List<OptionItem>();
+        List<OptionItem> glowWhaleOptions = new List<OptionItem>();
+        List<OptionItem> pinnacaridOptions = new List<OptionItem>();
+        List<OptionItem> triopsOptions = new List<OptionItem>();
+        List<OptionItem> trivalveOptions = new List<OptionItem>();
+        List<OptionItem> symbioteFishOptions = new List<OptionItem>();
+        List<OptionItem> rockGrubOptions = new List<OptionItem>();
+        List<OptionItem> crashFishOptions = new List<OptionItem>();
+        List<OptionItem> brineWingOptions = new List<OptionItem>();
+        List<OptionItem> lilyPaddlerOptions = new List<OptionItem>();
+        List<OptionItem> cryptosuchusOptions = new List<OptionItem>();
+        List<OptionItem> bruteSharkOptions = new List<OptionItem>();
+        List<OptionItem> squidSharkOptions = new List<OptionItem>();
+        List<OptionItem> chelicerateOptions = new List<OptionItem>();
+        List<OptionItem> shadowLeviathanOptions = new List<OptionItem>();
+        List<OptionItem> voidLeviathanOptions = new List<OptionItem>();
+        List<OptionItem> skyRayOptions = new List<OptionItem>();
+        List<OptionItem> penglingOptions = new List<OptionItem>();
+        List<OptionItem> pengwingOptions = new List<OptionItem>();
+        List<OptionItem> seaMonkeyBabyOptions = new List<OptionItem>();
+        List<OptionItem> seaMonkeyOptions = new List<OptionItem>();
+        List<OptionItem> snowStalkerBabyOptions = new List<OptionItem>();
+        List<OptionItem> snowStalkerOptions = new List<OptionItem>();
+        List<OptionItem> rockPuncherOptions = new List<OptionItem>();
+        List<OptionItem> ventgardenOptions = new List<OptionItem>();
         #endregion
 
         public MyModOptions() : base("Bigger Fish")
@@ -3091,9 +4294,23 @@ namespace BiggerFishMod
             proportionalCreatureLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(proportionalCreatureLimitOption);
 
+            ModToggleOption proportionalRandomizeOption = proportionalRandomize.ToModToggleOption();
+            proportionalRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(proportionalRandomizeOption);
+
+            ModSliderOption proportionalRandomizeMinOption = proportionalRandomizeMin.ToModSliderOption(1, 50);
+            proportionalRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(proportionalRandomizeMinOption);
+
+            ModSliderOption proportionalRandomizeMaxOption = proportionalRandomizeMax.ToModSliderOption(1, 50);
+            proportionalRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(proportionalRandomizeMaxOption);
 
 
 
+            ModToggleOption peeperExcludeOption = arcticPeeperExclude.ToModToggleOption();
+            peeperExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(peeperExcludeOption);
 
             ModSliderOption peeperScaleOption = arcticPeeperScale.ToModSliderOption(1, 50);
             peeperScaleOption.OnChanged += SliderOptionsChanged;
@@ -3111,9 +4328,25 @@ namespace BiggerFishMod
             peeperLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(peeperLimitOption);
 
+            ModToggleOption peeperRandomizeOption = arcticPeeperRandomize.ToModToggleOption();
+            peeperRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(peeperRandomizeOption);
+
+            ModSliderOption peeperRandomizeMinOption = arcticPeeperRandomizeMin.ToModSliderOption(1, 50);
+            peeperRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperRandomizeMinOption);
+
+            ModSliderOption peeperRandomizeMaxOption = arcticPeeperRandomizeMax.ToModSliderOption(1, 50);
+            peeperRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(peeperRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption arcticRayExcludeOption = arcticRayExclude.ToModToggleOption();
+            arcticRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(arcticRayExcludeOption);
 
             ModSliderOption arcticRayScaleOption = arcticRayScale.ToModSliderOption(1, 50);
             arcticRayScaleOption.OnChanged += SliderOptionsChanged;
@@ -3131,9 +4364,25 @@ namespace BiggerFishMod
             arcticRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(arcticRayLimitOption);
 
+            ModToggleOption arcticRayRandomizeOption = arcticRayRandomize.ToModToggleOption();
+            arcticRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(arcticRayRandomizeOption);
+
+            ModSliderOption arcticRayRandomizeMinOption = arcticRayRandomizeMin.ToModSliderOption(1, 50);
+            arcticRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(arcticRayRandomizeMinOption);
+
+            ModSliderOption arcticRayRandomizeMaxOption = arcticRayRandomizeMax.ToModSliderOption(1, 50);
+            arcticRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(arcticRayRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption arrowRayExcludeOption = arrowRayExclude.ToModToggleOption();
+            arrowRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(arrowRayExcludeOption);
 
             ModSliderOption arrowRayScaleOption = arrowRayScale.ToModSliderOption(1, 50);
             arrowRayScaleOption.OnChanged += SliderOptionsChanged;
@@ -3151,9 +4400,25 @@ namespace BiggerFishMod
             arrowRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(arrowRayLimitOption);
 
+            ModToggleOption arrowRayRandomizeOption = arrowRayRandomize.ToModToggleOption();
+            arrowRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(arrowRayRandomizeOption);
+
+            ModSliderOption arrowRayRandomizeMinOption = arrowRayRandomizeMin.ToModSliderOption(1, 50);
+            arrowRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(arrowRayRandomizeMinOption);
+
+            ModSliderOption arrowRayRandomizeMaxOption = arrowRayRandomizeMax.ToModSliderOption(1, 50);
+            arrowRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(arrowRayRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption bladderFishExcludeOption = bladderFishExclude.ToModToggleOption();
+            bladderFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bladderFishExcludeOption);
 
             ModSliderOption bladderFishScaleOption = bladderFishScale.ToModSliderOption(1, 50);
             bladderFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3171,9 +4436,25 @@ namespace BiggerFishMod
             bladderFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bladderFishLimitOption);
 
+            ModToggleOption bladderFishRandomizeOption = bladderFishRandomize.ToModToggleOption();
+            bladderFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bladderFishRandomizeOption);
+
+            ModSliderOption bladderFishRandomizeMinOption = bladderFishRandomizeMin.ToModSliderOption(1, 50);
+            bladderFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishRandomizeMinOption);
+
+            ModSliderOption bladderFishRandomizeMaxOption = bladderFishRandomizeMax.ToModSliderOption(1, 50);
+            bladderFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(bladderFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption boomerangExcludeOption = boomerangExclude.ToModToggleOption();
+            boomerangExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boomerangExcludeOption);
 
             ModSliderOption boomerangScaleOption = boomerangScale.ToModSliderOption(1, 50);
             boomerangScaleOption.OnChanged += SliderOptionsChanged;
@@ -3191,9 +4472,25 @@ namespace BiggerFishMod
             boomerangLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(boomerangLimitOption);
 
+            ModToggleOption boomerangRandomizeOption = boomerangRandomize.ToModToggleOption();
+            boomerangRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(boomerangRandomizeOption);
+
+            ModSliderOption boomerangRandomizeMinOption = boomerangRandomizeMin.ToModSliderOption(1, 50);
+            boomerangRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangRandomizeMinOption);
+
+            ModSliderOption boomerangRandomizeMaxOption = boomerangRandomizeMax.ToModSliderOption(1, 50);
+            boomerangRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(boomerangRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption brineWingExcludeOption = brineWingExclude.ToModToggleOption();
+            brineWingExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(brineWingExcludeOption);
 
             ModSliderOption brineWingScaleOption = brineWingScale.ToModSliderOption(1, 50);
             brineWingScaleOption.OnChanged += SliderOptionsChanged;
@@ -3211,9 +4508,25 @@ namespace BiggerFishMod
             brineWingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(brineWingLimitOption);
 
+            ModToggleOption brineWingRandomizeOption = brineWingRandomize.ToModToggleOption();
+            brineWingRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(brineWingRandomizeOption);
+
+            ModSliderOption brineWingRandomizeMinOption = brineWingRandomizeMin.ToModSliderOption(1, 50);
+            brineWingRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(brineWingRandomizeMinOption);
+
+            ModSliderOption brineWingRandomizeMaxOption = brineWingRandomizeMax.ToModSliderOption(1, 50);
+            brineWingRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(brineWingRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption bruteSharkExcludeOption = bruteSharkExclude.ToModToggleOption();
+            bruteSharkExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bruteSharkExcludeOption);
 
             ModSliderOption bruteSharkScaleOption = bruteSharkScale.ToModSliderOption(1, 50);
             bruteSharkScaleOption.OnChanged += SliderOptionsChanged;
@@ -3231,9 +4544,25 @@ namespace BiggerFishMod
             bruteSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(bruteSharkLimitOption);
 
+            ModToggleOption bruteSharkRandomizeOption = bruteSharkRandomize.ToModToggleOption();
+            bruteSharkRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(bruteSharkRandomizeOption);
+
+            ModSliderOption bruteSharkRandomizeMinOption = bruteSharkRandomizeMin.ToModSliderOption(1, 50);
+            bruteSharkRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(bruteSharkRandomizeMinOption);
+
+            ModSliderOption bruteSharkRandomizeMaxOption = bruteSharkRandomizeMax.ToModSliderOption(1, 50);
+            bruteSharkRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(bruteSharkRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption chelicerateExcludeOption = chelicerateExclude.ToModToggleOption();
+            chelicerateExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(chelicerateExcludeOption);
 
             ModSliderOption chelicerateScaleOption = chelicerateScale.ToModSliderOption(1, 50);
             chelicerateScaleOption.OnChanged += SliderOptionsChanged;
@@ -3251,9 +4580,25 @@ namespace BiggerFishMod
             chelicerateLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(chelicerateLimitOption);
 
+            ModToggleOption chelicerateRandomizeOption = chelicerateRandomize.ToModToggleOption();
+            chelicerateRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(chelicerateRandomizeOption);
+
+            ModSliderOption chelicerateRandomizeMinOption = chelicerateRandomizeMin.ToModSliderOption(1, 50);
+            chelicerateRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(chelicerateRandomizeMinOption);
+
+            ModSliderOption chelicerateRandomizeMaxOption = chelicerateRandomizeMax.ToModSliderOption(1, 50);
+            chelicerateRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(chelicerateRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption crashFishExcludeOption = crashFishExclude.ToModToggleOption();
+            crashFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crashFishExcludeOption);
 
             ModSliderOption crashFishScaleOption = crashFishScale.ToModSliderOption(1, 50);
             crashFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3271,9 +4616,25 @@ namespace BiggerFishMod
             crashFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(crashFishLimitOption);
 
+            ModToggleOption crashFishRandomizeOption = crashFishRandomize.ToModToggleOption();
+            crashFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(crashFishRandomizeOption);
+
+            ModSliderOption crashFishRandomizeMinOption = crashFishRandomizeMin.ToModSliderOption(1, 50);
+            crashFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishRandomizeMinOption);
+
+            ModSliderOption crashFishRandomizeMaxOption = crashFishRandomizeMax.ToModSliderOption(1, 50);
+            crashFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(crashFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption cryptosuchusExcludeOption = cryptosuchusExclude.ToModToggleOption();
+            cryptosuchusExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(cryptosuchusExcludeOption);
 
             ModSliderOption cryptosuchusScaleOption = cryptosuchusScale.ToModSliderOption(1, 50);
             cryptosuchusScaleOption.OnChanged += SliderOptionsChanged;
@@ -3291,9 +4652,25 @@ namespace BiggerFishMod
             cryptosuchusLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(cryptosuchusLimitOption);
 
+            ModToggleOption cryptosuchusRandomizeOption = cryptosuchusRandomize.ToModToggleOption();
+            cryptosuchusRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(cryptosuchusRandomizeOption);
+
+            ModSliderOption cryptosuchusRandomizeMinOption = cryptosuchusRandomizeMin.ToModSliderOption(1, 50);
+            cryptosuchusRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(cryptosuchusRandomizeMinOption);
+
+            ModSliderOption cryptosuchusRandomizeMaxOption = cryptosuchusRandomizeMax.ToModSliderOption(1, 50);
+            cryptosuchusRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(cryptosuchusRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption discusFishExcludeOption = discusFishExclude.ToModToggleOption();
+            discusFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(discusFishExcludeOption);
 
             ModSliderOption discusFishScaleOption = discusFishScale.ToModSliderOption(1, 50);
             discusFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3311,9 +4688,25 @@ namespace BiggerFishMod
             discusFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(discusFishLimitOption);
 
+            ModToggleOption discusFishRandomizeOption = discusFishRandomize.ToModToggleOption();
+            discusFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(discusFishRandomizeOption);
+
+            ModSliderOption discusFishRandomizeMinOption = discusFishRandomizeMin.ToModSliderOption(1, 50);
+            discusFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(discusFishRandomizeMinOption);
+
+            ModSliderOption discusFishRandomizeMaxOption = discusFishRandomizeMax.ToModSliderOption(1, 50);
+            discusFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(discusFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption jellyFishExcludeOption = jellyFishExclude.ToModToggleOption();
+            jellyFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jellyFishExcludeOption);
 
             ModSliderOption jellyFishScaleOption = jellyFishScale.ToModSliderOption(1, 50);
             jellyFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3331,9 +4724,25 @@ namespace BiggerFishMod
             jellyFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(jellyFishLimitOption);
 
+            ModToggleOption jellyFishRandomizeOption = jellyFishRandomize.ToModToggleOption();
+            jellyFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(jellyFishRandomizeOption);
+
+            ModSliderOption jellyFishRandomizeMinOption = jellyFishRandomizeMin.ToModSliderOption(1, 50);
+            jellyFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyFishRandomizeMinOption);
+
+            ModSliderOption jellyFishRandomizeMaxOption = jellyFishRandomizeMax.ToModSliderOption(1, 50);
+            jellyFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(jellyFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption featherFishExcludeOption = featherFishExclude.ToModToggleOption();
+            featherFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(featherFishExcludeOption);
 
             ModSliderOption featherFishScaleOption = featherFishScale.ToModSliderOption(1, 50);
             featherFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3351,9 +4760,25 @@ namespace BiggerFishMod
             featherFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(featherFishLimitOption);
 
+            ModToggleOption featherFishRandomizeOption = featherFishRandomize.ToModToggleOption();
+            featherFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(featherFishRandomizeOption);
+
+            ModSliderOption featherFishRandomizeMinOption = featherFishRandomizeMin.ToModSliderOption(1, 50);
+            featherFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishRandomizeMinOption);
+
+            ModSliderOption featherFishRandomizeMaxOption = featherFishRandomizeMax.ToModSliderOption(1, 50);
+            featherFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(featherFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption glowWhaleExcludeOption = glowWhaleExclude.ToModToggleOption();
+            glowWhaleExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(glowWhaleExcludeOption);
 
             ModSliderOption glowWhaleScaleOption = glowWhaleScale.ToModSliderOption(1, 50);
             glowWhaleScaleOption.OnChanged += SliderOptionsChanged;
@@ -3371,9 +4796,25 @@ namespace BiggerFishMod
             glowWhaleLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(glowWhaleLimitOption);
 
+            ModToggleOption glowWhaleRandomizeOption = glowWhaleRandomize.ToModToggleOption();
+            glowWhaleRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(glowWhaleRandomizeOption);
+
+            ModSliderOption glowWhaleRandomizeMinOption = glowWhaleRandomizeMin.ToModSliderOption(1, 50);
+            glowWhaleRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleRandomizeMinOption);
+
+            ModSliderOption glowWhaleRandomizeMaxOption = glowWhaleRandomizeMax.ToModSliderOption(1, 50);
+            glowWhaleRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(glowWhaleRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption hoopFishExcludeOption = hoopFishExclude.ToModToggleOption();
+            hoopFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoopFishExcludeOption);
 
             ModSliderOption hoopFishScaleOption = hoopFishScale.ToModSliderOption(1, 50);
             hoopFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3391,9 +4832,25 @@ namespace BiggerFishMod
             hoopFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(hoopFishLimitOption);
 
+            ModToggleOption hoopFishRandomizeOption = hoopFishRandomize.ToModToggleOption();
+            hoopFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(hoopFishRandomizeOption);
+
+            ModSliderOption hoopFishRandomizeMinOption = hoopFishRandomizeMin.ToModSliderOption(1, 50);
+            hoopFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishRandomizeMinOption);
+
+            ModSliderOption hoopFishRandomizeMaxOption = hoopFishRandomizeMax.ToModSliderOption(1, 50);
+            hoopFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(hoopFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption lilyPaddlerExcludeOption = lilyPaddlerExclude.ToModToggleOption();
+            lilyPaddlerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lilyPaddlerExcludeOption);
 
             ModSliderOption lilyPaddlerScaleOption = lilyPaddlerScale.ToModSliderOption(1, 50);
             lilyPaddlerScaleOption.OnChanged += SliderOptionsChanged;
@@ -3411,9 +4868,25 @@ namespace BiggerFishMod
             lilyPaddlerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(lilyPaddlerLimitOption);
 
+            ModToggleOption lilyPaddlerRandomizeOption = lilyPaddlerRandomize.ToModToggleOption();
+            lilyPaddlerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(lilyPaddlerRandomizeOption);
+
+            ModSliderOption lilyPaddlerRandomizeMinOption = lilyPaddlerRandomizeMin.ToModSliderOption(1, 50);
+            lilyPaddlerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(lilyPaddlerRandomizeMinOption);
+
+            ModSliderOption lilyPaddlerRandomizeMaxOption = lilyPaddlerRandomizeMax.ToModSliderOption(1, 50);
+            lilyPaddlerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(lilyPaddlerRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption nootFishExcludeOption = nootFishExclude.ToModToggleOption();
+            nootFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(nootFishExcludeOption);
 
             ModSliderOption nootFishScaleOption = nootFishScale.ToModSliderOption(1, 50);
             nootFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3431,9 +4904,25 @@ namespace BiggerFishMod
             nootFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(nootFishLimitOption);
 
+            ModToggleOption nootFishRandomizeOption = nootFishRandomize.ToModToggleOption();
+            nootFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(nootFishRandomizeOption);
+
+            ModSliderOption nootFishRandomizeMinOption = nootFishRandomizeMin.ToModSliderOption(1, 50);
+            nootFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(nootFishRandomizeMinOption);
+
+            ModSliderOption nootFishRandomizeMaxOption = nootFishRandomizeMax.ToModSliderOption(1, 50);
+            nootFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(nootFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption penglingExcludeOption = penglingExclude.ToModToggleOption();
+            penglingExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(penglingExcludeOption);
 
             ModSliderOption penglingScaleOption = penglingScale.ToModSliderOption(1, 50);
             penglingScaleOption.OnChanged += SliderOptionsChanged;
@@ -3451,9 +4940,25 @@ namespace BiggerFishMod
             penglingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(penglingLimitOption);
 
+            ModToggleOption penglingRandomizeOption = penglingRandomize.ToModToggleOption();
+            penglingRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(penglingRandomizeOption);
+
+            ModSliderOption penglingRandomizeMinOption = penglingRandomizeMin.ToModSliderOption(1, 50);
+            penglingRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(penglingRandomizeMinOption);
+
+            ModSliderOption penglingRandomizeMaxOption = penglingRandomizeMax.ToModSliderOption(1, 50);
+            penglingRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(penglingRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption pengwingExcludeOption = pengwingExclude.ToModToggleOption();
+            pengwingExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(pengwingExcludeOption);
 
             ModSliderOption pengwingScaleOption = pengwingScale.ToModSliderOption(1, 50);
             pengwingScaleOption.OnChanged += SliderOptionsChanged;
@@ -3471,9 +4976,25 @@ namespace BiggerFishMod
             pengwingLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(pengwingLimitOption);
 
+            ModToggleOption pengwingRandomizeOption = pengwingRandomize.ToModToggleOption();
+            pengwingRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(pengwingRandomizeOption);
+
+            ModSliderOption pengwingRandomizeMinOption = pengwingRandomizeMin.ToModSliderOption(1, 50);
+            pengwingRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(pengwingRandomizeMinOption);
+
+            ModSliderOption pengwingRandomizeMaxOption = pengwingRandomizeMax.ToModSliderOption(1, 50);
+            pengwingRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(pengwingRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption pinnacaridExcludeOption = pinnacaridExclude.ToModToggleOption();
+            pinnacaridExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(pinnacaridExcludeOption);
 
             ModSliderOption pinnacaridScaleOption = pinnacaridScale.ToModSliderOption(1, 50);
             pinnacaridScaleOption.OnChanged += SliderOptionsChanged;
@@ -3491,9 +5012,25 @@ namespace BiggerFishMod
             pinnacaridLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(pinnacaridLimitOption);
 
+            ModToggleOption pinnacaridRandomizeOption = pinnacaridRandomize.ToModToggleOption();
+            pinnacaridRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(pinnacaridRandomizeOption);
+
+            ModSliderOption pinnacaridRandomizeMinOption = pinnacaridRandomizeMin.ToModSliderOption(1, 50);
+            pinnacaridRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(pinnacaridRandomizeMinOption);
+
+            ModSliderOption pinnacaridRandomizeMaxOption = pinnacaridRandomizeMax.ToModSliderOption(1, 50);
+            pinnacaridRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(pinnacaridRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption rockGrubExcludeOption = rockGrubExclude.ToModToggleOption();
+            rockGrubExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rockGrubExcludeOption);
 
             ModSliderOption rockGrubScaleOption = rockGrubScale.ToModSliderOption(1, 50);
             rockGrubScaleOption.OnChanged += SliderOptionsChanged;
@@ -3511,9 +5048,25 @@ namespace BiggerFishMod
             rockGrubLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(rockGrubLimitOption);
 
+            ModToggleOption rockGrubRandomizeOption = rockGrubRandomize.ToModToggleOption();
+            rockGrubRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rockGrubRandomizeOption);
+
+            ModSliderOption rockGrubRandomizeMinOption = rockGrubRandomizeMin.ToModSliderOption(1, 50);
+            rockGrubRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(rockGrubRandomizeMinOption);
+
+            ModSliderOption rockGrubRandomizeMaxOption = rockGrubRandomizeMax.ToModSliderOption(1, 50);
+            rockGrubRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(rockGrubRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption rockPuncherExcludeOption = rockPuncherExclude.ToModToggleOption();
+            rockPuncherExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rockPuncherExcludeOption);
 
             ModSliderOption rockPuncherScaleOption = rockPuncherScale.ToModSliderOption(1, 50);
             rockPuncherScaleOption.OnChanged += SliderOptionsChanged;
@@ -3531,9 +5084,25 @@ namespace BiggerFishMod
             rockPuncherLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(rockPuncherLimitOption);
 
+            ModToggleOption rockPuncherRandomizeOption = rockPuncherRandomize.ToModToggleOption();
+            rockPuncherRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(rockPuncherRandomizeOption);
+
+            ModSliderOption rockPuncherRandomizeMinOption = rockPuncherRandomizeMin.ToModSliderOption(1, 50);
+            rockPuncherRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(rockPuncherRandomizeMinOption);
+
+            ModSliderOption rockPuncherRandomizeMaxOption = rockPuncherRandomizeMax.ToModSliderOption(1, 50);
+            rockPuncherRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(rockPuncherRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption seaMonkeyExcludeOption = seaMonkeyExclude.ToModToggleOption();
+            seaMonkeyExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaMonkeyExcludeOption);
 
             ModSliderOption seaMonkeyScaleOption = seaMonkeyScale.ToModSliderOption(1, 50);
             seaMonkeyScaleOption.OnChanged += SliderOptionsChanged;
@@ -3551,9 +5120,25 @@ namespace BiggerFishMod
             seaMonkeyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaMonkeyLimitOption);
 
+            ModToggleOption seaMonkeyRandomizeOption = seaMonkeyRandomize.ToModToggleOption();
+            seaMonkeyRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaMonkeyRandomizeOption);
+
+            ModSliderOption seaMonkeyRandomizeMinOption = seaMonkeyRandomizeMin.ToModSliderOption(1, 50);
+            seaMonkeyRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaMonkeyRandomizeMinOption);
+
+            ModSliderOption seaMonkeyRandomizeMaxOption = seaMonkeyRandomizeMax.ToModSliderOption(1, 50);
+            seaMonkeyRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaMonkeyRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption seaMonkeyBabyExcludeOption = seaMonkeyBabyExclude.ToModToggleOption();
+            seaMonkeyBabyExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaMonkeyBabyExcludeOption);
 
             ModSliderOption seaMonkeyBabyScaleOption = seaMonkeyBabyScale.ToModSliderOption(1, 50);
             seaMonkeyBabyScaleOption.OnChanged += SliderOptionsChanged;
@@ -3571,9 +5156,25 @@ namespace BiggerFishMod
            seaMonkeyBabyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(seaMonkeyBabyLimitOption);
 
+            ModToggleOption seaMonkeyBabyRandomizeOption = seaMonkeyBabyRandomize.ToModToggleOption();
+            seaMonkeyBabyRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(seaMonkeyBabyRandomizeOption);
+
+            ModSliderOption seaMonkeyBabyRandomizeMinOption = seaMonkeyBabyRandomizeMin.ToModSliderOption(1, 50);
+            seaMonkeyBabyRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaMonkeyBabyRandomizeMinOption);
+
+            ModSliderOption seaMonkeyBabyRandomizeMaxOption = seaMonkeyBabyRandomizeMax.ToModSliderOption(1, 50);
+            seaMonkeyBabyRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(seaMonkeyBabyRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption shadowLeviathanExcludeOption = shadowLeviathanExclude.ToModToggleOption();
+            shadowLeviathanExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(shadowLeviathanExcludeOption);
 
             ModSliderOption shadowLeviathanScaleOption = shadowLeviathanScale.ToModSliderOption(1, 50);
             shadowLeviathanScaleOption.OnChanged += SliderOptionsChanged;
@@ -3591,9 +5192,25 @@ namespace BiggerFishMod
             shadowLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(shadowLeviathanLimitOption);
 
+            ModToggleOption shadowLeviathanRandomizeOption = shadowLeviathanRandomize.ToModToggleOption();
+            shadowLeviathanRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(shadowLeviathanRandomizeOption);
+
+            ModSliderOption shadowLeviathanRandomizeMinOption = shadowLeviathanRandomizeMin.ToModSliderOption(1, 50);
+            shadowLeviathanRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(shadowLeviathanRandomizeMinOption);
+
+            ModSliderOption shadowLeviathanRandomizeMaxOption = shadowLeviathanRandomizeMax.ToModSliderOption(1, 50);
+            shadowLeviathanRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(shadowLeviathanRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption skyRayExcludeOption = skyRayExclude.ToModToggleOption();
+            skyRayExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(skyRayExcludeOption);
 
             ModSliderOption skyRayScaleOption = skyRayScale.ToModSliderOption(1, 50);
             skyRayScaleOption.OnChanged += SliderOptionsChanged;
@@ -3611,9 +5228,25 @@ namespace BiggerFishMod
             skyRayLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(skyRayLimitOption);
 
+            ModToggleOption skyRayRandomizeOption = skyRayRandomize.ToModToggleOption();
+            skyRayRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(skyRayRandomizeOption);
+
+            ModSliderOption skyRayRandomizeMinOption = skyRayRandomizeMin.ToModSliderOption(1, 50);
+            skyRayRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayRandomizeMinOption);
+
+            ModSliderOption skyRayRandomizeMaxOption = skyRayRandomizeMax.ToModSliderOption(1, 50);
+            skyRayRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(skyRayRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption snowStalkerExcludeOption = snowStalkerExclude.ToModToggleOption();
+            snowStalkerExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(snowStalkerExcludeOption);
 
             ModSliderOption snowStalkerScaleOption = snowStalkerScale.ToModSliderOption(1, 50);
             snowStalkerScaleOption.OnChanged += SliderOptionsChanged;
@@ -3631,9 +5264,25 @@ namespace BiggerFishMod
             snowStalkerLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(snowStalkerLimitOption);
 
+            ModToggleOption snowStalkerRandomizeOption = snowStalkerRandomize.ToModToggleOption();
+            snowStalkerRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(snowStalkerRandomizeOption);
+
+            ModSliderOption snowStalkerRandomizeMinOption = snowStalkerRandomizeMin.ToModSliderOption(1, 50);
+            snowStalkerRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(snowStalkerRandomizeMinOption);
+
+            ModSliderOption snowStalkerRandomizeMaxOption = snowStalkerRandomizeMax.ToModSliderOption(1, 50);
+            snowStalkerRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(snowStalkerRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption snowStalkerBabyExcludeOption = snowStalkerBabyExclude.ToModToggleOption();
+            snowStalkerBabyExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(snowStalkerBabyExcludeOption);
 
             ModSliderOption snowStalkerBabyScaleOption = snowStalkerBabyScale.ToModSliderOption(1, 50);
             snowStalkerBabyScaleOption.OnChanged += SliderOptionsChanged;
@@ -3651,9 +5300,25 @@ namespace BiggerFishMod
             snowStalkerBabyLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(snowStalkerBabyLimitOption);
 
+            ModToggleOption snowStalkerBabyRandomizeOption = snowStalkerBabyRandomize.ToModToggleOption();
+            snowStalkerBabyRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(snowStalkerBabyRandomizeOption);
+
+            ModSliderOption snowStalkerBabyRandomizeMinOption = snowStalkerBabyRandomizeMin.ToModSliderOption(1, 50);
+            snowStalkerBabyRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(snowStalkerBabyRandomizeMinOption);
+
+            ModSliderOption snowStalkerBabyRandomizeMaxOption = snowStalkerBabyRandomizeMax.ToModSliderOption(1, 50);
+            snowStalkerBabyRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(snowStalkerBabyRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption spinnerFishExcludeOption = spinnerFishExclude.ToModToggleOption();
+            spinnerFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spinnerFishExcludeOption);
 
             ModSliderOption spinnerFishScaleOption = spinnerFishScale.ToModSliderOption(1, 50);
             spinnerFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3671,9 +5336,25 @@ namespace BiggerFishMod
             spinnerFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(spinnerFishLimitOption);
 
+            ModToggleOption spinnerFishRandomizeOption = spinnerFishRandomize.ToModToggleOption();
+            spinnerFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(spinnerFishRandomizeOption);
+
+            ModSliderOption spinnerFishRandomizeMinOption = spinnerFishRandomizeMin.ToModSliderOption(1, 50);
+            spinnerFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(spinnerFishRandomizeMinOption);
+
+            ModSliderOption spinnerFishRandomizeMaxOption = spinnerFishRandomizeMax.ToModSliderOption(1, 50);
+            spinnerFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(spinnerFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption squidSharkExcludeOption = squidSharkExclude.ToModToggleOption();
+            squidSharkExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(squidSharkExcludeOption);
 
             ModSliderOption squidSharkScaleOption = squidSharkScale.ToModSliderOption(1, 50);
             squidSharkScaleOption.OnChanged += SliderOptionsChanged;
@@ -3691,9 +5372,25 @@ namespace BiggerFishMod
             squidSharkLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(squidSharkLimitOption);
 
+            ModToggleOption squidSharkRandomizeOption = squidSharkRandomize.ToModToggleOption();
+            squidSharkRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(squidSharkRandomizeOption);
+
+            ModSliderOption squidSharkRandomizeMinOption = squidSharkRandomizeMin.ToModSliderOption(1, 50);
+            squidSharkRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(squidSharkRandomizeMinOption);
+
+            ModSliderOption squidSharkRandomizeMaxOption = squidSharkRandomizeMax.ToModSliderOption(1, 50);
+            squidSharkRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(squidSharkRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption symbioteFishExcludeOption = symbioteFishExclude.ToModToggleOption();
+            symbioteFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(symbioteFishExcludeOption);
 
             ModSliderOption symbioteFishScaleOption = symbioteFishScale.ToModSliderOption(1, 50);
             symbioteFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3711,9 +5408,25 @@ namespace BiggerFishMod
             symbioteFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(symbioteFishLimitOption);
 
+            ModToggleOption symbioteFishRandomizeOption = symbioteFishRandomize.ToModToggleOption();
+            symbioteFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(symbioteFishRandomizeOption);
+
+            ModSliderOption symbioteFishRandomizeMinOption = symbioteFishRandomizeMin.ToModSliderOption(1, 50);
+            symbioteFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(symbioteFishRandomizeMinOption);
+
+            ModSliderOption symbioteFishRandomizeMaxOption = symbioteFishRandomizeMax.ToModSliderOption(1, 50);
+            symbioteFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(symbioteFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption titanHoleFishExcludeOption = titanHoleFishExclude.ToModToggleOption();
+            titanHoleFishExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(titanHoleFishExcludeOption);
 
             ModSliderOption titanHoleFishScaleOption = titanHoleFishScale.ToModSliderOption(1, 50);
             titanHoleFishScaleOption.OnChanged += SliderOptionsChanged;
@@ -3731,9 +5444,25 @@ namespace BiggerFishMod
             titanHoleFishLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(titanHoleFishLimitOption);
 
+            ModToggleOption titanHoleFishRandomizeOption = titanHoleFishRandomize.ToModToggleOption();
+            titanHoleFishRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(titanHoleFishRandomizeOption);
+
+            ModSliderOption titanHoleFishRandomizeMinOption = titanHoleFishRandomizeMin.ToModSliderOption(1, 50);
+            titanHoleFishRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(titanHoleFishRandomizeMinOption);
+
+            ModSliderOption titanHoleFishRandomizeMaxOption = titanHoleFishRandomizeMax.ToModSliderOption(1, 50);
+            titanHoleFishRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(titanHoleFishRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption triopsExcludeOption = triopsExclude.ToModToggleOption();
+            triopsExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(triopsExcludeOption);
 
             ModSliderOption triopsScaleOption = triopsScale.ToModSliderOption(1, 50);
             triopsScaleOption.OnChanged += SliderOptionsChanged;
@@ -3751,9 +5480,25 @@ namespace BiggerFishMod
             triopsLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(triopsLimitOption);
 
+            ModToggleOption triopsRandomizeOption = triopsRandomize.ToModToggleOption();
+            triopsRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(triopsRandomizeOption);
+
+            ModSliderOption triopsRandomizeMinOption = triopsRandomizeMin.ToModSliderOption(1, 50);
+            triopsRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(triopsRandomizeMinOption);
+
+            ModSliderOption triopsRandomizeMaxOption = triopsRandomizeMax.ToModSliderOption(1, 50);
+            triopsRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(triopsRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption trivalveExcludeOption = trivalveExclude.ToModToggleOption();
+            trivalveExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(trivalveExcludeOption);
 
             ModSliderOption trivalveScaleOption = trivalveScale.ToModSliderOption(1, 50);
             trivalveScaleOption.OnChanged += SliderOptionsChanged;
@@ -3771,9 +5516,25 @@ namespace BiggerFishMod
             trivalveLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(trivalveLimitOption);
 
+            ModToggleOption trivalveRandomizeOption = trivalveRandomize.ToModToggleOption();
+            trivalveRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(trivalveRandomizeOption);
+
+            ModSliderOption trivalveRandomizeMinOption = trivalveRandomizeMin.ToModSliderOption(1, 50);
+            trivalveRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(trivalveRandomizeMinOption);
+
+            ModSliderOption trivalveRandomizeMaxOption = trivalveRandomizeMax.ToModSliderOption(1, 50);
+            trivalveRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(trivalveRandomizeMaxOption);
 
 
 
+
+
+            ModToggleOption voidLeviathanExcludeOption = voidLeviathanExclude.ToModToggleOption();
+            voidLeviathanExcludeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(voidLeviathanExcludeOption);
 
             ModSliderOption voidLeviathanScaleOption = voidLeviathanScale.ToModSliderOption(1, 50);
             voidLeviathanScaleOption.OnChanged += SliderOptionsChanged;
@@ -3791,6 +5552,18 @@ namespace BiggerFishMod
             voidLeviathanLimitOption.OnChanged += SliderOptionsChanged;
             AddItem(voidLeviathanLimitOption);
 
+            ModToggleOption voidLeviathanRandomizeOption = voidLeviathanRandomize.ToModToggleOption();
+            voidLeviathanRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(voidLeviathanRandomizeOption);
+
+            ModSliderOption voidLeviathanRandomizeMinOption = voidLeviathanRandomizeMin.ToModSliderOption(1, 50);
+            voidLeviathanRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidLeviathanRandomizeMinOption);
+
+            ModSliderOption voidLeviathanRandomizeMaxOption = voidLeviathanRandomizeMax.ToModSliderOption(1, 50);
+            voidLeviathanRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(voidLeviathanRandomizeMaxOption);
+
 
 
 
@@ -3803,11 +5576,413 @@ namespace BiggerFishMod
             largeVentGardenScaleOption.OnChanged += SliderOptionsChanged;
             AddItem(largeVentGardenScaleOption);
 
+            ModToggleOption ventGardenRandomizeOption = ventgardenRandomize.ToModToggleOption();
+            ventGardenRandomizeOption.OnChanged += ToggleOptionsChanged;
+            AddItem(ventGardenRandomizeOption);
+
+            ModSliderOption ventGardenRandomizeMinOption = ventgardenRandomizeMin.ToModSliderOption(1, 50);
+            ventGardenRandomizeMinOption.OnChanged += SliderOptionsChanged;
+            AddItem(ventGardenRandomizeMinOption);
+
+            ModSliderOption ventGardenRandomizeMaxOption = ventgardenRandomizeMax.ToModSliderOption(1, 50);
+            ventGardenRandomizeMaxOption.OnChanged += SliderOptionsChanged;
+            AddItem(ventGardenRandomizeMaxOption);
+
 
 
 
 
             OptionsPanelHandler.RegisterModOptions(this);
+        }
+
+        public override void BuildModOptions(uGUI_TabbedControlsPanel panel, int modsTabIndex, IReadOnlyCollection<OptionItem> options)
+        {
+            HashSet<OptionItem> optionItemsHash = options.ToHashSet<OptionItem>();
+
+            int p = panel.AddTab("Bigger Fish");
+
+            foreach (OptionItem option in optionItemsHash)
+            {
+                if (option.Id.Contains("Misc. Options") && !miscOptions.Contains(option))
+                {
+                    miscOptions.Add(option);
+                }
+                else if (option.Id.Contains("Proportional Values") && !proportionalOptions.Contains(option))
+                {
+                    proportionalOptions.Add(option);
+                }
+                else if (option.Id.Contains("Arctic Peeper Values") && !arcticPeeperOptions.Contains(option))
+                {
+                    arcticPeeperOptions.Add(option);
+                }
+                else if (option.Id.Contains("Arrow Ray Values") && !arrowRayOptions.Contains(option))
+                {
+                    arrowRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Boomerang Values") && !boomerangOptions.Contains(option))
+                {
+                    boomerangOptions.Add(option);
+                }
+                else if (option.Id.Contains("Bladderfish Values") && !bladderFishOptions.Contains(option))
+                {
+                    bladderFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Hoopfish Values") && !hoopFishOptions.Contains(option))
+                {
+                    hoopFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Discusfish Values") && !discusFishOptions.Contains(option))
+                {
+                    discusFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Featherfish Values") && !featherFishOptions.Contains(option))
+                {
+                    featherFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Nootfish Values") && !nootFishOptions.Contains(option))
+                {
+                    nootFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Spinnerfish Values") && !spinnerFishOptions.Contains(option))
+                {
+                    spinnerFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Arctic Ray Values") && !arcticRayOptions.Contains(option))
+                {
+                    arcticRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Eye Jelly Values") && !jellyFishOptions.Contains(option))
+                {
+                    jellyFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Titan Hole Fish Values") && !titanHoleFishOptions.Contains(option))
+                {
+                    titanHoleFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Glow Whale Values") && !glowWhaleOptions.Contains(option))
+                {
+                    glowWhaleOptions.Add(option);
+                }
+                else if (option.Id.Contains("Pinnacarid Values") && !pinnacaridOptions.Contains(option))
+                {
+                    pinnacaridOptions.Add(option);
+                }
+                else if (option.Id.Contains("Triops Values") && !triopsOptions.Contains(option))
+                {
+                    triopsOptions.Add(option);
+                }
+                else if (option.Id.Contains("Trivalve Values") && !trivalveOptions.Contains(option))
+                {
+                    trivalveOptions.Add(option);
+                }
+                else if (option.Id.Contains("Symbiotefish Values") && !symbioteFishOptions.Contains(option))
+                {
+                    symbioteFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Rock Grub Values") && !rockGrubOptions.Contains(option))
+                {
+                    rockGrubOptions.Add(option);
+                }
+                else if (option.Id.Contains("Crash Fish Values") && !crashFishOptions.Contains(option))
+                {
+                    crashFishOptions.Add(option);
+                }
+                else if (option.Id.Contains("Brinewing Values") && !brineWingOptions.Contains(option))
+                {
+                    brineWingOptions.Add(option);
+                }
+                else if (option.Id.Contains("Lily Paddler Values") && !lilyPaddlerOptions.Contains(option))
+                {
+                    lilyPaddlerOptions.Add(option);
+                }
+                else if (option.Id.Contains("Cryptosuchus Values") && !cryptosuchusOptions.Contains(option))
+                {
+                    cryptosuchusOptions.Add(option);
+                }
+                else if (option.Id.Contains("Brute Shark Values") && !bruteSharkOptions.Contains(option))
+                {
+                    bruteSharkOptions.Add(option);
+                }
+                else if (option.Id.Contains("Squid Shark Values") && !squidSharkOptions.Contains(option))
+                {
+                    squidSharkOptions.Add(option);
+                }
+                else if (option.Id.Contains("Chelicerate Values") && !chelicerateOptions.Contains(option))
+                {
+                    chelicerateOptions.Add(option);
+                }
+                else if (option.Id.Contains("Shadow Leviathan Values") && !shadowLeviathanOptions.Contains(option))
+                {
+                    shadowLeviathanOptions.Add(option);
+                }
+                else if (option.Id.Contains("Void Leviathan Values") && !voidLeviathanOptions.Contains(option))
+                {
+                    voidLeviathanOptions.Add(option);
+                }
+                else if (option.Id.Contains("Skyray Values") && !skyRayOptions.Contains(option))
+                {
+                    skyRayOptions.Add(option);
+                }
+                else if (option.Id.Contains("Pengling Values") && !penglingOptions.Contains(option))
+                {
+                    penglingOptions.Add(option);
+                }
+                else if (option.Id.Contains("Pengwing Values") && !pengwingOptions.Contains(option))
+                {
+                    pengwingOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Monkey Baby Values") && !seaMonkeyBabyOptions.Contains(option))
+                {
+                    seaMonkeyBabyOptions.Add(option);
+                }
+                else if (option.Id.Contains("Sea Monkey Values") && !seaMonkeyOptions.Contains(option))
+                {
+                    seaMonkeyOptions.Add(option);
+                }
+                else if (option.Id.Contains("Snow Stalker Baby Values") && !snowStalkerBabyOptions.Contains(option))
+                {
+                    snowStalkerBabyOptions.Add(option);
+                }
+                else if (option.Id.Contains("Snow Stalker Values") && !snowStalkerOptions.Contains(option))
+                {
+                    snowStalkerOptions.Add(option);
+                }
+                else if (option.Id.Contains("Rock Puncher Values") && !rockPuncherOptions.Contains(option))
+                {
+                    rockPuncherOptions.Add(option);
+                }
+                else if(option.Id.Contains("Ventgarden Values") && !ventgardenOptions.Contains(option))
+                {
+                    ventgardenOptions.Add(option);
+                }
+            }
+            panel.AddHeading(p, "~~~Misc. Options~~~");
+            foreach (OptionItem option in miscOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Proportional Options~~~");
+            foreach (OptionItem option in proportionalOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Arctic Peeper Options~~~");
+            foreach (OptionItem option in arcticPeeperOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Arctic Ray Options~~~");
+            foreach (OptionItem option in arcticRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Arrow Ray Options~~~");
+            foreach (OptionItem option in arrowRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Bladderfish Options~~~");
+            foreach (OptionItem option in bladderFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Boomerang Options~~~");
+            foreach (OptionItem option in boomerangOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Brinewing Options~~~");
+            foreach (OptionItem option in brineWingOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Brute Shark Options~~~");
+            foreach (OptionItem option in bruteSharkOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Chelicerate Options~~~");
+            foreach (OptionItem option in chelicerateOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Crash Fish Options~~~");
+            foreach (OptionItem option in crashFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Cryptosuchus Options~~~");
+            foreach (OptionItem option in cryptosuchusOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Discusfish Options~~~");
+            foreach (OptionItem option in discusFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Eye Jelly Options~~~");
+            foreach (OptionItem option in jellyFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Featherfish Options~~~");
+            foreach (OptionItem option in featherFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Glow Whale Options~~~");
+            foreach (OptionItem option in glowWhaleOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Hoopfish Options~~~");
+            foreach (OptionItem option in hoopFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Lily Paddler Options~~~");
+            foreach (OptionItem option in lilyPaddlerOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Nootfish Options~~~");
+            foreach (OptionItem option in nootFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Pengling Options~~~");
+            foreach (OptionItem option in penglingOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Pengwing Options~~~");
+            foreach (OptionItem option in pengwingOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Pinnacarid Options~~~");
+            foreach (OptionItem option in pinnacaridOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Rock Grub Options~~~");
+            foreach (OptionItem option in rockGrubOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Rock Puncher Options~~~");
+            foreach (OptionItem option in rockPuncherOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Monkey Options~~~");
+            foreach (OptionItem option in seaMonkeyOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Sea Monkey Baby Options~~~");
+            foreach (OptionItem option in seaMonkeyBabyOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Shadow Leviathan Options~~~");
+            foreach (OptionItem option in shadowLeviathanOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Skyray Options~~~");
+            foreach (OptionItem option in skyRayOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Snow Stalker Options~~~");
+            foreach (OptionItem option in snowStalkerOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Snow Stalker Baby Options~~~");
+            foreach (OptionItem option in snowStalkerBabyOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Spinnerfish Options~~~");
+            foreach (OptionItem option in spinnerFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Squid Shark Options~~~");
+            foreach (OptionItem option in squidSharkOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Symbiotefish Options~~~");
+            foreach (OptionItem option in symbioteFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Titan Holefish Options~~~");
+            foreach (OptionItem option in titanHoleFishOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Triops Options~~~");
+            foreach (OptionItem option in triopsOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Trivalve Options~~~");
+            foreach (OptionItem option in trivalveOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Ventgarden Options~~~");
+            foreach(OptionItem option in ventgardenOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
+
+            panel.AddHeading(p, "~~~Void Leviathan Options~~~");
+            foreach (OptionItem option in voidLeviathanOptions)
+            {
+                option.AddToPanel(panel, p);
+            }
         }
 
         private void ToggleOptionsChanged(object sender, ToggleChangedEventArgs e)
@@ -3819,6 +5994,219 @@ namespace BiggerFishMod
                     break;
                 case "Remove Fish Schools":
                     removeFishSchools.Value = e.Value;
+                    break;
+                case "Arctic Peeper Exclude":
+                    arcticPeeperExclude.Value = e.Value;
+                    break;
+                case "Arctic Peeper Randomize":
+                    arcticPeeperRandomize.Value = e.Value;
+                    break;
+                case "Arrow Ray Exclude":
+                    arrowRayExclude.Value = e.Value;
+                    break;
+                case "Arrow Ray Randomize":
+                    arrowRayRandomize.Value = e.Value;
+                    break;
+                case "Boomerang Exclude":
+                    boomerangExclude.Value = e.Value;
+                    break;
+                case "Boomerang Randomize":
+                    boomerangRandomize.Value = e.Value;
+                    break;
+                case "Bladderfish Exclude":
+                    bladderFishExclude.Value = e.Value;
+                    break;
+                case "Bladderfish Randomize":
+                    bladderFishRandomize.Value = e.Value;
+                    break;
+                case "Hoopfish Exclude":
+                    hoopFishExclude.Value = e.Value;
+                    break;
+                case "Hoopfish Randomize":
+                    hoopFishRandomize.Value = e.Value;
+                    break;
+                case "Discusfish Exclude":
+                    discusFishExclude.Value = e.Value;
+                    break;
+                case "Discusfish Randomize":
+                    discusFishRandomize.Value = e.Value;
+                    break;
+                case "Featherfish Exclude":
+                    featherFishExclude.Value = e.Value;
+                    break;
+                case "Featherfish Randomize":
+                    featherFishRandomize.Value = e.Value;
+                    break;
+                case "Nootfish Exclude":
+                    nootFishExclude.Value = e.Value;
+                    break;
+                case "Nootfish Randomize":
+                    nootFishRandomize.Value = e.Value;
+                    break;
+                case "Spinnerfish Exclude":
+                    spinnerFishExclude.Value = e.Value;
+                    break;
+                case "Spinnerfish Randomize":
+                    spinnerFishRandomize.Value = e.Value;
+                    break;
+                case "Arctic Ray Exclude":
+                    arcticRayExclude.Value = e.Value;
+                    break;
+                case "Arctic Ray Randomize":
+                    arcticRayRandomize.Value = e.Value;
+                    break;
+                case "Eye Jelly Exclude":
+                    jellyFishExclude.Value = e.Value;
+                    break;
+                case "Eye Jelly Randomize":
+                    jellyFishRandomize.Value = e.Value;
+                    break;
+                case "Titan Hole Fish Exclude":
+                    titanHoleFishExclude.Value = e.Value;
+                    break;
+                case "Titan Hole Fish Randomize":
+                    titanHoleFishRandomize.Value = e.Value;
+                    break;
+                case "Glow Whale Exclude":
+                    glowWhaleExclude.Value = e.Value;
+                    break;
+                case "Glow Whale Randomize":
+                    glowWhaleRandomize.Value = e.Value;
+                    break;
+                case "Pinnacarid Exclude":
+                    pinnacaridExclude.Value = e.Value;
+                    break;
+                case "Pinnacarid Randomize":
+                    pinnacaridRandomize.Value = e.Value;
+                    break;
+                case "Triops Exclude":
+                    triopsExclude.Value = e.Value;
+                    break;
+                case "Triops Randomize":
+                    triopsRandomize.Value = e.Value;
+                    break;
+                case "Trivalve Exclude":
+                    trivalveExclude.Value = e.Value;
+                    break;
+                case "Trivalve Randomize":
+                    trivalveRandomize.Value = e.Value;
+                    break;
+                case "Symbiotefish Exclude":
+                    symbioteFishExclude.Value = e.Value;
+                    break;
+                case "Symbiotefish Randomize":
+                    symbioteFishRandomize.Value = e.Value;
+                    break;
+                case "Rock Grub Exclude":
+                    rockGrubExclude.Value = e.Value;
+                    break;
+                case "Rock Grub Randomize":
+                    rockGrubRandomize.Value = e.Value;
+                    break;
+                case "Crashfish Exclude":
+                    crashFishExclude.Value = e.Value;
+                    break;
+                case "Crashfish Randomize":
+                    crashFishRandomize.Value = e.Value;
+                    break;
+                case "Brinewing Exclude":
+                    brineWingExclude.Value = e.Value;
+                    break;
+                case "Brinewing Randomize":
+                    brineWingRandomize.Value = e.Value;
+                    break;
+                case "Lily Paddler Exclude":
+                    lilyPaddlerExclude.Value = e.Value;
+                    break;
+                case "Lily Paddler Randomize":
+                    lilyPaddlerRandomize.Value = e.Value;
+                    break;
+                case "Cryptosuchus Exclude":
+                    cryptosuchusExclude.Value = e.Value;
+                    break;
+                case "Cryptosuchus Randomize":
+                    cryptosuchusRandomize.Value = e.Value;
+                    break;
+                case "Brute Shark Exclude":
+                    bruteSharkExclude.Value = e.Value;
+                    break;
+                case "Brute Shark Randomize":
+                    bruteSharkRandomize.Value = e.Value;
+                    break;
+                case "Squid Shark Exclude":
+                    squidSharkExclude.Value = e.Value;
+                    break;
+                case "Squid Shark Randomize":
+                    squidSharkRandomize.Value = e.Value;
+                    break;
+                case "Chelicerate Exclude":
+                    chelicerateExclude.Value = e.Value;
+                    break;
+                case "Chelicerate Randomize":
+                    chelicerateRandomize.Value = e.Value;
+                    break;
+                case "Shadow Leviathan Exclude":
+                    shadowLeviathanExclude.Value = e.Value;
+                    break;
+                case "Shadow Leviathan Randomize":
+                    shadowLeviathanRandomize.Value = e.Value;
+                    break;
+                case "Void Leviathan Exclude":
+                    voidLeviathanExclude.Value = e.Value;
+                    break;
+                case "Void Leviathan Randomize":
+                    voidLeviathanRandomize.Value = e.Value;
+                    break;
+                case "Sky Ray Exclude":
+                    skyRayExclude.Value = e.Value;
+                    break;
+                case "Sky Ray Randomize":
+                    skyRayRandomize.Value = e.Value;
+                    break;
+                case "Pengling Exclude":
+                    penglingExclude.Value = e.Value;
+                    break;
+                case "Pengling Randomize":
+                    penglingRandomize.Value = e.Value;
+                    break;
+                case "Pengwing Exclude":
+                    pengwingExclude.Value = e.Value;
+                    break;
+                case "Pengwing Randomize":
+                    pengwingRandomize.Value = e.Value;
+                    break;
+                case "Sea Monkey Baby Exclude":
+                    seaMonkeyBabyExclude.Value = e.Value;
+                    break;
+                case "Sea Monkey Baby Randomize":
+                    seaMonkeyBabyRandomize.Value = e.Value;
+                    break;
+                case "Sea Monkey Exclude":
+                    seaMonkeyExclude.Value = e.Value;
+                    break;
+                case "Sea Monkey Randomize":
+                    seaMonkeyRandomize.Value = e.Value;
+                    break;
+                case "Snow Stalker Baby Exclude":
+                    snowStalkerBabyExclude.Value = e.Value;
+                    break;
+                case "Snow Stalker Baby Randomize":
+                    snowStalkerBabyRandomize.Value = e.Value;
+                    break;
+                case "Snow Stalker Exclude":
+                    snowStalkerExclude.Value = e.Value;
+                    break;
+                case "Snow Stalker Randomize":
+                    snowStalkerRandomize.Value = e.Value;
+                    break;
+                case "Rock Puncher Exclude":
+                    rockPuncherExclude.Value = e.Value;
+                    break;
+                case "Rock Puncher Randomize":
+                    rockPuncherRandomize.Value = e.Value;
+                    break;
+                case "Ventgarden Randomize":
+                    ventgardenRandomize.Value = e.Value;
                     break;
             }
         }
@@ -3839,6 +6227,13 @@ namespace BiggerFishMod
                 case "Proportional Creature Limit":
                     proportionalCreatureLimit.Value = e.Value;
                     break;
+                case "Proportional Randomize Min":
+                    proportionalRandomizeMin.Value = e.Value;
+                    break;
+                case "Proportional Randomize Max":
+                    proportionalRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Arctic Peeper Scale":
                     arcticPeeperScale.Value = e.Value;
                     break;
@@ -3851,6 +6246,13 @@ namespace BiggerFishMod
                 case "Arctic Peeper Limit":
                     arcticPeeperLimit.Value = e.Value;
                     break;
+                case "Arctic Peeper Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Arctic Peeper Randomize Max":
+                    arcticPeeperRandomizeMax.Value= e.Value;
+                    break;
+
                 case "Arrow Ray Scale":
                     arrowRayScale.Value = e.Value;
                     break;
@@ -3863,6 +6265,13 @@ namespace BiggerFishMod
                 case "Arrow Ray Limit":
                     arrowRayLimit.Value = e.Value;
                     break;
+                case "Arrow Ray Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Arrow Ray Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Boomerang Scale":
                     boomerangScale.Value = e.Value;
                     break;
@@ -3875,6 +6284,13 @@ namespace BiggerFishMod
                 case "Boomerang Limit":
                     boomerangLimit.Value = e.Value;
                     break;
+                case "Boomerang Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Boomerang Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Bladderfish Scale":
                     bladderFishScale.Value = e.Value;
                     break;
@@ -3887,6 +6303,13 @@ namespace BiggerFishMod
                 case "Bladderfish Limit":
                     bladderFishLimit.Value = e.Value;
                     break;
+                case "Bladderfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Bladderfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Hoopfish Scale":
                     hoopFishScale.Value = e.Value;
                     break;
@@ -3899,6 +6322,13 @@ namespace BiggerFishMod
                 case "Hoopfish Limit":
                     hoopFishLimit.Value = e.Value;
                     break;
+                case "Hoopfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Hoopfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Discusfish Scale":
                     discusFishScale.Value = e.Value;
                     break;
@@ -3911,6 +6341,13 @@ namespace BiggerFishMod
                 case "Discusfish Limit":
                     discusFishLimit.Value = e.Value;
                     break;
+                case "Discusfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Discusfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Featherfish Scale":
                     featherFishScale.Value = e.Value;
                     break;
@@ -3923,6 +6360,13 @@ namespace BiggerFishMod
                 case "Featherfish Limit":
                     featherFishLimit.Value = e.Value;
                     break;
+                case "Featherfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Featherfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Nootfish Scale":
                     nootFishScale.Value = e.Value;
                     break;
@@ -3935,6 +6379,13 @@ namespace BiggerFishMod
                 case "Nootfish Limit":
                     nootFishLimit.Value = e.Value;
                     break;
+                case "Nootfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Nootfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Spinnerfish Scale":
                     spinnerFishScale.Value = e.Value;
                     break;
@@ -3947,6 +6398,13 @@ namespace BiggerFishMod
                 case "Spinnerfish Limit":
                     spinnerFishLimit.Value = e.Value;
                     break;
+                case "Spinnerfish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Spinnerfish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Arctic Ray Scale":
                     arcticRayScale.Value = e.Value;
                     break;
@@ -3959,6 +6417,13 @@ namespace BiggerFishMod
                 case "Arctic Ray Limit":
                     arcticRayLimit.Value = e.Value;
                     break;
+                case "Arctic Ray Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Arctic Ray Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Eye Jelly Scale":
                     jellyFishScale.Value = e.Value;
                     break;
@@ -3971,6 +6436,13 @@ namespace BiggerFishMod
                 case "Eye Jelly Limit":
                     jellyFishLimit.Value = e.Value;
                     break;
+                case "Eye Jelly Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Eye Jelly Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Titan Hole Fish Scale":
                     titanHoleFishScale.Value = e.Value;
                     break;
@@ -3983,6 +6455,13 @@ namespace BiggerFishMod
                 case "Titan Hole Fish Limit":
                     titanHoleFishLimit.Value = e.Value;
                     break;
+                case "Titan Hole Fish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Titan Hole Fish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Glow Whale Scale":
                     glowWhaleScale.Value = e.Value;
                     break;
@@ -3995,6 +6474,13 @@ namespace BiggerFishMod
                 case "Glow Whale Limit":
                     glowWhaleLimit.Value = e.Value;
                     break;
+                case "Glow Whale Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Glow Whale Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Pinnacarid Scale":
                     pinnacaridScale.Value = e.Value;
                     break;
@@ -4007,6 +6493,13 @@ namespace BiggerFishMod
                 case "Pinnacarid Limit":
                     pinnacaridLimit.Value = e.Value;
                     break;
+                case "Pinnacarid Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Pinnacarid Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Triops Scale":
                     triopsScale.Value = e.Value;
                     break;
@@ -4019,6 +6512,13 @@ namespace BiggerFishMod
                 case "Triops Limit":
                     triopsLimit.Value = e.Value;
                     break;
+                case "Triops Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Triops Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Trivalve Scale":
                     trivalveScale.Value = e.Value;
                     break;
@@ -4031,6 +6531,13 @@ namespace BiggerFishMod
                 case "Trivalve Limit":
                     trivalveLimit.Value = e.Value;
                     break;
+                case "Trivalve Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Trivalve Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Symbiotefish Scale":
                     symbioteFishScale.Value = e.Value;
                     break;
@@ -4043,6 +6550,13 @@ namespace BiggerFishMod
                 case "Symbiotefish Limit":
                     symbioteFishLimit.Value = e.Value;
                     break;
+                case "Symbiotefish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Symbiotefish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Rock Grub Scale":
                     rockGrubScale.Value = e.Value;
                     break;
@@ -4055,6 +6569,13 @@ namespace BiggerFishMod
                 case "Rock Grub Limit":
                     rockGrubLimit.Value = e.Value;
                     break;
+                case "Rock Grub Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Rock Grub Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Crash Fish Scale":
                     crashFishScale.Value = e.Value;
                     break;
@@ -4067,6 +6588,13 @@ namespace BiggerFishMod
                 case "Crash Fish Limit":
                     crashFishLimit.Value = e.Value;
                     break;
+                case "Crash Fish Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Crash Fish Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Brinewing Scale":
                     brineWingScale.Value = e.Value;
                     break;
@@ -4078,6 +6606,13 @@ namespace BiggerFishMod
                     break;
                 case "Brinewing Limit":
                     brineWingLimit.Value = e.Value;
+                    break;
+                case "Brinewing Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Brinewing Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+
                     break;
                 case "Lily Paddler Scale":
                     lilyPaddlerScale.Value = e.Value;
@@ -4091,6 +6626,13 @@ namespace BiggerFishMod
                 case "Lily Paddler Limit":
                     lilyPaddlerLimit.Value = e.Value;
                     break;
+                case "Lily Paddler Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Lily Paddler Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Cryptosuchus Scale":
                     cryptosuchusScale.Value = e.Value;
                     break;
@@ -4103,6 +6645,13 @@ namespace BiggerFishMod
                 case "Cryptosuchus Limit":
                     cryptosuchusLimit.Value = e.Value;
                     break;
+                case "Cryptosuchus Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Cryptosuchus Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Brute Shark Scale":
                     bruteSharkScale.Value = e.Value;
                     break;
@@ -4114,6 +6663,13 @@ namespace BiggerFishMod
                     break;
                 case "Brute Shark Limit":
                     bruteSharkLimit.Value = e.Value;
+                    break;
+                case "Brute Shark Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Brute Shark Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+
                     break;
                 case "Squid Shark Scale":
                     squidSharkScale.Value = e.Value;
@@ -4127,6 +6683,13 @@ namespace BiggerFishMod
                 case "Squid Shark Limit":
                     squidSharkLimit.Value = e.Value;
                     break;
+                case "Squid Shark Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Squid Shark Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+
+                    break;
                 case "Chelicerate Scale":
                     chelicerateScale.Value = e.Value;
                     break;
@@ -4139,6 +6702,13 @@ namespace BiggerFishMod
                 case "Chelicerate Limit":
                     chelicerateLimit.Value = e.Value;
                     break;
+                case "Chelicerate Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Chelicerate Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Shadow Leviathan Scale":
                     shadowLeviathanScale.Value = e.Value;
                     break;
@@ -4151,6 +6721,13 @@ namespace BiggerFishMod
                 case "Shadow Leviathan Limit":
                     shadowLeviathanLimit.Value = e.Value;
                     break;
+                case "Shadow Leviathan Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Shadow Leviathan Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Void Leviathan Scale":
                     voidLeviathanScale.Value = e.Value;
                     break;
@@ -4163,6 +6740,13 @@ namespace BiggerFishMod
                 case "Void Leviathan Limit":
                     voidLeviathanLimit.Value = e.Value;
                     break;
+                case "Void Leviathan Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Void Leviathan Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Skyray Scale":
                     skyRayScale.Value = e.Value;
                     break;
@@ -4175,6 +6759,13 @@ namespace BiggerFishMod
                 case "Skyray Limit":
                     skyRayLimit.Value = e.Value;
                     break;
+                case "Skyray Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Skyray Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Pengling Scale":
                     penglingScale.Value = e.Value;
                     break;
@@ -4187,6 +6778,13 @@ namespace BiggerFishMod
                 case "Pengling Limit":
                     penglingLimit.Value = e.Value;
                     break;
+                case "Pengling Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Pengling Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Pengwing Scale":
                     pengwingScale.Value = e.Value;
                     break;
@@ -4199,6 +6797,13 @@ namespace BiggerFishMod
                 case "Pengwing Limit":
                     pengwingLimit.Value = e.Value;
                     break;
+                case "Pengwing Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Pengwing Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Monkey Baby Scale":
                     seaMonkeyBabyScale.Value = e.Value;
                     break;
@@ -4211,6 +6816,13 @@ namespace BiggerFishMod
                 case "Sea Monkey Baby Limit":
                     seaMonkeyBabyLimit.Value = e.Value;
                     break;
+                case "Sea Monkey Baby Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Monkey Baby Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Sea Monkey Scale":
                     seaMonkeyScale.Value = e.Value;
                     break;
@@ -4223,6 +6835,13 @@ namespace BiggerFishMod
                 case "Sea Monkey Limit":
                     seaMonkeyLimit.Value = e.Value;
                     break;
+                case "Sea Monkey Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Sea Monkey Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Snow Stalker Baby Scale":
                     snowStalkerBabyScale.Value = e.Value;
                     break;
@@ -4235,6 +6854,13 @@ namespace BiggerFishMod
                 case "Snow Stalker Baby Limit":
                     snowStalkerBabyLimit.Value = e.Value;
                     break;
+                case "Snow Stalker Baby Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Snow Stalker Baby Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Snow Stalker Scale":
                     snowStalkerScale.Value = e.Value;
                     break;
@@ -4247,6 +6873,13 @@ namespace BiggerFishMod
                 case "Snow Stalker Limit":
                     snowStalkerLimit.Value = e.Value;
                     break;
+                case "Snow Stalker Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Snow Stalker Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Rock Puncher Scale":
                     rockPuncherScale.Value = e.Value;
                     break;
@@ -4259,11 +6892,24 @@ namespace BiggerFishMod
                 case "Rock Puncher Limit":
                     rockPuncherLimit.Value = e.Value;
                     break;
+                case "Rock Puncher Randomize Min":
+                    arcticPeeperRandomizeMin.Value = e.Value;
+                    break;
+                case "Rock Puncher Randomize Max":
+                    arcticPeeperRandomizeMax.Value = e.Value;
+                    break;
+
                 case "Small Ventgarden Scale":
                     smallVentGardenScale.Value = e.Value;
                     break;
                 case "Large Ventgarden Scale":
                     largeVentGardenScale.Value = e.Value;
+                    break;
+                case "Ventgarden Randomize Min":
+                    ventgardenRandomizeMin.Value = e.Value;
+                    break;
+                case "Ventgarden Randomize Max":
+                    ventgardenRandomizeMax.Value = e.Value;
                     break;
             }
         }
